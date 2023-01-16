@@ -1,0 +1,521 @@
+openapi: 3.0.3
+info:
+  title: Enterprise Services OpenAPI specification
+  description: |
+    Enterprise Services complements basic services offered by the Prism Agent. 
+    Currently two products are part of this suite: __Onboard__ and 
+    __Authenticate__.
+    
+    __Onboard product__ enables organisations to request and get a DID from 
+    another party. It is about onboarding people towards SSI based systems. The 
+    process happens out-of-band, meaning no DIDComm messaging is utilised. 
+    Acquired DID could be used to trigger various SSI based services such as 
+    authentication with DID.
+    
+    Onboard flow:
+
+    * Inviting party creates a DID request.
+    * DID request is encoded, usually as a QR code or deep link, and sent to the
+    other party over appropriate channel depending on the use case. 
+    * Receiving party uses their wallet to scan/receive DID request.
+    * New DID is created by the wallet and sent back to the `onboardEndpoint` 
+    stated in DID request.
+    * Inviting party binds received did with its system context, ie. with userId
+    
+    __Authenticate product__ enables authenticating users and things based on 
+    DIDs they control. This product offers APIs to create and track the state of 
+    an authentication challenge, which is sent to an authenticating party.
+    
+    Authenticate flow:
+    * Authentication challenge is created.
+    * Challenge is encoded and sent to the other party over appropriate channel 
+    depending on the use case. 
+    * Party which receives the challenge, needs to sign the `nonce` and to submit 
+    `signature` and `did` containing corresponding authentication public key to 
+    the `submissionEndpoint` for verification.
+    * Signature is verified and challenge state is updated accordingly.
+    * Application can check if submitted signature is valid and if used did is 
+    known, and act upon it. 
+    
+    Authentication challenge session is time constrained and has defined 
+    expiration time.
+    
+    Application has to acquire a DID and to bind it to its system context before 
+    or during authentication flow. Onboard product could be used for that purpose.
+    
+    Wallets could use `did:peer` and `did:prism` for the time being.
+
+  version: 0.7.0
+servers:
+  - url: "https://k8s-dev.atalaprism.io/enterprise"
+    description: Development server
+  - url: "http://localhost:{port}"
+    description: Local server
+    variables:
+      port:
+        default: '8070'
+
+security:
+  - ApiKey: [ ]
+
+tags:
+  - name: Onboard
+    description: Create DID requests and track its state to integrate with applications
+  - name: Authenticate
+    description: Create authentication challenges and track its state to act upon received challenge responses
+
+paths:
+  /onboard/did-requests:
+    post:
+      tags:
+        - Onboard
+      operationId: createDidRequest
+      summary: Create new did request to send to another party
+      description: |
+        Create new did request state record. Optional `from` parameter could be 
+        provided in request body to allow wallets to present who is sending 
+        challenge.
+        
+        Created did request state record contains `didRequest` field which should 
+        be encoded and delivered to another party, usually in the form of a QR code. 
+        Once DID is received for created request, according state record will be 
+        updated. Initial state is set to `pending`, and once valid response is 
+        received, state is set to `success` and `did` field is populated. In the 
+        case of receiving invalid response from a wallet, state is set to 
+        `error`. This could be used by wallets to signal rejection, by sending
+        `null` for example.
+
+        To respond to DID request, other party should submit a valid DID, in 
+        `DidSubmission` message, to the `onboardEndpoint` given in the received 
+        request.
+
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              properties:
+                from:
+                  type: string
+                  example: "Government Issuer"
+      responses:
+        "200":
+          description: DID request state record
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DidRequestState"
+    get:
+      tags:
+        - Onboard
+      operationId: getDidRequests
+      summary: Return a list of all did requests created up to date
+      responses:
+        "200":
+          description: List of did request state records
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DidRequestStateCollection"
+
+  /onboard/did-requests/{didRequestId}:
+    get:
+      tags:
+        - Onboard
+      parameters:
+        - $ref: "#/components/parameters/didRequestId"
+      operationId: getDidRequest
+      summary: Return an existing did request state record by id
+      description: |
+        Provide information to application about particular did request. Once 
+        did is received, state is updated to `success` and `did` field is set. 
+        Application can use this information to bind received DID with its system
+        context.
+      responses:
+        "200":
+          description: DID request state record
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DidRequestState"
+        "404":
+          description: DID request state record not found for given `didRequestId`
+
+    delete:
+      tags:
+        - Onboard
+      parameters:
+        - $ref: "#/components/parameters/didRequestId"
+      operationId: deleteDidRequest
+      summary: Delete existing did request state record
+      description: Provides a way for applications to delete requests which are not needed anymore.
+      responses:
+        "200":
+          description: Successful delete
+        "404":
+          description: DID request state record not found for given `didRequestId`
+
+  /onboard/{didRequestSubmissionId}:
+    post:
+      tags:
+        - Onboard
+      parameters:
+        - $ref: "#/components/parameters/didRequestSubmissionId"
+      operationId: submitDid
+      summary: Public endpoint to which holders submit DIDs
+      description: |
+        Any valid did could be submitted, it's up to the wallet application to 
+        implement logic for creating and/or selecting existing DIDs. Size is 
+        limited to maximum of 1000 characters.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DidSubmission"
+      responses:
+        "200":
+          description: DID submission success
+        "400":
+          description: Invalid DID submitted
+        "410":
+          description: DID request expired
+        "500":
+          description: Server error
+
+  /did-authentication/challenges:
+    post:
+      tags:
+        - Authenticate
+      operationId: createAuthenticationChallenge
+      summary: Create new challenge to send for authentication to another party
+      description: |
+        Create new challenge state record. Optional `from` parameter could be 
+        provided in request body to allow wallets to present who is sending 
+        challenge.
+        
+        Created challenge state record contains `challenge` field which should 
+        be encoded and delivered to another party, usually in the form of a QR code. 
+        `challenge` object contains a random string (`nonce`) which holder needs 
+        to sign and post back to `submissionEndpoint` in `ChallengeSubmission` 
+        format. Initial state is set to `pending`, and once valid response is 
+        received, state is set to `success` and `did` field is populated. In the 
+        case of receiving invalid response from a wallet, either invalid 
+        response format or invalid signature, state is set to `error`.
+        
+        `id` is used to query for challenge state over time to detect terminal
+        state, either success or error. Once `success` is detected, application 
+        could use submitted `did` to check if it is known in its system and act
+        upon.
+
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              properties:
+                from:
+                  type: string
+                  example: "The App"
+      responses:
+        "200":
+          description: New authentication challenge state. `challenge` object should be encoded end transferred to the other party.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticationChallengeState"
+    get:
+      tags:
+        - Authenticate
+      operationId: getAuthenticationChallenges
+      summary: Get all authentication challenges created up to date
+      responses:
+        "200":
+          description: A list of authentication challenges
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticationChallengeStateCollection"
+
+  /did-authentication/challenges/{challengeId}:
+    get:
+      tags:
+        - Authenticate
+      operationId: getAuthenticationChallenge
+      summary: Get the state of single authentication challenge
+      description: |
+        Provide information to application if challenge has been 
+        submitted and if it's valid. Based on this information, application can 
+        decide when to establish new authenticated session (to create a JWT or 
+        something else) and let user in. Once user successfully submit challenge 
+        response, the corresponding state will save DID used to sign the
+        challenge, so application can check if given DID is known in its system.
+        
+        When DID is submitted, record will transition to `success` state and 
+        `did` field will be available.
+      parameters:
+        - $ref: "#/components/parameters/challengeId"
+      responses:
+        "200":
+          description: Existing authentication challenge state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticationChallengeState"
+        "404":
+          description: Authentication challenge state record not found for given `challengeId`.
+    delete:
+      tags:
+        - Authenticate
+      operationId: deleteAuthenticationChallenge
+      summary: Delete the state of an authentication challenge
+      description: Provides a way for applications to delete challenges which are not needed anymore.
+      parameters:
+        - $ref: "#/components/parameters/challengeId"
+      responses:
+        "200":
+          description: Challenge state deleted.
+        "404":
+          description: Authentication challenge state record not found for given `challengeId`.
+
+  /did-authentication/challenge-submissions/{challengeSubmissionId}:
+    post:
+      tags:
+        - Authenticate
+      operationId: submitAuthenticationChallengeResponse
+      parameters:
+        - $ref: "#/components/parameters/challengeSubmissionId"
+      summary: Public endpoint to which holders submit challenge responses
+      description: |
+        When submitted, signed challenge is verified against the authentication 
+        key found in DID document of a DID used to sign the challenge. Any 
+        request to this endpoint would invalidate particular authentication 
+        session. If invalid request is submitted, challenge state would 
+        transition to `error` state.
+        
+        Both `did` and `signature` size is limited to maximum of 1000 characters.
+        Signature should be `base64Url` encoded, and only `did:peer` is supported
+        up to date.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChallengeSubmission"
+      responses:
+        "200":
+          description: Challenge response submitted
+        "400":
+          description: Invalid challenge response submitted
+        "410":
+          description: Challenge expired
+        "500":
+          description: Server error
+
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: apikey
+  parameters:
+    didRequestId:
+      in: path
+      name: didRequestId
+      required: true
+      description: id field from DID request state record
+      schema:
+        type: string
+    didRequestSubmissionId:
+      in: path
+      name: didRequestSubmissionId
+      required: true
+      description: unique identifier of did request session
+      schema:
+        type: string
+    challengeId:
+      in: path
+      name: challengeId
+      required: true
+      description: id field from challenge state record
+      schema:
+        type: string
+    challengeSubmissionId:
+      in: path
+      name: challengeSubmissionId
+      required: true
+      description: unique identifier of authentication challenge session
+      schema:
+        type: string
+
+  schemas:
+    DidRequest:
+      type: object
+      required:
+        - type
+        - onboardEndpoint
+      properties:
+        type:
+          type: string
+          example: "https://atalaprism.io/did-request"
+        onboardEndpoint:
+          type: string
+          example: https://demo.atalaprism.io:8085/request-id-1234
+        from:
+          type: string
+          example: "Government Issuer"
+
+    DidRequestState:
+      type: object
+      required:
+        - self
+        - kind
+        - id
+        - didRequest
+        - state
+        - createdAt
+      properties:
+        self:
+          type: string
+          example: https://atala-prism-products.io/did-requests/did-request-1234
+        kind:
+          type: string
+          example: DidRequestState
+        id:
+          type: string
+          example: "onboard-record-1234"
+        didRequest:
+          $ref: "#/components/schemas/DidRequest"
+        did:
+          type: string
+          example: "did:peer:12345"
+        state:
+          type: string
+          enum: [ "pending", "success", "error" ]
+        createdAt:
+          type: string
+          format: date-time
+          example: 2021-10-31T09:22:23Z
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2021-12-31T13:59:60Z
+
+    DidRequestStateCollection:
+      type: object
+      required:
+        - self
+        - kind
+        - contents
+      properties:
+        self:
+          type: string
+          example: https://atala-prism-products.io/did-requests
+        kind:
+          type: string
+          example: Collection
+        contents:
+          type: array
+          items:
+            $ref: "#/components/schemas/DidRequestState"
+
+    DidSubmission:
+      type: object
+      required:
+        - did
+      properties:
+        did:
+          type: string
+          example: "did:prism:123456"
+
+    Challenge:
+      type: object
+      required:
+        - type
+        - submissionEndpoint
+        - nonce
+        - expireAt
+      properties:
+        type:
+          type: string
+          example: "https://atalaprism.io/authentication-challenge"
+        submissionEndpoint:
+          type: string
+          example: https://demo.atalaprism.io:8085/did-authentication/challenge-submissions/challenge-id-1234
+        nonce:
+          type: string
+          example: authenticate-NzIxZTZmNjQtOGY0Ni00ODQ4LWFhYjAtZGYzNDJmYzNlMjM2
+        from:
+          type: string
+          example: "The App"
+        expireAt:
+          type: string
+          format: date-time
+          example: 2021-10-31T09:22:23Z
+
+    AuthenticationChallengeState:
+      type: object
+      required:
+        - self
+        - kind
+        - id
+        - challenge
+        - state
+        - createdAt
+      properties:
+        self:
+          type: string
+          example: https://atala-prism-products.io/did-authentication/challenges/challenge-id-1234
+        kind:
+          type: string
+          example: AuthenticationChallengeState
+        id:
+          type: string
+          example: "challenge-id-1234"
+        did:
+          type: string
+          example: null
+        challenge:
+          $ref: "#/components/schemas/Challenge"
+        state:
+          type: string
+          enum: [ "pending", "success", "error" ]
+        createdAt:
+          type: string
+          format: date-time
+          example: 2021-10-31T09:22:23Z
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2021-12-31T13:59:60Z
+
+    AuthenticationChallengeStateCollection:
+      type: object
+      required:
+        - self
+        - kind
+        - contents
+      properties:
+        self:
+          type: string
+          example: https://atala-prism-products.io/did-authentication/challenges
+        kind:
+          type: string
+          example: Collection
+        contents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuthenticationChallengeState'
+
+    ChallengeSubmission:
+      type: object
+      required:
+        - did
+        - signature
+      properties:
+        did:
+          type: string
+          example: "did:peer:12345"
+        signature:
+          type: string
+          example: "tY63mfjyHZHN0723PgCKYZYsVHh1H6xVsh5UG9mu2qBpcV8ZWbPtfQWNUbWAv76h5UQCMBWlJRiF41r6fFJCCQ"

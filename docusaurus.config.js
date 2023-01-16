@@ -56,6 +56,8 @@ const config = {
         path: 'documentation/api/agent-api',
         routeBasePath: 'agent-api',
         sidebarPath: require.resolve('./sidebars.js'),
+        docLayoutComponent: "@theme/DocPage",
+        docItemComponent: "@theme/ApiItem"
       }, 
     ],
     [
@@ -65,6 +67,8 @@ const config = {
         path: 'documentation/api/enterprise-api',
         routeBasePath: 'enterprise-api',
         sidebarPath: require.resolve('./sidebars.js'),
+        docLayoutComponent: "@theme/DocPage",
+        docItemComponent: "@theme/ApiItem"
       }, 
     ],
     [
@@ -85,8 +89,27 @@ const config = {
         sidebarPath: require.resolve('./documentation/sdk/enterprise-sdk/sidebars.js'),
       },
     ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "apiDocs",
+        docsPluginId: "classic",
+        config: {
+          agent_api: { // Note: this key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
+              specPath: "documentation/api/agent-api/api/http/prism-agent-openapi-spec.yaml",
+              outputDir: "documentation/api/agent-api"
+            },
+          enterprise_api: {
+            specPath: "documentation/api/enterprise-api/enterprise-services-spec.yaml",
+            outputDir: "documentation/api/enterprise-api"
+          }
+        }
+      },
+    ],
     require.resolve('docusaurus-lunr-search')
   ],
+
+  themes: ["docusaurus-theme-openapi-docs"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -117,12 +140,12 @@ const config = {
             position: 'left',
             items: [
               {
-                to: '/agent-api/agent-api-intro',
+                to: '/agent-api/prismagent-openapi-specification',
                 label: 'Agent API',
                 activeBaseRegex: `/agent-api/`
               },
               {
-                to: '/enterprise-api/enterprise-api-intro',
+                to: '/enterprise-api/enterprise-services-openapi-specification',
                 label: 'Enterprise API',
                 activeBaseRegex: `/enterprise-api/`
               }
@@ -168,14 +191,14 @@ const config = {
           {
             title: 'Documentation',
             items: [
-              // {
-              //   label: 'Getting Started',
-              //   to: '/docs/getting-started',
-              // },
-              // {
-              //   label: 'Tutorials',
-              //   to: '/tutorials/index',
-              // },
+              {
+                label: 'Getting Started',
+                to: '/docs/getting-started',
+              },
+              {
+                label: 'Tutorials',
+                to: '/tutorials/index',
+              },
             ],
           },
           {

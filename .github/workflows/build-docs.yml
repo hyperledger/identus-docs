@@ -21,7 +21,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build website
-        run: yarn build
+        run: |
+          yarn docusaurus gen-api-docs all
+          yarn build
       - name: Save website
         uses: actions/upload-artifact@v2
         with:
