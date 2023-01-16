@@ -30,7 +30,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./docs-sidebars.js'),
+          sidebarPath: require.resolve('./documentation/docs/sidebars.js'),
+          path: './documentation/docs'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -43,45 +44,45 @@ const config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'tutorials',
-        path: 'docs-tutorials',
-        routeBasePath: 'docs-tutorials',
-        sidebarPath: require.resolve('./tutorials-sidebars.js'),
+        path: 'documentation/tutorials',
+        routeBasePath: 'tutorials',
+        sidebarPath: require.resolve('./documentation/tutorials/sidebars.js'),
       },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-agent-api',
-        path: 'docs-agent-api',
-        routeBasePath: 'docs-agent-api',
+        id: 'agent-api',
+        path: 'documentation/api/agent-api',
+        routeBasePath: 'agent-api',
         sidebarPath: require.resolve('./sidebars.js'),
       }, 
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-enterprise-api',
-        path: 'docs-enterprise-api',
-        routeBasePath: 'docs-enterprise-api',
+        id: 'enterprise-api',
+        path: 'documentation/api/enterprise-api',
+        routeBasePath: 'enterprise-api',
         sidebarPath: require.resolve('./sidebars.js'),
       }, 
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-wallet-sdk',
-        path: 'docs-wallet-sdk',
-        routeBasePath: 'docs-wallet-sdk',
-        sidebarPath: require.resolve('./sidebars.js'),
+        id: 'wallet-sdk',
+        path: 'documentation/sdk/wallet-sdk',
+        routeBasePath: 'wallet-sdk',
+        sidebarPath: require.resolve('./documentation/sdk/wallet-sdk/sidebars.js'),
       },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-enterprise-sdk',
-        path: 'docs-enterprise-sdk',
-        routeBasePath: 'docs-enterprise-sdk',
-        sidebarPath: require.resolve('./sidebars.js'),
+        id: 'enterprise-sdk',
+        path: 'documentation/sdk/enterprise-sdk',
+        routeBasePath: 'enterprise-sdk',
+        sidebarPath: require.resolve('./documentation/sdk/enterprise-sdk/sidebars.js'),
       },
     ],
     require.resolve('docusaurus-lunr-search')
@@ -105,42 +106,42 @@ const config = {
             label: 'Docs',
           },
           {
-            to: '/docs-tutorials/',
+            to: '/tutorials/',
             label: 'Tutorials',
             position: 'left',
-            activeBaseRegex: `/docs-tutorials/`
+            activeBaseRegex: `/tutorials/`
           },
           {
             type: 'dropdown',
-            label: 'Community',
+            label: 'API',
             position: 'left',
             items: [
               {
-                to: '/docs-agent-api/agent-api-intro',
-                label: 'PRISM Agent API',
-                activeBaseRegex: `/docs-agent-api/`
+                to: '/agent-api/agent-api-intro',
+                label: 'Agent API',
+                activeBaseRegex: `/agent-api/`
               },
               {
-                to: '/docs-wallet-sdk/wallet-sdk-intro',
-                label: 'Wallet SDK',
-                activeBaseRegex: `/docs-wallet-sdk/`
-              },
+                to: '/enterprise-api/enterprise-api-intro',
+                label: 'Enterprise API',
+                activeBaseRegex: `/enterprise-api/`
+              }
             ],
           },
           {
             type: 'dropdown',
-            label: 'Enterprise',
+            label: 'SDK',
             position: 'left',
             items: [
               {
-                to: '/docs-enterprise-api/enterprise-api-intro',
-                label: 'Enterprise API',
-                activeBaseRegex: `/docs-enterprise-api/`
+                to: '/wallet-sdk/wallet-sdk-intro',
+                label: 'Wallet SDK',
+                activeBaseRegex: `/wallet-sdk/`
               },
               {
-                to: '/docs-enterprise-sdk/enterprise-sdk-intro',
+                to: '/enterprise-sdk/enterprise-sdk-intro',
                 label: 'Enterprise SDK',
-                activeBaseRegex: `/docs-enterprise-sdk/`
+                activeBaseRegex: `/enterprise-sdk/`
               },
             ],
           },
@@ -150,27 +151,31 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Playground',
-                href: 'Playground',
-              },
-              {
                 label: 'PRISM DID Spec',
                 href: 'https://hackmd.io/-i6On7_LTRamKhEzYA6Hcw?view',
               },
             ],
           },
+          {
+            label: 'Changelog',
+            href: 'http://atala-prism-v2-changelog-page.io',
+          }
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
-              {
-                label: 'Docs',
-                to: '/docs/getting-started',
-              },
+              // {
+              //   label: 'Getting Started',
+              //   to: '/docs/getting-started',
+              // },
+              // {
+              //   label: 'Tutorials',
+              //   to: '/tutorials/index',
+              // },
             ],
           },
           {
@@ -200,7 +205,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Atala PRISM V2.`,
       },
       prism: {
         theme: lightCodeTheme,
