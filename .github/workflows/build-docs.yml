@@ -47,7 +47,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./infra
-          push: true
+          push: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: Build and push Docker image
