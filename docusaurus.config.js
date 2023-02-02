@@ -15,6 +15,9 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'input-output-hk',
   projectName: 'atala-prisim-docs',
+  markdown: {
+    mermaid: true,
+  },
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -86,7 +89,7 @@ const config = {
     require.resolve('docusaurus-lunr-search')
   ],
 
-  themes: ["docusaurus-theme-openapi-docs"],
+  themes: ["docusaurus-theme-openapi-docs", '@docusaurus/theme-mermaid'],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

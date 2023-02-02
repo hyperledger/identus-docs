@@ -32,6 +32,7 @@ const sidebars = {
         'essentials/setup-agent',
       ],
     },
+    'connections/connection',
     {
       type: 'category',
       label: 'Credentials',
@@ -42,9 +43,7 @@ const sidebars = {
       },
       items: [
         'credentials/issue',
-        'credentials/present-proof',
-        'credentials/verify',
-        'credentials/revoke',
+        'credentials/present-proof'
       ],
     },
     {
