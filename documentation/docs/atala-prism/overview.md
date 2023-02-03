@@ -11,7 +11,8 @@ Atala offers a hosted service for PRISM, which provides a dedicated - single-ten
 Atala builds its services using a set of functionally decomposed building blocks which are re-usable libraries with strong domain context bounds.  
 
 For more information regarding each component, please see the following links:
-    - For details on the building--blocks, please see [building-blocks](building-blocks.md)
-    - For the fully featured PRISM Cloud Agent, please see [prism-agent](prism-agent.md)
+    - For details on the building-blocks, please see [building-blocks](building-blocks.md)
+    - For the fully featured PRISM Cloud Agent, please see [prism-agent](prism-cloud-agent.md)
     - For the Verifiable Data Registry based upon Cardano, please see [prism-node](prism-node.md)
-    - For how Atala host it's dedicated instances, please see [hosted instances](hosted-instances.md)
+    - For the Enterprise version of our cloud agent, please see [prism-cloud-agent-enterprise](prism-cloud-agent-enterprise.md)
+    - For how Atala host it's dedicated instances, please see [hosted instances](infrastructure/hosted-instances.md)

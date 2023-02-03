@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Atala PRISM V2',
   tagline: 'Unlock the power of your identity with Atala PRISM V2',
-  url: 'https://docs.atalaprism-v2.io',
+  url: 'https://docs.atalaprism.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
