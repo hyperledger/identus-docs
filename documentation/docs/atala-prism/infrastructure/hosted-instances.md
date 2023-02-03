@@ -26,11 +26,11 @@ Organisations cannot access any other instance apart from their own
 
 Each instance has a dedicated domain name and API tokens are issued to the organisation to manage access. 
 
-Please see [Authentication](authentication.md) for more details on how to use an API token
+Please see [Authentication](../architecture/authentication.md) for more details on how to use an API token
 
 All ingress points are protected with TLS using strong cipher and configuration parameters. 
 
-Please see [Encryption](encryption.md) for further information on how data-in-transit and data-at-rest is secured.
+Please see [Encryption](../architecture/encryption.md) for further information on how data-in-transit and data-at-rest is secured.
 
 
 ### What makes up a dedicated instance?
@@ -43,9 +43,14 @@ Each dedicated instance contains
 
 The Verifiable Data Registry speaks to Cardano through shared infrastructure
 
-
 ![Each dedicated instance contains a PRISM Cloud Agent Enterprise, a PRISM Cloud Agent, a Verifiable Data Registry and Dedicated Relational Storage](/img/hosted-instances-overview-4.svg)
 
+Each instance exposes many HTTP routes which allow an organisation to consume the capabilities of the components running.
+
+The PRISM Cloud Agent, which sits at the core of every PRISM instance, provides:
+    - a DIDComm v2 endpoint for agent-to-agent communication - See (Agent Orientated Architeture)[../architecture/agent-orientated-architecture.md] and [DIDComm](../architecture/didcomm.md])
+    - endpoints to control the configuration and actions of the agent - agent control
+    - an endpoint which shows documentation in Open API Standard for all available endpoints
 
 The Kubernetes environment is a managed Platform-as-a-Service (PaaS) offering called Elastic Kubernetes Service (EKS). Using a managed service reduces the cost of operating the underlying infrastructure and dramatically reduces the configuration complexity of creating a Kubernetes environment.
 
