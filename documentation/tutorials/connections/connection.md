@@ -1,16 +1,15 @@
 # Connecting agents
 
-The Connection protocol is a mechanism for creating, managing and accepting connections between two Atala PRISM Agents.
+The Connection protocol mechanism creates, manages, and accepts connections between two Atala PRISM Agents.
 A connection is a stateful relationship between two parties that enables secure communication.
 
-The need for this Connection protocol is to establish secure connections between agents,
-allowing them to exchange information and interact with each other.
+The Connection protocol is required to establish secure connections between agents,
+allowing them to exchange information and interact.
 
 The protocol provides endpoints for creating and managing connections, as well as for accepting invitations.
-The protocol ensures that only authorized agents can access the connections and their associated information.
-This is critical for maintaining the privacy and security of the connected agents and the information they exchange.
+The protocol ensures that only authorized agents can access the connections and their associated information, which is critical for maintaining the privacy and security of the connected agents and the information they exchange.
 
-The endpoints are designed to be easily integrated into existing applications, providing a convenient and secure way to establish connections between agents.
+The endpoints can be easily integrated into existing applications, providing a convenient and secure way to establish connections between agents.
 
 ## Prerequisites
 
