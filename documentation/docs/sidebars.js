@@ -47,8 +47,11 @@ const sidebars = {
       collapsed: false,
       items: [
         'atala-prism/overview',
-        'atala-prism/architecture',
-        'atala-prism/prism-agent',
+        'atala-prism/hosted-instances',
+        'atala-prism/authentication',
+        'atala-prism/encryption',
+        'atala-prism/prism-cloud-agent',
+        'atala-prism/prism-cloud-agent-enterprise',
         'atala-prism/prism-node',
         'atala-prism/prism-mediator'
       ],
