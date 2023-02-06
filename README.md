@@ -38,7 +38,8 @@ The `documentation` folder is split into the following parts:
 ## Installation
 
 ```
-$ yarn
+$ yarn install
+$ yarn docusaurus gen-api-docs all
 ```
 
 ## Local Development
@@ -48,3 +49,10 @@ $ yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+## Build
+
+```
+$ yarn build --out-dir infra/website
+
+This command creates a set of static resources which can be hosted to serve the full site.
