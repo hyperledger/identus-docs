@@ -54,7 +54,6 @@ git clone https://github.com/input-output-hk/atala-prism-docs.git
 # Deploy local version of the website
 cd atala-prism-docs
 yarn install
-yarn docusaurus gen-api-docs all
 yarn start
 ```
 

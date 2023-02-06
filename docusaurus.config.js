@@ -38,6 +38,22 @@ const config = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        // Plugin Options for loading OpenAPI files
+        specs: [
+          {
+            spec: 'atala-prism-building-blocks/prism-agent/service/api/http/prism-agent-openapi-spec.yaml',
+            route: '/agent-api/',
+          },
+          {
+            spec: "atala-prism-products/enterprise-services/api-spec/enterprise-services-spec.yml",
+            route: "/enterprise-api/"
+          }
+        ]
+      },
+    ],
   ],
   plugins: [
     [
@@ -48,28 +64,6 @@ const config = {
         routeBasePath: 'tutorials',
         sidebarPath: require.resolve('./documentation/tutorials/sidebars.js'),
       },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'agent-api',
-        path: 'documentation/api/agent-api',
-        routeBasePath: 'agent-api',
-        sidebarPath: require.resolve('./sidebars.js'),
-        docLayoutComponent: "@theme/DocPage",
-        docItemComponent: "@theme/ApiItem"
-      }, 
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'enterprise-api',
-        path: 'documentation/api/enterprise-api',
-        routeBasePath: 'enterprise-api',
-        sidebarPath: require.resolve('./sidebars.js'),
-        docLayoutComponent: "@theme/DocPage",
-        docItemComponent: "@theme/ApiItem"
-      }, 
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -87,23 +81,6 @@ const config = {
         path: 'documentation/sdk/enterprise-sdk',
         routeBasePath: 'enterprise-sdk',
         sidebarPath: require.resolve('./documentation/sdk/enterprise-sdk/sidebars.js'),
-      },
-    ],
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: "apiDocs",
-        docsPluginId: "classic",
-        config: {
-          agent_api: { // Note: this key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
-              specPath: "atala-prism-building-blocks/prism-agent/service/api/http/prism-agent-openapi-spec.yaml",
-              outputDir: "documentation/api/agent-api"
-            },
-          enterprise_api: {
-            specPath: "atala-prism-products/enterprise-services/api-spec/enterprise-services-spec.yml",
-            outputDir: "documentation/api/enterprise-api"
-          }
-        }
       },
     ],
     require.resolve('docusaurus-lunr-search')
@@ -140,12 +117,12 @@ const config = {
             position: 'left',
             items: [
               {
-                to: '/agent-api/prismagent-openapi-specification',
+                to: '/agent-api/',
                 label: 'Agent API',
                 activeBaseRegex: `/agent-api/`
               },
               {
-                to: '/enterprise-api/enterprise-services-openapi-specification',
+                to: '/enterprise-api/',
                 label: 'Enterprise API',
                 activeBaseRegex: `/enterprise-api/`
               }
