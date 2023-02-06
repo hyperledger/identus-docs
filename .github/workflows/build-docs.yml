@@ -29,7 +29,6 @@ jobs:
         run: yarn install
       - name: Build website
         run: |
-          yarn docusaurus gen-api-docs all
           yarn build --out-dir infra/website
       - name: Log in to the Container registry
         uses: docker/login-action@v1
