@@ -1,0 +1,8 @@
+[submodule "atala-prism-building-blocks"]
+	path = atala-prism-building-blocks
+	url = https://github.com/input-output-hk/atala-prism-building-blocks.git
+	branch = main
+[submodule "atala-prism-products"]
+	path = atala-prism-products
+	url = https://github.com/input-output-hk/atala-prism-products.git
+	branch = main

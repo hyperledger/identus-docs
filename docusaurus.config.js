@@ -96,11 +96,11 @@ const config = {
         docsPluginId: "classic",
         config: {
           agent_api: { // Note: this key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
-              specPath: "documentation/api/agent-api/api/http/prism-agent-openapi-spec.yaml",
+              specPath: "atala-prism-building-blocks/prism-agent/service/api/http/prism-agent-openapi-spec.yaml",
               outputDir: "documentation/api/agent-api"
             },
           enterprise_api: {
-            specPath: "documentation/api/enterprise-api/enterprise-services-spec.yaml",
+            specPath: "atala-prism-products/enterprise-services/api-spec/enterprise-services-spec.yml",
             outputDir: "documentation/api/enterprise-api"
           }
         }
