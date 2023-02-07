@@ -53,7 +53,7 @@ The VCs issued during this protocol could represent a diploma, a certificate of 
 
 
 :::info
-For more detailed information, please, check the full **[PRISM Agent API](/agent-api/prismagent-openapi-specification).**
+For more detailed information, please, check the full **[PRISM Agent API](/agent-api).**
 :::
 
 ## Issuer interactions

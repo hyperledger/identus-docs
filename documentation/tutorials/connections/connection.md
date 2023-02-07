@@ -204,5 +204,5 @@ Example response:
 ```
 
 :::info
-For more detailed information, please, check the full **[PRISM Agent API](/agent-api/prismagent-openapi-specification).**
+For more detailed information, please, check the full **[PRISM Agent API](/agent-api).**
 :::
