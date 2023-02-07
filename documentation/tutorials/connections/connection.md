@@ -1,40 +1,36 @@
-# Connecting agents
+# Connections
 
-The Connection protocol mechanism creates, manages, and accepts connections between two Atala PRISM Agents.
 A connection is a stateful relationship between two parties that enables secure communication.
 
-The Connection protocol is required to establish secure connections between agents,
+The **Connection protocol** is required to establish secure connections between agents,
 allowing them to exchange information and interact.
 
 The protocol provides endpoints for creating and managing connections, as well as for accepting invitations.
-The protocol ensures that only authorized agents can access the connections and their associated information, which is critical for maintaining the privacy and security of the connected agents and the information they exchange.
 
-The endpoints can be easily integrated into existing applications, providing a convenient and secure way to establish connections between agents.
+## Roles
+
+The connection protocol has two roles:
+
+1.  **Inviter**: A subject that initiates a connection request by sending a *connection invitation*.
+2.  **Invitee**: A subject that receives a connection invitation and accepts it by sending a *connection request*.
 
 ## Prerequisites
 
 1. **Inviter** and **Invitee** PRISM Agents up and running
 
-## Roles
-
-The protocol has two roles:
-
-1.  **Inviter**: A PRISM Agent that initiates a connection request by sending a connection invitation.
-2.  **Invitee**: A PRISM Agent that receives a connection invitation and accepts it by sending a connection request.
-
 ## PRISM Agent endpoints overview
 
 The protocol uses the following REST API endpoints:
 
-1. `/connections`:
-   - `POST`: Creates a new connection and returns an invitation 
-   - `GET`: Returns a list of connections
-2. `/connections/{connectionId}`:
-   - `GET`: Returns an existing connection record by id
-3. `/connection-invitations`:
-   - `POST`: Accepts an externally received invitation
+1. [`/connections`](/agent-api/#tag/Connections-Management):
+   - [`POST`](/agent-api/#tag/Connections-Management/operation/createConnection): Creates a new connection and returns an invitation 
+   - [`GET`](/agent-api/#tag/Connections-Management/operation/getConnections): Returns a list of connections
+2. [`GET /connections/{connectionId}`](/agent-api/#tag/Connections-Management/operation/getConnection): Returns an existing connection record by id
+3. [`POST /connection-invitations`](/agent-api/#tag/Connections-Management/operation/acceptConnectionInvitation): Accepts an externally received invitation
 
-For more detailed information, please, check the full API specification of the PRISM Agent.
+:::info
+For more detailed information, please, check the full **[PRISM Agent API](/agent-api).**
+:::
 
 ## Inviter Flow
 
@@ -52,7 +48,7 @@ stateDiagram-v2
 [*] --> InvitationGenerated: generate and share new OOB invitation
 InvitationGenerated --> ConnectionRequestReceived: receive connection request
 ConnectionRequestReceived --> ConnectionResponsePending: accept connection request
-ConnectionResponsePending --> ConnectionResponseSent: send connection response (via DIDComm Agent)
+ConnectionResponsePending --> ConnectionResponseSent: send connection response (DIDComm)
 ConnectionResponseSent --> [*]
 ```
 
@@ -61,7 +57,7 @@ ConnectionResponseSent --> [*]
 
 1.  Receive the OOB invitation (`InvitationReceived` state)
 2.  Accept the invitation (connection is created in `ConnectionRequestPending` state)
-3.  Send the connection request via the DIDComm Agent (connection achieves `ConnectionRequestSent` state)
+3.  Send the connection request via DIDComm (connection achieves `ConnectionRequestSent` state)
 4.  Receive the connection response (connection achieves `ConnectionResponseReceived` state)
 
 The **Invitee**'s state transitions are represented by the following Mermaid diagram:
@@ -72,7 +68,7 @@ title: Invitee Connection State
 stateDiagram-v2
 [*] --> InvitationReceived: receive OOB invitation
 InvitationReceived --> ConnectionRequestPending: accept invitation
-ConnectionRequestPending --> ConnectionRequestSent: send connection request (via DIDComm Agent)
+ConnectionRequestPending --> ConnectionRequestSent: send connection request (DIDComm)
 ConnectionRequestSent --> ConnectionResponseReceived: receive connection response
 ConnectionResponseReceived --> [*]
 ```
