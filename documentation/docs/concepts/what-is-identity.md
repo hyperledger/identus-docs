@@ -2,7 +2,7 @@
 
 Identity is the essence of who we are. Identity consists of mutable and immutable traits. Immutable traits are sex, height, eye color, and genealogy. Mutable characteristics also contribute to our lives, such as where we bank, who we are insured by, where we are citizens, and where we went to primary, secondary school, and university. 
 
-Today, most mutable traits have a physical representation via a document issued by an appropriate authority that stores that information in a centralized storage medium (i.e., servers).
+Today, most mutable traits have a physical representation via a document issued by an appropriate authority that stores that information in a centralized storage medium (i.e., databases).
 
 Identity is so ingrained in our daily lives we rarely think about how deeply intertwined with everything we do. When we get a driver's license, it is issued to us by a governing authority. Then, we may present that license to an entity that verifies the information on the document. The verifier trusts the issuer because, typically, physical copies have watermarks, seals, etc. 
 
