@@ -1,6 +1,6 @@
 {
-  "name": "website",
-  "version": "0.0.0",
+  "name": "prism-documentation-portal",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -28,7 +28,12 @@
     "redocusaurus": "^1.4.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.3.0"
+    "@docusaurus/module-type-aliases": "^2.3.0",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^19.0.3",
+    "semantic-release-slack-bot": "^3.5.3"
   },
   "browserslist": {
     "production": [
