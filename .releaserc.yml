@@ -8,8 +8,8 @@ plugins:
   - '@semantic-release/release-notes-generator'
   - [ '@semantic-release/changelog', { changelogFile: 'CHANGELOG.md' } ]
   - [ '@semantic-release/exec', {
-    prepareCmd: 'npm version ${nextRelease.version} --git-tag-version false',
-    publishCmd: './infra/release-docs-container.sh ${nextRelease.version}' } ]
+    prepareCmd: 'npm version ${nextRelease.version} --git-tag-version false && ./infra/release-docs-container.sh ${nextRelease.version}',
+    } ]
   - [ '@semantic-release/git', {
     assets: [ 'package.json' , 'package-lock.json', 'CHANGELOG.md' ],
     message: 'chore(release): release prism documentation portal ${nextRelease.version} [skip ci]
