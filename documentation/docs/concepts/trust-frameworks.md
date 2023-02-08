@@ -8,7 +8,7 @@ These things give us comfort and a sense that we are dealing with an entity clai
 
 Trust is hard in the digital world, and this is where the role of a Trust/Governance Framework becomes useful. Before we begin, the terms Trust/Governance in this context are the same. Some prefer the word trust because governance implies government, which isn't necessarily the case.
 
-A Trust/Governance Framework does govern an ecosystem. An example in practice today is a medical board. In the United States, states have a medical board that derives its authority from the state, typically via law or regulation. In a digital world, the state could issue the medical board a verifiable credential that is presentable and verifiable.
+A Trust/Governance Framework does govern an ecosystem. An example in practice today is a medical board. In the United States, states delegate responsibility to various authorities. For example, a state medical board inherits its authority from the state, typically via law or regulation. In a digital world, the state could issue the medical board a verifiable credential that is presentable and verifiable.
 
 This board consists of legal experts and practicing attorney's this board agrees collectively to determine what qualifies a person to be a lawyer in that state. This board issues a law license or a verifiable credential to the attorney. 
 
