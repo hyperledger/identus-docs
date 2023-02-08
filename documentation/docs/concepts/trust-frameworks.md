@@ -12,7 +12,7 @@ A Trust/Governance Framework does govern an ecosystem. An example in practice to
 
 This board consists of legal experts and practicing attorney's this board agrees collectively to determine what qualifies a person to be a lawyer in that state. This board issues a law license or a verifiable credential to the attorney. 
 
-The attorney can then present that document or verifiable credential to clients, law firms, etc., for verification, typically through a website checking license number and name. 
+The attorney can then present that document or verifiable credential to clients, law firms, etc., for verification.
 
 > We should have a diagram here showing a hierarchy. Will work on a doodle to provide to design.
 
