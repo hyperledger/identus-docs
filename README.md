@@ -41,7 +41,7 @@ Here are the simple installation instructions for MacOS to start from the very s
 
 ```shell
 # Install brew, git, node and yarn
-# if you 
+# If you have these tools, skip these steps
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install git
 brew install node
@@ -50,6 +50,11 @@ brew install yarn
 # Create new projects directory
 cd ~ && mkdir projects && cd projects
 git clone https://github.com/input-output-hk/atala-prism-docs.git
+# Update submodules
+git submodule update --remote --recursive
+
+# Use this step to checkout custom branch to review from PR
+# git checkout feature-branch
 
 # Deploy local version of the website
 cd atala-prism-docs
