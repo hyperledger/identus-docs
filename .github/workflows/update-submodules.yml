@@ -1,0 +1,39 @@
+name: 'Update submodules'
+
+on:
+  # Weekly
+  schedule:
+    - cron: '0 0 * * 0'
+  # By manual trigger
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ATALA_GITHUB_TOKEN }}
+          submodules: true
+      - name: Update submodules
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v3
+        id: import_gpg
+        with:
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          git-user-signingkey: true
+          git-commit-gpgsign: true
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: auto-update submodules to the latest state"
+          commit_user_name: ${{ steps.import_gpg.outputs.name }}
+          commit_user_email: ${{ steps.import_gpg.outputs.email }}
