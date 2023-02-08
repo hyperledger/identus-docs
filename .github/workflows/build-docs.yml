@@ -27,7 +27,6 @@ jobs:
           token: ${{ secrets.ATALA_GITHUB_TOKEN }}
       - name: Update submodules
         run: |
-          git pull --recurse-submodules
           git submodule update --remote --recursive
       - uses: actions/setup-node@v3
         with:
