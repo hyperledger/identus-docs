@@ -7,8 +7,6 @@ This has the necessary stuff to prepare the website for deployment.
 To build the website follow the next steps:
 
 ```shell
-# Generate API docs
-yarn docusaurus gen-api-docs all
 # Build Docusaurus website
 yarn build website
 ```
