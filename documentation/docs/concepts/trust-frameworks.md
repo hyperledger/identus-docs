@@ -2,7 +2,7 @@
 
 Trust is hard. It becomes infinitely more challenging when we introduce strangers on the internet into the mix. We expect to have some certainty or confidence with claims made about an entity. As an example, a stranger claims they are a doctor. How do you know? Is it because they are wearing scrubs with a white coat? Is it the paper hanging on the wall? Could that document be fake? What makes us comfortable with a doctor claiming they are a doctor? In today's world, typically, it's an accumulation of things, referrals, an office, the equipment in the office, staff, attire, license on the wall, etc.
 
-These things give us comfort and a sense that we are dealing with an entity claiming to be a doctor. Sure, it could be a scam, but there's a reasonable expectation this entity is a doctor. None of this exists in the digital world today, but in digital identity, it's necessary because it gives us comfort and some level of certainty in the digital world.
+These things give us comfort and a sense that we are dealing with an entity claiming to be a doctor. Sure, it could be a scam, but there's a reasonable expectation this entity is a doctor. None of this exists in the digital world today, but with digital identity, it's necessary because it gives us comfort and some level of certainty in the digital world.
 
 ## Trust/Governance Framework
 
