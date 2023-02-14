@@ -30,7 +30,7 @@ const sidebars = {
         description: 'Learn about the most important SSI concepts!'
       },
       items: [
-        'concepts/what-is-digital-identity',
+        'concepts/what-is-identity',
         'concepts/digital-wallets',
         'concepts/verifiable-data',
         'concepts/trust-frameworks',
