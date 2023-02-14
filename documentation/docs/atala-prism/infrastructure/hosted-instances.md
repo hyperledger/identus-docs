@@ -66,14 +66,14 @@ PRISM Node speaks to Cardano through shared infrastructure
 Each instance exposes many HTTP routes, allowing an organisation to consume the components' capabilities.
 
  **PRISM Cloud Agent**, which sits at the core of every PRISM instance, provides:
-  - a *DIDComm v2* endpoint for agent-to-agent communication - See [Agent Orientated Architeture](../architecture/agent-orientated-architecture) and [DIDComm](../architecture/didcomm])
+  - a *DIDComm v2* endpoint for agent-to-agent communication - See [Agent Orientated Architeture](../architecture/agent-orientated-architecture) and [DIDComm](../architecture/didcomm)
   - endpoints to control the configuration and actions of the agent
   - an endpoint which shows *documentation in Open API Standard* for all available endpoints
 
 **PRISM Cloud Agent Enterprise** provides:
-  - endpoints for the [Manage](../prism-cloud-agent-enterprise/manage/overview) capability
-  - endpoints for the [Onboard](../prism-cloud-agent-enterprise/onboard/overview) capability
-  - endpoints for the [Authenticate](../prism-cloud-agent-enterprise/authenticate/overview) capability
+  - endpoints for the [Manage](../prism-cloud-agent-enterprise/manage) capability
+  - endpoints for the [Onboard](../prism-cloud-agent-enterprise/onboard) capability
+  - endpoints for the [Authenticate](../prism-cloud-agent-enterprise/authenticate) capability
 
 **PRISM Node** does not provide endpoints that an organization can interact with - it gives internal only gRPC endpoints to the PRISM Cloud Agent for reading and writing to the distributed ledger - Cardano. Please see [PRISM Node](../prism-node) for further details on what this component does and how it works.
 
