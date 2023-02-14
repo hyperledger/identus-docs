@@ -47,10 +47,75 @@ const sidebars = {
       collapsed: false,
       items: [
         'atala-prism/overview',
-        'atala-prism/architecture',
-        'atala-prism/prism-agent',
+        {
+          type: 'category',
+          label: 'PRISM Cloud Agent',
+          collapsed: true,
+          link: {
+            type: 'generated-index',
+            title: 'PRISM Cloud Agent',
+            description: 'Learn about the Atala PRISM Cloud Agent!'
+          },
+          items: [
+            'atala-prism/prism-cloud-agent/overview',
+            'atala-prism/prism-cloud-agent/building-blocks'
+          ]
+        },
         'atala-prism/prism-node',
-        'atala-prism/prism-mediator'
+        'atala-prism/prism-mediator',
+        {
+          type: 'category',
+          label: 'PRISM Cloud Agent Enterprise',
+          collapsed: true,
+          link: {
+            type: 'generated-index',
+            title: 'PRISM Cloud Agent',
+            description: 'Learn about the Atala PRISM Cloud Agent Enterprise!'
+          },
+          items: [
+            'atala-prism/prism-cloud-agent-enterprise/overview',
+            'atala-prism/prism-cloud-agent-enterprise/manage',
+            'atala-prism/prism-cloud-agent-enterprise/onboard',
+            'atala-prism/prism-cloud-agent-enterprise/authenticate'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Architecture',
+          collapsed: true,
+          link: {
+            type: 'generated-index',
+            title: 'PRISM Architecture',
+            description: 'Learn about the Atala PRISM architecture!'
+          },
+          items: [
+            'atala-prism/architecture/principles',
+            'atala-prism/architecture/cloud',
+            'atala-prism/architecture/deployment',
+            'atala-prism/architecture/authentication',
+            'atala-prism/architecture/encryption',
+            'atala-prism/architecture/security',
+            'atala-prism/architecture/agent-orientated-architecture',
+            'atala-prism/architecture/didcomm',
+            'atala-prism/architecture/persistence',
+            'atala-prism/architecture/resiliiency',
+            'atala-prism/architecture/scalability'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Infrastructure',
+          collapsed: true,
+          link: {
+            type: 'generated-index',
+            title: 'PRISM Infrastructure',
+            description: 'Learn about the Atala PRISM Infrastructure!'
+          },
+          items: [
+            'atala-prism/infrastructure/hosted-instances',
+          ]
+        },
+        'atala-prism/getting-help'
       ],
     },
   ],
