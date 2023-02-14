@@ -18,7 +18,7 @@ Each instance is single-tenant, has dedicated storage and runs on shared infrast
 
 Each organization accesses its dedicated instance through an API Gateway that enforces authentication.
 
-![Each instance is in use by a different organisation](/img/hosted-instances-overview-2.svg)
+![Each instance is in use by a different organization](/img/hosted-instances-overview-2.svg)
 
 Organizations cannot access any other instance apart from their own
 
@@ -63,7 +63,7 @@ PRISM Node speaks to Cardano through shared infrastructure
 
 ![Each dedicated instance contains a PRISM Cloud Agent Enterprise, a PRISM Cloud Agent, a Verifiable Data Registry and Dedicated Relational Storage](/img/hosted-instances-overview-4.svg)
 
-Each instance exposes many HTTP routes, allowing an organisation to consume the components' capabilities.
+Each instance exposes many HTTP routes, allowing an organization to consume the components' capabilities.
 
  **PRISM Cloud Agent**, which sits at the core of every PRISM instance, provides:
   - a *DIDComm v2* endpoint for agent-to-agent communication - See [Agent Orientated Architeture](../architecture/agent-orientated-architecture) and [DIDComm](../architecture/didcomm)
