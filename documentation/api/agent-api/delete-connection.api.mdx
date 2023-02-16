@@ -1,0 +1,38 @@
+---
+id: delete-connection
+title: "Deletes existing connection record."
+description: "Just deletes connection state in the Agent, it does not include notifing other party that connection is deleted. We should consider this feature for the future. If additional action is attempted over deleted connection, it should thow error (no matter which side deleted connection)."
+sidebar_label: "Deletes existing connection record."
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Connections Management"],"parameters":[{"in":"path","name":"connectionId","required":true,"description":"Id of connection state record.","schema":{"type":"string"}}],"operationId":"deleteConnection","description":"Just deletes connection state in the Agent, it does not include notifing other party that connection is deleted. We should consider this feature for the future. If additional action is attempted over deleted connection, it should thow error (no matter which side deleted connection).","responses":{"200":{"description":"Successful delete"},"404":{"description":"Connection state record not found for given `connectionId`"}},"method":"delete","path":"/connections/{connectionId}","servers":[{"url":"https://k8s-dev.atalaprism.io/prism-agent/"},{"url":"http://localhost/prism-agent"}],"security":[{"ApiKeyAuth":[]}],"securitySchemes":{"ApiKeyAuth":{"type":"apiKey","in":"header","name":"apikey"}},"info":{"title":"PrismAgent OpenAPI specification","description":"OpenAPI specification for Decentralized Identifiers (DID) Operations","version":"0.1.0","contact":{"name":"Core DID","email":"atala-coredid@iohk.io"}},"postman":{"name":"Deletes existing connection record.","description":{"content":"Just deletes connection state in the Agent, it does not include notifing other party that connection is deleted. We should consider this feature for the future. If additional action is attempted over deleted connection, it should thow error (no matter which side deleted connection).","type":"text/plain"},"url":{"path":["connections",":connectionId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) Id of connection state record.","type":"text/plain"},"type":"any","value":"","key":"connectionId"}]},"method":"DELETE"}}
+sidebar_class_name: "delete api-method"
+info_path: documentation/api/agent-api/prismagent-openapi-specification
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Deletes existing connection record.
+
+
+
+Just deletes connection state in the Agent, it does not include notifing other party that connection is deleted. We should consider this feature for the future. If additional action is attempted over deleted connection, it should thow error (no matter which side deleted connection).
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"connectionId","required":true,"description":"Id of connection state record.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful delete
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Connection state record not found for given `connectionId`
+
+</div><div></div></TabItem></ApiTabs></div>
+      

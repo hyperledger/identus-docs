@@ -1,0 +1,67 @@
+---
+id: enterprise-services-openapi-specification
+title: "Enterprise Services OpenAPI specification"
+description: "Enterprise Services complements basic services offered by the Prism Agent."
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiDemoPanel/Export";
+
+<span className={"theme-doc-version-badge badge badge--secondary"}>Version: 0.7.0</span>
+
+# Enterprise Services OpenAPI specification
+
+
+
+Enterprise Services complements basic services offered by the Prism Agent. 
+Currently two products are part of this suite: __Onboard__ and 
+__Authenticate__.
+
+__Onboard product__ enables organisations to request and get a DID from 
+another party. It is about onboarding people towards SSI based systems. The 
+process happens out-of-band, meaning no DIDComm messaging is utilised. 
+Acquired DID could be used to trigger various SSI based services such as 
+authentication with DID.
+
+Onboard flow:
+
+* Inviting party creates a DID request.
+* DID request is encoded, usually as a QR code or deep link, and sent to the
+other party over appropriate channel depending on the use case. 
+* Receiving party uses their wallet to scan/receive DID request.
+* New DID is created by the wallet and sent back to the `onboardEndpoint` 
+stated in DID request.
+* Inviting party binds received did with its system context, ie. with userId
+
+__Authenticate product__ enables authenticating users and things based on 
+DIDs they control. This product offers APIs to create and track the state of 
+an authentication challenge, which is sent to an authenticating party.
+
+Authenticate flow:
+* Authentication challenge is created.
+* Challenge is encoded and sent to the other party over appropriate channel 
+depending on the use case. 
+* Party which receives the challenge, needs to sign the `nonce` and to submit 
+`signature` and `did` containing corresponding authentication public key to 
+the `submissionEndpoint` for verification.
+* Signature is verified and challenge state is updated accordingly.
+* Application can check if submitted signature is valid and if used did is 
+known, and act upon it. 
+
+Authentication challenge session is time constrained and has defined 
+expiration time.
+
+Application has to acquire a DID and to bind it to its system context before 
+or during authentication flow. Onboard product could be used for that purpose.
+
+Wallets could use `did:peer` and `did:prism` for the time being.
+
+
+<div style={{"marginBottom":"2rem"}}><h2 id={"authentication"} style={{"marginBottom":"1rem"}}>Authentication</h2><Tabs><TabItem label={"API Key"} value={"ApiKey"}><div><table><tbody><tr><th>Security Scheme Type:</th><td>apiKey</td></tr><tr><th>Header parameter name:</th><td>apikey</td></tr></tbody></table></div></TabItem></Tabs></div>
+      

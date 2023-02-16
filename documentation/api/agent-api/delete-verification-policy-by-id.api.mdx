@@ -1,0 +1,30 @@
+---
+id: delete-verification-policy-by-id
+title: "Delete the verification policy by id"
+description: "Delete the verification policy by id"
+sidebar_label: "Delete the verification policy by id"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Verification"],"description":"Delete the verification policy by id","operationId":"deleteVerificationPolicyById","parameters":[{"name":"id","in":"path","description":"Delete the verification policy by id","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":""},"400":{"description":"","content":{"application/json":{"schema":{"required":["msg"],"type":"object","properties":{"msg":{"type":"string"},"errors":{"type":"array","items":{"type":"string"}}}}}}},"404":{"description":"","content":{"application/json":{"schema":{"required":["msg"],"type":"object","properties":{"msg":{"type":"string"}}}}}},"500":{"description":"","content":{"application/json":{"schema":{"required":["msg"],"type":"object","properties":{"msg":{"type":"string"}}}}}}},"method":"delete","path":"/verification/policies/{id}","servers":[{"url":"https://k8s-dev.atalaprism.io/prism-agent/"},{"url":"http://localhost/prism-agent"}],"security":[{"ApiKeyAuth":[]}],"securitySchemes":{"ApiKeyAuth":{"type":"apiKey","in":"header","name":"apikey"}},"info":{"title":"PrismAgent OpenAPI specification","description":"OpenAPI specification for Decentralized Identifiers (DID) Operations","version":"0.1.0","contact":{"name":"Core DID","email":"atala-coredid@iohk.io"}},"postman":{"name":"Delete the verification policy by id","description":{"content":"Delete the verification policy by id","type":"text/plain"},"url":{"path":["verification","policies",":id"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) Delete the verification policy by id","type":"text/plain"},"type":"any","value":"","key":"id"}]},"header":[{"key":"Accept","value":"application/json"}],"method":"DELETE"}}
+sidebar_class_name: "delete api-method"
+info_path: documentation/api/agent-api/prismagent-openapi-specification
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Delete the verification policy by id
+
+
+
+Delete the verification policy by id
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","in":"path","description":"Delete the verification policy by id","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div></div><div></div></TabItem><TabItem label={"400"} value={"400"}><div></div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"msg"} required={false} deprecated={undefined} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"errors"} required={false} deprecated={undefined} schemaDescription={undefined} schemaName={"string[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"msg\": \"string\",\n  \"errors\": [\n    \"string\"\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"404"} value={"404"}><div></div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"msg"} required={false} deprecated={undefined} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"msg\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"500"} value={"500"}><div></div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"msg"} required={false} deprecated={undefined} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"msg\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      

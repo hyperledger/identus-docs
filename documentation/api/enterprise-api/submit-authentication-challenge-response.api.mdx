@@ -1,0 +1,55 @@
+---
+id: submit-authentication-challenge-response
+title: "Public endpoint to which holders submit challenge responses"
+description: "When submitted, signed challenge is verified against the authentication"
+sidebar_label: "Public endpoint to which holders submit challenge responses"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Authenticate"],"operationId":"submitAuthenticationChallengeResponse","parameters":[{"in":"path","name":"challengeSubmissionId","required":true,"description":"unique identifier of authentication challenge session","schema":{"type":"string"}}],"description":"When submitted, signed challenge is verified against the authentication \nkey found in DID document of a DID used to sign the challenge. Any \nrequest to this endpoint would invalidate particular authentication \nsession. If invalid request is submitted, challenge state would \ntransition to `error` state.\n\nBoth `did` and `signature` size is limited to maximum of 1000 characters.\nSignature should be `base64Url` encoded, and only `did:peer` is supported\nup to date.\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["did","signature"],"properties":{"did":{"type":"string","example":"did:peer:12345"},"signature":{"type":"string","example":"tY63mfjyHZHN0723PgCKYZYsVHh1H6xVsh5UG9mu2qBpcV8ZWbPtfQWNUbWAv76h5UQCMBWlJRiF41r6fFJCCQ"}}}}}},"responses":{"200":{"description":"Challenge response submitted"},"400":{"description":"Invalid challenge response submitted"},"410":{"description":"Challenge expired"},"500":{"description":"Server error"}},"method":"post","path":"/did-authentication/challenge-submissions/{challengeSubmissionId}","servers":[{"url":"https://k8s-dev.atalaprism.io/enterprise","description":"Development server"},{"url":"http://localhost:{port}","description":"Local server","variables":{"port":{"default":"8070"}}}],"security":[{"ApiKey":[]}],"securitySchemes":{"ApiKey":{"type":"apiKey","in":"header","name":"apikey"}},"jsonRequestBodyExample":{"did":"did:peer:12345","signature":"tY63mfjyHZHN0723PgCKYZYsVHh1H6xVsh5UG9mu2qBpcV8ZWbPtfQWNUbWAv76h5UQCMBWlJRiF41r6fFJCCQ"},"info":{"title":"Enterprise Services OpenAPI specification","description":"Enterprise Services complements basic services offered by the Prism Agent. \nCurrently two products are part of this suite: __Onboard__ and \n__Authenticate__.\n\n__Onboard product__ enables organisations to request and get a DID from \nanother party. It is about onboarding people towards SSI based systems. The \nprocess happens out-of-band, meaning no DIDComm messaging is utilised. \nAcquired DID could be used to trigger various SSI based services such as \nauthentication with DID.\n\nOnboard flow:\n\n* Inviting party creates a DID request.\n* DID request is encoded, usually as a QR code or deep link, and sent to the\nother party over appropriate channel depending on the use case. \n* Receiving party uses their wallet to scan/receive DID request.\n* New DID is created by the wallet and sent back to the `onboardEndpoint` \nstated in DID request.\n* Inviting party binds received did with its system context, ie. with userId\n\n__Authenticate product__ enables authenticating users and things based on \nDIDs they control. This product offers APIs to create and track the state of \nan authentication challenge, which is sent to an authenticating party.\n\nAuthenticate flow:\n* Authentication challenge is created.\n* Challenge is encoded and sent to the other party over appropriate channel \ndepending on the use case. \n* Party which receives the challenge, needs to sign the `nonce` and to submit \n`signature` and `did` containing corresponding authentication public key to \nthe `submissionEndpoint` for verification.\n* Signature is verified and challenge state is updated accordingly.\n* Application can check if submitted signature is valid and if used did is \nknown, and act upon it. \n\nAuthentication challenge session is time constrained and has defined \nexpiration time.\n\nApplication has to acquire a DID and to bind it to its system context before \nor during authentication flow. Onboard product could be used for that purpose.\n\nWallets could use `did:peer` and `did:prism` for the time being.\n","version":"0.7.0"},"postman":{"name":"Public endpoint to which holders submit challenge responses","description":{"content":"When submitted, signed challenge is verified against the authentication \nkey found in DID document of a DID used to sign the challenge. Any \nrequest to this endpoint would invalidate particular authentication \nsession. If invalid request is submitted, challenge state would \ntransition to `error` state.\n\nBoth `did` and `signature` size is limited to maximum of 1000 characters.\nSignature should be `base64Url` encoded, and only `did:peer` is supported\nup to date.\n","type":"text/plain"},"url":{"path":["did-authentication","challenge-submissions",":challengeSubmissionId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) unique identifier of authentication challenge session","type":"text/plain"},"type":"any","value":"","key":"challengeSubmissionId"}]},"header":[{"key":"Content-Type","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}}}}
+sidebar_class_name: "post api-method"
+info_path: documentation/api/enterprise-api/enterprise-services-openapi-specification
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Public endpoint to which holders submit challenge responses
+
+
+
+When submitted, signed challenge is verified against the authentication 
+key found in DID document of a DID used to sign the challenge. Any 
+request to this endpoint would invalidate particular authentication 
+session. If invalid request is submitted, challenge state would 
+transition to `error` state.
+
+Both `did` and `signature` size is limited to maximum of 1000 characters.
+Signature should be `base64Url` encoded, and only `did:peer` is supported
+up to date.
+
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"challengeSubmissionId","required":true,"description":"unique identifier of authentication challenge session","schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"did"} required={true} deprecated={undefined} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"signature"} required={true} deprecated={undefined} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem></MimeTabs><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Challenge response submitted
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Invalid challenge response submitted
+
+</div><div></div></TabItem><TabItem label={"410"} value={"410"}><div>
+
+Challenge expired
+
+</div><div></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Server error
+
+</div><div></div></TabItem></ApiTabs></div>
+      
