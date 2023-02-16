@@ -11,7 +11,7 @@ When a DID is created or updated, the layer 2 Prism Node generates a Prism trans
 
 Layer 2 nodes also play a critical role in the resolution of DIDs. When a client requests the information associated with a particular DID, the layer 2 node uses its internal records to quickly retrieve and return the appropriate data. This allows for fast and efficient resolution of DIDs without requiring access to the underlying blockchain, which can be slow and resource-intensive.
 
-Overall, layer 2 nodes are an important component of the Sidetree protocol, providing the necessary off-chain processing and data storage capabilities to make DIDs scalable and efficient.
+Overall, layer 2 nodes are an important component of the Prism Node protocol, providing the necessary off-chain processing and data storage capabilities to make DIDs scalable and efficient.
 
 At its core, PRISM depends on a set of protocols that define how to manage Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs). 
 The PRISM node is the main component that implements these protocols. In order to understand what the node does, we should explain how the protocol work.
