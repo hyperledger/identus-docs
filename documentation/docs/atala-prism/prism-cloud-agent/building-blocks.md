@@ -6,25 +6,12 @@ This modular architecture also provides a great deal of flexibility and customiz
 
 A brief overview of the current building blocks of Atala Prism are outlined below.
 
-> Option 1:
-
-**Building Block**|**Definition**|**Reasoning**
+**Building Block**|**Definition**|**Code Name**
 :-----:|:-----:|:-----:
-Apollo|A suite of cryptographic primitives to ensure properties of integrity, authenticity and confidentiality of any data we store and process in a provably secure manner.|(god of truth)
-Castor|A suite of decentralised identifier (DID) operations to create, manage and resolve standards based decentralised identifiers in a user-controlled manner.|(the twin gods) 
-Pollux|A suite of credential operations to issue, manage and verify standards based verifiable credentials in a privacy preserving manner.|(the twin gods)
-Mercury|A set of secure, standards based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport agnostic and interoperable manner.|(god of comms)
-> What about Iris?
-
-> Option 2:
-
-**Building Block**|**Definition**
-:-----:|:-----:
-Cryptography|A suite of cryptographic primitives to ensure properties of integrity, authenticity and confidentiality of any data we store and process in a provably secure manner.
-Dcentralised Identifiers (DID)|A suite of decentralised identifier (DID) operations to create, manage and resolve standards based decentralised identifiers in a user-controlled manner.
-Verifiable Credentials|A suite of credential operations to issue, manage and verify standards based verifiable credentials in a privacy preserving manner.
-DIDComm V2|A set of secure, standards based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport agnostic and interoperable manner.
-> What about Iris?
+Cryptography|A suite of cryptographic primitives to ensure properties of integrity, authenticity and confidentiality of any data we store and process in a provably secure manner.|Apollo
+Dcentralised Identifiers (DID)|A suite of decentralised identifier (DID) operations to create, manage and resolve standards based decentralised identifiers in a user-controlled manner.|Castor
+Verifiable Credentials|A suite of credential operations to issue, manage and verify standards based verifiable credentials in a privacy preserving manner.|Pollux
+DIDComm V2|A set of secure, standards based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport agnostic and interoperable manner.|Mercury
 
 ## Apollo - Cryptography Module
 Apollo is one of the building blocks of Atala Prism, and it is a suite of cryptographic primitives that ensure the security of data stored and processed within the platform. Cryptographic primitives are mathematical algorithms and protocols that form the foundation for secure communication and data protection.
