@@ -3,6 +3,16 @@ Prism Node acts as a layer 2 node for the Cardano blockchain. It is designed to 
 
 The main purpose of Prism Node is to provide a secure and trustworthy platform for storing and managing data on the Cardano blockchain. It does this by leveraging the security and decentralization of the blockchain. This means that data stored by Prism Node is secure and tamper-proof, and that it can be independently verified and authenticated. This is achieved through the use of cryptographic signatures and other security measures, which ensure that the data stored or queried via Prism Node is accurate and trustworthy.
 
+The Prism Node protocol is designed to create decentralized identifiers (DIDs) on a blockchain, but it also needs to provide an efficient and scalable way to access and update those DIDs. This is where layer 2 nodes come in.
+
+A layer 2 node is a service that runs alongside a blockchain node and provides additional functionality and services to support the Prism Node protocol. Specifically, layer 2 nodes are responsible for handling off-chain transactions that relate to the creation, updating, and resolution of DIDs.
+
+When a DID is created or updated, the layer 2 Prism Node generates a Prism transaction that includes the necessary information and proof of work. The transaction is then broadcast to the blockchain network for verification and validation. Once the transaction is confirmed on the blockchain, the layer 2 node updates its own internal records to reflect the changes.
+
+Layer 2 nodes also play a critical role in the resolution of DIDs. When a client requests the information associated with a particular DID, the layer 2 node uses its internal records to quickly retrieve and return the appropriate data. This allows for fast and efficient resolution of DIDs without requiring access to the underlying blockchain, which can be slow and resource-intensive.
+
+Overall, layer 2 nodes are an important component of the Sidetree protocol, providing the necessary off-chain processing and data storage capabilities to make DIDs scalable and efficient.
+
 At its core, PRISM depends on a set of protocols that define how to manage Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs). 
 The PRISM node is the main component that implements these protocols. In order to understand what the node does, we should explain how the protocol work.
 
