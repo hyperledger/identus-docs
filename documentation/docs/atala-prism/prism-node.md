@@ -1,4 +1,8 @@
 # PRISM node
+Prism Node acts as a layer 2 node for the Cardano blockchain. It is designed to function as a verifiable data registry, providing a secure and reliable way to store and manage data.
+
+The main purpose of Prism Node is to provide a secure and trustworthy platform for storing and managing data on the Cardano blockchain. It does this by leveraging the security and decentralization of the blockchain. This means that data stored by Prism Node is secure and tamper-proof, and that it can be independently verified and authenticated. This is achieved through the use of cryptographic signatures and other security measures, which ensure that the data stored or queried via Prism Node is accurate and trustworthy.
+
 At its core, PRISM depends on a set of protocols that define how to manage Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs). 
 The PRISM node is the main component that implements these protocols. In order to understand what the node does, we should explain how the protocol work.
 
@@ -15,3 +19,6 @@ At a high level, the protocol that defines the prism DID method works as follows
 In short, users can create, update and deactivate DIDs by posting respective actions on-chain. The action of creating a DID can optionally not be posted on-chain. Based on the operations posted on-chain, nodes can construct the DID Documents associated to a given DID.
 
 Additionally, the node provides an interface to track the status of operations submitted to the node.
+
+
+
