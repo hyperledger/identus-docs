@@ -1,6 +1,7 @@
 # Overview
 
-> Prism Agent: A scaleable, easy to use and robust Aries standards based agent that can be leveraged to build self-sovereign identity services and use cases using any programming language that support integration with Rest APIs.
+> Prism Agent: A scaleable, easy-to-use, robust, and W3C/Aries standards-based agent that provides self-sovereign identity services to build products and solutions based on it. 
+Prism Agent exposes REST API for integration with any programming language.
 
 Prism Agent provides all the required capabilities to leverage the power of self-sovereign identity and verifiable credentials through an easy API interface. Prism Agent is developed on the Aries concepts and include the following high-level features: 
 
