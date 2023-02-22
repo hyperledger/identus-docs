@@ -8,7 +8,7 @@ Prism Agent includes the following high-level features:
 
 The Prism Agent API can be used to develop `controllers` that implement specific business logic according to use case requirements. Controllers can be developed in any programming language and remove the requirement for developers to interact or learn the nuts and bolts of the various self-sovereign identity and verifiable credential standards and the associated implementations.
 
-The Prism Agent is built using the Scala programming language, and is designed to support the DID:Prism and DIDComm v2 protocols, which are the standards used in the Atala Prism ecosystem. It's also designed to work with the Cardano blockchain, which provides a high degree of security and immutability.
+The Prism Agent is written in Scala, supports DID Prism method, interacts with the Prism Node over gRPC protocol, and uses it as the Verifiable Data Registry. In addition, the Prism Node interacts with the Cardano blockchain, providing high security, scalability, and availability.
 
 The Prism Agent is essentially a cloud agent, which means that it can be deployed in the cloud and accessed from anywhere. It's designed to be highly scalable and flexible, which makes it well-suited for a wide range of use cases and applications.
 
