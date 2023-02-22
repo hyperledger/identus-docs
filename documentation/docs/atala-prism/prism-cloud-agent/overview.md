@@ -39,8 +39,7 @@ This document provides an of the Prism Agent feature set. This document is manua
 | Issuer   | :white_check_mark:        |            |
 | Holder   | :white_check_mark:        |            |
 | Verifier | :white_check_mark:        |            |
-| Mediator Service | :white_check_mark:        |  |
-| Mediator Client | :white_check_mark: |
+| Mediator Service | :white_check_mark:|            |
 
 ## Credential Types
 > TODO - fix signature types
