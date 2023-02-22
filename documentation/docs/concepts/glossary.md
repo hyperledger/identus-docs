@@ -10,7 +10,7 @@
 ### decentralized identifer
 
 ### DID
-See [decentralized identifier](/documentation/docs/concepts/glossary#decentralized-identifier)
+See [decentralized identifier](/documentation/docs/concepts/glossary.md#decentralized-identifer)
 ## E
 ### endpoints
 
