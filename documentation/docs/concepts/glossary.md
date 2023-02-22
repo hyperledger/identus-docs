@@ -11,6 +11,7 @@
 
 ### DID
 See [decentralized identifier](/documentation/docs/concepts/glossary.md#decentralized-identifer)
+
 ## E
 ### endpoints
 
@@ -44,11 +45,11 @@ See [decentralized identifier](/documentation/docs/concepts/glossary.md#decentra
 ## O
 
 ## P
-## presentation
+### presentation
 
-## PRISM
+### PRISM
 
-## PRISM Agent
+### PRISM Agent
 
 ### proof
 
@@ -65,13 +66,13 @@ See [decentralized identifier](/documentation/docs/concepts/glossary.md#decentra
 ## U
 
 ## V
-## verifiable credential
+### verifiable credential
 
-## veriifable data
+### veriifable data
 
-## verifiable presentation
+### verifiable presentation
 
-## verifier
+### verifier
 
 ## W
 ### wallet
