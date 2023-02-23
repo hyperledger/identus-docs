@@ -7,7 +7,7 @@
 ## C
 
 ## D
-### decentralized identifer
+### decentralized identifier
 
 ### DID
 See [decentralized identifier](/documentation/docs/concepts/glossary.md#decentralized-identifer)
@@ -68,7 +68,7 @@ See [decentralized identifier](/documentation/docs/concepts/glossary.md#decentra
 ## V
 ### verifiable credential
 
-### veriifable data
+### verifiable data
 
 ### verifiable presentation
 
