@@ -155,7 +155,7 @@ const config = {
             items: [
               {
                 label: 'PRISM DID Spec',
-                href: 'https://github.com/input-output-hk/prism-did-method-spec',
+                href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
               },
             ],
           },
