@@ -50,6 +50,8 @@ brew install yarn
 # Create new projects directory
 cd ~ && mkdir projects && cd projects
 git clone https://github.com/input-output-hk/atala-prism-docs.git
+# Initialize submodules
+git submodule init
 # Update submodules
 git submodule update --remote --recursive
 
