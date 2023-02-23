@@ -67,6 +67,12 @@ This document provides an of the Prism Agent feature set. This document is manua
 
 | Protocol | Supported | Notes |
 | --- | :--: | -- |
+| [Mediator Coordinator](https://didcomm.org/mediator-coordination/2.0/) | :white_check_mark: | -- |
+| [DIDComm V2 Messaging](https://identity.foundation/didcomm-messaging/spec) | :white_check_mark: | -- |
+| [DIDComm V2 Issue Credential](https://github.com/decentralized-identity/waci-didcomm/tree/main/issue_credential) | :white_check_mark: | -- |
+| [DIDComm V2 Present Proof](https://github.com/decentralized-identity/waci-didcomm/blob/main/present_proof/present-proof-v3.md) | :white_check_mark: | -- |
+| [DIDComm V2 Report Problem](https://identity.foundation/didcomm-messaging/spec/#problem-reports) | :white_check_mark: | -- |
+| [DIDComm V2 Routing Protocol](https://identity.foundation/didcomm-messaging/spec/#routing-protocol-20) | :white_check_mark: | -- |
 
 ## Secure Storage Types
 > TODO - fix and  provide details regarding our secure storage for the wallets.
@@ -77,32 +83,9 @@ This document provides an of the Prism Agent feature set. This document is manua
 
 ## Supported Aries RFCs
 
-### AIP 1.0
-> TODO - fix and apply actual RFCs supported
-
-RFCs listed in [AIP 1.0](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0302-aries-interop-profile#aries-interop-profile-version-10).
-
 | RFC | Supported | Notes |
  --- | :--: | -- |
-| [0025-didcomm-transports](https://github.com/hyperledger/aries-rfcs/tree/b490ebe492985e1be9804fc0763119238b2e51ab/features/0025-didcomm-transports)      | :white_check_mark:        | |
-
-### AIP 2.0
-> TODO - fix and apply actual RFCs supported
-
-RFCs listed in [AIP 2.0](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0302-aries-interop-profile#aries-interop-profile-version-20)
-
-| RFC | Supported | Notes |
- --- | :--: | -- |
-| [0023-did-exchange](https://github.com/hyperledger/aries-rfcs/tree/b3a3942ef052039e73cd23d847f42947f8287da2/features/0023-did-exchange)   | :warning:   |    |
-
-### AIP 3.0
-RFCs listed in [AIP 3.0](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0302-aries-interop-profile#aries-interop-profile-version-30)
-| RFC | Supported | Notes |
-| --- | :--: | -- |
-
-
-### Other Supported RFCs
-
-| RFC | Supported | Notes |
-| --- | :--: | -- |
-| [0031-discover-features](https://github.com/hyperledger/aries-rfcs/blob/main/features/0031-discover-features/README.md)           | :white_check_mark:        |   |
+| [0023-did-exchange](https://github.com/hyperledger/aries-rfcs/tree/main/features/0023-did-exchange)      | :white_check_mark:        | |
+| [0434-out-of-band-protocol](https://github.com/hyperledger/aries-rfcs/blob/main/features/0434-outofband/README.md)      | :white_check_mark:        | |
+| [0453-issue-credential-protocol](https://github.com/hyperledger/aries-rfcs/tree/main/features/0453-issue-credential-v2)      | :white_check_mark:        | |
+| [0453-present-proof-protocol](https://github.com/hyperledger/aries-rfcs/tree/main/features/0454-present-proof-v2)      | :white_check_mark:        | |
