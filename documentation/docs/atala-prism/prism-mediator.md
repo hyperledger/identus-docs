@@ -1,6 +1,6 @@
 # PRISM Mediator
 
-Mediators play a critical role in self-sovereign identity wallets, particularly in the context of mobile devices. This is because mobile devices don't typically have static IP addresses, can be without internet or even switched off, which can make it difficult to establish direct connections between different parties in the ecosystem and ensure DIDComm message delivery. As a result, a mediator is often required to relay or store and forward information between different parties.
+Mediators play a critical role in self-sovereign identity wallets, particularly in the context of mobile devices, because mobile devices don’t typically have static IP addresses and might be offline or even turned off, which can make it difficult to establish direct connections between different parties in the ecosystem and ensure DIDComm message delivery. As a result, the mediator must relay, store, and forward messages between parties.
 
 Definitions of mediator and relays as per [RFC 0046](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0046-mediators-and-relays#summary) are outlined below:
 
