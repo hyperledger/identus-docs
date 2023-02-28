@@ -40,7 +40,7 @@ You can access your instance by prepending your instance-id to `atalaprism.io`
 
 For example, for an environment given the instance-id of `ei30m6d5368w`, its APIs will be available at `ei30m6d5368w.atalaprism.io`
 
-::: note 
+:::note 
 
 Atala also prepend a `purpose` flag to instances. This flag indicates if they are development (d), test (t), staging (s), or production (p) instances. The purpose flag is not part of the domain.
 
@@ -48,7 +48,7 @@ Atala also prepend a `purpose` flag to instances. This flag indicates if they ar
 
 Atala will provide you with your instance-id and API tokens when you are onboarded. 
 
-::: info Getting more tokens
+:::tip Getting more tokens
 
  Atala recommends that you request the creation of additional tokens for each integration/service or human user that you have. Please see [Getting Help](../getting-help) for instructions on how to get in touch with us to request additional API tokens.
 
@@ -58,7 +58,7 @@ An API token must be added to every API call made to non-public endpoints. The A
 
 ![Example Insomnia window showing `apikey` header being specified](/img/hosted-instances-apikey-header.png)
 
-::: info Public Endpoints
+:::info Public Endpoints
 
 Some endpoints must be unprotected in that they do not require authentication. These endpoints must be accessible by everyone for the agent to interact with the wider identity ecosystem which requires interopability with common standards. A good example of a public endpoint is the DIDComm endpoint - which - must be able to recieve messages from client devices which have no fixed address and whose agents do not spknow of the PRISM authentication requirement.
 
