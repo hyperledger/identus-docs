@@ -1,31 +1,15 @@
 # Verifiable data
 
-Digital identity brings several flavors of authentication to the table. Verifiable credentials (VCs) are the most commonly referenced methodology, but there is a concept of verifiable data, which may leverage VCs or DIDs, but it is different.
+Verifiable data plays a crucial role in the emerging field of self-sovereign identity and verifiable credentials. In this context, verifiable data refers to data anyone can verify without a centralized authority or intermediary.
 
+Self-sovereign identity (SSI) is a concept that empowers individuals to take control of their own digital identities, which includes managing their data and controlling with whom it's shared. Verifiable credentials are a crucial component of SSI, as they allow individuals to share specific data about themselves (such as their name, date of birth, or educational qualifications) with others in a secure and trustworthy way.
 
-## Verifiable Credentials
+Creating verifiable credentials uses blockchain technology, cryptography, and standardized data formats. They consist of claims describing a particular aspect of an individual's identity or qualifications, along with cryptographic proofs that allow authentication of the claims. These proofs get created using public key cryptography, which enables anyone to verify that the data in the credential hasn't been tampered with or altered.
 
-VCs are claims made about a subject. A subject is typically the holder of the credential. Credentials can be anything. A few examples are below:
+Verifiable data in SSI and verifiable credentials have several significant benefits.
 
+First, it gives individuals greater control over their data and how it's shared. It can help reduce the risk of identity theft and fraud and make it easier for individuals to manage their identities across multiple contexts and services.
 
-| Issues and makes a claim       | That the subject                            |
-| ------------------------------ | ------------------------------------------- |
-| Government                     | is a citizen                                |
-| Insurance company              | is insured                                  |
-| Streaming service              | has an account                              |
-| Programming reputation website | subject has an account                      |
-|                                | and is proficient in a programming language |
-| Medical board                  | can practice medicine                       |
-| University                     | graduated with a specific degree            |
+Second, verifiable data provides higher trust and security in online interactions. By allowing anyone to verify the authenticity of data, it's possible to establish trust and confidence in online transactions without needing a centralized authority or intermediary. As a result, it has important implications for various industries, from healthcare and finance to education and e-commerce.
 
-These claims are all verifiable by having the holder present the credentials to a verifier. Depending on the level of certainty required will determine how the credential is verified. Generally, if the issuing DID is trusted (via a governance framework and trust registry), there is assurance that the claims made by that issuer are valid. 
-
-
-
-## Verifiable Data
-
-Authenticating a credential is a crucial function of an ecosystem, like validating the source material for a shirt. But what about where that material went from the source? What ports did it stop at, for how long, who handled it, etc.? This functionality is possible if an ecosystem is utilizing digital identity. Third-party auditors, insurers, etc., would also be able to verify the authenticity of the data. In supply-chain ecosystems, this data would be invaluable.
-
-
-
-> Figure 1.1 Image showing shirt being sourced and moving through ecosystem
+Verifiable data is critical to the emerging field of digital identity. Verifiable data will change how we manage and share our identities online by enabling individuals to take control of their data and providing a higher level of trust and security in online interactions.
