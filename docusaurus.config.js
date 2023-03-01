@@ -63,9 +63,9 @@ const config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'tutorials',
-        path: 'documentation/tutorials',
+        path: 'atala-prism-building-blocks/docs/docusaurus',
         routeBasePath: 'tutorials',
-        sidebarPath: require.resolve('./documentation/tutorials/sidebars.js'),
+        sidebarPath: require.resolve('./atala-prism-building-blocks/docs/docusaurus/sidebars.js'),
       },
     ],
     [
