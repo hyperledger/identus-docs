@@ -81,29 +81,6 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Architecture',
-          collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'PRISM Architecture',
-            description: 'Learn about the Atala PRISM architecture!'
-          },
-          items: [
-            'atala-prism/architecture/principles',
-            'atala-prism/architecture/cloud',
-            'atala-prism/architecture/deployment',
-            'atala-prism/architecture/authentication',
-            'atala-prism/architecture/encryption',
-            'atala-prism/architecture/security',
-            'atala-prism/architecture/agent-orientated-architecture',
-            'atala-prism/architecture/didcomm',
-            'atala-prism/architecture/persistence',
-            'atala-prism/architecture/resiliiency',
-            'atala-prism/architecture/scalability'
-          ]
-        },
-        {
-          type: 'category',
           label: 'Infrastructure',
           collapsed: true,
           link: {
@@ -113,6 +90,7 @@ const sidebars = {
           },
           items: [
             'atala-prism/infrastructure/hosted-instances',
+            'atala-prism/infrastructure/running-agent-locally'
           ]
         },
         'atala-prism/getting-help'
