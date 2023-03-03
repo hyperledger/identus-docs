@@ -1,0 +1,45 @@
+name: Deployment
+
+# Trigger deployment when a new tag is pushed
+# to a service component
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      env:
+        required: false
+        type: string
+        default: "staging"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to deploy, e.g. v1.0.0"
+        required: true
+      env:
+        description: "Environment to trigger update on"
+        required: false
+        default: "staging"
+
+jobs:
+  trigger-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse input parameters
+        id: parse-params
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "VERSION=${{ github.event.inputs.version }}" >> "${GITHUB_OUTPUT}"
+            echo "ENV=${{ github.event.inputs.env }}" >> "${GITHUB_OUTPUT}"
+          else
+            echo "VERSION=${{ inputs.version }}" >> "${GITHUB_OUTPUT}"
+            echo "ENV=${{ inputs.env }}" >> "${GITHUB_OUTPUT}"
+          fi
+      - name: Trigger deployment
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.ATALA_GITHUB_TOKEN }}
+          repository: input-output-hk/atala-prism-non-prod-argocd-state
+          event-type: trigger-prism-documentation-deployment
+          client-payload: '{"version": "${{ steps.parse-params.outputs.VERSION }}", "env": "${{ steps.parse-params.outputs.ENV }}"}'
