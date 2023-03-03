@@ -93,26 +93,39 @@ consumers:
 
 #### Running the agent with Ngrok
 
-Once installed, the PRISM Cloud Agent `run.sh` script has a command line argument for telling it that you are using ngrok - it will attempt to configure itself to use the publicly available ngrok URL for the tunnel it creates when running it.
+The PRISM Cloud Agent `run.sh` script has a command line argument for telling it that you are using ngrok - it will attempt to configure itself to use the publicly available ngrok URL for the tunnel it creates when running it.
 
-The `run.sh` requires `jq` - a json manipulation tool - to be installed alongside ngrok. `jq` is available [here](https://stedolan.github.io/jq/]). Please see the installation guide for your platform on the jq website and complete the installation.
+:::caution
 
-Please complete the installation of ngrok and jq and create a tunnel per the ngrok getting started guide. Confirm that the tunnel is up, and then run the PRISM Cloud Agent using the following command:
+The `run.sh` requires `jq` - a json manipulation tool - to be installed alongside ngrok. `jq` is available [here](https://stedolan.github.io/jq/). Please see the installation guide for your platform on the jq website and complete the installation.
+
+Please complete the installation of ngrok and jq and create a tunnel per the ngrok getting started guide before executing the run.sh script
+
+:::
+
+After you have created a tunnel - run the PRISM Cloud Agent using the following command:
 
 ```
 run.sh --ngrok
 ```
 
-Once your PRISM Cloud Agent runs, the `DIDComm Service Endpoint` will be set as the ngrok tunnel address. Interactions with other agents will result in communication flowing back into your agent.
+The `DIDComm Service Endpoint` in your agent will be set as the ngrok tunnel address. Interactions with other agents will result in communication flowing back into your agent.
 
 #### Additional information
 
-The free account tier of ngrok will provision a random domain every time you start a ngrok tunnel. A tunnel may be interrupted by network failures and restarts of your system, resulting in the domain name changing. As the domain name changes, the location of your agent changes and other agents may send messages to the wrong place.
+The free account tier of ngrok will provision a random domain every time you start a ngrok tunnel. A tunnel may be interrupted by network failures and restarts of your system, resulting in the domain name changing.
 
-Please consider subscribing to a commercial plan with ngrok for persistent domain names [or configure your networking layer manually to allow ingress] if you need the agent to always be accessible in one place.
+As the domain name changes, the location of your agent changes and other agents may send messages to the wrong place.
+
+**Please consider subscribing to a commercial plan with ngrok for persistent domain names [or configure your networking layer manually to allow ingress] if you need the agent to always be accessible in one place.
+**
+
+:::tip
 
 The status of an active ngrok tunnel is shown in the ngrok web interface accessible by default from within a web browser on [http://localhost:4040](http://localhost:4040)
 
+:::
+
 The PRISM Cloud Agent docker-compose files include running and configuring an API Gateway - APISIX. An API Gateway is required when running the PRISM Cloud Agent as it is built as a microservice architecture and comprises multiple services running on different network ports.
 
-The API Gateway unifies these different services into a single ingress plane where a single port is exposed rather than many. Using APISIX as an API Gateway provides security and protection to prevent unauthorised access.
+The API Gateway unifies these different services into a single ingress plane where a single port is exposed rather than many. Using APISIX as an API Gateway provides security and protection to prevent unauthorized access.
