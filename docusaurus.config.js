@@ -63,9 +63,9 @@ const config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'tutorials',
-        path: 'documentation/tutorials',
+        path: 'atala-prism-building-blocks/docs/docusaurus',
         routeBasePath: 'tutorials',
-        sidebarPath: require.resolve('./documentation/tutorials/sidebars.js'),
+        sidebarPath: require.resolve('./atala-prism-building-blocks/docs/docusaurus/sidebars.js'),
       },
     ],
     [
@@ -155,7 +155,7 @@ const config = {
             items: [
               {
                 label: 'PRISM DID Spec',
-                href: 'https://hackmd.io/-i6On7_LTRamKhEzYA6Hcw?view',
+                href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
               },
             ],
           },

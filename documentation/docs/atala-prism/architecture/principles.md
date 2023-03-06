@@ -1,3 +1,0 @@
-# Principles
-
-## Contract First Approach
