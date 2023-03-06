@@ -45,7 +45,7 @@ This document provides an of the Prism Agent feature set. This document is manua
 
 | Credential Type | Supported | Notes |
 | --- | :--: | -- |
-| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWT using the `JsonWebKey2020` and `JSONWebSignature2020` with `ES256K` signature suite.<br><br>Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions. |
+| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWT using the `JsonWebSignature2020` with `ESK256K` signature suite.<br><br>Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions. |
 
 ## DID Methods
 
