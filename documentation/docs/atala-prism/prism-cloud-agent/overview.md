@@ -18,7 +18,7 @@ With its focus on security, scalability, and flexibility, the Prism Agent has th
 
 This document provides an of the Prism Agent feature set. This document is manually updated and as such, may not be up to date with the most recent release of Prism Agent.
 
-**Last Update**: 2023-02-16, Release x.y.z
+**Last Update**: 2023-02-16, Release 0.48.3
 
 ## Platform Support
 
@@ -26,7 +26,7 @@ This document provides an of the Prism Agent feature set. This document is manua
 | -------- | :-------: |  ------- |
 | Server   | :white_check_mark: |    |
 | Kubernetes | :white_check_mark: |  |
-| Docker   | :white_check_mark: | IOG publishes docker images on [Docker Hub](https://hub.docker.com/r/iohk....) |
+| Docker   | :white_check_mark: | IOG will publish docker images on Docker Hub in future. A link to the IOG Docker Hub for Prism Agent will be provided once published. |
 | Desktop  | :warning:         | Could be run as a local service on the computer |
 | iOS      | :x:        |    |
 | Android  | :x:        |    |
@@ -42,18 +42,17 @@ This document provides an of the Prism Agent feature set. This document is manua
 | Mediator Service | :white_check_mark:|            |
 
 ## Credential Types
-> TODO - fix signature types
 
 | Credential Type | Supported | Notes |
 | --- | :--: | -- |
-| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWWT using the `Ed25519Signature2018`, `BbsBlsSignature2020` and `BbsBlsSignatureProof2020` signature suites.<br><br>Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions. |
+| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWT using the `JsonWebKey2020` with `ESK256K` signature suite.<br><br>Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions. |
 
 ## DID Methods
 
 | Method | Supported | Notes |
 | --- | :--: | -- |
-| `did:prism` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) Compliant. Cardano is the default Verifiable Data Registry (VDR) to anchor DIDs. Used for Verifiable Credentials and Verifiable Presentations |
-| `did:peer` | :warning:| Used for P2P connections |
+| `did:prism` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) compliant [Prism DID Method](https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md) specification. Cardano is the default Verifiable Data Registry (VDR) to anchor DIDs. Prism DID Method is used for Verifiable Credentials and Verifiable Presentations.  |
+| `did:peer` | :white_check_mark:| Used for P2P connections |
 | Universal Resolver | :construction: |  |
 
 ## DIDComm
@@ -73,13 +72,6 @@ This document provides an of the Prism Agent feature set. This document is manua
 | [DIDComm V2 Present Proof](https://github.com/decentralized-identity/waci-didcomm/blob/main/present_proof/present-proof-v3.md) | :white_check_mark: | -- |
 | [DIDComm V2 Report Problem](https://identity.foundation/didcomm-messaging/spec/#problem-reports) | :white_check_mark: | -- |
 | [DIDComm V2 Routing Protocol](https://identity.foundation/didcomm-messaging/spec/#routing-protocol-20) | :white_check_mark: | -- |
-
-## Secure Storage Types
-> TODO - fix and  provide details regarding our secure storage for the wallets.
-
-| Secure Storage Types | Supported | Notes |
- --- | :--: | -- |
-| [Aries Askar](https://github.com/hyperledger/aries-askar) | :white_check_mark: | Recommended - Aries Askar provides equivalent/evolved secure storage and cryptography support to the "indy-wallet" part of the Indy SDK. When using Askar (via the `--wallet-type askar` startup parameter), other Indy SDK functionality is handled by [Indy Shared RS](https://github.com/hyperledger/indy-shared-rs) (AnonCreds) and [Indy VDR](https://github.com/hyperledger/indy-vdr) (Indy ledger interactions). |
 
 ## Supported Aries RFCs
 
