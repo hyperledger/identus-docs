@@ -71,15 +71,6 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'wallet-sdk',
-        path: 'documentation/sdk/wallet-sdk',
-        routeBasePath: 'wallet-sdk',
-        sidebarPath: require.resolve('./documentation/sdk/wallet-sdk/sidebars.js'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'enterprise-sdk',
         path: 'documentation/sdk/enterprise-sdk',
         routeBasePath: 'enterprise-sdk',
@@ -137,9 +128,8 @@ const config = {
             position: 'left',
             items: [
               {
-                to: '/wallet-sdk/wallet-sdk-intro',
-                label: 'Wallet SDK',
-                activeBaseRegex: `/wallet-sdk/`
+                label: 'Swift Wallet SDK',
+                href: 'https://swift-docs.atalaprism.io/',
               },
               {
                 to: '/enterprise-sdk/enterprise-sdk-intro',
