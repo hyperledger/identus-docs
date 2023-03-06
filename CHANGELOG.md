@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.2.0...v1.3.0) (2023-03-06)
+
+
+### Features
+
+* add wallet sdk website link ([#23](https://github.com/input-output-hk/atala-prism-docs/issues/23)) ([dc329f6](https://github.com/input-output-hk/atala-prism-docs/commit/dc329f67ae2a32f6905c8d26fd58d796a6719aa8))
+
 # [1.2.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.1.0...v1.2.0) (2023-03-05)
 
 
