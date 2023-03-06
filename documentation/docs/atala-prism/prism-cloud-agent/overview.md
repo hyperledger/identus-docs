@@ -18,7 +18,7 @@ With its focus on security, scalability, and flexibility, the Prism Agent has th
 
 This document provides an of the Prism Agent feature set. This document is manually updated and as such, may not be up to date with the most recent release of Prism Agent.
 
-**Last Update**: 2023-02-16, Release 0.48.3
+**Last Update**: 2023-03-06, Release 0.48.3
 
 ## Platform Support
 
