@@ -1,3 +1,58 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('/static/font/Poppins-Regular.woff2') format('woff2'),
+  url('/static/font/Poppins-Regular.woff') format('woff'),
+  url('/static/font/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/static/font/Poppins-Bold.woff2') format('woff2'),
+  url('/static/font/Poppins-Bold.woff') format('woff'),
+  url('/static/font/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/static/font/Poppins-SemiBold.woff2') format('woff2'),
+  url('/static/font/Poppins-SemiBold.woff') format('woff'),
+  url('/static/font/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/static/font/Poppins-Medium.woff2') format('woff2'),
+  url('/static/font/Poppins-Medium.woff') format('woff'),
+  url('/static/font/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/static/font/Poppins-SemiBoldItalic.woff2') format('woff2'),
+  url('/static/font/Poppins-SemiBoldItalic.woff') format('woff'),
+  url('/static/font/Poppins-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+.navbar__title {
+  font-weight: 600;
+}
+
+
 :root {
   --ifm-color-primary: #f85c54;
   --ifm-color-primary-dark: #d22b2a;
@@ -7,6 +62,8 @@
   --ifm-color-primary-lighter: #e5302f;
   --ifm-color-primary-lightest: #f83432;
   --ifm-code-font-size: 95%;
+  --ifm-heading-font-weight: 600;
+  --ifm-font-family-base: "Poppins", "sans-serif";
 }
 
 .docusaurus-highlight-code-line {
@@ -28,3 +85,4 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .version-number {
   color: var(--ifm-link-color);
 }
+
