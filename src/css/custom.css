@@ -71,6 +71,11 @@ html[data-theme="dark"] {
 .navbar__title {
   font-weight: 600;
 }
+.navbar__link--active {
+  font-weight: 600;
+  /*color: var(--ifm-navbar-link-hover-color);*/
+  text-decoration: none;
+}
 
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
