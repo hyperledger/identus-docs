@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Decentralization',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/decentralization.svg').default,
     description: (
       <>
         Designed to allow individuals to take control
@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: 'Interoperability',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/interoperability.svg').default,
     description: (
       <>
         Enables users to easily access a wide range of services
@@ -28,7 +28,7 @@ const FeatureList = [
   },
   {
     title: 'Security and Privacy',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/security-privacy.svg').default,
     description: (
       <>
         Provides strong protection for users' personal information

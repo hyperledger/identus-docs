@@ -48,22 +48,28 @@
   font-display: swap;
 }
 
-.navbar__title {
-  font-weight: 600;
+html[data-theme="dark"] {
+  --ifm-background-color: #101828;
+  --ifm-color-primary: #767AF5;
+  --ifm-footer-background-color: #1D2939;
 }
 
-
 :root {
-  --ifm-color-primary: #f85c54;
-  --ifm-color-primary-dark: #d22b2a;
-  --ifm-color-primary-darker: #a72221;
-  --ifm-color-primary-darkest: #711716;
-  --ifm-color-primary-light: #f85c54;
-  --ifm-color-primary-lighter: #e5302f;
-  --ifm-color-primary-lightest: #f83432;
+  --ifm-color-primary: #5559F2;
+  --ifm-color-primary-dark: #3038EC;
+  --ifm-color-primary-darker: #2C2FE0;
+  --ifm-color-primary-darkest: #2121D4;
+  --ifm-color-primary-light: #767AF5;
+  --ifm-color-primary-lighter: #A0A0f7;
+  --ifm-color-primary-lightest: #C7C5FA;
+  --ifm-footer-background-color: #F9FAFB;
   --ifm-code-font-size: 95%;
   --ifm-heading-font-weight: 600;
   --ifm-font-family-base: "Poppins", "sans-serif";
+}
+
+.navbar__title {
+  font-weight: 600;
 }
 
 .docusaurus-highlight-code-line {
@@ -78,7 +84,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 .navbar__search {
-  padding-left: 1rem;
   padding-left: var(--ifm-navbar-padding-horizontal);
 }
 
