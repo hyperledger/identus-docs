@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.3.0...v1.4.0) (2023-03-09)
+
+
+### Features
+
+* update bb to latest version ([6287b34](https://github.com/input-output-hk/atala-prism-docs/commit/6287b34d33e54e37ace1dfba83158ac160e41958))
+
 # [1.3.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.2.0...v1.3.0) (2023-03-06)
 
 
