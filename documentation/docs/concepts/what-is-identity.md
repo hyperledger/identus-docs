@@ -16,9 +16,7 @@ Digital identity is a digital representation of an entity. An entity is a person
 
 Digital identity at the surface level works similarly to the world today, with additional security, privacy, interoperability, portability, transparency, and agency layers. A few key differences are that digital identity requires no central authority to provide an identity, nor is there any centralized registry, and there is no requirement to phone home to verify a credential.
 
-
-
-The entire SSI and decentralized identity communities have agreed upon principles that make up an ecosystem. The Sovrin Foundation has compiled those into a diagram [here](https://sovrin.org/principles-of-ssi/), also provided below:
+Self-Sovereign Identity is a methodology of managing identity. The SSI community have agreed upon principles that make up an ecosystem. The Sovrin Foundation has compiled these into a diagram [here](https://sovrin.org/principles-of-ssi/), also provided below:
 
 **Agency**
 
