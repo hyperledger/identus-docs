@@ -28,15 +28,13 @@ Overall, the Apollo building block is an essential component of Atala Prism, pro
 
 ## Castor - DID Module
 
-Castor is a building block of Atala Prism that provides a suite of decentralized identifier (DID) operations. DIDs are unique digital identities that are self-sovereign, meaning they are owned and controlled by the individual or entity they represent.
+Castor is a building block of Atala Prism that provides a suite of decentralised identifier (DID) operations. DIDs are unique digital identities that are self-sovereign, meaning they are owned and controlled by the individual or entity they represent.
 
 Castor provides users with the ability to create, manage, and resolve DIDs in a user-controlled manner. This means that users have complete control over their digital identity, including the ability to create new DIDs, update existing ones, and delete them if necessary.
 
-In terms of managing DIDs, Castor allows users to associate data with their DIDs, including personal information, credentials, and other relevant data. This data can be used to build a comprehensive digital profile that represents the user's online identity.
+Castor is designed to support a variety of DID methods, including full support of the in-house Prism DID method, as well as other widely-used methods such as the Peer DID method. This enables users to choose the DID method that best suits their needs and allows for interoperability with other systems and platforms.
 
-The resolving capabilities of Castor allow users to retrieve the data associated with a specific DID, including any credentials that have been issued to the user. This allows users to easily and securely share their credentials with others, such as employers, schools, and other organizations.
-
-By providing a suite of user-controlled DID operations, Castor empowers individuals and organizations to take control of their digital identity and to manage their online reputation in a secure and transparent manner. This is a key aspect of the self-sovereign identity paradigm, as it enables users to control their personal information and digital footprint without relying on centralized authorities.
+By providing a suite of user-controlled DID operations, Castor empowers individuals and organisations to take control of their digital identity and to manage their online reputation in a secure and transparent manner. This is a key aspect of the self-sovereign identity paradigm, as it enables users to control their personal information and digital footprint without relying on centralised authorities.
 
 ## Pollux - Verifiable Credential Module
 
