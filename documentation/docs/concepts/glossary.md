@@ -6,7 +6,7 @@
 
 ## C
 ### claim
-An assertion made about a subject.
+An assertion made about a [subject](/documentation/docs/concepts/glossary.md#did-subject).
 
 ## D
 ### decentralized identifier
@@ -70,7 +70,7 @@ An entity that asserts claim(s) about one or more [subjects](/documentation/docs
 ### PRISM Agent
 
 ### proof
-
+A cryptographic mechanism that proves the information in a [verifiable credential](/documentation/docs/concepts/glossary.md#verifiable-credentials) or [verifiable presentation](/documentation/docs/concepts/glossary.md#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
 
 ## R
 
@@ -86,15 +86,16 @@ See [Self-Sovereign Identity](/documentation/docs/concepts/glossary.md#self-sove
 ## U
 
 ## V
-### VC
 
-### verifiable credential
-
-### verifiable data
+### verifiable credential (VC)
+A verifiable credential is a tamper-evident credential that contains one or more claims made by an issuer whose authorship can be cryptographically verified. It is possible to use VCs to create a [verifiable presentation](/documentation/docs/concepts/glossary.md#verifiable-presentation). Also, the claims in a VC can be about different subjects.
 
 ### verifiable presentation
+Data is derived from one or more [verifiable credentials](/documentation/docs/concepts/glossary.md#verifiable-credential), issued by issuers, and shared (presented) to a specific verifier. The verifiable presentation is tamper-evident and encoded in a way to trust the authorship of the data after a cryptographic verification. 
+
 
 ### verifier
+An entity that receives one or more [verifiable credentials](/documentation/docs/concepts/glossary.md#verifiable-credential) optionally, inside a [verifiable presentation](/documentation/docs/concepts/glossary.md#verifiable-presentation). Also known as a relying party.
 
 ## W
 ### wallet
