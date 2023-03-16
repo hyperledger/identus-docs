@@ -12,7 +12,6 @@ Cryptography|A suite of cryptographic primitives to ensure properties of integri
 Dcentralised Identifiers (DID)|A suite of decentralised identifier (DID) operations to create, manage and resolve standards based decentralised identifiers in a user-controlled manner.|Castor
 Verifiable Credentials|A suite of credential operations to issue, manage and verify standards based verifiable credentials in a privacy preserving manner.|Pollux
 DIDComm V2|A set of secure, standards based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport agnostic and interoperable manner.|Mercury
-DLT Proxy|A reliable auxiliary service which plays a role of a proxy to Cardano blockchain, and leverages its public capabilities for keeping DID related operations transparent.|Iris
 
 ## Apollo - Cryptography Module
 Apollo is one of the building blocks of Atala Prism, and it is a suite of cryptographic primitives that ensure the security of data stored and processed within the platform. Cryptographic primitives are mathematical algorithms and protocols that form the foundation for secure communication and data protection.
