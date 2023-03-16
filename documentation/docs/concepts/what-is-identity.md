@@ -1,6 +1,6 @@
 # What is identity?
 
-Identity is the essence of who we are. Identity consists of mutable and immutable traits. Immutable traits are sex, height, eye color, and genealogy. Mutable characteristics also contribute to our lives, such as where we bank, who we are insured by, where we are citizens, and where we went to primary, secondary school, and university. 
+Identity is the essence of who we are. Identity consists of mutable and immutable traits. Immutable traits are height, eye color, and genealogy. Mutable characteristics also contribute to our lives, such sex, where we bank, who we are insured by, where we are citizens, and where we went to primary, secondary school, and university. 
 
 Today, most mutable traits have a physical representation via a document issued by an appropriate authority that stores that information in a centralized storage medium (i.e., databases).
 
