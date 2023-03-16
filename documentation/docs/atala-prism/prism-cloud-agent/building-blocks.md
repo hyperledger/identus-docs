@@ -9,7 +9,7 @@ A brief overview of the current building blocks of Atala Prism are outlined belo
 **Building Block**|**Definition**|**Code Name**
 :-----:|:-----:|:-----:
 Cryptography|A suite of cryptographic primitives to ensure properties of integrity, authenticity and confidentiality of any data we store and process in a provably secure manner.|Apollo
-Dcentralised Identifiers (DID)|A suite of decentralised identifier (DID) operations to create, manage and resolve standards based decentralised identifiers in a user-controlled manner.|Castor
+Decentralized Identifiers (DID)|A suite of decentralized identifier (DID) operations to create, manage and resolve standards based decentralized identifiers in a user-controlled manner.|Castor
 Verifiable Credentials|A suite of credential operations to issue, manage and verify standards based verifiable credentials in a privacy preserving manner.|Pollux
 DIDComm V2|A set of secure, standards based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport agnostic and interoperable manner.|Mercury
 
@@ -28,9 +28,9 @@ Overall, the Apollo building block is an essential component of Atala Prism, pro
 
 ## Castor - DID Module
 
-Castor is a building block of Atala Prism that provides a suite of Decentralised Identifier (DID) operations. A DID is a unique identifier that is not dependent on a centralised authority or organization, meaning they are self-sovereign. Castor enable individuals, organizations, and entities to own and control their DIDs in a decentralised manner.
+Castor is a building block of Atala Prism that provides a suite of Decentralized Identifier (DID) operations. A DID is a unique identifier that is not dependent on a centralized authority or organization, meaning they are self-sovereign. Castor enable individuals, organizations, and entities to own and control their DIDs in a decentralized manner.
 
-Castor provides users with the ability to create, manage, and resolve DIDs. A DID Document is a JSON-LD document that contains information about a DID. It includes information such as the public keys associated with the DID, the authentication mechanisms that can be used with the DID, and associated services. Castor includes a resolver, that is responsible for resolving a DID to its associated DID Document. It is essentially a lookup service that allows a client to retrieve the DID Document for a given DID.
+Castor provides users with the ability to create, manage, and resolve DIDs. A DID Document is a JSON-LD document that contains information about a DID. It includes information such as the public keys associated with the DID, the authentication mechanisms that can be used with the DID, and associated services. Castor includes a resolver, that is responsible for resolving a DID to its associated DID Document. It is essentially a lookup service that allows a users to retrieve the DID Document for a given DID.
 
 Castor is designed to support a variety of DID methods, including full support of the in-house Prism DID method, as well as other widely-used methods such as the Peer DID method. This enables users to choose the DID method that best suits their needs and allows for interoperability with other systems and platforms.
 
