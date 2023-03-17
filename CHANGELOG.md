@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.8.0...v1.9.0) (2023-03-17)
+
+
+### Features
+
+* remove password, add legal section ([#29](https://github.com/input-output-hk/atala-prism-docs/issues/29)) ([e39dfdc](https://github.com/input-output-hk/atala-prism-docs/commit/e39dfdcac7637fc872e6a5ab7413e1215037ee67))
+
 # [1.8.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.7.0...v1.8.0) (2023-03-17)
 
 
