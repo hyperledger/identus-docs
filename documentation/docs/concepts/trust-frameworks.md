@@ -14,13 +14,11 @@ This board consists of legal experts and practicing attorney's this board agrees
 
 The attorney can then present that document or verifiable credential to clients, law firms, etc., for verification.
 
-> We should have a diagram here showing a hierarchy. Will work on a doodle to provide to design.
-
 ## Trust registry
 
 A trust registry exists because a Trust/Governance Framework creates and manages it. Its sole purpose is to make a transparent trail of trusted issuers and, in some cases, verifiers. Trust registries not only establish a mechanism to verify issuers and their authority, but it also keeps blockchain transactions to a minimum, keeping costs down.
 
 > **Note:** Repositories are the best candidate for distributing a single source of truth across many sources and maintaining transparency. Another benefit of the repository is that the Trust/Governance Framework could have its governing rules and processes published, maintain a versioning history, and efficiently distribute updates.
 
-> Will link to the PPPGF as an example.
+The Atala PRISM Pioneer Program has a functioning trust framework that is available [here](https://github.com/AtalaPRISMTribe/PPPGF) as an example.
 
