@@ -1,27 +1,23 @@
-import React, {useLayoutEffect, useRef, SVGSVGElement, useMemo} from 'react';
+import React, {useLayoutEffect, useRef, SVGSVGElement, useState} from 'react';
 import styles from './index.module.css';
 export default function AtalaGraphic() {
     const ref = useRef(null);
+    const wrapperRef = useRef(null)
+    const [height, setHeight] = useState('auto')
+    // useLayoutEffect(() => {
+    //     wrapperRef.current?.style.setProperty('--graphic-height', `${ref.current.clientHeight}px`)
+    //     window.addEventListener('resize' , ( ) => {
+    //         wrapperRef.current.style.setProperty('--graphic-height', `${ref.current.clientHeight}px`)
+    //     })
+    // }, [ref])
 
-
-    function generateRandomHash(length) {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let result = '';
-
-        for (let i = 0; i < length; i++) {
-            result += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-
-        return result;
-    }
     useLayoutEffect(() => {
         function shuffleTSpanText() {
             const tspans = ref.current.querySelectorAll('tspan');
 
             tspans.forEach((tspan, index) => {
                 const text = tspan.textContent.trim();
-                const _text = generateRandomHash(text.length);
-                tspan.textContent = randomizeLetters(_text);
+                tspan.textContent = randomizeLetters(text);
             });
         }
 
