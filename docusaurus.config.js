@@ -128,7 +128,7 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Swift Wallet SDK',
+                label: 'Wallet SDK Swift',
                 href: 'https://swift-docs.atalaprism.io/',
               },
               {
@@ -166,9 +166,48 @@ const config = {
                 to: '/tutorials',
               },
             ],
-          }
+          },
+          {
+            title: 'APIs',
+            items: [
+              {
+                label: 'Agent API',
+                to: '/agent-api',
+              },
+              {
+                label: 'Enterprise API',
+                to: '/enterprise-api',
+              },
+            ],
+          },
+          {
+            title: 'SDKs',
+            items: [
+              {
+                label: 'Wallet SDK Swift',
+                href: 'https://swift-docs.atalaprism.io/',
+              },
+              {
+                label: 'Wallet SDK TypeScript',
+                to: '/wallet-sdk-ts',
+              },
+            ],
+          },
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Terms and Conditions',
+                href: 'https://static.iohk.io/terms/iohktermsandconditions.pdf',
+              },
+              {
+                label: 'Privacy policy',
+                href: 'https://static.iohk.io/terms/iog-privacy-policy.pdf',
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Atala PRISM V2.`,
+        copyright: `Copyright © ${new Date().getFullYear()} IOHK.`,
       },
       prism: {
         theme: lightCodeTheme,
