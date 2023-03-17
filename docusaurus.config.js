@@ -71,10 +71,10 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'enterprise-sdk',
-        path: 'documentation/sdk/enterprise-sdk',
-        routeBasePath: 'enterprise-sdk',
-        sidebarPath: require.resolve('./documentation/sdk/enterprise-sdk/sidebars.js'),
+        id: 'wallet-sdk-ts',
+        path: 'atala-prism-wallet-sdk-ts/docs',
+        routeBasePath: 'wallet-sdk-ts',
+        sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
       },
     ],
     require.resolve('docusaurus-lunr-search')
@@ -132,9 +132,9 @@ const config = {
                 href: 'https://swift-docs.atalaprism.io/',
               },
               {
-                to: '/enterprise-sdk/enterprise-sdk-intro',
-                label: 'Enterprise SDK',
-                activeBaseRegex: `/enterprise-sdk/`
+                to: '/wallet-sdk-ts',
+                label: 'Wallet SDK TypeScript',
+                activeBaseRegex: `/wallet-sdk-ts/`
               },
             ],
           },
@@ -167,36 +167,10 @@ const config = {
               },
               {
                 label: 'Tutorials',
-                to: '/tutorials/index',
+                to: '/tutorials',
               },
             ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
+          }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Atala PRISM V2.`,
       },
