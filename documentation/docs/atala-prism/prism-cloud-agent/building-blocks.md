@@ -8,10 +8,10 @@ A brief overview of the current building blocks of Atala Prism are outlined belo
 
 **Building Block**|**Definition**|**Code Name**
 :-----:|:-----:|:-----:
-Cryptography|A suite of cryptographic primitives to ensure properties of integrity, authenticity, and confidentiality of any data we store and process in a provably secure manner.|Apollo
-Decentralized Identifiers (DID)|A suite of decentralized identifier (DID) operations to create, manage and resolve standards-based decentralized identifiers in a user-controlled manner.|Castor
-Verifiable Credentials|A suite of credential operations to issue, manage, and verify standards-based verifiable credentials in a privacy-preserving manner.|Pollux
-DIDComm V2|A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.|Mercury
+Cryptography|A suite of cryptographic primitives to ensure properties of integrity, authenticity and confidentiality of any data we store and process in a provably secure manner.|Apollo
+Decentralized Identifiers (DID)|A suite of decentralized identifier (DID) operations to create, manage and resolve standards based decentralized identifiers in a user-controlled manner.|Castor
+Verifiable Credentials|A suite of credential operations to issue, manage and verify standards based verifiable credentials in a privacy preserving manner.|Pollux
+DIDComm V2|A set of secure, standards based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport agnostic and interoperable manner.|Mercury
 
 ## Apollo - Cryptography Module
 Apollo is one of the building blocks of Atala Prism, and it is a suite of cryptographic primitives that ensure the security of data stored and processed within the platform. Cryptographic primitives are mathematical algorithms and protocols that form the foundation for secure communication and data protection.
@@ -28,15 +28,13 @@ Overall, the Apollo building block is an essential component of Atala Prism, pro
 
 ## Castor - DID Module
 
-Castor is a building block of Atala Prism that provides a suite of decentralized identifier (DID) operations. DIDs are unique digital identities that are self-sovereign, meaning they are owned and controlled by the individual or entity they represent.
+Castor is a building block of Atala Prism that provides a suite of Decentralized Identifier (DID) operations. A DID is a unique identifier that is not dependent on a centralized authority or organization, meaning they are self-sovereign. Castor enable individuals, organizations, and entities to own and control their DIDs in a decentralized manner.
 
-Castor provides users with the ability to create, manage, and resolve DIDs in a user-controlled manner. This means that users have complete control over their digital identity, including the ability to create new DIDs, update existing ones, and delete them if necessary.
+Castor provides users with the ability to create, manage, and resolve DIDs. A DID Document is a JSON-LD document that contains information about a DID. It includes information such as the public keys associated with the DID, the authentication mechanisms that can be used with the DID, and associated services. Castor includes a resolver, that is responsible for resolving a DID to its associated DID Document. It is essentially a lookup service that allows a users to retrieve the DID Document for a given DID.
 
-In terms of managing DIDs, Castor allows users to associate data with their DIDs, including personal information, credentials, and other relevant data. This data can be used to build a comprehensive digital profile that represents the user's online identity.
+Castor is designed to support a variety of DID methods, including full support of the in-house Prism DID method, as well as other widely-used methods such as the Peer DID method. This enables users to choose the DID method that best suits their needs and allows for interoperability with other systems and platforms.
 
-The resolving capabilities of Castor allow users to retrieve the data associated with a specific DID, including any credentials that have been issued to the user. This allows users to easily and securely share their credentials with others, such as employers, schools, and other organizations.
-
-By providing a suite of user-controlled DID operations, Castor empowers individuals and organizations to take control of their digital identity and to manage their online reputation in a secure and transparent manner. This is a key aspect of the self-sovereign identity paradigm, as it enables users to control their personal information and digital footprint without relying on centralized authorities.
+Castor provide users with complete control over their DID, including the ability to create new DIDs, update existing ones, and delete or deactivate them if necessary.
 
 ## Pollux - Verifiable Credential Module
 
@@ -63,13 +61,3 @@ One of the key features of Mercury is its use of secure and standards-based comm
 In terms of managing connections between DIDs, Mercury provides the necessary tools for establishing and maintaining secure and trusted relationships between DIDs. This includes the ability to initiate communication, manage the flow of information, and to establish trust between parties.
 
 Overall, the Mercury building block provides a secure and efficient means of establishing and managing trusted, peer-to-peer connections between DIDs. This is a critical component of the self-sovereign identity paradigm, as it enables individuals and organizations to take control of their online identities and to interact with others in a secure and transparent manner.
-
-## Iris - Prism Node
-
-Iris is a building block of Atala Prism that acts as a layer 2 node for the Cardano blockchain. It is designed to function as a verifiable data registry, providing a secure and reliable way to store and manage data.
-
-The main purpose of Iris is to provide a secure and trustworthy platform for storing and managing data on the Cardano blockchain. It does this by leveraging the security and decentralization of the blockchain, as well as the cryptographic primitives provided by other Atala Prism building blocks such as Apollo and Castor.
-
-One of the key capabilities of Iris is its ability to act as a layer 2 verifiable data registry using the Cardano blockchain. This means that data stored by Iris is secure and tamper-proof, and that it can be independently verified and authenticated. This is achieved through the use of cryptographic signatures and other security measures, which ensure that the data stored on Iris is accurate and trustworthy.
-
-Overall, Iris is an important building block of Atala Prism that provides a secure, reliable, and verifiable platform for storing and managing data on the Cardano blockchain.

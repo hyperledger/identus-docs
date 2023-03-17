@@ -207,7 +207,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} IOHK.`,
+        copyright: `Copyright © ${new Date().getFullYear()} IOG.`,
       },
       prism: {
         theme: lightCodeTheme,

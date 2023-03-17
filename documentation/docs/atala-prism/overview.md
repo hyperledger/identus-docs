@@ -15,5 +15,4 @@ For more information regarding each component, please see the following links:
   - For the fully featured PRISM Cloud Agent, please see [PRISM Cloud Agent](prism-cloud-agent/overview)
   - For details on the building-blocks, please see [Building Blocks](prism-cloud-agent/building-blocks)
   - For the Verifiable Data Registry based upon Cardano, please see [PRISM Node](prism-node)
-  - For the Enterprise version of our cloud agent, please see [PRISM Cloud Agent Enterprise](prism-cloud-agent-enterprise/overview)
   - For how Atala host it's dedicated instances, please see [Hosted Instances](infrastructure/hosted-instances)
