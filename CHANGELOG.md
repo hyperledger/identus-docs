@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.9.0...v1.10.0) (2023-03-17)
+
+
+### Features
+
+* update building blocks and icon ([#30](https://github.com/input-output-hk/atala-prism-docs/issues/30)) ([6c9b81f](https://github.com/input-output-hk/atala-prism-docs/commit/6c9b81f2e6eb2aedfd35a6bd1d150c0b005d4398))
+
 # [1.9.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.8.0...v1.9.0) (2023-03-17)
 
 
