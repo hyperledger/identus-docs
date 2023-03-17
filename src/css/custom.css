@@ -66,33 +66,8 @@ html[data-theme="dark"] {
   --ifm-code-font-size: 95%;
   --ifm-heading-font-weight: 600;
   --ifm-font-family-base: "Poppins", "sans-serif";
-  --ifm-container-width: 1216px;
-  --ifm-container-width-xl: 1216px;
 }
 
-.navbar__inner {
-  max-width: var(--ifm-container-width);
-  padding: 0 var(--ifm-spacing-horizontal);
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 1440px) {
-  .navbar__inner {
-    max-width: var(--ifm-container-width-xl);
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .navbar--fixed-top {
-    position: fixed;
-  }
-}
-
-.navbar--fixed-top {
-  width: 100%;
-  background-color: rgba(255,255,255, .5);
-  backdrop-filter: blur(5px);
-}
 .navbar__title {
   font-weight: 600;
 }
@@ -120,5 +95,4 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .version-number {
   color: var(--ifm-link-color);
 }
-
 

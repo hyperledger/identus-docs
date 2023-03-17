@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Unlock the power<br/>of your digital<br/> identity.',
-  tagline: 'ATALA PRISM V2 Docs',
+  title: 'Atala PRISM V2',
+  tagline: 'Unlock the power of your identity with Atala PRISM V2',
   url: 'https://docs.atalaprism.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
