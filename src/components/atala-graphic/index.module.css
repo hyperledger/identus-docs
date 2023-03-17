@@ -12,23 +12,16 @@
     margin-left: auto;
 }
 .atala__graphic svg {
-    width: 200px;
     padding-bottom: 5rem;
-    transform: rotate(120deg) translateX(25%) translateY(-5%);
     transition: all ease-in-out;
     position: relative;
     margin-left: auto;
     display: block;
     left: auto;
+    transform: translateX(clamp(0rem, 10vw, 20rem));
+    width: clamp(20.25rem, 50vw, 56.25rem);
 }
 
-@media screen and (min-width: 600px) {
-
-    .atala__graphic svg {
-        transform: translateX(clamp(0rem, 10vw, 20rem));
-        width: clamp(40.25rem, 50vw, 56.25rem);
-    }
-}
 
 @media screen and (min-width: 1430px){
     .atala__graphic svg {

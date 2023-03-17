@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import AtalaGraphic from '../atala-graphic';
+import HomeResources from '../home-resources';
 
 const FeatureList = [
   {
@@ -64,6 +64,7 @@ export default function HomepageFeatures() {
             <Feature key={idx} {...props} />
           ))}
         </div>
+          <HomeResources/>
       </div>
     </section>
   );

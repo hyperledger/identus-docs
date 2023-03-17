@@ -52,9 +52,16 @@ html[data-theme="dark"] {
   --ifm-background-color: #101828;
   --ifm-color-primary: #767AF5;
   --ifm-footer-background-color: #1D2939;
+  --ifm-resource-cards-background-color: var(--ifm-footer-background-color);
+  --ifm-resource-cards-text-color: #fff;
+  --ifm-navbar-background-color: rgba(16, 24, 40, .7);
+  --ifm-hero-background-color: #1D2939;
+  --ifm-hero-text-color: #fff;
 }
 
 :root {
+  --ifm-hero-background-color: #fff;
+  --ifm-hero-text-color: #000;
   --ifm-color-primary: #5559F2;
   --ifm-color-primary-dark: #3038EC;
   --ifm-color-primary-darker: #2C2FE0;
@@ -66,8 +73,15 @@ html[data-theme="dark"] {
   --ifm-code-font-size: 95%;
   --ifm-heading-font-weight: 600;
   --ifm-font-family-base: "Poppins", "sans-serif";
+  --ifm-color-gray-50: #F9FAFB;
+  --ifm-color-gray-600: #475467;
+  --ifm-color-gray-900: #101828;
+  --ifm-colo-teal-300: #5FE9D0;
   --ifm-container-width: 1216px;
   --ifm-container-width-xl: 1216px;
+  --ifm-resource-cards-background-color: var(--ifm-color-gray-50);
+  --ifm-resource-cards-text-color: var(--ifm-color-gray-600);
+  --ifm-navbar-background-color: rgba(255,255,255, .7);
 }
 
 .navbar__inner {
@@ -90,15 +104,14 @@ html[data-theme="dark"] {
 
 .navbar--fixed-top {
   width: 100%;
-  background-color: rgba(255,255,255, .5);
-  backdrop-filter: blur(5px);
+  background-color: var(--ifm-navbar-background-color);
+  backdrop-filter: blur(24px);
 }
 .navbar__title {
   font-weight: 600;
 }
 .navbar__link--active {
   font-weight: 600;
-  /*color: var(--ifm-navbar-link-hover-color);*/
   text-decoration: none;
 }
 

@@ -24,9 +24,9 @@
 }
 
 .hero__title {
-  color: #000;
+  color: var(--ifm-hero-text-color);
   font-weight: 500;
-  font-size: clamp(3rem, 5vw,4rem);
+  font-size: clamp(2rem, 5vw,4rem);
 }
 
 @media screen and (max-width: 996px) {
