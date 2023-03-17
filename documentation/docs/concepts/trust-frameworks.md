@@ -10,13 +10,9 @@ Trust is hard in the digital world, and this is where the role of a Trust/Govern
 
 A Trust/Governance Framework does govern an ecosystem. An example in practice today is a medical board. In the United States, states delegate responsibility to various authorities. For example, a state medical board inherits its authority from the state, typically via law or regulation. In a digital world, the state could issue the medical board a verifiable credential that is presentable and verifiable.
 
-This board consists of legal experts and practicing attorney's this board agrees collectively to determine what qualifies a person to be a lawyer in that state. This board issues a law license or a verifiable credential to the attorney. 
-
-The attorney can then present that document or verifiable credential to clients, law firms, etc., for verification.
-
 ## Trust registry
 
-A trust registry exists because a Trust/Governance Framework creates and manages it. Its sole purpose is to make a transparent trail of trusted issuers and, in some cases, verifiers. Trust registries not only establish a mechanism to verify issuers and their authority, but it also keeps blockchain transactions to a minimum, keeping costs down.
+A trust registry exists because a Trust Authority implements and manages a Trust/Governance Framework. Its sole purpose is to make a transparent trail of trusted issuers and, in some cases, verifiers. Trust registries not only establish a mechanism to verify issuers and their authority, but it also keeps blockchain transactions to a minimum, keeping costs down.
 
 > **Note:** Repositories are the best candidate for distributing a single source of truth across many sources and maintaining transparency. Another benefit of the repository is that the Trust/Governance Framework could have its governing rules and processes published, maintain a versioning history, and efficiently distribute updates.
 
