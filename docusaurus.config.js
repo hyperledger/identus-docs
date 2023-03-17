@@ -149,10 +149,6 @@ const config = {
               },
             ],
           },
-          {
-            label: 'Changelog',
-            href: 'http://atala-prism-v2-changelog-page.io',
-          }
         ],
       },
       footer: {
