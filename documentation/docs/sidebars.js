@@ -65,22 +65,6 @@ const sidebars = {
         'atala-prism/prism-mediator',
         {
           type: 'category',
-          label: 'PRISM Cloud Agent Enterprise',
-          collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'PRISM Cloud Agent',
-            description: 'Learn about the Atala PRISM Cloud Agent Enterprise!'
-          },
-          items: [
-            'atala-prism/prism-cloud-agent-enterprise/overview',
-            'atala-prism/prism-cloud-agent-enterprise/manage',
-            'atala-prism/prism-cloud-agent-enterprise/onboard',
-            'atala-prism/prism-cloud-agent-enterprise/authenticate'
-          ]
-        },
-        {
-          type: 'category',
           label: 'Infrastructure',
           collapsed: true,
           link: {

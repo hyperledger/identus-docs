@@ -1,3 +1,39 @@
+# [1.11.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.10.0...v1.11.0) (2023-03-19)
+
+
+### Features
+
+* update submodules documentation to latest ([26d4ed9](https://github.com/input-output-hk/atala-prism-docs/commit/26d4ed9093e0f92923d8d46409836cf5598cce8c))
+
+# [1.10.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.9.0...v1.10.0) (2023-03-17)
+
+
+### Features
+
+* update building blocks and icon ([#30](https://github.com/input-output-hk/atala-prism-docs/issues/30)) ([6c9b81f](https://github.com/input-output-hk/atala-prism-docs/commit/6c9b81f2e6eb2aedfd35a6bd1d150c0b005d4398))
+
+# [1.9.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.8.0...v1.9.0) (2023-03-17)
+
+
+### Features
+
+* remove password, add legal section ([#29](https://github.com/input-output-hk/atala-prism-docs/issues/29)) ([e39dfdc](https://github.com/input-output-hk/atala-prism-docs/commit/e39dfdcac7637fc872e6a5ab7413e1215037ee67))
+
+# [1.8.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.7.0...v1.8.0) (2023-03-17)
+
+
+### Features
+
+* pluto and agent guides for ts wallet sdk ([d30799f](https://github.com/input-output-hk/atala-prism-docs/commit/d30799f0430a8edd9d40aabebbd601dbb9330779))
+* remove changelog ([#28](https://github.com/input-output-hk/atala-prism-docs/issues/28)) ([3d9bc1d](https://github.com/input-output-hk/atala-prism-docs/commit/3d9bc1d58b610d014f2b9286b05fa35c4940cc17))
+
+# [1.7.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.6.0...v1.7.0) (2023-03-17)
+
+
+### Features
+
+* update Prism Node with community feedback ([#26](https://github.com/input-output-hk/atala-prism-docs/issues/26)) ([217c809](https://github.com/input-output-hk/atala-prism-docs/commit/217c809bc633d927d7ff207821bf21748ebc1e74))
+
 # [1.6.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.5.0...v1.6.0) (2023-03-14)
 
 

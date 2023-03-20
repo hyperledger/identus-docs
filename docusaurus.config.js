@@ -71,10 +71,10 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'enterprise-sdk',
-        path: 'documentation/sdk/enterprise-sdk',
-        routeBasePath: 'enterprise-sdk',
-        sidebarPath: require.resolve('./documentation/sdk/enterprise-sdk/sidebars.js'),
+        id: 'wallet-sdk-ts',
+        path: 'atala-prism-wallet-sdk-ts/docs',
+        routeBasePath: 'wallet-sdk-ts',
+        sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
       },
     ],
     require.resolve('docusaurus-lunr-search')
@@ -128,13 +128,13 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Swift Wallet SDK',
+                label: 'Wallet SDK Swift',
                 href: 'https://swift-docs.atalaprism.io/',
               },
               {
-                to: '/enterprise-sdk/enterprise-sdk-intro',
-                label: 'Enterprise SDK',
-                activeBaseRegex: `/enterprise-sdk/`
+                to: '/wallet-sdk-ts',
+                label: 'Wallet SDK TypeScript',
+                activeBaseRegex: `/wallet-sdk-ts/`
               },
             ],
           },
@@ -149,10 +149,6 @@ const config = {
               },
             ],
           },
-          {
-            label: 'Changelog',
-            href: 'http://atala-prism-v2-changelog-page.io',
-          }
         ],
       },
       footer: {
@@ -167,38 +163,51 @@ const config = {
               },
               {
                 label: 'Tutorials',
-                to: '/tutorials/index',
+                to: '/tutorials',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'APIs',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Agent API',
+                to: '/agent-api',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Enterprise API',
+                to: '/enterprise-api',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'SDKs',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Wallet SDK Swift',
+                href: 'https://swift-docs.atalaprism.io/',
+              },
+              {
+                label: 'Wallet SDK TypeScript',
+                to: '/wallet-sdk-ts',
+              },
+            ],
+          },
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Terms and Conditions',
+                href: 'https://static.iohk.io/terms/iohktermsandconditions.pdf',
+              },
+              {
+                label: 'Privacy policy',
+                href: 'https://static.iohk.io/terms/iog-privacy-policy.pdf',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Atala PRISM V2.`,
+        copyright: `Copyright © ${new Date().getFullYear()} IOG.`,
       },
       prism: {
         theme: lightCodeTheme,
