@@ -18,3 +18,4 @@ A trust registry exists because a Trust Authority implements and manages a Trust
 
 The Atala PRISM Pioneer Program has a functioning trust framework that is available [here](https://github.com/AtalaPRISMTribe/PPPGF) as an example.
 
+![Trust Framework](/img/trust_framework_onion.png)
