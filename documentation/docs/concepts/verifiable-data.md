@@ -4,7 +4,7 @@ Verifiable data plays a crucial role in the emerging field of self-sovereign ide
 
 Self-sovereign identity (SSI) is a concept that empowers individuals to take control of their own digital identities, which includes managing their data and controlling with whom it's shared. Verifiable credentials are a crucial component of SSI, as they allow individuals to share specific data about themselves (such as their name, date of birth, or educational qualifications) with others in a secure and trustworthy way.
 
-Creating verifiable credentials uses blockchain technology, cryptography, and standardized data formats. They consist of claims describing a particular aspect of an individual's identity or qualifications, along with cryptographic proofs that allow authentication of the claims. These proofs get created using public key cryptography, which enables anyone to verify that the data in the credential hasn't been tampered with or altered.
+Creating verifiable credentials uses blockchain technology, cryptography, and standardized data formats. They consist of claims describing a particular aspect of an individual's identity or qualifications, along with cryptographic proofs that allow verification of the claims. These proofs get created using public key cryptography, which enables anyone to verify that the data in the credential hasn't been tampered with or altered.
 
 Verifiable data in SSI and verifiable credentials have several significant benefits.
 
