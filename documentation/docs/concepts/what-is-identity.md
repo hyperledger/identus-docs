@@ -60,6 +60,6 @@ An issuer is an entity that issues VCs to holders.
 
 ### Verifier
 
-The verifier verifies a presentation from a Holder. There is an assurance question regarding the data presented and what would be acceptable to each verifier. For example, a verifier may accept verifying the issuing DID as a proper authority for a specific type of credential, and another may require an additional check or knowledge of the information on the VC itself.
+The Verifier verifies a presentation from a Holder. There is an assurance question regarding the data presented and what would be acceptable to each verifier. For example, a verifier may accept verifying the issuing DID as a proper authority for a specific type of credential, and another may require an additional check or knowledge of the information on the VC itself.
 
 
