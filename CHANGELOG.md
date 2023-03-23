@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.11.0...v1.12.0) (2023-03-23)
+
+
+### Features
+
+* address feedback for concepts section ([#31](https://github.com/input-output-hk/atala-prism-docs/issues/31)) ([f193cc6](https://github.com/input-output-hk/atala-prism-docs/commit/f193cc655b3a80180bca4217f4d265127ca1c5bb))
+
 # [1.11.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.10.0...v1.11.0) (2023-03-19)
 
 
