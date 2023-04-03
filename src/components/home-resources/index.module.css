@@ -5,6 +5,10 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
 }
+
+.home__resources_resource {
+    border: 1px solid var(--ifm-resource-border-color);
+}
 @media screen and (min-width: 700px) {
     .home__resources div:first-child {
         grid-column-start: 1;
@@ -15,8 +19,7 @@
 }
 
 .home__resources div:first-child {
-    /*background: linear-gradient(45deg, #101828, #475467);*/
-    background: linear-gradient(45deg, var(--ifm-color-primary-lightest), var(--ifm-color-gray-50));
+    background: var(--ifm-resource-card-getstarted-background);
     color: #fff;
     display: flex;
     flex-wrap: wrap;
@@ -82,6 +85,7 @@
 .home__resources div {
     text-align: center;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .button {

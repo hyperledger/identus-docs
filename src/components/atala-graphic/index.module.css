@@ -30,6 +30,9 @@
     }
 }
 
-.atala__graphic tspan  {
+.atala__graphic tspan:nth-child(odd)  {
+    fill: var(--ifm-color-primary-light);
+}
+.atala__graphic tspan:nth-child(even)  {
     fill: var(--ifm-color-primary);
 }

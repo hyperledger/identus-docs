@@ -81,7 +81,7 @@ export default function HomeResources() {
         <div className={styles.home__resources}>
                     {
                         RESOURCES.map((resource, index) => (
-                            <div key={index}>
+                            <div key={index} className={styles.home__resources_resource}>
                                 {
                                     index === 0 ? (
                                         <>

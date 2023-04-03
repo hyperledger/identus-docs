@@ -1,0 +1,42 @@
+.blob {
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: var(--ifm-blob-background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    translate: -50% -50%;
+    animation: rotate 5s infinite;
+    opacity: .2;
+    z-index: -1;
+    mix-blend-mode: color-dodge;
+    pointer-events: none;
+    filter: blur(150px);
+}
+
+.blob__wrapper {
+    position: fixed;
+    width: 100%;
+    pointer-events: none;
+    height: 100%;
+    z-index: -1;
+    /*opacity: .1;*/
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    25% {
+        scale: 1 1.5;
+    }
+    50% {
+        scale: 1.5 1;
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

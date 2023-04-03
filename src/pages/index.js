@@ -7,7 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
 import AtalaGraphic from '../components/atala-graphic';
-
+import Blob from '../components/blob';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -36,6 +36,7 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
+        <Blob/>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
