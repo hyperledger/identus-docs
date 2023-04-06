@@ -4,96 +4,37 @@
     margin-top: 4rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
+    perspective: 10000px;
 }
 
-.home__resources_resource {
-    border: 1px solid var(--ifm-resource-border-color);
-}
-@media screen and (min-width: 700px) {
-    .home__resources div:first-child {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        display: flex;
-        align-items: center;
-    }
-}
-
-.home__resources div:first-child {
-    background: var(--ifm-resource-card-getstarted-background);
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.home__resources div:first-child img {
-    flex: 0;
-    width: 201px;
-}
-
-.home__resources div:first-child div {
-    background-color: transparent;
-    color: #fff;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-
-}
-.home__resources div:first-child div p,
-.home__resources div:first-child div h3 {
-    color: #fff;
-}
-
-.home__resources div:first-child div h3 {
-    font-size: clamp(1.5rem,2vw,2rem);
-}
-.home__resources div:first-child div p,
-.home__resources div:first-child div h3,
-.home__resources div:first-child div button {
-    align-self: flex-start;
-}
-
-
-.home__resources div:first-child div button {
-    background-color: var(--ifm-color-primary);
-    color: #fff;
-}
-
-.home__resources div:not(:first-child) {
+.home__resources__resource {
     background-color: var(--ifm-resource-cards-background-color);
     display: flex;
     flex-wrap: wrap;
+    text-decoration: none !important;
+    position: relative;
     text-align: left;
-    padding: 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
     gap: 1rem;
 }
 
-
-.home__resources div:not(:first-child) button {
-    align-self: flex-end;
-    justify-self: flex-start;
-}
-
-.home__resources div:not(:first-child) p {
+.home__resources__resource p {
+    font-size: 14px;
+    margin-bottom: 0;
+    max-width: 307px;
     color: var(--ifm-resource-cards-text-color);
 }
 
-.home__resources div:not(:first-child) h3 {
+.home__resources__resource h3 {
     align-self: center;
     margin-bottom: 0;
+    font-size: 17px;
 }
 
-.home__resources div {
-    text-align: center;
-    border-radius: 15px;
-    cursor: pointer;
-}
-
-.button {
-    background-color: var(--ifm-color-primary);
-    border-radius: 5rem;
-    border: none;
-    padding: .7rem 1rem;
-    height: fit-content;
-    color: #fff;
-    font-weight: 600;
+.resource__link {
+    height: 20px;
+    margin-left: auto;
+    align-self: flex-end;
 }
