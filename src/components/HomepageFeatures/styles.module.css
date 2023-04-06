@@ -5,7 +5,16 @@
   width: 100%;
 }
 
+.features a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.features p {
+  color: var(--ifm-resource-cards-text-color);
+}
+
 .featureSvg {
-  height: 150px;
-  width: 150px;
+  height: 97.5px;
+  width: 100px;
 }

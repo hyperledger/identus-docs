@@ -10,6 +10,7 @@ const config = {
   tagline: 'ATALA PRISM V2 Docs',
   url: 'https://docs.atalaprism.io',
   baseUrl: '/',
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -155,50 +156,16 @@ const config = {
           }
         ],
       },
-      footer: {
-        links: [
-          {
-            title: 'Documentation',
-            items: [
-              {
-                label: 'Getting Started',
-                to: '/docs/getting-started',
-              },
-              {
-                label: 'Tutorials',
-                to: '/tutorials/index',
-              },
-            ],
+        footer: {
+          logo: {
+            alt: 'Meta Open Source Logo',
+            src: 'img/logo-primary.svg',
+            href: 'https://atalaprism.io',
+            width: 142,
+            height: 32,
           },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Atala PRISM V2.`,
-      },
+          copyright: `© ${new Date().getFullYear()} Atala PRISM. All rights reserved.`,
+        },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,

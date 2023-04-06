@@ -60,7 +60,8 @@ html[data-theme="dark"] {
     --ifm-hero-background-color: transparent;
     --ifm-hero-text-color: #fff;
     --ifm-resource-border-color: var(--ifm-color-gray-600);
-    --ifm-blob-background: linear-gradient(to right, var(--ifm-color-teal-400), var(--ifm-color-teal-300));
+    --ifm-blob-background: linear-gradient(to right, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+    --ifm-footer-hr-color: var(--ifm-color-gray-500);
 }
 
 :root {
@@ -81,6 +82,8 @@ html[data-theme="dark"] {
     --ifm-font-family-base: "Poppins", "sans-serif";
     --ifm-color-gray-50: #F9FAFB;
     --ifm-color-gray-600: #475467;
+    --ifm-color-gray-200: #EAECF0;
+    --ifm-color-gray-500: #667085;
     --ifm-color-gray-900: #101828;
     --ifm-color-teal-300: #5FE9D0;
     --ifm-color-teal-400: #2ED3B7;
@@ -90,6 +93,7 @@ html[data-theme="dark"] {
     --ifm-resource-cards-text-color: var(--ifm-color-gray-600);
     --ifm-resource-card-getstarted-background: linear-gradient(45deg, var(--ifm-color-primary-lightest), var(--ifm-color-gray-50));
     --ifm-navbar-background-color: rgba(255, 255, 255, .7);
+    --ifm-footer-hr-color: var(--ifm-color-gray-200);
 }
 
 .navbar__inner {

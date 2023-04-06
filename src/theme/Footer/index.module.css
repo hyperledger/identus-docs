@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--ifm-footer-hr-color);
+}
+
+.copyright {
+    color: var(--ifm-color-gray-500);
+}
