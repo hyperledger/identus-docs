@@ -7,34 +7,93 @@
     perspective: 10000px;
 }
 
-.home__resources__resource {
-    background-color: var(--ifm-resource-cards-background-color);
-    display: flex;
-    flex-wrap: wrap;
-    text-decoration: none !important;
+.resource__wrapper {
     position: relative;
-    text-align: left;
-    border-radius: 15px;
-    cursor: pointer;
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
-    gap: 1rem;
-}
-
-.home__resources__resource p {
-    font-size: 14px;
-    margin-bottom: 0;
-    max-width: 307px;
-    color: var(--ifm-resource-cards-text-color);
-}
-
-.home__resources__resource h3 {
-    align-self: center;
-    margin-bottom: 0;
-    font-size: 17px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .resource__link {
     height: 20px;
     margin-left: auto;
     align-self: flex-end;
+}
+
+.resource__common p {
+    font-size: 14px;
+    margin-bottom: 0;
+    max-width: 307px;
+}
+
+.resource__common h3 {
+    align-self: center;
+    margin-bottom: 0;
+    font-size: 17px;
+}
+
+.resource__common {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: left;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+.home__resources .resource__common h3, p {
+    /*color: var(--ifm-color-gray-600);*/
+    color: inherit;
+}
+
+.resource__active {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: white;
+    position: absolute;
+    gap: 1rem;
+    z-index: 10;
+    background: linear-gradient(90deg, #2C2FE0 0%, #5559F2 100%);
+    transform: translateY(-101%);
+}
+
+.resource__active p {
+    color: white;
+}
+
+.resource__inactive {
+    background: var(--ifm-resource-cards-background-color);
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    text-align: left;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+/*.bg {*/
+/*    width: 100%;*/
+/*    mask: content-box;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    height: 100%;*/
+/*    z-index: 0;*/
+/*    color: white;*/
+/*    position: absolute;*/
+/*    gap: 1rem;*/
+/*    background: linear-gradient(90deg, #2C2FE0 0%, #5559F2 100%);*/
+/*}*/
+
+
+.resource__content {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    z-index: 1;
 }
