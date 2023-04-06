@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import HomeResources from '../home-resources';
+import HomeResources from '../resources';
 
 const FeatureList = [
     {
