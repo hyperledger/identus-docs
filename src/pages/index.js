@@ -16,13 +16,11 @@ function HomepageHeader() {
           <div className={styles.hero__content}>
               <span className={clsx('hero__subtitle', styles.hero__tagline)}>{siteConfig.tagline}</span>
               <h1 className={clsx('hero__title', styles.hero__title)} dangerouslySetInnerHTML={{__html: siteConfig.title}}/>
-              <div className={styles.buttons}>
                   <Link
                       className={clsx("button button--lg", styles.hero__button)}
                       to="/docs/getting-started">
                       Get Started
                   </Link>
-              </div>
           </div>
           <AtalaGraphic/>
       </div>

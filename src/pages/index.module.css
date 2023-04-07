@@ -38,13 +38,13 @@
 .hero__content {
   max-width: 635px;
   position: absolute;
+  z-index: 10;
 }
 
-.buttons {
-}
 
 .hero__button {
   margin-top: 1.5rem;
+  cursor: pointer;
   border-radius: 5rem;
   background-color: var(--ifm-color-primary);
   padding: .7rem 1.5rem;
