@@ -1,5 +1,6 @@
 import React, {useCallback, useRef, useState} from 'react'
 import styles from './index.module.css';
+import Link from '@docusaurus/Link';
 
 const Graphics = {
     apis({color = "#5559F2"}) {
@@ -153,7 +154,6 @@ const RESOURCES = [
 ]
 
 function ResourceLink({linkTo}) {
-    // const {colorMode} = useColorMode()
     return (
         <div className={styles.resource__link}>
             <svg width={23} height={22} fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,31 +172,6 @@ function ResourceLink({linkTo}) {
 function Resource(props) {
     const ref = useRef(null);
     const backgroundRef = useRef(null);
-    const [mouseLeavingFrom] = useState(null);
-    const [mouseEntersFrom] = useState(null);
-    const [size, setSize] = useState({height: 'auto', width: 'auto'});
-    // const [enteredFrom, setEnteredFrom] = useState();
-
-    const verifyMousePosition = useCallback(({left, top, width, height, pageX, pageY}) => {
-        const mouseX = pageX - (left + window.pageXOffset);
-        const mouseY = pageY - (top + window.pageYOffset);
-        const fromLeft = mouseX < width / 4;
-        const fromRight = mouseX > (width * 3) / 4;
-        const fromTop = mouseY < height / 4;
-        const fromBottom = mouseY > (height * 3) / 4;
-        let position = '';
-        if (fromLeft) {
-            position = 'left';
-        } else if (fromRight) {
-            position = 'right';
-        }
-        if (fromTop) {
-            position = 'top';
-        } else if (fromBottom) {
-            position = 'bottom';
-        }
-        return position;
-    }, [])
 
     const handleMouseMove = useCallback((event) => {
         const {clientX, clientY, currentTarget, pageX, pageY} = event;
@@ -212,157 +187,28 @@ function Resource(props) {
         const mouseY = (clientY - offsetY);
         const x = ((mouseX - centerX) * .08);
         const y = ((mouseY - centerY) * .08);
-        setSize({width: targetWidth, height: targetHeight});
         ref.current.animate({transform: `rotateX(${x}deg) rotateY(${y}deg)`}, {fill: "forwards"})
     }, [ref])
 
     const handleMouseLeave = useCallback((event) => {
         event.preventDefault()
-        const {left, top, width, height} = event.currentTarget.getBoundingClientRect();
-        const position = verifyMousePosition({left, top, width, height, pageX: event.pageX, pageY: event.pageY})
         ref.current.animate({transform: `rotateX(${0}deg) rotateY(${0}deg)`}, {fill: "forwards", duration: 1000})
-
-        const config = {
-            fill: "forwards",
-            duration: 200
-        }
-        switch (position) {
-            case 'top':
-                backgroundRef.current.animate([
-                    {
-                        opacity: 1,
-                        transform: `translateY(0%)`,
-                    },
-                    {
-                        transform: 'translateY(-100%)',
-                        opacity: 0,
-                    },
-                ], config)
-                break;
-
-            case 'bottom':
-                backgroundRef.current.animate([
-                    {
-                        opacity: 1,
-                        transform: `translateY(0%)`,
-                    },
-                    {
-                        opacity: 0,
-                        transform: 'translateY(100%)',
-                    },
-                ], config)
-                break;
-
-            case 'left':
-                backgroundRef.current.animate([
-                    {
-                        opacity: 1,
-                        transform: `translateX(0%)`,
-                    },
-                    {
-                        opacity: 0,
-                        transform: 'translateX(-100%)',
-                    },
-                ], config)
-                break;
-            case 'right':
-                backgroundRef.current.animate([
-                    {
-                        opacity: 1,
-                        transform: `translateX(0%)`,
-                    },
-                    {
-                        opacity: 0,
-                        transform: 'translateX(100%)',
-                    },
-                ], config)
-                break;
-        }
-    }, [backgroundRef])
-
-    const handleMouseEnter = useCallback((event) => {
-        const {left, top, width, height} = event.currentTarget.getBoundingClientRect();
-        const position = verifyMousePosition({left, top, width, height, pageX: event.pageX, pageY: event.pageY})
-
-        const config = {
-            fill: "forwards",
-            duration: 200
-        }
-        switch (position) {
-            case 'top':
-                backgroundRef.current.animate([
-                    {
-                        transform: 'translateY(-100%)',
-                        opacity: 0,
-                    },
-                    {
-                        opacity: 1,
-                        transform: `translateY(0%)`,
-                    }
-                ], config)
-                break;
-
-            case 'bottom':
-                backgroundRef.current.animate([
-                    {
-                        opacity: 0,
-                        transform: 'translateY(100%)',
-                    },
-                    {
-                        opacity: 1,
-                        transform: `translateY(0%)`,
-                    }
-                ], config)
-                break;
-
-            case 'left':
-                backgroundRef.current.animate([
-                    {
-                        opacity: 0,
-                        transform: 'translateX(-100%)',
-                    },
-                    {
-                        opacity: 1,
-                        transform: `translateX(0%)`,
-                    }
-                ], config)
-                break;
-            case 'right':
-                backgroundRef.current.animate([
-                    {
-                        opacity: 0,
-                        transform: 'translateX(100%)',
-                    },
-                    {
-                        opacity: 1,
-                        transform: `translateX(0%)`,
-                    }
-                ], config)
-                break;
-        }
 
     }, [backgroundRef])
 
     return (
         <div
             ref={ref}
-            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className={styles.resource__wrapper}
             onMouseMove={handleMouseMove}
         >
-            <div className={`${styles.resource__common} ${styles.resource__inactive}`}>
+            <Link href={props.linkTo} className={`${styles.resource__common} ${styles.resource__inactive}`}>
                 <props.Svg/>
                 <h3>{props.title}</h3>
                 <p>{props.content}</p>
                 <ResourceLink linkTo={props.linkTo}/>
-            </div>
-            <div className={`${styles.resource__common} ${styles.resource__active}`} ref={backgroundRef}>
-                <props.Svg color="#fff"/>
-                <h3>{props.title}</h3>
-                <p>{props.content}</p>
-                <ResourceLink linkTo={props.linkTo}/>
-            </div>
+            </Link>
         </div>
     );
 }
