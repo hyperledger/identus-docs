@@ -3,8 +3,8 @@
  * and scoped locally.
  */
 .heroBanner {
-  padding: 0;
   overflow: hidden;
+  height: 100vh;
 }
 
 .container {
@@ -50,4 +50,20 @@
   padding: .7rem 1.5rem;
   color: #fff;
   font-weight: 500;
+}
+
+@media screen and (min-width: 600px) {
+  .heroBanner {
+    height: auto;
+  }
+  .hero__content {
+    height: auto;
+  }
+}
+
+
+@media screen and (min-height: 667px) {
+  .hero__content {
+    margin-top: 6rem;
+  }
 }

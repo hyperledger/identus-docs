@@ -2,37 +2,36 @@
     --graphic-height: auto;
 }
 
-
-
-.atala__graphic {
-    position: relative;
-    left: auto;
-    right: 0;
-    width: 100%;
-    margin-left: auto;
-}
-.atala__graphic svg {
-    padding-bottom: 5rem;
-    transition: all ease-in-out;
+.hero__graphic__wrapper {
     position: relative;
     margin-left: auto;
-    display: block;
-    left: auto;
-    transform: translateX(clamp(0rem, 10vw, 20rem));
-    width: clamp(20.25rem, 50vw, 56.25rem);
+    z-index: 100;
+    transform: translateX(-5%) translateY(-60%);
 }
 
+.hero__graphic {
+    position: relative;
+    left: 0;
+    right: auto;
+    width: clamp(15.25rem, 100vw, 60.25rem);
+    height: clamp(15.6875rem, 100vw, 58.6875rem);
+    overflow: hidden;
+    margin-right: auto;
+    mask-image: url("/static/img/graphics/hero.svg");
+    mask-size: 100% 100%;
+    color: var(--ifm-color-primary);
+    font-size: 14px;
+}
 
-@media screen and (min-width: 1430px){
-    .atala__graphic svg {
-        transform: translateX(clamp(0rem, 10vw, 20rem)) ;
-        width: clamp(40.25rem, 50vw, 56.25rem);
+@media screen and (min-width: 600px) {
+    .hero__graphic {
+        margin-left: auto;
+        right: 0;
+        left: auto;
+
     }
-}
 
-.atala__graphic tspan:nth-child(odd)  {
-    fill: var(--ifm-color-primary-light);
-}
-.atala__graphic tspan:nth-child(even)  {
-    fill: var(--ifm-color-primary);
+    .hero__graphic__wrapper {
+        transform: translateX(25%);
+    }
 }
