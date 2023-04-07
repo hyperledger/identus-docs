@@ -50,7 +50,7 @@
 
 html[data-theme="dark"] {
     --ifm-background-color: #101828;
-    --ifm-color-primary: #767AF5;
+    --ifm-color-primary: var(--ifm-color-primary-light);
     --ifm-footer-background-color: #1D2939;
     --ifm-resource-cards-background-color: var(--ifm-footer-background-color);
     --ifm-resource-cards-text-color: #fff;
@@ -62,12 +62,14 @@ html[data-theme="dark"] {
     --ifm-resource-border-color: var(--ifm-color-gray-600);
     --ifm-blob-background: linear-gradient(to right, var(--ifm-color-primary), var(--ifm-color-primary-dark));
     --ifm-footer-hr-color: var(--ifm-color-gray-500);
+    --ifm-color-resources-intro: #fff;
 }
 
 :root {
     --ifm-resource-border-color: transparent;
     --ifm-blob-background: linear-gradient(to right, var(--ifm-color-primary), var(--ifm-color-primary-dark));
     --ifm-hero-background-color: transparent;
+    --ifm-color-resources-intro: var(--ifm-color-gray-900);
     --ifm-hero-text-color: #000;
     --ifm-color-primary: #5559F2;
     --ifm-color-primary-dark: #3038EC;

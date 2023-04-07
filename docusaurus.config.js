@@ -157,13 +157,6 @@ const config = {
         ],
       },
         footer: {
-          logo: {
-            alt: 'Meta Open Source Logo',
-            src: 'img/logo-primary.svg',
-            href: 'https://atalaprism.io',
-            width: 142,
-            height: 32,
-          },
           copyright: `© ${new Date().getFullYear()} Atala PRISM. All rights reserved.`,
         },
       prism: {
