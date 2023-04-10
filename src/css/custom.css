@@ -110,12 +110,6 @@ html[data-theme="dark"] {
     }
 }
 
-@media screen and (min-width: 600px) {
-    .navbar--fixed-top {
-        position: fixed;
-    }
-}
-
 .navbar--fixed-top {
     width: 100%;
     background-color: var(--ifm-navbar-background-color);

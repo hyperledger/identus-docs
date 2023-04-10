@@ -87,11 +87,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Atala PRISM V2',
         logo: {
           alt: 'Atala PRISM logo',
-          src: 'img/atala-prism-logo-suite-light.svg',
-          srcDark: "img/atala-prism-logo-suite-dark.svg",
+          src: 'img/logo-navbar-dark.png',
+          srcDark: "img/logo-navbar-light.png",
         },
         items: [
           {
