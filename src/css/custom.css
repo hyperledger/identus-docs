@@ -145,10 +145,60 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .navbar__search {
     padding-left: var(--ifm-navbar-padding-horizontal);
+    display: none;
+}
+
+.navbar__items {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex: unset;
+}
+
+.navbar__brand {
+    /*justify-self: flex-end;*/
+    /*margin-left: auto;*/
+    /*display: block;*/
+    order: 1;
+}
+
+.navbar__toggle {
+    order: 2;
+}
+.navbar-sidebar__brand {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-sidebar__brand .navbar__brand {
+    order: 3;
+    margin: 0;
+}
+.navbar-sidebar__brand .toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+    margin: 0 !important;
+    order: 2;
+}
+
+.navbar-sidebar__brand .navbar-sidebar__close {
+    order: 1;
+    margin-left: 0;
+}
+@media screen and (min-width: 996px) {
+    .navbar__brand {
+        order: unset;
+    }
+
+    .navbar__toggle {
+        order: unset;
+    }
+    .navbar__items {
+        justify-content: flex-start;
+        width: auto;
+    }
+    .navbar__search {
+        display: inline-block;
+    }
 }
 
 .version-number {
     color: var(--ifm-link-color);
 }
-
-
