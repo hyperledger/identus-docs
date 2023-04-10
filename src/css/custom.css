@@ -63,6 +63,9 @@ html[data-theme="dark"] {
     --ifm-blob-background: linear-gradient(to right, var(--ifm-color-primary), var(--ifm-color-primary-dark));
     --ifm-footer-hr-color: var(--ifm-color-gray-500);
     --ifm-color-resources-intro: #fff;
+    --ifm-navbar-search-input-background-color: var(--ifm-color-gray-800);
+    --ifm-navbar-search-input-icon: url("/static/img/search-icon-light.svg");
+    --ifm-navbar-search-input-border-color: var(--ifm-color-gray-600);
 }
 
 :root {
@@ -85,8 +88,10 @@ html[data-theme="dark"] {
     --ifm-color-gray-50: #F9FAFB;
     --ifm-color-gray-600: #475467;
     --ifm-color-gray-200: #EAECF0;
+    --ifm-color-gray-300: #D0D5DD;
     --ifm-color-gray-500: #667085;
     --ifm-color-gray-900: #101828;
+    --ifm-color-gray-800: #1D2939;
     --ifm-color-teal-300: #5FE9D0;
     --ifm-color-teal-400: #2ED3B7;
     --ifm-container-width: 1216px;
@@ -94,14 +99,20 @@ html[data-theme="dark"] {
     --ifm-resource-cards-background-color: var(--ifm-color-gray-50);
     --ifm-resource-cards-text-color: var(--ifm-color-gray-600);
     --ifm-resource-card-getstarted-background: linear-gradient(45deg, var(--ifm-color-primary-lightest), var(--ifm-color-gray-50));
-    --ifm-navbar-background-color: rgba(255, 255, 255, .7);
+    --ifm-navbar-background-color: rgba(255, 255, 255, .9);
     --ifm-footer-hr-color: var(--ifm-color-gray-200);
+    --ifm-navbar-search-input-background-color: #fff;
+    --ifm-navbar-search-input-icon: url("/static/img/search-icon-dark.svg");
+    --ifm-navbar-search-input-border-color: var(--ifm-color-gray-300);
 }
-
 .navbar__inner {
     max-width: var(--ifm-container-width);
     padding: 0 var(--ifm-spacing-horizontal);
     margin: 0 auto;
+}
+
+.navbar__search-input {
+    border: 1px solid var(--ifm-navbar-search-input-border-color);
 }
 
 @media screen and (min-width: 1440px) {
@@ -109,15 +120,11 @@ html[data-theme="dark"] {
         max-width: var(--ifm-container-width-xl);
     }
 }
-
 .navbar--fixed-top {
-    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: var(--ifm-z-index-fixed);
     background-color: var(--ifm-navbar-background-color);
-    backdrop-filter: blur(24px);
-}
-
-.navbar__title {
-    font-weight: 600;
 }
 
 .navbar__link--active {

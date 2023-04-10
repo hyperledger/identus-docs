@@ -6,6 +6,7 @@
 @media screen and (min-width: 600px) {
   .navbar--fixed-top {
     position: fixed;
+    backdrop-filter: blur(24px);
   }
 }
 
@@ -71,6 +72,6 @@
 
 @media screen and (min-height: 667px) {
   .hero__content {
-    margin-top: 6rem;
+    top: clamp(9.125rem, 100vw, 11.125rem);
   }
 }
