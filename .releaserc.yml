@@ -12,7 +12,7 @@ plugins:
     } ]
   - [ '@semantic-release/git', {
     assets: [ 'package.json' , 'package-lock.json', 'CHANGELOG.md' ],
-    message: 'chore(release): release prism documentation portal ${nextRelease.version} [skip ci]
+    message: 'chore(release): release prism documentation portal ${nextRelease.version}
     ${nextRelease.notes}' } ]
   - [ "semantic-release-slack-bot", {
     notifyOnSuccess: true,
