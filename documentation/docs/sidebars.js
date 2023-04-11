@@ -80,7 +80,7 @@ const sidebars = {
         'atala-prism/getting-help'
       ],
     },
-	'concepts/glossary'
+  'concepts/glossary'
   ],
 };
 
