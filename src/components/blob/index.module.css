@@ -5,24 +5,27 @@
     height: 600px;
     border-radius: 50%;
     background: var(--ifm-blob-background);
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 40%;
+    left: 70%;
     translate: -50% -50%;
     animation: rotate 5s infinite;
     opacity: .2;
-    z-index: -1;
-    mix-blend-mode: color-dodge;
+    z-index: -10;
     pointer-events: none;
-    filter: blur(150px);
 }
 
 .blob__wrapper {
     position: fixed;
     width: 100%;
-    pointer-events: none;
     height: 100%;
+    pointer-events: none;
     z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(150px);
     /*opacity: .1;*/
 }
 

@@ -17,8 +17,9 @@ export default function Blob() {
         }
     }, [])
     return (
-        // <div className={styles.blob__wrapper}>
+        <div style={{position: "fixed", zIndex: -1, width: "100%", height: "100%"}}>
             <div ref={blob} className={styles.blob}/>
-        // </div>
+            <div className={styles.blob__wrapper}/>
+        </div>
     )
 }
