@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.15.0...v1.16.0) (2023-04-11)
+
+
+### Features
+
+* update staging with new tag ([caceb68](https://github.com/input-output-hk/atala-prism-docs/commit/caceb6816c9b057573076976e6b08f8e857630f9))
+
 # [1.15.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.14.0...v1.15.0) (2023-04-09)
 
 
