@@ -21,6 +21,7 @@
     mask-size: 100% 100%;
     color: var(--ifm-color-primary);
     font-size: 14px;
+    font-family: 'Space Mono', monospace;
 }
 
 @media screen and (min-width: 600px) {

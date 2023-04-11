@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Mono&display=swap');
 @font-face {
     font-family: 'Poppins';
     src: url('/static/font/Poppins-Regular.woff2') format('woff2'),
@@ -92,6 +93,7 @@ html[data-theme="dark"] {
     --ifm-color-gray-500: #667085;
     --ifm-color-gray-900: #101828;
     --ifm-color-gray-800: #1D2939;
+    --ifm-color-gray-700: #344054;
     --ifm-color-teal-300: #5FE9D0;
     --ifm-color-teal-400: #2ED3B7;
     --ifm-container-width: 1216px;
