@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.16.0...v1.17.0) (2023-04-11)
+
+
+### Features
+
+* dont skip ci when tag is pushed ([a502b7c](https://github.com/input-output-hk/atala-prism-docs/commit/a502b7c0dd15ec673f446d3eb1d45dda5e0e1d74))
+
 # [1.16.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.15.0...v1.16.0) (2023-04-11)
 
 
