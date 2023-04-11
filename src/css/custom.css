@@ -176,6 +176,9 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     margin: 0;
     display: none;
 }
+.navbar-sidebar__backdrop {
+    background: transparent;
+}
 .navbar-sidebar__brand .toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
     margin: 0 !important;
     order: 2;
