@@ -21,6 +21,9 @@ on:
         description: "Environment to trigger update on"
         required: false
         default: "staging"
+  push:
+    tags:
+      - "v*"
 
 jobs:
   trigger-deployment:
@@ -32,9 +35,12 @@ jobs:
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             echo "VERSION=${{ github.event.inputs.version }}" >> "${GITHUB_OUTPUT}"
             echo "ENV=${{ github.event.inputs.env }}" >> "${GITHUB_OUTPUT}"
-          else
+          elif [[ "${{ github.event_name }}" == "workflow_call" ]]; then
             echo "VERSION=${{ inputs.version }}" >> "${GITHUB_OUTPUT}"
             echo "ENV=${{ inputs.env }}" >> "${GITHUB_OUTPUT}"
+          else
+            echo "VERSION=${GITHUB_REF#refs/tags/}" >> "${GITHUB_OUTPUT}"
+            echo "ENV=staging" >> "${GITHUB_OUTPUT}"
           fi
       - name: Trigger deployment
         uses: peter-evans/repository-dispatch@v2
