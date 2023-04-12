@@ -163,6 +163,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     order: 1;
 }
 
+.menu__list-item {
+    margin: 1rem 0;
+}
+
 .navbar__toggle {
     order: 2;
     margin-right: 0;
