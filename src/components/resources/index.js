@@ -154,17 +154,12 @@ const RESOURCES = [
     },
 ]
 
-function ResourceLink({linkTo}) {
+function ResourceLink() {
     return (
         <div className={styles.resource__link}>
-            <svg width={23} height={22} fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M3.338 6A9.996 9.996 0 0 1 12 1c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.996 9.996 0 0 1-8.662-5M11 15l4-4m0 0-4-4m4 4H1"
-                    stroke="#667085"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
+            <svg width={32} height={22} fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path className={styles.resource__link__svg__0} d="M3.33789 5.99976C5.06694 3.01075 8.29866 0.999756 12.0001 0.999756C17.5229 0.999756 22.0001 5.47691 22.0001 10.9998C22.0001 16.5226 17.5229 20.9998 12.0001 20.9998C8.29866 20.9998 5.06694 18.9888 3.33789 15.9998" stroke="#667085" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path className={styles.resource__link__svg__1} d="M11 14.9998L15 10.9998M15 10.9998L11 6.99976M15 10.9998H1" stroke="#667085" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
         </div>
     )

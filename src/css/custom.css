@@ -198,6 +198,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     transform: translate3d(100%, 0, 0);
     backdrop-filter: blur(16px);
 }
+
 @media screen and (min-width: 996px) {
     .navbar__brand {
         order: unset;

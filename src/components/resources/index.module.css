@@ -19,7 +19,20 @@
     margin-left: auto;
     align-self: flex-end;
 }
+.resource:hover .resource__link__svg__0 {
+    transform: rotate(180deg);
+}
+.resource__link__svg__0 {
+    transform-origin: 12px center;
+    transition: transform 250ms;
+}
 
+.resource:hover .resource__link__svg__1 {
+    transform: translateX(15px);
+}
+.resource__link__svg__1 {
+    transition: transform 250ms;
+}
 .resource p {
     font-size: 14px;
     margin-bottom: 0;
@@ -60,7 +73,7 @@
 .resource:hover svg path {
     stroke: white;
 }
-.resource:hover .resource__light {
+.resource__link__svg {
 }
 .resource__light {
     top: 0;
