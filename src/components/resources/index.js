@@ -172,11 +172,12 @@ function ResourceLink({linkTo}) {
 
 function Resource(props) {
     const ref = useRef(null);
+    const lightRef = useRef(null)
     const backgroundRef = useRef(null);
     const {colorMode} = useColorMode();
 
     const handleMouseMove = useCallback((event) => {
-        const {clientX, clientY, currentTarget, pageX, pageY} = event;
+        const {clientX, clientY, currentTarget} = event;
         const {
             height: targetHeight,
             width: targetWidth,
@@ -190,7 +191,11 @@ function Resource(props) {
         const x = ((mouseX - centerX) * .06);
         const y = ((mouseY - centerY) * .06);
         ref.current.animate({transform: `rotateX(${x}deg) rotateY(${y}deg)`}, {fill: "forwards"})
-    }, [ref])
+        lightRef.current.animate({
+            top: `${mouseY}px`,
+            left: `${mouseX}px`,
+        }, {fill: "forwards", duration: 500})
+    }, [ref, lightRef])
 
     const handleMouseLeave = useCallback((event) => {
         event.preventDefault()
@@ -205,11 +210,12 @@ function Resource(props) {
             className={styles.resource__wrapper}
             onMouseMove={handleMouseMove}
         >
-            <Link href={props.linkTo} className={`${styles.resource__common} ${styles.resource__inactive}`}>
+            <Link href={props.linkTo} className={`${styles.resource}`}>
                 <props.Svg color={colorMode === 'dark' ? "#767AF5" : "#5559F2"}/>
                 <h3>{props.title}</h3>
                 <p>{props.content}</p>
                 <ResourceLink linkTo={props.linkTo}/>
+                <div className={styles.resource__light} ref={lightRef}/>
             </Link>
         </div>
     );
@@ -221,16 +227,17 @@ export default function HomeResources() {
 
             <div className={styles.resource__intro}>
                 <h5>Atala PRISM Docs</h5>
-                <h2>This guide will help you understand the principles of SSI and how to start deploying solutions quickly with Atala PRISM</h2>
+                <h2>This guide will help you understand the principles of SSI and how to start deploying solutions
+                    quickly with Atala PRISM</h2>
                 <Link href="/docs/get-started">Start now</Link>
             </div>
-        <div className={styles.home__resources}>
-            {
-                RESOURCES.map((resource, index) => (
-                    <Resource {...resource} key={index}/>
-                ))
-            }
-        </div>
+            <div className={styles.home__resources}>
+                {
+                    RESOURCES.map((resource, index) => (
+                        <Resource {...resource} key={index}/>
+                    ))
+                }
+            </div>
         </>
     );
 }
