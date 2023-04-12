@@ -10,7 +10,6 @@ const config = {
   tagline: 'ATALA PRISM V2 Docs',
   url: 'https://docs.atalaprism.io',
   baseUrl: '/',
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -72,10 +71,10 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'enterprise-sdk',
-        path: 'documentation/sdk/enterprise-sdk',
-        routeBasePath: 'enterprise-sdk',
-        sidebarPath: require.resolve('./documentation/sdk/enterprise-sdk/sidebars.js'),
+        id: 'wallet-sdk-ts',
+        path: 'atala-prism-wallet-sdk-ts/docs',
+        routeBasePath: 'wallet-sdk-ts',
+        sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
       },
     ],
     require.resolve('docusaurus-lunr-search')
@@ -128,13 +127,13 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Swift Wallet SDK',
+                label: 'Wallet SDK Swift',
                 href: 'https://swift-docs.atalaprism.io/',
               },
               {
-                to: '/enterprise-sdk/enterprise-sdk-intro',
-                label: 'Enterprise SDK',
-                activeBaseRegex: `/enterprise-sdk/`
+                to: '/wallet-sdk-ts',
+                label: 'Wallet SDK TypeScript',
+                activeBaseRegex: `/wallet-sdk-ts/`
               },
             ],
           },
@@ -149,10 +148,6 @@ const config = {
               },
             ],
           },
-          {
-            label: 'Changelog',
-            href: 'http://atala-prism-v2-changelog-page.io',
-          }
         ],
       },
         footer: {

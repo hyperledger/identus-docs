@@ -1,3 +1,102 @@
+# [1.17.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.16.0...v1.17.0) (2023-04-11)
+
+
+### Features
+
+* dont skip ci when tag is pushed ([a502b7c](https://github.com/input-output-hk/atala-prism-docs/commit/a502b7c0dd15ec673f446d3eb1d45dda5e0e1d74))
+
+# [1.16.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.15.0...v1.16.0) (2023-04-11)
+
+
+### Features
+
+* update staging with new tag ([caceb68](https://github.com/input-output-hk/atala-prism-docs/commit/caceb6816c9b057573076976e6b08f8e857630f9))
+
+# [1.15.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.14.0...v1.15.0) (2023-04-09)
+
+
+### Features
+
+* update submodules documentation to latest ([9e54101](https://github.com/input-output-hk/atala-prism-docs/commit/9e5410197ba06deac1fce50ec0c124d8eb997f8e))
+
+# [1.14.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.13.0...v1.14.0) (2023-04-02)
+
+
+### Features
+
+* update submodules documentation to latest ([934c430](https://github.com/input-output-hk/atala-prism-docs/commit/934c430ad01dd5af3a0311326a0d22f5632ef7c6))
+
+# [1.13.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.12.0...v1.13.0) (2023-03-26)
+
+
+### Features
+
+* update submodules documentation to latest ([3c9f60f](https://github.com/input-output-hk/atala-prism-docs/commit/3c9f60f8916219c0a07f45380ad731246631be99))
+
+# [1.12.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.11.0...v1.12.0) (2023-03-23)
+
+
+### Features
+
+* address feedback for concepts section ([#31](https://github.com/input-output-hk/atala-prism-docs/issues/31)) ([f193cc6](https://github.com/input-output-hk/atala-prism-docs/commit/f193cc655b3a80180bca4217f4d265127ca1c5bb))
+
+# [1.11.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.10.0...v1.11.0) (2023-03-19)
+
+
+### Features
+
+* update submodules documentation to latest ([26d4ed9](https://github.com/input-output-hk/atala-prism-docs/commit/26d4ed9093e0f92923d8d46409836cf5598cce8c))
+
+# [1.10.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.9.0...v1.10.0) (2023-03-17)
+
+
+### Features
+
+* update building blocks and icon ([#30](https://github.com/input-output-hk/atala-prism-docs/issues/30)) ([6c9b81f](https://github.com/input-output-hk/atala-prism-docs/commit/6c9b81f2e6eb2aedfd35a6bd1d150c0b005d4398))
+
+# [1.9.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.8.0...v1.9.0) (2023-03-17)
+
+
+### Features
+
+* remove password, add legal section ([#29](https://github.com/input-output-hk/atala-prism-docs/issues/29)) ([e39dfdc](https://github.com/input-output-hk/atala-prism-docs/commit/e39dfdcac7637fc872e6a5ab7413e1215037ee67))
+
+# [1.8.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.7.0...v1.8.0) (2023-03-17)
+
+
+### Features
+
+* pluto and agent guides for ts wallet sdk ([d30799f](https://github.com/input-output-hk/atala-prism-docs/commit/d30799f0430a8edd9d40aabebbd601dbb9330779))
+* remove changelog ([#28](https://github.com/input-output-hk/atala-prism-docs/issues/28)) ([3d9bc1d](https://github.com/input-output-hk/atala-prism-docs/commit/3d9bc1d58b610d014f2b9286b05fa35c4940cc17))
+
+# [1.7.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.6.0...v1.7.0) (2023-03-17)
+
+
+### Features
+
+* update Prism Node with community feedback ([#26](https://github.com/input-output-hk/atala-prism-docs/issues/26)) ([217c809](https://github.com/input-output-hk/atala-prism-docs/commit/217c809bc633d927d7ff207821bf21748ebc1e74))
+
+# [1.6.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.5.0...v1.6.0) (2023-03-14)
+
+
+### Features
+
+* update docs from BB to latest version ([14645a7](https://github.com/input-output-hk/atala-prism-docs/commit/14645a795263f40dc3f5e4f40fe941f12e74c79a))
+
+# [1.5.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.4.0...v1.5.0) (2023-03-12)
+
+
+### Features
+
+* update submodules documentation to latest ([25d4327](https://github.com/input-output-hk/atala-prism-docs/commit/25d4327c80670c71f514807751e38f815e0e3f11))
+
+# [1.4.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.3.0...v1.4.0) (2023-03-09)
+
+
+### Features
+
+* update bb to latest version ([6287b34](https://github.com/input-output-hk/atala-prism-docs/commit/6287b34d33e54e37ace1dfba83158ac160e41958))
+
 # [1.3.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.2.0...v1.3.0) (2023-03-06)
 
 

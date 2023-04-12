@@ -1,43 +1,65 @@
 # What is identity?
 
-Identity is the essence of who we are. Identity consists of mutable and immutable traits. Immutable traits are sex, height, eye color, and genealogy. Mutable characteristics also contribute to our lives, such as where we bank, who we are insured by, where we are citizens, and where we went to primary, secondary school, and university. 
+Identity is the essence of who we are. Identity consists of mutable and immutable traits. Immutable traits are sex, eye color, and genealogy. Mutable characteristics also contribute to our lives, where we bank, who we are insured by, where we are citizens, and where we went to primary, secondary school, and university. 
 
 Today, most mutable traits have a physical representation via a document issued by an appropriate authority that stores that information in a centralized storage medium (i.e., databases).
 
-Identity is so ingrained in our daily lives we rarely think about how frequently we use our identity. When we get a driver's license, it is issued to us by a governing authority. Then, we may present that license to an entity that verifies the information on the document. The verifier trusts the issuer because, typically, physical copies have watermarks, seals, etc. 
+Identity is so ingrained in our daily lives we rarely think about how frequently we use our identity. When we get a driver's license, it is issued to us by a governing authority, i.e., Dept. of Motor Vehicles, Driver License Vehicle Agency. We may present that license to an entity that verifies the information on the document. The verifier trusts the document because it usually contains a watermark, seals, and other security measures unique to the issuer.
+
 
 ## What is Digital Identity?
 
-Digital identity is a digital representation of an entity via a decentralized identifier (DID). An entity is a person, place, organization, digital or physical thing. Instead of physical documents, digital representations, called verifiable credentials, represent mutable characteristics.
+Digital identity is a digital representation of an entity. An entity is a person, place, organization, digital or physical thing. Authenticatable digital documents replace physical documents. An entity would present its digital documents to prove various claims made about itself.
+
 
 ## Principles of SSI
 
-The roles we discussed in the driver's license example still exist in digital identity. It works similarly but with additional security, privacy, interoperability, portability, transparency, and agency layers. A few key differences are that digital identity requires no central authority to provide an identity, nor is there any centralized registry, and there is no requirement to phone home to verify a credential. 
+Digital identity at the surface level works similarly to the world today, with additional security, privacy, interoperability, portability, transparency, and agency layers. A few key differences are that digital identity requires no central authority to provide an identity, nor is there any centralized registry, and there is no requirement to phone home to verify a credential.
 
-> Figure x.x 12 Principles of SSI
+Self-Sovereign Identity is a methodology of managing identity. The SSI community have agreed upon principles that make up an ecosystem. The Sovrin Foundation has compiled these into a diagram [here](https://sovrin.org/principles-of-ssi/), also provided below:
 
-## Using digital identity
+**Agency**
 
+Representation
+
+Delegation
+
+Equity and Inclusion
+
+Usability, Accessibility & Consistency
+
+**Autonomy**
+
+Participation
+
+Decentralization
+
+Interoperability
+
+Portability
+
+**Integrity**
+
+Security
+
+Verifiability & Authenticity
+
+Privacy & Minimal Disclosure
+
+Transparency
+
+## Roles
 ### Holder
 
-The term holder is an entity with a DID. Typically the DID is stored or held in a digital wallet. Every player in a digital identity ecosystem will have one or more DIDs.
-
-> Figure x.x Holder, Wallet, DID
+A holder is an entity that has a DID, and holds verifiable credentials. The holder will receive VCs from Issuers and present VCs to Verifiers. Issuers and Verifiers can also be Holders simultaneously. 
 
 ### Issuer
 
-An issuer is an entity that issues verifiable credentials (VCs) to holders.
+An issuer is an entity that issues VCs to holders. 
 
-> Figure x.x Issuer, holder, VC
-
-### DID pair
-
-A connection between two agents is always unique for that relationship. A DID pair represents each side of this relationship, one going to each entity. It is essential because neither party knows the other entity's DID, only the DID pair. This key point is a privacy feature ensuring that your doctor won't know where you buy books, the bookstore won't know where you buy groceries, etc.
-
-> Figure x.x DID pair
 
 ### Verifier
 
-The verifier verifies a VC presentation. There is an assurance question regarding the data presented and what would be acceptable to each verifier. For example, one verifier may accept verifying the issuing DID as being a proper authority for a specific type of credential, and another may require an additional check or knowledge of the information on the VC itself.
+The Verifier verifies a presentation from a Holder. There is an assurance question regarding the data presented and what would be acceptable to each verifier. For example, a verifier may accept verifying the issuing DID as a proper authority for a specific type of credential, and another may require an additional check or knowledge of the information on the VC itself.
 
-> Figure x.x Verifier, holder, issuer, trust framework, trust registry
+

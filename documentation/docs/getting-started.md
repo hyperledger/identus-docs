@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Getting Started
 
-Atala PRISM is a decentralized identity platform. It is a layer-2 blockchain solution that leverages the Cardano blockchain as a verifiable data registry (VDR). PRISM is rooted in the principles of self-sovereign identity (SSI). PRISM empowers users to own and control their identity, and personal information, which they can share securely, using private-key encryption, and privately opting with whom to share their data.
+Atala PRISM is a decentralized identity platform. It is a layer-2 blockchain solution that leverages the Cardano blockchain as a verifiable data registry (VDR). PRISM is rooted in the principles of self-sovereign identity (SSI). PRISM empowers users to own and control their identity, and personal information, which they can share securely, using asymmetric cryptography, and privately opting with whom to share their data.
 
 The documentation herein will explain the following:
 
