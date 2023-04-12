@@ -110,6 +110,8 @@ html[data-theme="dark"] {
 .navbar__inner {
     max-width: var(--ifm-container-width);
     margin: 0 auto;
+    backdrop-filter: blur(16px);
+    padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
 }
 
 .navbar__search-input {
@@ -124,6 +126,7 @@ html[data-theme="dark"] {
 .navbar--fixed-top {
     position: sticky;
     top: 0;
+    padding: 0;
     z-index: var(--ifm-z-index-fixed);
     background-color: var(--ifm-navbar-background-color);
 }
