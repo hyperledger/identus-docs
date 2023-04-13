@@ -3,8 +3,6 @@
 .idea
 # Production
 /build
-atala-prism-building-blocks/*
-atala-prism-products/*
 
 # Generated files
 .docusaurus
