@@ -65,7 +65,7 @@ const config = {
                     primaryColor: "#5559F2",
                     theme: {
                         codeBlock: {
-                            backgroundColor: "rgba(85,89,242,.5)"
+                            backgroundColor: "#1D2939"
                         },
                         rightPanel: {
                             backgroundColor: "transparent"

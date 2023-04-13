@@ -8,6 +8,7 @@ import HomepageFeatures from '@site/src/components/features';
 import styles from './index.module.css';
 import AtalaGraphic from '../components/atala-graphic';
 import Blob from '../components/blob';
+import Button from '../components/button';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -16,11 +17,11 @@ function HomepageHeader() {
           <div className={styles.hero__content}>
               <span className={clsx('hero__subtitle', styles.hero__tagline)}>{siteConfig.tagline}</span>
               <h1 className={clsx('hero__title', styles.hero__title)} dangerouslySetInnerHTML={{__html: siteConfig.title}}/>
-                  <Link
+                  <Button
                       className={clsx("button button--lg", styles.hero__button)}
                       to="/docs/getting-started">
                       Get Started
-                  </Link>
+                  </Button>
           </div>
           <AtalaGraphic/>
       </div>

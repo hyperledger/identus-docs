@@ -290,3 +290,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .navbar__search-input {
     font-family: 'POPPINS', sans-serif;
 }
+
+button[aria-expanded] {
+    border-radius: 10px;
+}

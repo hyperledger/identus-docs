@@ -2,6 +2,7 @@ import React, {useCallback, useRef, useState} from 'react'
 import styles from './index.module.css';
 import Link from '@docusaurus/Link';
 import {useColorMode} from '@docusaurus/theme-common';
+import Button from '../button';
 
 const Graphics = {
     apis({color = "#5559F2"}) {
@@ -224,7 +225,7 @@ export default function HomeResources() {
                 <h5>Atala PRISM Docs</h5>
                 <h2>This guide will help you understand the principles of SSI and how to start deploying solutions
                     quickly with Atala PRISM</h2>
-                <Link href="/docs/get-started">Start now</Link>
+                <Button to="/docs/getting-started">Start now</Button>
             </div>
             <div className={styles.home__resources}>
                 {
