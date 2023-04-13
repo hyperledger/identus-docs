@@ -51,8 +51,10 @@
 
 html[data-theme="dark"] {
     --ifm-background-color: #101828;
+    --redocusaurus-h3-color: #fff;
     --ifm-color-primary: var(--ifm-color-primary-light);
     --ifm-footer-background-color: #1D2939;
+    --ifm-side-pannel-background-color: transparent;
     --ifm-resource-cards-background-color: var(--ifm-footer-background-color);
     --ifm-resource-cards-text-color: #fff;
     --ifm-resource-card-getstarted-background: linear-gradient(45deg, #101828, #475467);
@@ -71,6 +73,8 @@ html[data-theme="dark"] {
 
 :root {
     --ifm-resource-border-color: transparent;
+    --ifm-side-pannel-background-color: var(--ifm-color-gray-200);
+    --redocusaurus-h3-color: var(--ifm-color-gray-900);
     --ifm-blob-background: linear-gradient(to right, var(--ifm-color-primary), var(--ifm-color-primary-dark));
     --ifm-hero-background-color: transparent;
     --ifm-color-resources-intro: var(--ifm-color-gray-900);
@@ -225,4 +229,64 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .version-number {
     color: var(--ifm-link-color);
+}
+
+
+.redocusaurus {
+    font-family: Poppins, sans-serif;
+}
+
+.redocusaurus .menu-content {
+    background: transparent;
+}
+
+.menu-content {
+    top: var(--ifm-navbar-height) !important;
+    padding: 0 .5rem;
+}
+
+.menu-content ul li label[type="tag"][role="menuitem"]:hover {
+    color: inherit;
+}
+
+.menu-content ul li label[type="tag"][role="menuitem"] {
+    padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
+    font-weight: var(--ifm-font-weight-semibold);
+    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    border-radius: 0.25rem;
+}
+
+.menu-content ul li label[type="tag"][role="menuitem"].active {
+    background: var(--ifm-menu-color-background-active);
+    color: var(--ifm-menu-color-active);
+}
+.menu-content ul li label[type="tag"][role="menuitem"]:not(.active) {
+    color: var(--ifm-menu-color);
+}
+
+.menu-content ul[role="menu"] li {
+    margin: 1rem 0;
+}
+/*.redocusaurus div:first-child > div:nth-child(4) {*/
+/*    background: var(--ifm-side-pannel-background-color);*/
+/*}*/
+
+
+.http-verb,
+.react-tabs__tab-list li,
+.operation-type {
+    border-radius: 16px !important;
+}
+
+.redocusaurus h3 {
+    margin: 1.5rem 0;
+    color: var(--redocusaurus-h3-color) !important;
+}
+
+.react-tabs__tab-panel  {
+    margin: 1.5rem 0;
+}
+
+.navbar__search-input {
+    font-family: 'POPPINS', sans-serif;
 }
