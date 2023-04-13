@@ -60,18 +60,7 @@ const config = {
                         spec: "atala-prism-products/enterprise-services/api-spec/enterprise-services-spec.yml",
                         route: "/enterprise-api/",
                     }
-                ],
-                theme: {
-                    primaryColor: "#5559F2",
-                    theme: {
-                        codeBlock: {
-                            backgroundColor: "#1D2939"
-                        },
-                        rightPanel: {
-                            backgroundColor: "transparent"
-                        }
-                    },
-                }
+                ]
             },
         ],
     ],

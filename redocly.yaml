@@ -13,7 +13,6 @@ theme:
     disableSearch: true
     # See https://redocly.com/docs/api-reference-docs/configuration/theming/
     theme:
-      #      primaryColor: "#5559F2"
       sidebar:
         backgroundColor: "transparent"
         activeTextColor: "#5559F2"
@@ -25,15 +24,12 @@ theme:
         primary:
           main: '#5559F2'
       rightPanel:
-        backgroundColor: "#A0A0f7"
-        dark: "red"
-        light: "#A0A0f7"
-        textColor: "#5559F2"
+        backgroundColor: "transparent"
         servers:
           overlay:
             backgroundColor: "#EAECF0"
             textColor: "#5559F2"
           url:
             backgroundColor: "#fff"
-      code:
-        backgroundColor: "red"
+      codeBlock:
+        backgroundColor: "#1D2939"
