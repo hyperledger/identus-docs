@@ -59,7 +59,8 @@ html[data-theme="dark"] {
     --ifm-resource-cards-text-color: #fff;
     --ifm-resource-card-getstarted-background: linear-gradient(45deg, #101828, #475467);
     --ifm-navbar-background-color: rgba(16, 24, 40, .7);
-    /*--ifm-hero-background-color: #1D2939;*/
+    --ifm-dropdown-background-color: var(--ifm-color-gray-800);
+    --ifm-card-background-color: var(--ifm-color-gray-800);
     --ifm-hero-background-color: transparent;
     --ifm-hero-text-color: #fff;
     --ifm-resource-border-color: var(--ifm-color-gray-600);
