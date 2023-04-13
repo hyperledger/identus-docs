@@ -50,6 +50,7 @@
 }
 
 html[data-theme="dark"] {
+    --ifm-redoc-arrow-color: #fff;
     --ifm-background-color: #101828;
     --redocusaurus-h3-color: #fff;
     --ifm-color-primary: var(--ifm-color-primary-light);
@@ -73,6 +74,7 @@ html[data-theme="dark"] {
 }
 
 :root {
+    --ifm-redoc-arrow-color: rgba(0,0,0,.5);
     --ifm-resource-border-color: transparent;
     --ifm-side-pannel-background-color: var(--ifm-color-gray-200);
     --redocusaurus-h3-color: var(--ifm-color-gray-900);
@@ -248,6 +250,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .menu-content ul li label[type="tag"][role="menuitem"]:hover {
     color: inherit;
+}
+
+.menu-content ul li label[type="tag"][role="menuitem"] polygon {
+    fill: var(--ifm-redoc-arrow-color);
 }
 
 .menu-content ul li label[type="tag"][role="menuitem"] {
