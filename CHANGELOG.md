@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.17.0...v1.18.0) (2023-04-13)
+
+
+### Features
+
+* update to beautiful design ([3e102d6](https://github.com/input-output-hk/atala-prism-docs/commit/3e102d6a01e3add1f208593c66f0b73faef3c4cf))
+
 # [1.17.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.16.0...v1.17.0) (2023-04-11)
 
 
