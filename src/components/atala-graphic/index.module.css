@@ -1,0 +1,38 @@
+:root {
+    --graphic-height: auto;
+}
+
+.hero__graphic__wrapper {
+    position: relative;
+    margin-left: auto;
+    z-index: 100;
+    transform: translateX(-5%) translateY(-60%);
+}
+
+.hero__graphic {
+    position: relative;
+    left: 0;
+    right: auto;
+    width: clamp(15.25rem, 100vw, 60.25rem);
+    height: clamp(15.6875rem, 100vw, 58.6875rem);
+    overflow: hidden;
+    margin-right: auto;
+    mask-image: url("/static/img/graphics/hero.svg");
+    mask-size: 100% 100%;
+    color: var(--ifm-color-primary);
+    font-size: 14px;
+    font-family: 'Space Mono', monospace;
+}
+
+@media screen and (min-width: 600px) {
+    .hero__graphic {
+        margin-left: auto;
+        right: 0;
+        left: auto;
+
+    }
+
+    .hero__graphic__wrapper {
+        transform: translateX(25%);
+    }
+}

@@ -1,0 +1,35 @@
+# NOTE: Only supports options marked as "Supported in Redoc CE"
+# See https://redocly.com/docs/cli/configuration/ for more information.
+
+extends:
+  - recommended
+
+rules:
+  no-unused-components: error
+
+theme:
+  # See https://redocly.com/docs/api-reference-docs/configuration/functionality/
+  openapi:
+    disableSearch: true
+    # See https://redocly.com/docs/api-reference-docs/configuration/theming/
+    theme:
+      sidebar:
+        backgroundColor: "transparent"
+        activeTextColor: "#5559F2"
+        groupItems:
+          activeBackgroundColor: "rgba(255, 255, 255, 0.05)"
+        arrow:
+          color: "rgba(0,0,0,0.5)"
+      colors:
+        primary:
+          main: '#5559F2'
+      rightPanel:
+        backgroundColor: "transparent"
+        servers:
+          overlay:
+            backgroundColor: "#EAECF0"
+            textColor: "#5559F2"
+          url:
+            backgroundColor: "#fff"
+      codeBlock:
+        backgroundColor: "#1D2939"

@@ -3,11 +3,38 @@
  * and scoped locally.
  */
 
+@media screen and (min-width: 600px) {
+  .navbar--fixed-top {
+    position: fixed;
+    backdrop-filter: blur(24px);
+  }
+}
+
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
   overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero__tagline {
+  display: inline-block;
+  margin-bottom: .5rem;
+  font-size: 18px;
+  color: var(--ifm-color-primary);
+  font-weight: var(--ifm-heading-font-weight);
+}
+
+.hero__title {
+  color: var(--ifm-hero-text-color);
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw,4rem);
 }
 
 @media screen and (max-width: 996px) {
@@ -16,8 +43,36 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero__content {
+  max-width: 635px;
+  position: absolute;
+  z-index: 10;
+  margin-top: -3rem;
+}
+
+
+.hero__button {
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border-radius: 5rem;
+  background-color: var(--ifm-color-primary);
+  padding: .7rem 1.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 600px) {
+  .heroBanner {
+    height: auto;
+  }
+  .hero__content {
+    height: auto;
+  }
+}
+
+
+@media screen and (min-height: 667px) {
+  .hero__content {
+    top: clamp(9.125rem, 100vw, 11.125rem);
+  }
 }

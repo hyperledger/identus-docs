@@ -1,0 +1,20 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.features a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.features p {
+  color: var(--ifm-resource-cards-text-color);
+}
+
+.featureSvg {
+  height: 97.5px;
+  width: 100px;
+}
