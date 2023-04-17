@@ -16,7 +16,7 @@ A globally unique persistent identifier that does not require a centralized regi
 See [decentralized identifier](/documentation/docs/concepts/glossary.md#decentralized-identifer)
 
 ### DIDComm
-
+A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.
 
 ### DID document
 A set of data that describes the DID subject, including mechanisms such as cryptographic public keys. The entire W3C DID specification is [here](https://www.w3.org/TR/did-spec-registries/).
