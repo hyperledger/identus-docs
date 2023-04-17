@@ -21,7 +21,6 @@ At its core, PRISM depends on protocols defining how to manage [Decentralized Id
 - Clients can query any PRISM Node and obtain a DID's historical change log information.
 - DID resolvers can take the output of PRISM Nodes and construct the current DID document associated with a DID.
 - An additional consideration is that operations can be posted on-chain in blocks, helping on the scalability side and general reduction of fees.
-- 
-In short, users can create, update and deactivate DIDs by posting respective actions on-chain. The operation of creating a DID can optionally not be published on-chain. Based on the operations posted on-chain, nodes can construct the DID Documents associated with a given DID.
+
 
 Additionally, the node provides an interface to track the status of operations submitted to a PRISM Node.
