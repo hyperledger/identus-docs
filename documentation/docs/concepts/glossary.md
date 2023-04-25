@@ -8,6 +8,9 @@
 ### claim
 An assertion made about a [subject](/documentation/docs/concepts/glossary.md#did-subject).
 
+### controller
+
+
 ## D
 ### decentralized identifier
 A globally unique persistent identifier that does not require a centralized registration authority and is often cryptographically generated. All DIDs use distributed ledger technology (DLT) or some other decentralized network.
@@ -73,6 +76,9 @@ For a detailed overview of mediators refer to the [RFC0046: Mediators and Relays
 ## O
 
 ## P
+
+### Peer DID Method
+
 ### PRISM
 
 ### PRISM Agent
@@ -80,6 +86,8 @@ For a detailed overview of mediators refer to the [RFC0046: Mediators and Relays
 ### proof
 A cryptographic mechanism that proves the information in a [verifiable credential](/documentation/docs/concepts/glossary.md#verifiable-credentials) or [verifiable presentation](/documentation/docs/concepts/glossary.md#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
 
+### protocol buffer
+Also know as protobuf (define).
 
 ## R
 ### relay
