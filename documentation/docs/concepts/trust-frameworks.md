@@ -24,3 +24,5 @@ The last piece to touch on here is that trust frameworks and registries aim for 
 
 The Trust Over Internet Protocol (TOIP) foundation has created a template for Trust Frameworks located [here](https://trustoverip.org/news/2022/02/01/the-toip-foundation-releases-its-first-official-governance-specifications/). In the spirit of setting an example, the Atala PRISM Pioneer Program has an established trust framework available [here](https://github.com/AtalaPRISMTribe/PPPGF).
 
+![Trust Diamond](/documentation/docs/images/trust-diamond.png "Trust Diamond")
+> Fig. 1 Trust Diamond with Trust Framwork and Registry
