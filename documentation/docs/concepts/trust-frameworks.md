@@ -1,21 +1,28 @@
 # Trust
 
-Trust is hard. It becomes infinitely more challenging when we introduce strangers on the internet into the mix. We expect to have some certainty or confidence with claims made about an entity. As an example, a stranger claims they are a doctor. How do you know? Is it because they are wearing scrubs with a white coat? Is it the paper hanging on the wall? Could that document be fake? What makes us comfortable with a doctor claiming they are a doctor? In today's world, typically, it's an accumulation of things, referrals, an office, the equipment in the office, staff, attire, license on the wall, etc.
+Trust is hard in the physical world. It becomes infinitely more complex when we introduce the internet to the mix. Strangers and non-living entities (i.e., bots) coexist in a vast space. Today we have no certainty of an entity. How do we know that @alice123456789 on Twitter is a doctor? Is Alice wearing scrubs in their profile picture? Was that AI-generated? In many of these online spaces, we cannot verify that the entity is who they claim.
 
-These things give us comfort and a sense that we are dealing with an entity claiming to be a doctor. Sure, it could be a scam, but there's a reasonable expectation this entity is a doctor. None of this exists in the digital world today, but with digital identity, it's necessary because it gives us comfort and some level of certainty in the digital world.
+If we were in a doctor's office, we could begin establishing trust because they may be wearing scrubs or a white coat. There may be a degree and medical license on the wall. These things make us feel comfortable because these things are familiar to us about doctors. But have you ever verified your doctor's medical license–probably not. The standard when we move online is dramatically different.
 
-## Trust/Governance Framework
+If a doctor used a decentralized identity, we could easily verify the medical license on a wall with a QR code or Bluetooth device. This authentication on demand applies to all credentials, whether a doctor, lawyer, police officer, supplier, etc. It seems simple, but how does it work?
 
-Trust is hard in the digital world, and this is where the role of a Trust/Governance Framework becomes useful. Before we begin, the terms Trust/Governance in this context are the same. Some prefer the word trust because governance implies government, which isn't necessarily the case.
+## Trust Framework
 
-A Trust/Governance Framework does govern an ecosystem. An example in practice today is a medical board. In the United States, states delegate responsibility to various authorities. For example, a state medical board inherits its authority from the state, typically via law or regulation. In a digital world, the state could issue the medical board a verifiable credential that is presentable and verifiable.
+Before we get started, the terms trust or governance framework are probably familiar, depending on your background or what ecosystem you may be coming from. These terms are interchangeable, but we stick to the [trust framework](/documentation/docs/concepts/glossary.md#trust-framework) usage.
 
-## Trust registry
+This clarification leads to the first topic: trust frameworks are not the government (necessarily). The purpose of a trust framework is governance over a specific ecosystem. For example, medical licenses get issued by state or provincial medical boards. The board acts like a governance body, determining who can practice medicine, the rules and eligibility requirements, etc.
 
-A trust registry exists because a Trust Authority implements and manages a Trust/Governance Framework. Its sole purpose is to make a transparent trail of trusted issuers and, in some cases, verifiers. Trust registries not only establish a mechanism to verify issuers and their authority, but it also keeps blockchain transactions to a minimum, keeping costs down.
+The [issuer](/documentation/docs/concepts/glossary.md#issuer), in our case, the medical board, issues licenses to [holders](/documentation/docs/concepts/glossary.md#holders) and governs themselves with a trust framework. In the previous sections, we discussed trust but have yet to determine how it fits in. The trust framework is where we can establish verifiable trust using a [trust registry](/documentation/docs/concepts/glossary.md#trust-registry).
 
-> **Note:** Repositories are the best candidate for distributing a single source of truth across many sources and maintaining transparency. Another benefit of the repository is that the Trust/Governance Framework could have its governing rules and processes published, maintain a versioning history, and efficiently distribute updates.
+## Trust Registry
 
-The Atala PRISM Pioneer Program has a functioning trust framework that is available [here](https://github.com/AtalaPRISMTribe/PPPGF) as an example.
+Trust registries serve a specific and narrowly focused role by establishing who the issuers and verifiers are. The registry allows a verifier to check the medical license issuer registry and validate that an authorized authority issued the medical license credential. You may be asking yourself, isn't decentralized identity self-sovereign? It is, but if Bob down the street can issue medical licenses with no authority, we quickly run into problems.
 
-![Trust Framework](/img/trust_framework_onion.png)
+Many of us may limit our thinking to our local area or region, but remember, the internet is everywhere (including space). When we take the doctor and possibly send them on a mission to another country, how does that country validate the doctor is authentic? The other country needs to know what trust registry exists for doctors from different places, and should they trust it? If the medical license is from a trusted source, like a medical board in Canada, instead of Bob down the road, I would be more open to trusting it.
+
+The last piece to touch on here is that trust frameworks and registries aim for transparency. These documents that govern the framework and the registry should be public, where applicable. A repository, for example, would provide built-in versioning for what changed, such as rules or issuers. It could also have the added benefit of keeping costs down. If some transactions can be off-chain, it means no transaction fee. 
+
+The Trust Over Internet Protocol (TOIP) foundation has created a template for Trust Frameworks located [here](https://trustoverip.org/news/2022/02/01/the-toip-foundation-releases-its-first-official-governance-specifications/). In the spirit of setting an example, the Atala PRISM Pioneer Program has an established trust framework available [here](https://github.com/AtalaPRISMTribe/PPPGF).
+
+![Trust Diamond](/img/trust-diamond.png "Trust Diamond")
+> Fig. 1 Trust Diamond with Trust Framwork and Registry
