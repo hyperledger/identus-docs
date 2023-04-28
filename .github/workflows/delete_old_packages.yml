@@ -1,0 +1,23 @@
+name: Cleanup Package Versions
+
+# This workflow is executed every Monday at 3:00 AM and deletes outdated versions of packages for the current repository.
+# Github Action actions/delete-package-versions@v4 is used.
+# Curent renention policy:
+# - Keep 10 last packages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/delete-package-versions@v4
+        with:
+          owner: input-output-hk
+          package-name: prism-documentation-portal
+          package-type: container
+          min-versions-to-keep: 10
+          token: ${{ secrets.ATALA_GITHUB_TOKEN }}
