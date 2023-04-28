@@ -11,9 +11,9 @@ embargoes and sanctions around the globe.
 
 A cryptographic signature like PGP to sign an email is a simple example. In public/private key cryptography, the private key allows the controller to sign - nobody else can unless they control the private key. For example, when I receive an email from Alice with her PGP signature, I have confidence that Alice genuinely sent the message.
 
-If we take the concept of public/private cryptography out of our example and drop it into decentralized identity, we can authenticate DIDs. As someone with a [DID](/documentation/docs/concepts/glossary.md#decentralized-identifer), I could log in to a service, sign a document, etc. With cryptography, a signatory is reliable and authentic because manipulation can be proven.
+If we take the concept of public/private cryptography out of our example and drop it into decentralized identity, we can authenticate DIDs. As someone with a [DID](/docs/concepts/glossary#decentralized-identifer), I could log in to a service, sign a document, etc. With cryptography, a signatory is reliable and authentic because manipulation can be proven.
 
-This concept of signing applies when we introduce [verifiable credentials (VCs)](/documentation/docs/concepts/glossary.md#verifiable-credentials). An issuer signs the VC when it is issued, then a holder/prover will sign the presentation to a verifier. This process authenticates that the issuer issued a VC and that the holder didn't manipulate the data.
+This concept of signing applies when we introduce [verifiable credentials (VCs)](/docs/concepts/glossary#verifiable-credentials). An issuer signs the VC when it is issued, then a holder/prover will sign the presentation to a verifier. This process authenticates that the issuer issued a VC and that the holder didn't manipulate the data.
 
 A potato originating from a small farm could have documents or credentials that could trace back through the retailer, distributor, shipping, harvest date, field, and possible organic/other certifications. This instant and unrestricted authentication on demand opens a world of opportunities. 
 

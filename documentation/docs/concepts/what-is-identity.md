@@ -10,18 +10,18 @@ As we move into a digital world, physical documents become difficult to use, sec
 
 ## Decentralized Identity Model
 
-The core of the decentralized identity model shifts the control from the center to the edges. It uses [decentralized identifiers (DIDs)](/documentation/docs/concepts/glossary.md#decentralized-identifer), commonly referred to as DIDs, that are unique identifiers that represent an entity: a person, place, organization, digital or physical thing.
-Using a DID, we can connect to other DIDs, where data sharing and communications are possible. In some instances, the entity we connect with can assert claims about us in the form of a [verifiable credential (VC)](/documentation/docs/concepts/glossary.md#verifiable-credential).
+The core of the decentralized identity model shifts the control from the center to the edges. It uses [decentralized identifiers (DIDs)](/docs/concepts/glossary#decentralized-identifer), commonly referred to as DIDs, that are unique identifiers that represent an entity: a person, place, organization, digital or physical thing.
+Using a DID, we can connect to other DIDs, where data sharing and communications are possible. In some instances, the entity we connect with can assert claims about us in the form of a [verifiable credential (VC)](/docs/concepts/glossary#verifiable-credential).
 
 VCs are what entities present to attest details about themselves. Instead of presenting a physical card, we use cryptographic mechanisms to make the presentation. In place of watermarks, we use cryptographic signatures to validate data integrity. Assurance plays a role in verification, and we will cover that in the trust section.
 
 ## Roles
 
 ### Holder
-A [holder](/documentation/docs/concepts/glossary.md#holder) is an entity with one or more DIDs with verifiable credentials. The holder receives VCs from issuers and presents (as a prover) VCs to verifiers. Issuers and verifiers can also be holders simultaneously. 
+A [holder](/docs/concepts/glossary#holder) is an entity with one or more DIDs with verifiable credentials. The holder receives VCs from issuers and presents (as a prover) VCs to verifiers. Issuers and verifiers can also be holders simultaneously. 
 
 ### Issuer
-An [issuer](/documentation/docs/concepts/glossary.md#issuer) is an entity that makes claims about a subject and issues a VC to a holder.
+An [issuer](/docs/concepts/glossary#issuer) is an entity that makes claims about a subject and issues a VC to a holder.
 
 ### Verifier
-The [verifier](/documentation/docs/concepts/glossary.md#verifier) requests a presentation from a holder, then verifies the [presentation](/documentation/docs/concepts/glossary.md#verifiable-presentation).
+The [verifier](/docs/concepts/glossary#verifier) requests a presentation from a holder, then verifies the [presentation](/docs/concepts/glossary#verifiable-presentation).

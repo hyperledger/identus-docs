@@ -8,11 +8,11 @@ If a doctor used a decentralized identity, we could easily verify the medical li
 
 ## Trust Framework
 
-Before we get started, the terms trust or governance framework are probably familiar, depending on your background or what ecosystem you may be coming from. These terms are interchangeable, but we stick to the [trust framework](/documentation/docs/concepts/glossary.md#trust-framework) usage.
+Before we get started, the terms trust or governance framework are probably familiar, depending on your background or what ecosystem you may be coming from. These terms are interchangeable, but we stick to the [trust framework](/docs/concepts/glossary#trust-framework) usage.
 
 This clarification leads to the first topic: trust frameworks are not the government (necessarily). The purpose of a trust framework is governance over a specific ecosystem. For example, medical licenses get issued by state or provincial medical boards. The board acts like a governance body, determining who can practice medicine, the rules and eligibility requirements, etc.
 
-The [issuer](/documentation/docs/concepts/glossary.md#issuer), in our case, the medical board, issues licenses to [holders](/documentation/docs/concepts/glossary.md#holders) and governs themselves with a trust framework. In the previous sections, we discussed trust but have yet to determine how it fits in. The trust framework is where we can establish verifiable trust using a [trust registry](/documentation/docs/concepts/glossary.md#trust-registry).
+The [issuer](/docs/concepts/glossary#issuer), in our case, the medical board, issues licenses to [holders](/docs/concepts/glossary#holders) and governs themselves with a trust framework. In the previous sections, we discussed trust but have yet to determine how it fits in. The trust framework is where we can establish verifiable trust using a [trust registry](/docs/concepts/glossary#trust-registry).
 
 ## Trust Registry
 

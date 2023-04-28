@@ -3,7 +3,7 @@
 The Atala PRISM suite contains the following core components:
 
 - PRISM Cloud Agent, a fully featured cloud agent used for interacting with other identity agents in a standards-based and interoperable way
-- PRISM Node, a [Verifiable Data Registry](/documentation/docs/concepts/glossary.md#verifiable-data-registry) (VDR) which provides on-chain persistence using the Cardano blockchain.
+- PRISM Node, a [Verifiable Data Registry](/docs/concepts/glossary#verifiable-data-registry) (VDR) which provides on-chain persistence using the Cardano blockchain.
 - PRISM Mediator allows mobile applications to route messages to and from PRISM Agents
 - PRISM Cloud Agent Enterprise, built on top of the fully featured PRISM Cloud Agent as its foundation, provides additional capabilities and enterprise-ready business controller logic
 

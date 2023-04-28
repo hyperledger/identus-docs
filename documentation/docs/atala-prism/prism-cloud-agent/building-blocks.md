@@ -9,9 +9,9 @@ Below is a brief overview of the current building blocks of Atala PRISM:
 **Building Block**|**Definition**|**Code Name**
 :-----:|:-----:|:-----:
 Cryptography|A suite of cryptographic primitives to ensure properties of integrity, authenticity, and confidentiality of any data we store and process in a provably secure manner.|Apollo
-[Decentralized Identifiers (DID)](/documentation/docs/concepts/glossary.md#decentralized-identifer)|A suite of decentralized identifier (DID) operations to create, manage and resolve standards-based decentralized identifiers in a user-controlled manner.|Castor
-[Verifiable Credentials](/documentation/docs/concepts/glossary.md#verifiable-credentials)|A suite of credential operations to issue, manage, and verify standards-based verifiable credentials in a privacy-preserving manner.|Pollux
-[DIDComm](/documentation/docs/concepts/glossary.md#didcomm) V2|A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.|Mercury
+[Decentralized Identifiers (DID)](/docs/concepts/glossary#decentralized-identifer)|A suite of decentralized identifier (DID) operations to create, manage and resolve standards-based decentralized identifiers in a user-controlled manner.|Castor
+[Verifiable Credentials](/docs/concepts/glossary#verifiable-credentials)|A suite of credential operations to issue, manage, and verify standards-based verifiable credentials in a privacy-preserving manner.|Pollux
+[DIDComm](/docs/concepts/glossary#didcomm) V2|A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.|Mercury
 
 ## Apollo - Cryptography Module
 Apollo is one of the building blocks of Atala PRISM. It is a suite of cryptographic primitives ensuring data security during storage and handling. Cryptographic primitives are mathematical algorithms and protocols that form the foundation for secure communication and data protection.
@@ -28,17 +28,17 @@ Overall, the Apollo building block is an essential component of Atala PRISM, pro
 
 ## Castor - DID Module
 
-Castor is a building block of Atala PRISM that provides a suite of [Decentralized Identifier (DID)](/documentation/docs/concepts/glossary.md#decentralized-identifier) operations, allowing users to create, manage, and resolve DIDs. 
+Castor is a building block of Atala PRISM that provides a suite of [Decentralized Identifier (DID)](/docs/concepts/glossary#decentralized-identifier) operations, allowing users to create, manage, and resolve DIDs. 
 
-A [DID Document](/documentation/docs/concepts/glossary.md#did-document) is a JSON-LD document that contains information about a DID. It includes information such as the public keys associated with the DID, the authentication mechanisms, and associated services. Castor consists of a resolver that resolves a DID to its associated DID Document. It is a lookup service that allows users to retrieve the DID Document for a given DID.
+A [DID Document](/docs/concepts/glossary#did-document) is a JSON-LD document that contains information about a DID. It includes information such as the public keys associated with the DID, the authentication mechanisms, and associated services. Castor consists of a resolver that resolves a DID to its associated DID Document. It is a lookup service that allows users to retrieve the DID Document for a given DID.
 
-Castor supports a variety of [DID methods](/documentation/docs/concepts/glossary.md#did-method), including full support of the in-house `did:prism` method and other widely-used methods such as the [Peer DID method](/documentation/docs/concepts/glossary.md#peer-did-method), enabling users to choose the DID method that best suits their needs and allows for interoperability with other systems and platforms.
+Castor supports a variety of [DID methods](/docs/concepts/glossary#did-method), including full support of the in-house `did:prism` method and other widely-used methods such as the [Peer DID method](/docs/concepts/glossary#peer-did-method), enabling users to choose the DID method that best suits their needs and allows for interoperability with other systems and platforms.
 
 Castor gives users complete control over their DID, including creating new DIDs, updating existing ones, and deleting or deactivating them if necessary.
 
 ## Pollux - Verifiable Credential Module
 
-Pollux is a building block of Atala PRISM that provides a suite of operations for managing and verifying [verifiable credentials (VCs)](/documentation/docs/concepts/glossary.md#verifiable-credentials).
+Pollux is a building block of Atala PRISM that provides a suite of operations for managing and verifying [verifiable credentials (VCs)](/docs/concepts/glossary#verifiable-credentials).
 
 With Pollux, users can issue, manage, and verify verifiable credentials in a privacy-preserving manner. Pollux ensures that users can share their credentials with others while maintaining control over their personal information and protecting it from unauthorized access and exposure.
 
@@ -48,7 +48,7 @@ For managing credentials, Pollux allows users to store and manage their verifiab
 
 Finally, for verifying credentials, Pollux provides the necessary tools to check a given credential's validity and verify that a trusted party has issued it. Pollux includes the ability to check the status of the credential, such as whether it has been revoked or not, and to validate that the attributes it represents are accurate and up-to-date.
 
-Overall, the Pollux building block provides a secure and efficient means of managing and verifying verifiable credentials in a privacy-preserving manner. This building block is a vital aspect of the [self-sovereign identity](/documentation/docs/concepts/glossary.md#self-sovereign-identity) paradigm. It enables individuals and organizations to take control of their personal information and share it with others securely and transparently.
+Overall, the Pollux building block provides a secure and efficient means of managing and verifying verifiable credentials in a privacy-preserving manner. This building block is a vital aspect of the [self-sovereign identity](/docs/concepts/glossary#self-sovereign-identity) paradigm. It enables individuals and organizations to take control of their personal information and share it with others securely and transparently.
 
 ## Mercury - DIDComm Module
 
