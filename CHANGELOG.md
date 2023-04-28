@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.19.1...v1.19.2) (2023-04-28)
+
+
+### :sparkles: Updates
+
+* update glossary links with the correct path ([57e3f9f](https://github.com/input-output-hk/atala-prism-docs/commit/57e3f9f8b534a2504870b7e0bfcf5636ffca8f77))
+
 ## [1.19.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.19.0...v1.19.1) (2023-04-28)
 
 
