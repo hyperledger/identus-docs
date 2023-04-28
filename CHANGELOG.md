@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.19.0...v1.19.1) (2023-04-28)
+
+
+### Bug Fixes
+
+* polishing documentation ([#37](https://github.com/input-output-hk/atala-prism-docs/issues/37)) ([6ffc33f](https://github.com/input-output-hk/atala-prism-docs/commit/6ffc33f20322288f6a48a25a5fe6a665a8fa99f3))
+
 # [1.19.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.18.0...v1.19.0) (2023-04-13)
 
 
