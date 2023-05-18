@@ -1,3 +1,10 @@
+## [1.23.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.22.0...v1.23.0) (2023-05-18)
+
+
+### :rocket: New Content
+
+* tapir openapi spec for prism agent ([fa2c4ac](https://github.com/input-output-hk/atala-prism-docs/commit/fa2c4ac2826f7463a3c6f2fb3438102a144096f3))
+
 ## [1.22.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.21.0...v1.22.0) (2023-05-14)
 
 
