@@ -2,9 +2,9 @@
 
 Authenticate relies on the powers of decentralized identifiers (DIDs). By using
 DIDs, users can prove their identity and authenticate themselves and their
-interactions with other parties in a decentralized, secure manner. Organisations
-can utilise this technology to streamline their business processes and make
-authentication transparent and more secure to their users.
+interactions with other parties in a decentralized, secure manner. Organizations
+can utilize this technology to streamline their business processes and make
+authentication more transparent and more secure to their users.
 
 Authenticate provides primitives to facilitate the authentication of users and
 devices through DIDs they control. These primitives include creating and
@@ -13,10 +13,10 @@ devices to prove their identity.
 
 ## Actors
 
-- **User** or a **device** - the party that is being authenticated.
-- **SSI Wallet** - any piece of software able to create and manage DIDs - in 
-control of the user. 
-- **Application** - the party that is requesting authentication. Has its own
+- **User** or a **device** - the party being authenticated.
+- **SSI Wallet** - any piece of software able to create and manage DIDs - in
+  control of the user.
+- **Application** - the party that is requesting authentication, which has its own
   state and business logic.
 - **Authenticate Service** - a service that provides authentication primitives
   (managing authentication challenges and responses).
@@ -24,18 +24,17 @@ control of the user.
 ## Authentication flow
 
 On a high level, the authentication flow starts with the application creating a
-challenge, encoding it and sending it to the other party. The other party then
+challenge, encoding it, and sending it to the other party. The other party then
 uses their SSI wallet to respond to the challenge by signing the nonce and
 sending it back to the submission endpoint specified in the challenge.
 
 Let's go through the whole process in more detail.
 
-Application creates a new **authentication challenge**. Challenge contains a nonce,
-expiration time, and submission endpoint. It also contains a `type` field, which
-is used as a protocol identifier for wallets to understand how to process the
+Application creates a new **authentication challenge**. The challenge contains a nonce,
+expiration time, and submission endpoint. It also includes a `type` field used as a protocol identifier for wallets to understand how to process the
 message.
 
-An example of authentication challenge state:
+An example of an authentication challenge state:
 
 ```json
 {
@@ -56,58 +55,49 @@ An example of authentication challenge state:
 }
 ```
 
-It contains `challenge` field and other metadata which could be used to track
+It contains a `challenge` field and other metadata which makes it possible to track
 the challenge over time.
 
-> NOTE: Only `challenge` field should be encoded and sent to the other side!
+> *Note*: Only the `challenge` field should be encoded and sent to the other side!
 
-Optional `from` field could be added too. It is a human-readable label which
+It is possible to add the optional `from` field too. It is a human-readable label that
 represents the party requesting authentication. Wallets could use this label
-later to display information to users about who is sending request.
+later to display information to users about who is sending requests.
 
-Initial state is `pending`, and `did` field is `null`.
+The initial state is `pending`, and `did` field is `null`.
 
 Next, the `challenge` object is encoded, typically as a QR code or deep link,
-depending on the use-case. Encoded challenge is then presented or sent to the
+depending on the use case. The encoded challenge is then presented or sent to the
 other party.
 
 Now, the receiving party uses their wallet to decode and process the received
-authentication challenge. In this case, `type` field is checked for value
-`https://atalaprism.io/authentication-challenge`. Wallet then should
-present a prompt to the user to accept or reject the request, showing optionally
-`from` label. If user accepts the request, next step is to instruct the
-wallet which DID to use to respond to the challenge. Authentication key from selected DID is used to
-sign the `nonce` field and to send the signature , along with used DID, to the
-submission endpoint specified in the challenge.
+authentication challenge. In this case, the `type` field gets checked for value
+`https://atalaprism.io/authentication-challenge`. The wallet then should
+present a prompt to the user to accept or reject the request, showing the optional
+`from` label. If the user accepts the request, the next step is to instruct the
+wallet which DID to use to respond to the challenge. The authentication key from the selected DID signs the nonce field and sends the signature, and the used DID to the submission endpoint specified in the challenge.
 
 Upon receiving the response, the Authenticate service verifies the signature and
-updates the challenge state accordingly. In the case of invalid signature, the
-state is set to `error`. In the case of valid signature, the state is set to
-`success` and `did` field is populated with the DID used to sign the response.
+updates the challenge state accordingly. In the case of an invalid signature, the
+state changes to `error`. In the case of a valid signature, the state is set to
+`success` and the `did` field gets populated with the DID used to sign the response.
 
-During the process, application can query the state of sent authentication
-challenge to check if the response has been received and if it's valid. As
-mentioned, terminal state is either `error` or `success`. Once the challenge
-response is received, the application can act upon it, depending on the business
-logic. For example, creating a login session for the user based on JWT.
+During the process, an application can query the state of the sent authentication challenge to check the response status and if it's valid. As mentioned, the terminal state is either `error` or `success`. Once the challenge response is received, the application can act upon it, depending on the business logic. For example, creating a login session for the user based on JWT.
 
-> NOTE: Authenticate service only checks if the signature is valid, based on the
-> DID used to sign the response. Checking if given DID is known to the
-> application is the responsibility of the application itself.
+> *Note*: Authenticate service only checks if the signature is valid, based on the
+> DID used to sign the response. Checking if the given DID is known to the
+> application is the application's responsibility.
 
 ## Code example
 
-Here's an example of how user login flow could be implemented using Authenticate
-API. We will demonstrate how to add DID-based authentication to an existing 
+Here's an example of implementing user login flow using Authenticate API. We will demonstrate how to add DID-based authentication to an existing
 application, which already has a user database and supports password-based login.
 
-> NOTE: Please note that this code is not intended to be executed directly, but
-> rather a code 'sketch' intended to illustrate the general flow. There are many
-> possible ways to implement this flow, and this is just one example.
+> *Note*: This aims to 'sketch' or illustrate the general flow. This example is just one of many possible ways to implement this flow. The intent of the code herein is for demonstration purposes only, not for execution.
 
-Example code is written in JavaScript/TypeScript, but it should be easy to
+The example code is in JavaScript/TypeScript, but it should be easy to
 translate it to any other language. API could be consumed directly or via a generated client library. For example,
-[Orval tool](https://orval.dev/) could be used to generate TypeScript API client
+[Orval tool](https://orval.dev/) can generate a TypeScript API client
 from OpenAPI spec.
 
 ```shell
@@ -127,8 +117,8 @@ interface User {
 }
 ```
 
-Here is the implementation of endpoint called by the application front-end to 
-start the DID-based login flow. New authentication challenge is created and encoded as a QR code.
+Here is the implementation of the endpoint called by the application front-end to
+start the DID-based login flow. A new authentication challenge is created and encoded as a QR code.
 
 ```js
 async function handleDidAuthRequest() {
@@ -144,8 +134,8 @@ async function handleDidAuthRequest() {
   console.info(`Challenge "${authChallengeState.id}" has been created and sent to the front-end.`);
 }
 ```
-Once the QR code is presented to the user for scanning with their mobile wallet,
-front-end app could call an endpoint to track the challenge state and wait for
+Once the QR code gets presented to the user for scanning with their mobile wallet,
+the front-end app could call an endpoint to track the challenge state and wait for
 the response.
 
 ```js
@@ -197,32 +187,28 @@ async function trackAuthChallengeState(challengeId) {
 }
 ```
 
-> NOTE: Please be aware that the Authenticate service currently does not provide
-> an eventing mechanism. Therefore, the application is responsible for 
-> periodically checking the challenge state. However, when eventing is eventually
-> implemented, this aspect of the flow will be easier to cover in a reliable way.
+> *Note*: Please be aware that the Authenticate service currently does not provide an eventing mechanism. Therefore, the application is responsible for periodically checking the challenge state. However, when eventing gets implemented, this portion will be easier to cover reliably.
 
 ## How wallets should respond to authentication challenge?
 
-Upon receiving a challenge, wallets should extract the `nonce` field, pick a DID
-to use for signing the response and sign the `nonce` field. The signature should
-be submitted to the `submissionEndpoint`, along with the DID used to sign.
+Upon receiving a challenge, wallets should extract the `nonce` field, pick a DID to sign the response, and sign the `nonce` field. The signature should
+be submitted to the `submissionEndpoint`, with the DID used to sign.
 
 Current restrictions and expectations:
-* `{ signature, did }` shape of object should be submitted as a JSON body to the 
-`submissionEndpoint`.
+* `{ signature, did }` shape of object should be submitted as a JSON body to the
+  `submissionEndpoint`.
 * Only `did:peer` DIDs are supported - `numalgo` 0 and 2 variants.
 * Ed25519 authentication key is expected to be used for signing.
 * Signature should be encoded as a `base64Url` string.
 
 ### Code example - wallet integration with TypeScript Wallet SDK
 
-Wallets and other applications can use the TypeScript SDK to create required 
+Wallets and other applications can use the TypeScript SDK to create required
 key pairs and DIDs. Also, to resolve DIDs, sign data and verify signatures. Here
 is an example of how to do it:
 
-> NOTE: We assume that wallet already has a DID created and stored in the wallet,
-> see Onboard service docs for more details about that step.
+> *Note*: We assume the wallet already has a DID created and stored.
+> See the Onboard service docs for more details about that step.
 
 ```ts
 import {Apollo, Castor, Domain} from "@input-output-hk/atala-prism-wallet-sdk";
