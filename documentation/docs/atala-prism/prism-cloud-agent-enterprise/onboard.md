@@ -1,24 +1,21 @@
 # Onboard
 
-Onboard provides a way to request and obtain a Decentralized Identifier (DID) 
-from another party. The goal of this product is to facilitate onboarding 
-towards systems based on SSI. The obtained DID can then be used as input to 
-various SSI-based services, such as authentication using DID.
+Onboard enables requesting and obtaining a Decentralized Identifier (DID)
+from another party. This product aims to facilitate onboarding
+systems based on SSI. The obtained DID can then be input into various SSI-based services, such as authentication using a DID.
 
-> Note: This process occurs out-of-band, meaning no DIDComm messaging is 
-> utilized. If you are seeking to use DIDComm based, agent-to-agent services, 
-> please see the Connect product page.
+> *Note*: This process occurs out-of-band, not using DIDComm. Please see the  
+> Connect product page if you want to use DIDComm-based agent-to-agent services.
 
 ## Getting a DID
 
-On a high level, the process of obtaining a DID includes creating a DID request, 
-encoding it and sending it to the other party. The other party then uses their 
-wallet to scan/receive the DID request and send back the DID, either existing or 
-a new one.
+On a high level, the process of obtaining a DID includes creating a DID request,
+encoding it, and sending it to the other party. The other party then uses their
+wallet to scan/receive the DID request and send back the existing or new DID.
 
 Let's go through the whole process in more detail.
 
-The inviting party creates a so called "DID request". An example of request state:
+The inviting party creates a so-called "DID request." An example of a request state:
 
 ```json
 {
@@ -36,45 +33,38 @@ The inviting party creates a so called "DID request". An example of request stat
   "updatedAt": "2023-02-24T10:22:23Z"
 }
 ```
-It contains `didRequest` field and other metadata which could be used to track 
-the request over time. 
+It contains the `didRequest` field and other metadata that makes tracking the requesting possible.
 
-> NOTE: Only `didRequest` field should be encoded and sent to the other side!
+> *Note*: Only the `didRequest` field should be encoded and sent to the other side!
 
-Optional `from` field could be added too. It is a human-readable label which 
-represents the inviting party. Wallets could use this label later to display 
+The optional `from` field could be added too. It is a human-readable label that
+represents the inviting party. Wallets could use this label later to display
 information to users about who is sending request.
 
-Initial state is `pending`, and `did` field is `null`.
+The initial state is `pending`, and `did` field is `null`.
 
-Next, the `didRequest` object is encoded, typically as a QR code or deep link,
-depending on the use-case. Encoded request is then sent to the other party via an 
-appropriate channel: email, chat message, or presenting it directly in a web app.
+Next, the `didRequest` object is encoded depending on the use case, typically as a QR code or deep link. The encoded request gets sent to the other party via an appropriate channel: email, chat message, or presenting directly in a web app.
 
-Now, the receiving party uses their wallet to decode and process the received 
-DID request. Type of message is identified by `type` field. In the case of DID 
-request, it is `https://atalaprism.io/did-request`. The wallet then should 
+Now, the receiving party uses their wallet to decode and process the received
+DID request. The type of message is identifiable by the `type` field. In the case of DID
+request, it is `https://atalaprism.io/did-request`. The wallet then should
 present a prompt to the user to accept or reject the request, showing optionally
-`from` label. If the user accepts the request, the wallet creates a new 
-relationship and sends its DID back to the `onboardEndpoint` specified in the 
+`from` label. If the user accepts the request, the wallet creates a new
+relationship and sends its DID back to the `onboardEndpoint` specified in the
 DID request.
 
-During the process, the inviting party can query the state of sent DID request 
-to check if the response has been received. Terminal state is either `error` or 
+During the process, the inviting party can query the sent DID request's state to check the response status. The terminal state is either `error` or
 `success` with received DID in `did` field. Once the DID is received, depending
 on the business logic, the application can act upon it, for example, associate
 it with a user ID in the main application state.
 
-> NOTE: DID request is for a one-time use only. If the response is received,
-> request is invalidated and cannot be used again.
+> *Note*: DID request is for one-time use only. The request is invalidated if the response is received and is not reusable.
 
-> NOTE: Currently, no mechanism to verify if submitted DID is under control of 
-> the other party is implemented. See Authenticate API if such feature is 
-> required.
+> *Note*: Currently, if a DID is under the other party's control, there is no mechanism to verify.. See Authenticate API if such a feature is required.
 
 ## Code example
 
-Here is the code example of the process of adding a DID to an existing user 
+Here is the code example of the process of adding a DID to an existing user
 profile:
 
 ### Server side
@@ -112,9 +102,9 @@ async function createDidRequest(context) {
 }
 ```
 
-Since no eventing mechanism is implemented at the moment, the application should
+Since there is no eventing mechanism currently, the application should
 periodically check the state of the DID request. For example, this could be a way
-to implement processing step in a background job:
+to implement a processing step in a background job:
 
 ```js
 async function checkDidRequest(didRequestId, userId) {
@@ -139,10 +129,9 @@ async function checkDidRequest(didRequestId, userId) {
 
 ### Holder side - wallet integration with TypeScript Wallet SDK
 
-Wallets and other applications can use the TypeScript SDK to create DIDs needed
-to respond to DID requests. Here is an example of how to do it:
+Wallets and other applications can use the TypeScript SDK to create DIDs to respond to DID requests. Here is an example of how to do it:
 
-> NOTE: See Wallet SDK documentation for more information on how to use it.
+> *Note*: See Wallet SDK documentation for more information on how to use it.
 
 ```ts
 import {Apollo, Castor, Domain} from "@input-output-hk/atala-prism-wallet-sdk";
@@ -200,10 +189,9 @@ async function handleDidRequest(didRequest) {
 
 ## Summary
 
-In the previous section, we discussed the process of obtaining a DID. Typically, 
+In the previous section, we discussed the process of obtaining a DID. Typically,
 the requesting party is an application aiming to extend its feature set with SSI
-capabilities, and the receiving party is a user with their own SSI wallet. The 
-Onboard service serves as an auxiliary service which helps to facilitate the 
-process of obtaining a DID by providing necessary abstractions and state 
-management. We also provided a code example of how to use the Onboard API from
+capabilities, and the receiving party is a user with their own SSI wallet. The
+Onboard service that helps to facilitate obtaining a DID by providing necessary abstractions and state
+management. We also provided a code example of using the Onboard API from
 both sides of the process.
