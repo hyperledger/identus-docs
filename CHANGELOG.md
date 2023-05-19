@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.23.0...v1.23.1) (2023-05-19)
+
+
+### :sparkles: Updates
+
+* port review fixes for enterprise agent ([#39](https://github.com/input-output-hk/atala-prism-docs/issues/39)) ([29ba868](https://github.com/input-output-hk/atala-prism-docs/commit/29ba8689d8b1e09d62db5f6008d9f1cfecb75334))
+
 ## [1.23.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.22.0...v1.23.0) (2023-05-18)
 
 
