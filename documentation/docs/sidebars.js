@@ -74,7 +74,23 @@ const sidebars = {
             'atala-prism/prism-cloud-agent-enterprise/overview',
             'atala-prism/prism-cloud-agent-enterprise/onboard',
             'atala-prism/prism-cloud-agent-enterprise/authenticate',
-            'atala-prism/prism-cloud-agent-enterprise/manage',
+            {
+              type: 'category',
+              label: 'Manage',
+              collapsed: true,
+              link: {
+                type: 'generated-index',
+                title: 'Manage',
+                description: 'Learn about the Manage product!'
+              },
+              items: [
+                'atala-prism/prism-cloud-agent-enterprise/manage/overview',
+                'atala-prism/prism-cloud-agent-enterprise/manage/definitions',
+                'atala-prism/prism-cloud-agent-enterprise/manage/setup',
+                'atala-prism/prism-cloud-agent-enterprise/manage/schemas',
+                'atala-prism/prism-cloud-agent-enterprise/manage/policies',
+              ]
+            }
           ]
         },
         'atala-prism/prism-node',
