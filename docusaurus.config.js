@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // console.log(colorMode)
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Unlock the power<br/>of your digital<br/> identity.',
+    title: 'Unlock the power of your digital identity.',
     tagline: 'ATALA PRISM V2 Docs',
     url: 'https://docs.atalaprism.io',
     baseUrl: '/',
@@ -151,6 +151,10 @@ const config = {
                             {
                                 label: 'PRISM DID Spec',
                                 href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
+                            },
+                            {
+                                label: 'Architecture Decision Records',
+                                href: 'pathname://adrs/index.html',
                             },
                         ],
                     },
