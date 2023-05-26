@@ -1,3 +1,18 @@
+## [1.25.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.24.0...v1.25.0) (2023-05-26)
+
+
+### :rocket: New Content
+
+* add structure for the Manage section ([#40](https://github.com/input-output-hk/atala-prism-docs/issues/40)) ([98ce880](https://github.com/input-output-hk/atala-prism-docs/commit/98ce880414866951f80ce05a35e95bc2fe6b7c8a))
+
+## [1.24.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.23.1...v1.24.0) (2023-05-26)
+
+
+### :rocket: New Content
+
+* add integrated ADRs support ([#41](https://github.com/input-output-hk/atala-prism-docs/issues/41)) ([e176604](https://github.com/input-output-hk/atala-prism-docs/commit/e1766041203cf1140be327e3cb2f036b8a0d950d))
+* update submodules documentation to latest ([46d0016](https://github.com/input-output-hk/atala-prism-docs/commit/46d0016ac3f22399aff0dda6d3c42bb62ca4eaff))
+
 ## [1.23.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.23.0...v1.23.1) (2023-05-19)
 
 

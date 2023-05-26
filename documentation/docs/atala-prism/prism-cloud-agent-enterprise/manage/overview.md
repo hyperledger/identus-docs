@@ -1,6 +1,4 @@
-# Manage
-
-> Coming soon!
+# Overview
 
 ManageUI is an intuitive web application designed to simplify the management of
 Atala PRISM's suite of products, which enables the creation of applications with
