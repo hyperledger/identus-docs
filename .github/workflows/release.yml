@@ -36,6 +36,12 @@ jobs:
           registry: ghcr.io
           username: ${{ secrets.ATALA_GITHUB_ACTOR }}
           password: ${{ secrets.ATALA_GITHUB_TOKEN }}
+      - name: Build ADRs
+        run: |
+          cd ./atala-prism-building-blocks
+          npm install -g log4brains
+          log4brains build --out ../static/adrs
+          touch ../static/adrs/.nojekyll
       - name: Release
         env:
           GIT_AUTHOR_EMAIL: ${{ steps.import_gpg.outputs.email }}

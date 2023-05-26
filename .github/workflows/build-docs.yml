@@ -36,6 +36,7 @@ jobs:
           cd ./atala-prism-building-blocks
           npm install -g log4brains
           log4brains build --out ../static/adrs
+          touch ../static/adrs/.nojekyll
       - name: Build website
         run: |
           yarn build --out-dir infra/website
