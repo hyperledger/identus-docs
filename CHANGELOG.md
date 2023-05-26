@@ -1,3 +1,10 @@
+## [1.25.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.24.0...v1.25.0) (2023-05-26)
+
+
+### :rocket: New Content
+
+* add structure for the Manage section ([#40](https://github.com/input-output-hk/atala-prism-docs/issues/40)) ([98ce880](https://github.com/input-output-hk/atala-prism-docs/commit/98ce880414866951f80ce05a35e95bc2fe6b7c8a))
+
 ## [1.24.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.23.1...v1.24.0) (2023-05-26)
 
 
