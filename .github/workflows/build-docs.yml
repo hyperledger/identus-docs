@@ -33,7 +33,7 @@ jobs:
         run: yarn install
       - name: Build ADRs
         run: |
-          cd ./atala-prism-building-blocks && log4brains build --out ../static/adrs
+          cd ./atala-prism-building-blocks && yarn log4brains build --out ../static/adrs
       - name: Build website
         run: |
           yarn build --out-dir infra/website
