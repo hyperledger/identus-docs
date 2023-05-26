@@ -31,6 +31,9 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: yarn install
+      - name: Build ADRs
+        run: |
+          cd ./atala-prism-building-blocks && log4brains build --out ../static/adrs
       - name: Build website
         run: |
           yarn build --out-dir infra/website
