@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.25.0...v1.25.1) (2023-05-26)
+
+
+### :sparkles: Updates
+
+* add ADRs in the release process ([#42](https://github.com/input-output-hk/atala-prism-docs/issues/42)) ([f033e08](https://github.com/input-output-hk/atala-prism-docs/commit/f033e080aeaaa2d929ee824f92264a355efdfb90))
+
 ## [1.25.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.24.0...v1.25.0) (2023-05-26)
 
 
