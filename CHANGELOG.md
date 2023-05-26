@@ -1,3 +1,10 @@
+## [1.25.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.25.1...v1.25.2) (2023-05-26)
+
+
+### :sparkles: Updates
+
+* make relative paths in ADRs ([b12e83d](https://github.com/input-output-hk/atala-prism-docs/commit/b12e83d88afe6bd439149016ddebcb4519432622))
+
 ## [1.25.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.25.0...v1.25.1) (2023-05-26)
 
 
