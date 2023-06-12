@@ -1,3 +1,10 @@
+## [1.29.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.28.0...v1.29.0) (2023-06-12)
+
+
+### :rocket: New Content
+
+* add native swift docs support ([#43](https://github.com/input-output-hk/atala-prism-docs/issues/43)) ([50bdd13](https://github.com/input-output-hk/atala-prism-docs/commit/50bdd13b18cca62cfb35d279fcaab41f6166041d))
+
 ## [1.28.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.27.0...v1.28.0) (2023-06-11)
 
 
