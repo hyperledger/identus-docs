@@ -10,3 +10,7 @@
 	path = atala-prism-wallet-sdk-ts
 	url = https://github.com/input-output-hk/atala-prism-wallet-sdk-ts.git
 	branch = master
+[submodule "atala-prism-wallet-sdk-swift"]
+	path = atala-prism-wallet-sdk-swift
+	url = https://github.com/input-output-hk/atala-prism-wallet-sdk-swift/
+	branch = gh-pages

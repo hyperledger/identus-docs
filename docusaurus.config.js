@@ -134,7 +134,7 @@ const config = {
                         items: [
                             {
                                 label: 'Wallet SDK Swift',
-                                href: 'https://swift-docs.atalaprism.io/',
+                                href: 'pathname://wallet-sdk-swift',
                             },
                             {
                                 to: '/wallet-sdk-ts',
