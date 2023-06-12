@@ -23,6 +23,7 @@ jobs:
         with:
           submodules: recursive
           token: ${{ secrets.ATALA_GITHUB_TOKEN }}
+          fetch-depth: 0
       - name: Update submodules
         run: |
           git submodule update --remote --recursive

@@ -6,6 +6,7 @@ on:
     - cron: '0 0 * * 0'
   # By manual trigger
   workflow_dispatch:
+  workflow_call:
 
 defaults:
   run:
@@ -20,6 +21,7 @@ jobs:
         with:
           token: ${{ secrets.ATALA_GITHUB_TOKEN }}
           submodules: true
+          fetch-depth: 0
       - name: Update submodules
         run: |
           git pull --recurse-submodules
