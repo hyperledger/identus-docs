@@ -14,7 +14,7 @@ The PRISM Agent provides all the required capabilities to leverage the power of 
 
 ## PRISM Agent Features
 
-This document provides an of the PRISM Agent feature set. This document is manually updated; as such, it may not be up to date with the most recent release of PRISM Agent.
+This document provides an overview of the PRISM Agent feature set. This document is manually updated; as such, it may not be up to date with the most recent release of PRISM Agent.
 
 **Last Update**: 2023-03-06, Release 0.48.3
 
