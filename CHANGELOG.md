@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.29.0...v1.29.1) (2023-06-13)
+
+
+### :sparkles: Updates
+
+* typo in the prism cloud agent overview ([e5e7370](https://github.com/input-output-hk/atala-prism-docs/commit/e5e737018e542cf87a212497a9e91375715935e3))
+
 ## [1.29.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.28.0...v1.29.0) (2023-06-12)
 
 
