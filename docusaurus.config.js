@@ -141,6 +141,10 @@ const config = {
                                 label: 'Wallet SDK TypeScript',
                                 activeBaseRegex: `/wallet-sdk-ts/`
                             },
+                            {
+                                label: 'Wallet SDK KMM',
+                                href: 'pathname://wallet-sdk-kmm',
+                            },
                         ],
                     },
                     {
