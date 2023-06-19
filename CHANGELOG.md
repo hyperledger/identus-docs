@@ -1,3 +1,10 @@
+## [1.33.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.33.0...v1.33.1) (2023-06-19)
+
+
+### :sparkles: Updates
+
+* link SDKs from github pages ([#45](https://github.com/input-output-hk/atala-prism-docs/issues/45)) ([1fc7856](https://github.com/input-output-hk/atala-prism-docs/commit/1fc7856ac1d6105a644ce27ea3842b2314fb6243))
+
 ## [1.33.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.32.0...v1.33.0) (2023-06-19)
 
 
