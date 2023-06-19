@@ -134,7 +134,7 @@ const config = {
                         items: [
                             {
                                 label: 'Wallet SDK Swift',
-                                href: 'pathname://wallet-sdk-swift',
+                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/',
                             },
                             {
                                 to: '/wallet-sdk-ts',
@@ -143,7 +143,7 @@ const config = {
                             },
                             {
                                 label: 'Wallet SDK KMM',
-                                href: 'pathname://wallet-sdk-kmm',
+                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/',
                             },
                         ],
                     },
