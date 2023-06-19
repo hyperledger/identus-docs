@@ -1,3 +1,10 @@
+## [1.32.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.31.0...v1.32.0) (2023-06-19)
+
+
+### :rocket: New Content
+
+* initial integration of wallet sdk kmm docs into website ([#44](https://github.com/input-output-hk/atala-prism-docs/issues/44)) ([98aebd8](https://github.com/input-output-hk/atala-prism-docs/commit/98aebd8ebfa84dec8c8210a7f26c5c9e23cb63cf))
+
 ## [1.31.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.30.0...v1.31.0) (2023-06-19)
 
 
