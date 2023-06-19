@@ -42,10 +42,6 @@ jobs:
           npm install -g log4brains
           log4brains build --out ../static/adrs --basePath /adrs
           touch ../static/adrs/.nojekyll
-      - name: Prepare Wallet SDKs
-        run: |
-          cp -r ./atala-prism-wallet-sdk-swift ./static/wallet-sdk-swift
-          cp -r ./atala-prism-wallet-sdk-kmm ./static/wallet-sdk-kmm
       - name: Release
         env:
           GIT_AUTHOR_EMAIL: ${{ steps.import_gpg.outputs.email }}
