@@ -1,3 +1,10 @@
+## [1.34.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.33.1...v1.34.0) (2023-06-19)
+
+
+### :rocket: New Content
+
+* update main page sdk components ([#46](https://github.com/input-output-hk/atala-prism-docs/issues/46)) ([21207c0](https://github.com/input-output-hk/atala-prism-docs/commit/21207c002db8e3f7d0d7561093f2f6bddd47b475))
+
 ## [1.33.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.33.0...v1.33.1) (2023-06-19)
 
 
