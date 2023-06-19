@@ -18,17 +18,6 @@ const Graphics = {
             </svg>
         )
     },
-    changelog({color = "#5559F2"}) {
-        return <svg xmlns="http://www.w3.org/2000/svg" width={51} height={51} fill="none">
-            <path
-                stroke={color}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12.75 36.125c0 1.976 0 2.964.217 3.775a6.375 6.375 0 0 0 4.508 4.508c.81.217 1.799.217 3.775.217h13.175c3.57 0 5.356 0 6.72-.695a6.376 6.376 0 0 0 2.785-2.786c.695-1.363.695-3.149.695-6.719v-17.85c0-3.57 0-5.355-.695-6.72a6.375 6.375 0 0 0-2.786-2.785c-1.363-.695-3.149-.695-6.719-.695H21.25c-1.976 0-2.964 0-3.775.217a6.375 6.375 0 0 0-4.508 4.508c-.217.81-.217 1.799-.217 3.775M25.5 17l8.5 8.5m0 0L25.5 34m8.5-8.5H6.375"
-            />
-        </svg>
-    },
     docs({color = "#5559F2"}) {
         return (
             <svg xmlns="http://www.w3.org/2000/svg" width={51} height={51} fill="none">
@@ -101,6 +90,19 @@ const Graphics = {
             </svg>
         )
     },
+    walletSdkKmm({color = "#5559F2"}) {
+        return (
+            <svg xmlns="http://www.w3.org/2000/svg" width={51} height={51} fill="none">
+                <path
+                    stroke={color}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M30.5 8h-9.975m-3.1 38.75h16.15c2.38 0 3.57 0 4.48-.463a4.25 4.25 0 0 0 1.857-1.858c.463-.909.463-2.099.463-4.479v-28.9c0-2.38 0-3.57-.463-4.48a4.25 4.25 0 0 0-1.858-1.857c-.909-.463-2.099-.463-4.479-.463h-16.15c-2.38 0-3.57 0-4.48.463a4.25 4.25 0 0 0-1.857 1.858c-.463.909-.463 2.099-.463 4.479v28.9c0 2.38 0 3.57.463 4.48a4.25 4.25 0 0 0 1.857 1.857c.91.463 2.1.463 4.48.463Z"
+                />
+            </svg>
+        )
+    },
     walletSdkTS({color = "#5559F2"}) {
         return (
             <svg xmlns="http://www.w3.org/2000/svg" width={51} height={51} fill="none">
@@ -127,13 +129,19 @@ const RESOURCES = [
         title: "Wallet SDK Swift",
         Svg: Graphics.walletSdkSwift,
         content: "Build Swift-based applications using our SDKs",
-        linkTo: "https://swift-docs.atalaprism.io"
+        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/"
     },
     {
         title: "Wallet SDK TypeScript",
         Svg: Graphics.walletSdkTS,
         content: "Build web-based applications using our SDKs",
         linkTo: "#"
+    },
+    {
+        title: "Wallet SDK KMM",
+        Svg: Graphics.walletSdkKmm,
+        content: "Build KMM-based applications using our SDKs",
+        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/"
     },
     {
         title: "APIs",
@@ -146,12 +154,6 @@ const RESOURCES = [
         Svg: Graphics.resources,
         content: "Everything you need to learn more about Atala PRISM",
         linkTo: "https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md"
-    },
-    {
-        title: "Changelog",
-        Svg: Graphics.changelog,
-        content: "View the previous versions of Atala PRISM",
-        linkTo: "http://atala-prism-v2-changelog-page.io/"
     },
 ]
 
