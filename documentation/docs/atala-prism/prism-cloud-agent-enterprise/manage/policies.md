@@ -1,3 +1,0 @@
-# Verification Policies
-
-> Coming soon!
