@@ -1,3 +1,10 @@
+## [1.35.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.34.0...v1.35.0) (2023-06-20)
+
+
+### :rocket: New Content
+
+* update manage content ([#48](https://github.com/input-output-hk/atala-prism-docs/issues/48)) ([7b965ee](https://github.com/input-output-hk/atala-prism-docs/commit/7b965ee33e014e2cbeb8f3f5ee193cce19c327ba))
+
 ## [1.34.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.33.1...v1.34.0) (2023-06-19)
 
 
