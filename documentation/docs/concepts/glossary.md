@@ -17,7 +17,7 @@ An invitation from one entity to another to establish a connection.
 A request to establish a connection.
 
 ### credential schema
-A credential schema is a standardized specification or template that defines a digital credential's structure, format, and properties. It outlines the necessary attributes, data elements, and metadata that ensure consistency and interoperability across credentials. These schemas are then stored as JSON in a specific format per this specification, and can subsequently be used to issue credentials using the Issue Credential APIs.
+A credential schema is a standardized specification or template that defines a digital credential's structure, format, and properties. It outlines the necessary attributes, data elements, and metadata that ensure consistency and interoperability across credentials. These schemas are then stored as JSON, and can subsequently be used to issue credentials using the Issue Credential APIs.
 
 ## D
 ### decentralized identifier
