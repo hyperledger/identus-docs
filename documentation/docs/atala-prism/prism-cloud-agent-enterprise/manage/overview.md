@@ -1,9 +1,8 @@
 # Overview
 
-ManageUI is an intuitive web application designed to simplify the management of
-Atala PRISM's suite of products, which enables the creation of applications with
-SSI-based features. With ManageUI, users can easily configure and integrate
-PRISM products without the need for any coding. Initially, ManageUI will allow
-users to create and manage credential schemas and verification policies.
-While ManageUI is currently in development, it will be launching soon.
+PRISM Manage is an intuitive web application designed to simplify workflows for the issuance and verification of credentials. 
 
+Initially, PRISM Manage will allow users to:
+- Create and manage credential schemas that can be used for issuing credentials [using the Issue APIs]  
+- Create and manage verification policies that can be used for proof requests for verifying credentials  [using the Verify APIs]. Coming Soon!  
+- Create and manage DIDs including the ability to publish and deactivate DIDs. Coming Soon!
