@@ -17,8 +17,7 @@ An invitation from one entity to another to establish a connection.
 A request to establish a connection.
 
 ### credential schema
-A data template for verifiable credentials (VCs). It contains claims of the VCs, credential schema author, type, name, version, and proof of authorship.
-
+A credential schema is a standardized specification or template that defines a digital credential's structure, format, and properties. It outlines the necessary attributes, data elements, and metadata that ensure consistency and interoperability across credentials. These schemas are then stored as JSON in a specific format per this specification, and can subsequently be used to issue credentials using the Issue Credential APIs.
 
 ## D
 ### decentralized identifier
@@ -142,6 +141,9 @@ A system that mediates the creation and verification of identifiers, keys, and o
 
 ### verifiable presentation
 Data is derived from one or more [verifiable credentials](/docs/concepts/glossary#verifiable-credential), issued by issuers, and shared (presented) to a specific verifier. The verifiable presentation is tamper-evident and encoded in a way to trust the authorship of the data after a cryptographic verification. 
+
+### verification policy
+Verification Policies enable verifiers to define the specific data they require for their business processes and will request from holders. Verification Policies are flexible because you can request specific data from a holder.
 
 ### verifier
 An entity that receives one or more [verifiable credentials](/docs/concepts/glossary#verifiable-credential) optionally, inside a [verifiable presentation](/docs/concepts/glossary#verifiable-presentation). Also known as a relying party.
