@@ -2,15 +2,15 @@
 
 ## Introduction
 
-Secrets are sensitive data that should be stored securely in the [Secrets Storage](</docs/concepts/glossary#secrets storage>).
-There are following types of the secrets managed by the Cloud Agent:
+Secrets are sensitive data that need to be stored securely in the [Secrets Storage](</docs/concepts/glossary#secrets storage>).
+The Cloud Agent manages the following types of secrets::
 
 - seed: a secret used to derive cryptographic keys
 - private key: a secret used to sign and decrypt data
-- any other entities sensitive data (for instance, `credential-definition` and the `link-secret` used by the AnonCreds)
+- any other sensitive data from entities' (for instance, `credential-definition` and the `link-secret` used by the AnonCreds)
 
 The default secret storage for the Cloud Agent is the [HashiCorp Vault Service](</docs/concepts/glossary#Vault Service>).
-Other implementation of the secret storages can be implemented based on the needs.
+Other implementations of secret storage can be implemented based on the needs.
 
 ## Technical Overview
 
@@ -19,11 +19,11 @@ Other implementation of the secret storages can be implemented based on the need
 The Vault service uses a secrets engine to store secrets.
 KV2 secrets engine is used to store secrets in the Vault service and provides the following features:
 
-- secrets are encrypted at rest
-- secrets are encrypted in transit
-- secrets are versioned
-- secrets can be deleted, restored and rolled back to a previous version
-- secrets are available via REST API, WEB UI, and command client
+- encrypted at rest
+- encrypted in transit
+- versioned
+- can be deleted, restored and rolled back to a previous version
+- available via REST API, WEB UI, and command client
 
 ### Secrets Storage Sequence Diagram
 
@@ -40,11 +40,11 @@ sequenceDiagram
 
 ### Naming Convention for the Vault Assets
 
-To store the assets in the Vault service each asset is assigned a unique name.
+Each asset is assigned a unique name to store the assets in the Vault service.
 The Vault is a key/value store with metadata attached to the key and versioning.
 
-The naming convention for the Vault assets is a matter of the implementation, but for the multi-tenant configuration all
-the assets of the Wallet must be stored under the path that contains the `tenant-id`.
+The naming convention for the Vault assets is a matter of implementation. 
+For a multi-tenant configuration, the Wallet requires all the asset storage under the path containing the `wallet-id'.
 
 For example, the `seed` can be stored by the following path:
 
@@ -52,7 +52,7 @@ For example, the `seed` can be stored by the following path:
 <wallet-id>/seed value=<base64-encoded-value> <metadata>
 ```
 
-The private keys for the DID can be stored by the following path:
+The following path can store the private keys for the DID:
 
 ```
 <wallet-id>/dids/prism/<did-ref>/keys/<key-purpose>/<key-index>/<operation-hash> value=<base64-encoded-value> <metadata>
@@ -63,13 +63,12 @@ where:
 - `wallet-id` is the unique identity of the Wallet
 - `did-ref` is the DID ref
 - `key-purpose` is the key purpose according to the PRISM DID Method specification
-- `key-index` is the key index. Starts from 0 and grows incrementally after each key rotation
+- `key-index`  is the key index. Starting from 0 and increasing incrementally after each key rotation
 - `operation-hash` is the reference to the update DID document operation
 - `base64-encoded-value` is the base64-encoded value of the key
-- `metadata` is the key/value metadata attached the key that can be used to store additional information about the key
-  such as `seed` or `key-derivation-path`
+- `metadata` is the key/value metadata attached to the key used to store additional information about the key such as `seed` or `key-derivation-path`
 
-The keys material of the DID peer can be stored by the following path:
+The following path can store the keys material of the DID peer:
 
 ```
 <wallet-id>/dids/peer/<did-ref>/keys/<key-purpose> value=<base64-encoded-value> <metadata>
