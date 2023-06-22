@@ -110,7 +110,7 @@ A cryptographic mechanism that proves the information in a [verifiable credentia
 See [Present Proof Protocol](/docs/concepts/glossary#present-proof-protocol)
 
 ### protocol buffer
-Also know as protobuf.
+Also known as protobuf.
 
 
 ## R
@@ -120,6 +120,10 @@ For a detailed overview of relays refer to the [RFC0046: Mediators and Relays](h
 
 
 ## S
+### secrets storage
+This component securely stores sensitive information, such as private keys associated with an individual's digital identity, wallet seed, etc.
+Secrets storage plays a crucial role in SSI systems because it ensures that sensitive information is securely stored and protected against unauthorized access or disclosure
+
 ### SSI
 See [Self-Sovereign Identity](/docs/concepts/glossary#self-sovereign-identity)
 
@@ -134,6 +138,10 @@ A governing body that establishes rules, requirements, establishes operating pro
 A document that lists authorized issuers and verifiers established by the [Trust framework](/docs/concepts/glossary#trust-framework).
 
 ## V
+### Vault Service
+HashiCorp Vault is a widely used open-source and enterprise-grade solution designed for securely storing, accessing, and managing secrets and sensitive data in modern computing environments.
+It offers a centralized platform for managing cryptographic keys, passwords, API keys, tokens, and other secrets.
+
 ### verifiable credential (VC)
 A verifiable credential is a tamper-evident credential that contains one or more claims made by an issuer whose authorship can be cryptographically verified. It is possible to use VCs to create a [verifiable presentation](/docs/concepts/glossary#verifiable-presentation). Also, the claims in a VC can be about different subjects.
 
