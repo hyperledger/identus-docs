@@ -1,3 +1,11 @@
+## [1.36.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.35.0...v1.36.0) (2023-06-22)
+
+
+### :rocket: New Content
+
+* add index docs for wallet sdk ts ([0d8fcdf](https://github.com/input-output-hk/atala-prism-docs/commit/0d8fcdf00e4a96647ae8bf2dd47d821a336c4f3a))
+* update submodules documentation to latest ([e73f876](https://github.com/input-output-hk/atala-prism-docs/commit/e73f876327d20a4cbd4af7745eabdac70308aca7))
+
 ## [1.35.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.34.0...v1.35.0) (2023-06-20)
 
 
