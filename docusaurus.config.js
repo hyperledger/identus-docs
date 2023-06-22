@@ -74,15 +74,6 @@ const config = {
                 sidebarPath: require.resolve('./atala-prism-building-blocks/docs/docusaurus/sidebars.js'),
             },
         ],
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'wallet-sdk-ts',
-                path: 'atala-prism-wallet-sdk-ts/docs',
-                routeBasePath: 'wallet-sdk-ts',
-                sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
-            },
-        ],
         require.resolve('docusaurus-lunr-search')
     ],
 
@@ -137,12 +128,11 @@ const config = {
                                 href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/',
                             },
                             {
-                                to: '/wallet-sdk-ts',
-                                label: 'Wallet SDK TypeScript',
-                                activeBaseRegex: `/wallet-sdk-ts/`
+                                label: 'Wallet SDK TS',
+                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/',
                             },
                             {
-                                label: 'Wallet SDK KMM',
+                                label: 'Wallet SDK Kotlin Multiplatform',
                                 href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/',
                             },
                         ],
