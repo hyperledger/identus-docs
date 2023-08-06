@@ -1,3 +1,10 @@
+## [1.44.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.43.0...v1.44.0) (2023-08-06)
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([19842b6](https://github.com/input-output-hk/atala-prism-docs/commit/19842b6e586b904f3188af1f5a495e27dc383b86))
+
 ## [1.43.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.42.0...v1.43.0) (2023-07-30)
 
 
