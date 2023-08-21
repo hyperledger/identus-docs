@@ -155,15 +155,19 @@ The following enviroment variables can be used to configure Prism Agent:
 * `PRESENTATION_VERIFY_SIGNATURE`
     - Type: `Boolean`
     - Default: `true`
+    - Description: Whether or not to verify a signed challenge used during credential presentation
 * `PRESENTATION_VERIFY_DATES`
     - Type: `Boolean`
     - Default: `false`
+    - Description: Whether or not to verify a challenge dates during presentation
 * `PRESENTATION_VERIFY_HOLDER_BINDING`
     - Type: `Boolean`
     - Default: `false`
+    - Description: 
 * `PRESENTATION_LEEWAY`
     - Type: `String`
     - Default: `0 seconds`
+    - Description: Time leeway when verifying challenge dates.
 * `SECRET_STORAGE_BACKEND`
     - Type: `Enum(vault, postgres)`
     - Default: `vault`
@@ -177,8 +181,17 @@ The following enviroment variables can be used to configure Prism Agent:
     - Default: `root`
     - Description: `Vault service auth token`
 * `WEBHOOK_URL`
+    - Type: `String`
+    - Default: `Null`
+    - Description: The webhook endpoint URL where the notifications will be sent.
 * `WEBHOOK_API_KEY`
+    - Type: `String`
+    - Default: `Null`
+    - Description: The optional API key (bearer token) to use as the Authorization header.
 * `WEBHOOK_PARALLELISM`
+    - Type: `Int`
+    - Default: `Null`
+    - Description: Maximum number of events that will be retrieved in a single iteration, from the event queue by the webhook publisher.
 
 
 
