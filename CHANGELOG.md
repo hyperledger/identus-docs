@@ -1,3 +1,10 @@
+## [1.46.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.45.0...v1.46.0) (2023-08-25)
+
+
+### :rocket: New Content
+
+* add docs for agent env variables ([#50](https://github.com/input-output-hk/atala-prism-docs/issues/50)) ([ff926ba](https://github.com/input-output-hk/atala-prism-docs/commit/ff926bafa5c9916d405c7387379230b605aa1461))
+
 ## [1.45.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.44.0...v1.45.0) (2023-08-20)
 
 
