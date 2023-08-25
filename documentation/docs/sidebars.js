@@ -60,7 +60,8 @@ const sidebars = {
             'atala-prism/prism-cloud-agent/overview',
             'atala-prism/prism-cloud-agent/building-blocks',
             'atala-prism/prism-cloud-agent/did-management',
-            'atala-prism/prism-cloud-agent/secrets-storage'
+            'atala-prism/prism-cloud-agent/secrets-storage',
+            'atala-prism/prism-cloud-agent/environment-variables'
           ]
         },
         {
