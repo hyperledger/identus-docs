@@ -1,3 +1,10 @@
+## [1.48.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.47.0...v1.48.0) (2023-08-28)
+
+
+### :rocket: New Content
+
+*  added new environment variable for accepting invitation leeway ([#51](https://github.com/input-output-hk/atala-prism-docs/issues/51)) ([962d6f1](https://github.com/input-output-hk/atala-prism-docs/commit/962d6f1802de10f64b1217f391695508b885838f))
+
 ## [1.47.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.46.0...v1.47.0) (2023-08-27)
 
 
