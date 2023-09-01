@@ -11,8 +11,7 @@ The PRISM agent calculates and stores the key derivation path whenever an activi
 new key material, such as creating a new DID or adding a new key.
 It internally tracks the DID counter and key counter to increment the derivation path accordingly.
 Details about the structure used by the PRISM agent to construct
-the key material from the seed can be found on the
-[HD key derivation decision record](/adrs/adr/20230516-hierarchical-deterministic-key-generation-algorithm/).
+the key material from the seed can be found on the HD-key derivation decision record.
 
 ## Managed Peer DID
 

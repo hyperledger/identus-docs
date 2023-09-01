@@ -18,5 +18,6 @@ For more information regarding each component, please see the following links:
   - [Hosted Instances](infrastructure/hosted-instances)
   
 Atala PRISM also provides feature-rich SDKs with documentation:
-  - For building Apple SSI Applications, please see [Swift SDK](https://swift-docs.atalaprism.io/)
-  - For building Web SSI Applications, please see [Typescript SDK](../../wallet-sdk-ts)
+  - For building Apple SSI Applications, please see [Swift SDK](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/)
+  - For building Web SSI Applications, please see [Typescript SDK](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/)
+  - For building JVM-based SSI Applications, please see [Kotlin Multiplatform SDK](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/)
