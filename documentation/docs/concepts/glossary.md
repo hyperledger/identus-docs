@@ -1,5 +1,10 @@
 # Glossary
 
+## A
+### access control
+Access control mechanisms define how tenants/entities can access and interact with their own data and resources, as well as control who can access them. 
+It helps enforce security and privacy policies in a multi-tenant environment.
+
 ## C
 ### claim
 An assertion made about a [subject](/docs/concepts/glossary#did-subject).
@@ -53,6 +58,11 @@ A distributed database or ledger establishes confidence for the participants to 
 ### endpoints
 A network address at which services operate on behalf of a [DID subject](/docs/concepts/glossary#did-subject).
 
+### entity
+An `entity`, in the context of the PRISM platform, is an identity representing a user or system. 
+Each entity possesses a Wallet and is associated with an authentication method. 
+Entities are crucial for secure and verifiable transactions within the SSI ecosystem.
+
 
 ## G
 ### governance framework
@@ -88,6 +98,9 @@ A mediator participates in agent-to-agent message delivery that the sender must 
 - A cloud-based agent that routes between/among the edges of a sovereign domain is a mediator.
 For a detailed overview of mediators refer to the [RFC0046: Mediators and Relays](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0046-mediators-and-relays).
 
+### mutli-tenancy
+Multi-tenancy is a core capability of the PRISM platform, allowing it to serve numerous users/identities while logically isolating their Wallet assets. 
+This segregation maintains data privacy and security, enhancing scalability and resource sharing within the SSI ecosystem.
 
 ## P
 
@@ -131,6 +144,17 @@ See [Self-Sovereign Identity](/docs/concepts/glossary#self-sovereign-identity)
 An identity model that shifts control to the edges, focused on security, privacy using public/private key encryption.
 
 ## T
+### Tenant
+A tenant is an individual user, organization, or entity that utilizes the SSI platform. 
+Each tenant has its own isolated area within the system, maintaining separation of assets.
+
+### Tenant Isolation
+Tenant isolation is a core capability of the PRISM platform, allowing it to serve numerous users/identities while logically isolating their Wallet assets.
+
+### Tenant Management
+Tenant management encompasses the processes and tools used to onboard, provision, and manage tenants within the SSI platform. 
+It includes tasks such as user registration, role assignment, configuring the authentication method and access permissions.
+
 ### Trust Framework
 A governing body that establishes rules, requirements, establishes operating procedures, and a [trust registry](/docs/concepts/glossary#trust-registry) for specific ecosystems.
 
