@@ -1,4 +1,4 @@
-# Multi-Tenancy in the Agent
+# Multi-Tenancy Management
 
 ## Introduction
 The general concept of the multi-tenancy and core features of the PRISM platform are described in the [Multi-Tenancy](/docs/concepts/multi-tenancy) document.
@@ -28,7 +28,7 @@ Request Example:
 curl -X 'POST' \
   'http://agent/wallets' \
   -H 'accept: application/json' \
-  -H 'x-admin-api-key: ${ADMIN_API_KEY}' \
+  -H 'x-admin-api-key: ******' \
   -H 'Content-Type: application/json' \
   -d '{
   "seed": "c9994785ce6d548134020f610b76102ca1075d3bb672a75ec8c9a27a7b8607e3b9b384e43b77bb08f8d5159651ae38b98573f7ecc79f2d7e1f1cc371ce60cf8a",
@@ -57,7 +57,7 @@ Request Example:
 curl -X 'GET' \
   'http://localhost:8085/wallets/00000000-0000-0000-0000-000000000000' \
   -H 'accept: application/json' \
-  -H 'x-admin-api-key: ${ADMIN_API_KEY}
+  -H 'x-admin-api-key: ******'
 ```
 
 Response Example:
@@ -85,7 +85,7 @@ Request Example:
 curl -X 'GET' \
   'http://localhost:8085/wallets' \
   -H 'accept: application/json' \
-  -H 'x-admin-api-key: ${ADMIN_API_KEY}'
+  -H 'x-admin-api-key: ******'
 ```
 
 Response Example:
@@ -129,7 +129,7 @@ Request Example:
 curl -X 'POST' \
   'http://localhost/prism-agent/iam/entities' \
   -H 'accept: application/json' \
-  -H 'x-admin-api-key: admin' \
+  -H 'x-admin-api-key: ******' \
   -H 'Content-Type: application/json' \
   -d '{
   "id": "10000000-0000-0000-0000-000000000000",
@@ -161,7 +161,7 @@ Request Example:
 curl -X 'GET' \
   'http://localhost/prism-agent/iam/entities/10000000-0000-0000-0000-000000000000' \
   -H 'accept: application/json' \
-  -H 'x-admin-api-key: admin'
+  -H 'x-admin-api-key: ******'
 ```
 
 Response Example:
@@ -188,7 +188,7 @@ Request Example:
 curl -X 'PUT' \
   'http://localhost/prism-agent/iam/entities/10000000-0000-0000-0000-000000000000/name' \
   -H 'accept: application/json' \
-  -H 'x-admin-api-key: admin' \
+  -H 'x-admin-api-key: ******' \
   -H 'Content-Type: application/json' \
   -d '{
   "name": "John Doe"
@@ -223,7 +223,7 @@ Request Example:
 curl -X 'PUT' \
   'http://localhost/prism-agent/iam/entities/10000000-0000-0000-0000-000000000000/walletId' \
   -H 'accept: application/json' \
-  -H 'x-admin-api-key: admin' \
+  -H 'x-admin-api-key: ******' \
   -H 'Content-Type: application/json' \
   -d '{
   "walletId": "c4abb8d4-a923-4317-a100-6b20125289d6"
@@ -251,11 +251,17 @@ To delete the entity, send a `DELETE` request to the `/entities/{id}` endpoint w
 Request Example:
 
 ```http
+curl -X 'DELETE' \
+  'http://localhost/prism-agent/iam/entities/10000000-0000-0000-0000-000000000000' \
+  -H 'accept: */*' \
+  -H 'x-admin-api-key: ******'
 ```
+
+Http code 200 will be returned in the case of the successful request execution without the body.
 
 ### Register `api-key` Authentication Method
 
-To register the `api-key` authentication method for the entity, send a `POST` request to the `/entities/api-key-authentication` endpoint with the `entityId` and the `api-key` parameter.
+To register the `api-key` authentication method for the entity, send a `POST` request to the `/entities/api-key-authentication` endpoint with the `entityId` and the `api-key` parameters in the body.
 
 |Parameter | Type | Description | Is Required |
 | entityId | string | The ID of the entity. | Yes |
@@ -264,18 +270,77 @@ To register the `api-key` authentication method for the entity, send a `POST` re
 Example Request:
 
 ```http
+curl -X 'POST' \
+  'http://localhost/prism-agent/iam/api-key-authentication' \
+  -H 'accept: */*' \
+  -H 'x-admin-api-key: ******' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "entityId": "10000000-0000-0000-0000-000000000000",
+  "apiKey": "dkflks3DflkFmkllnDfde"
+}'
 ```
+
+Http code 201 will be returned in the case of the successful request execution.
 
 ### Unregister `api-key` Authentication Method
 
+To unregister the `api-key` authentication method for the entity, send a `DELETE` request to the `/entities/api-key-authentication` endpoint with the `entityId` and the `api-key` parameters in the body.
+
+|Parameter | Type | Description | Is Required |
+| entityId | string | The ID of the entity. | Yes |
+| api-key | string | The API Key to unregister. | Yes |
+
+Example Request:
+
+```http
+curl -X 'DELETE' \
+  'http://localhost/prism-agent/iam/api-key-authentication' \
+  -H 'accept: */*' \
+  -H 'x-admin-api-key: ******' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "entityId": "10000000-0000-0000-0000-000000000000",
+  "apiKey": "dkflks3DflkFmkllnDfde"
+}'
+```
+
+Http code 200 will be returned in the case of the successful request execution without the body.
+
 ### Get Entities
 
+To get the list of entities, send a `GET` request to the `/entities` endpoint with the following parameters:
 
+| Parameter | Type | Description | Is Required |
+| offset | integer | The offset from the beginning of the list of entities. | No |
+| limit | integer | The maximum number of entities to return. | No |
 
+Request Example:
 
-## Authentication Methods
-### API-Key Authentication
-### Admin-Api-Key Authentication
+```http
+curl -X 'GET' \
+  'http://localhost/prism-agent/iam/entities?limit=100' \
+  -H 'accept: application/json' \
+  -H 'x-admin-api-key: ******'
+```  
 
+Response Example:
 
-## Webhooks
+```json
+{
+  "contents": [
+    {
+      "kind": "Entity",
+      "self": "/iam/entities/10000000-0000-0000-0000-000000000000",
+      "id": "10000000-0000-0000-0000-000000000000",
+      "name": "John Doe",
+      "walletId": "c4abb8d4-a923-4317-a100-6b20125289d6",
+      "createdAt": "2023-09-01T14:00:38.760045Z",
+      "updatedAt": "2023-09-01T14:10:52.166241Z"
+    }
+  ],
+  "kind": "EntityResponsePage",
+  "self": "/iam/entities?limit=100",
+  "pageOf": "/iam/entities"
+}
+```

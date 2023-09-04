@@ -17,6 +17,11 @@ It enables the platform to serve multiple tenants while ensuring the logical iso
 
 ## Concepts
 
+### Tenant
+
+A Tenant is a logical entity that represents an organization or a group of users within the PRISM platform.
+Each tenant is represented by an Entity, which is the primary entity for managing and interacting with the tenant's digital assets.
+
 ### Wallet
 
 A Wallet is a central component of PRISM's multi-tenancy model.
@@ -51,3 +56,23 @@ Administrators have the authority to configure permissions, resources, and acces
 DIDComm Connections are the secure channels of communication between peers within the SSI ecosystem.
 PRISM's multi-tenancy model ensures that the connections of one Entity are logically isolated from those of other Entities, preserving data privacy and security.
 Based on the DID-Peer of the message recipient, the corresponding Wallet is used to process the message.
+
+## Relation Diagram
+
+The following diagram illustrates the relationship between the key components of PRISM's multi-tenancy model.
+
+
+```mermaid
+graph TB;
+    Tenant(Tenant) --> |Represented by| Entity
+    Tenant --> |Authenticates by| AuthMethod(Authentication Method)
+
+    subgraph PRISM Platform
+            Wallet(Wallet) -->|Contains| DIDs(DIDs )
+            Wallet(Wallet) -->|Contains| VCs(Verifiable Credentials)
+            Wallet(Wallet) -->|Contains| VSSchemas(VC Schemas)
+            Wallet(Wallet) -->|Contains| Assets(Other Assets...)
+            Entity(Entity) -->|Owns| Wallet(Wallet)
+            Entity(Entity) -->|Uses| AuthMethod(Authentication Method)
+    end
+```
