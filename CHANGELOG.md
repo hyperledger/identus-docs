@@ -1,3 +1,10 @@
+## [1.50.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.49.0...v1.50.0) (2023-09-06)
+
+
+### :rocket: New Content
+
+* update mediator docs ([#53](https://github.com/input-output-hk/atala-prism-docs/issues/53)) ([4ba4099](https://github.com/input-output-hk/atala-prism-docs/commit/4ba4099e9311d6e7ef87420bb7450fa86bda01dc))
+
 ## [1.49.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.48.0...v1.49.0) (2023-09-03)
 
 
