@@ -57,6 +57,12 @@ DIDComm Connections are the secure communication channels between peers within t
 PRISM's multi-tenancy model ensures that the connections of one Entity are logically isolated from those of other Entities, preserving data privacy and security.
 Based on the DID-Peer of the message recipient, the corresponding Wallet processes the message.
 
+### Webhook Notifications
+Webhook notifications enable users to receive alerts for specific events in the system.
+There are two types of webhook notifications:
+global webhooks, which monitor all events across all wallets at the Agent level,
+and wallet webhooks, which are isolated to individual wallets and do not have visibility into assets in other wallets.
+
 ## Relation Diagram
 
 The following diagram illustrates the relationship between the key components of PRISM's multi-tenancy model.

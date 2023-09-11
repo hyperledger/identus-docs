@@ -9,16 +9,15 @@ The Wallet Management API gets protected by the Admin API Key authentication met
 
 When the wallet gets created in the system, the following actions are performed:```
 - The seed is set for the wallet.
-- The DID Peer is generated for the wallet.
-- The DID Peer is registered in the system to accept the messages from other peers.
 
 ### Create Wallet
 
 To create a new wallet, send a `POST` request to the `/wallets` endpoint with the following parameters:
 
-| Parameter | Type | Description | Is Required |
-| seed | string | The seed used to derive the key material for the wallet. | No |
-| name | string | The name of the wallet. | Yes |
+| Parameter | Type   | Description                                              | Is Required |
+|-----------|--------|----------------------------------------------------------|-------------|
+| seed      | string | The seed used to derive the key material for the wallet. | No          |
+| name      | string | The name of the wallet.                                  | Yes         |
 
 If not providing the`seed` parameter, the wallet will get created with a randomly generated seed.
 
@@ -75,9 +74,10 @@ Response Example:
 
 To get the list of wallets, send a `GET` request to the `/wallets` endpoint with the following parameters:
 
-| Parameter | Type | Description | Is Required |
-| offset | integer | The offset from the beginning of the list of wallets. | No |
-| limit | integer | The maximum number of wallets to return. | No |
+| Parameter | Type    | Description                                           | Is Required |
+|-----------|---------|-------------------------------------------------------|-------------|
+| offset    | integer | The offset from the beginning of the list of wallets. | No          |
+| limit     | integer | The maximum number of wallets to return.              | No          |
 
 Request Example:
 
@@ -115,9 +115,10 @@ Entity Management API gets  protected by the Admin API Key authentication method
 
 To create a new entity, send a `POST` request to the `/entities` endpoint with the following parameters:
 
-| Parameter | Type | Description | Is Required |
-| name | string | The name of the entity. | Yes |
-| walletId | string | The ID of the wallet to associate with the entity. | No |
+| Parameter | Type   | Description                                        | Is Required |
+|-----------|--------|----------------------------------------------------|-------------|
+| name      | string | The name of the entity.                            | Yes         |
+| walletId  | string | The ID of the wallet to associate with the entity. | No          |
 
 If not providing the walletId parameter, the entity will get created with a default wallet.
 The entity is not created if the `walletId` parameter is provided and the corresponding wallet does not exist.
@@ -213,9 +214,10 @@ Response Example:
 
 To update the entity's wallet, send a `PUT` request to the `/entities/{id}/wallet` endpoint with the `entityId` path parameter and the `walletId` parameter.
 
-|Parameter | Type | Description | Is Required |
-| id | string | The ID of the entity. | Yes |
-| walletId | string | The ID of the wallet to associate with the entity. | Yes |
+|Parameter | Type   | Description                                        | Is Required |
+|----------|--------|----------------------------------------------------|-------------|
+| id       | string | The ID of the entity.                              | Yes         |
+| walletId | string | The ID of the wallet to associate with the entity. | Yes         |
 
 Request Example:
     
@@ -263,9 +265,10 @@ HTTP code 200 returns in the case of the successful request execution without th
 
 To register the `apikey` authentication method for the entity, send a `POST` request to the `/entities/apikey-authentication` endpoint with the `entityId` and the `apikey` parameters in the body.
 
-|Parameter | Type | Description | Is Required |
-| entityId | string | The ID of the entity. | Yes |
-| apiKey | string | The API Key to register. | Yes |
+|Parameter | Type   | Description              | Is Required |
+|----------|--------|--------------------------|-------------|
+| entityId | string | The ID of the entity.    | Yes         |
+| apikey   | string | The API Key to register. | Yes         |
 
 Example Request:
 
@@ -287,9 +290,10 @@ HTTP code 201 returns in the case of the successful request execution.
 
 To unregister the `apikey` authentication method for the entity, send a `DELETE` request to the `/entities/apikey-authentication` endpoint with the `entityId` and the `apikey` parameters in the body.
 
-|Parameter | Type | Description | Is Required |
-| entityId | string | The ID of the entity. | Yes |
-| apiKey | string | The API Key to unregister. | Yes |
+|Parameter | Type   | Description                | Is Required |
+|----------|--------|----------------------------|-------------|
+| entityId | string | The ID of the entity.      | Yes         |
+| apikey   | string | The API Key to unregister. | Yes         |
 
 Example Request:
 
@@ -311,9 +315,10 @@ HTTP code 200 returns in the case of the successful request execution without th
 
 To get the list of entities, send a `GET` request to the `/entities` endpoint with the following parameters:
 
-| Parameter | Type | Description | Is Required |
-| offset | integer | The offset from the beginning of the list of entities. | No |
-| limit | integer | The maximum number of entities to return. | No |
+| Parameter | Type    | Description                                            | Is Required |
+|-----------|---------|--------------------------------------------------------|-------------|
+| offset    | integer | The offset from the beginning of the list of entities. | No          |
+| limit     | integer | The maximum number of entities to return.              | No          |
 
 Request Example:
 
