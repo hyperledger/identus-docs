@@ -38,11 +38,11 @@ Disable API-Key authentication and use the Default Wallet for all interactions w
 | API_KEY_ENABLED      | false  |
 
 ### Single Tenant with api-key authentication
-Enable API-Key authentication and use the Default Wallet for all interactions with the Agent over the  REST API and DIDComm
+Enable APIKey authentication and use the Default Wallet for all interactions with the Agent over the  REST API and DIDComm
 
 | Environment Variable                 | Value |
 |--------------------------------------|-------|
-| API_KEY_ENABLED                      | false |
+| API_KEY_ENABLED                      | true  |
 | API_KEY_AUTHENTICATE_AS_DEFAULT_USER | true  |
 
 ### Multi-Tenant with api-key authentication

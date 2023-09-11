@@ -259,19 +259,19 @@ curl -X 'DELETE' \
 
 Http code 200 will be returned in the case of the successful request execution without the body.
 
-### Register `api-key` Authentication Method
+### Register `apikey` Authentication Method
 
-To register the `api-key` authentication method for the entity, send a `POST` request to the `/entities/api-key-authentication` endpoint with the `entityId` and the `api-key` parameters in the body.
+To register the `apikey` authentication method for the entity, send a `POST` request to the `/entities/apikey-authentication` endpoint with the `entityId` and the `apikey` parameters in the body.
 
 |Parameter | Type | Description | Is Required |
 | entityId | string | The ID of the entity. | Yes |
-| api-key | string | The API Key to register. | Yes |
+| apiKey | string | The API Key to register. | Yes |
 
 Example Request:
 
 ```http
 curl -X 'POST' \
-  'http://localhost/prism-agent/iam/api-key-authentication' \
+  'http://localhost/prism-agent/iam/apikey-authentication' \
   -H 'accept: */*' \
   -H 'x-admin-api-key: ******' \
   -H 'Content-Type: application/json' \
@@ -283,19 +283,19 @@ curl -X 'POST' \
 
 Http code 201 will be returned in the case of the successful request execution.
 
-### Unregister `api-key` Authentication Method
+### Unregister `apikey` Authentication Method
 
-To unregister the `api-key` authentication method for the entity, send a `DELETE` request to the `/entities/api-key-authentication` endpoint with the `entityId` and the `api-key` parameters in the body.
+To unregister the `apikey` authentication method for the entity, send a `DELETE` request to the `/entities/apikey-authentication` endpoint with the `entityId` and the `apikey` parameters in the body.
 
 |Parameter | Type | Description | Is Required |
 | entityId | string | The ID of the entity. | Yes |
-| api-key | string | The API Key to unregister. | Yes |
+| apiKey | string | The API Key to unregister. | Yes |
 
 Example Request:
 
 ```http
 curl -X 'DELETE' \
-  'http://localhost/prism-agent/iam/api-key-authentication' \
+  'http://localhost/prism-agent/iam/apikey-authentication' \
   -H 'accept: */*' \
   -H 'x-admin-api-key: ******' \
   -H 'Content-Type: application/json' \
