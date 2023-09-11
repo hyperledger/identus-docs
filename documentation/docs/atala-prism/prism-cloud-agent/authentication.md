@@ -17,7 +17,7 @@ Default Entity - is an entity with id `00000000-0000-0000-0000-000000000000` and
 ## API-Key Authentication
 
 API-Key authentication is a simple authentication method that uses a secret key to authenticate the entity.
-The header `api-key` must be added to the http request with the value of the issued secret.
+The header `apikey` must be added to the http request with the value of the issued secret.
 The Platform Administrator can configure the API-Key authentication for the entity using the Admin API Key authentication method.
 
 The Agent maintains a list of API-Keys for each tenant, but the value of the API-Key is not stored in the Agent.
