@@ -1,3 +1,10 @@
+## [1.53.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.52.1...v1.53.0) (2023-09-12)
+
+
+### :rocket: New Content
+
+* new multitenancy rest api ([afe21c2](https://github.com/input-output-hk/atala-prism-docs/commit/afe21c2195063832021fdae4b6767b4122819a58))
+
 ## [1.52.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.52.0...v1.52.1) (2023-09-12)
 
 
