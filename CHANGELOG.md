@@ -1,3 +1,10 @@
+## [1.52.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.51.0...v1.52.0) (2023-09-12)
+
+
+### :rocket: New Content
+
+* multi-tenancy documentation part [#1](https://github.com/input-output-hk/atala-prism-docs/issues/1) ([#52](https://github.com/input-output-hk/atala-prism-docs/issues/52)) ([066b66e](https://github.com/input-output-hk/atala-prism-docs/commit/066b66ee1448c14ed95b7a8882c07867f75d3374))
+
 ## [1.51.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.50.0...v1.51.0) (2023-09-10)
 
 
