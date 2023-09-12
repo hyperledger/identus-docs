@@ -9,7 +9,7 @@ It enables the platform to serve multiple tenants while ensuring the logical iso
 
 ### Key Benefits
 
-- Scalability: PRISM's multi-tenancy support allows the platform to scale effortlessly to accommodate a growing number of users, entities, and organizations.
+- Scalability: PRISM's multi-tenancy support allows the platform to scale effortlessly to accommodate growing users, entities, and organizations.
 - Resource Efficiency: It optimizes resource utilization by enabling the sharing of infrastructure components, enhancing cost-effectiveness.
 - Data Isolation: Multi-tenancy ensures that the data, such as DIDs (Decentralized Identifiers), connections, VCs (Verifiable Credentials), keys, and more, of one tenant is completely isolated from others, preserving data privacy and security.
 - Enhanced Collaboration: Shared Wallets enable collaboration between entities while maintaining data segregation.
@@ -19,8 +19,8 @@ It enables the platform to serve multiple tenants while ensuring the logical iso
 
 ### Tenant
 
-A Tenant is a logical entity that represents an organization or a group of users within the PRISM platform.
-Each tenant is represented by an Entity, which is the primary entity for managing and interacting with the tenant's digital assets.
+A Tenant is a logical entity representing an organization or a group of users within the PRISM platform.
+Each tenant is represented by an Entity, the primary entity for managing and interacting with the tenant's digital assets.
 
 ### Wallet
 
@@ -30,7 +30,7 @@ Wallets are logically isolated to ensure that the data associated with one entit
 
 ### Entity
 
-An Entity is a representation of a user or any other identity within the PRISM platform.
+An Entity represents a user or any other identity within the PRISM platform.
 Each Entity owns a Wallet, making it the primary entity for managing and interacting with its digital credentials and assets.
 Entities can also share Wallets, enabling collaborative use of resources.
 
@@ -46,16 +46,16 @@ It ensures that the digital assets, transactions, and data of one Entity are log
 ### Shared Wallets
 PRISM's multi-tenancy capabilities allow for the sharing of Wallets among multiple Entities. 
 This feature facilitates collaborative work and resource sharing while preserving data isolation within the shared Wallet.
-The Entity can own only one Wallet, so the Wallet can be shared with other Entities, but it cannot be owned by multiple Entities.
+The Entity can own only one Wallet. It is possible to share it with other Entities, but multiple Entities cannot own it.
 
 ### Tenant Management
 Tenant Management is the process of onboarding, provisioning, and managing Entities and Wallets within the PRISM platform. 
-Administrators have the authority to configure permissions, resources, and access control for each Entity, ensuring efficient and secure multi-tenancy operations.
+Administrators can configure permissions, resources, and access control for each Entity, ensuring efficient and secure multi-tenancy operations.
 
 ### DIDComm Connections
-DIDComm Connections are the secure channels of communication between peers within the SSI ecosystem.
+DIDComm Connections are the secure communication channels between peers within the SSI ecosystem.
 PRISM's multi-tenancy model ensures that the connections of one Entity are logically isolated from those of other Entities, preserving data privacy and security.
-Based on the DID-Peer of the message recipient, the corresponding Wallet is used to process the message.
+Based on the DID-Peer of the message recipient, the corresponding Wallet processes the message.
 
 ## Relation Diagram
 

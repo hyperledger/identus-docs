@@ -2,7 +2,7 @@
 
 ## A
 ### access control
-Access control mechanisms define how tenants/entities can access and interact with their own data and resources, as well as control who can access them. 
+Access control mechanisms define how tenants/entities can access and interact with their data and resources and control who can access them. 
 It helps enforce security and privacy policies in a multi-tenant environment.
 
 ## C
@@ -59,7 +59,7 @@ A distributed database or ledger establishes confidence for the participants to 
 A network address at which services operate on behalf of a [DID subject](/docs/concepts/glossary#did-subject).
 
 ### entity
-An `entity`, in the context of the PRISM platform, is an identity representing a user or system. 
+An `entity,` in the context of the PRISM platform, is an identity representing a user or system. 
 Each entity possesses a Wallet and is associated with an authentication method. 
 Entities are crucial for secure and verifiable transactions within the SSI ecosystem.
 
@@ -146,14 +146,13 @@ An identity model that shifts control to the edges, focused on security, privacy
 ## T
 ### Tenant
 A tenant is an individual user, organization, or entity that utilizes the SSI platform. 
-Each tenant has its own isolated area within the system, maintaining separation of assets.
+Each tenant has its isolated area within the system, maintaining the separation of assets.
 
 ### Tenant Isolation
 Tenant isolation is a core capability of the PRISM platform, allowing it to serve numerous users/identities while logically isolating their Wallet assets.
 
 ### Tenant Management
-Tenant management encompasses the processes and tools used to onboard, provision, and manage tenants within the SSI platform. 
-It includes tasks such as user registration, role assignment, configuring the authentication method and access permissions.
+Tenant management encompasses the processes and tools used to onboard, provision, and manage tenants within the SSI platform, including user registration, role assignment, authentication method configuring, and access permissions.
 
 ### Trust Framework
 A governing body that establishes rules, requirements, establishes operating procedures, and a [trust registry](/docs/concepts/glossary#trust-registry) for specific ecosystems.

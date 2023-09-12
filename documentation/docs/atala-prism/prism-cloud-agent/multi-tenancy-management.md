@@ -1,13 +1,13 @@
 # Multi-Tenancy Management
 
 ## Introduction
-The general concept of the multi-tenancy and core features of the PRISM platform are described in the [Multi-Tenancy](/docs/concepts/multi-tenancy) document.
+The general concept of the multi-tenancy and core features of the PRISM platform can be found in the [Multi-Tenancy](/docs/concepts/multi-tenancy) document.
 
 ## Wallet Management
 The Agent exposes the Wallet Management REST API to manage Wallets.
-Wallet Management API is protected by the Admin API Key authentication method.
+The Wallet Management API gets protected by the Admin API Key authentication method.
 
-When the wallet is created in the system the following actions are performed:
+When the wallet gets created in the system, the following actions are performed:```
 - The seed is set for the wallet.
 - The DID Peer is generated for the wallet.
 - The DID Peer is registered in the system to accept the messages from other peers.
@@ -20,7 +20,7 @@ To create a new wallet, send a `POST` request to the `/wallets` endpoint with th
 | seed | string | The seed used to derive the key material for the wallet. | No |
 | name | string | The name of the wallet. | Yes |
 
-If the `seed` parameter is not provided, the wallet will be created with a randomly generated seed.
+If not providing the`seed` parameter, the wallet will get created with a randomly generated seed.
 
 Request Example:
 
@@ -49,7 +49,7 @@ Response Example:
 
 ### Get Wallet
 
-To get the wallet details, send a `GET` request to the `/wallets/{id}` endpoint with the `walletId` path parameter.
+Send a `GET` request to the `/wallets/{id}` endpoint with the `walletId` path parameter to get the wallet details.
 
 Request Example:
 
@@ -108,8 +108,8 @@ Response Example:
 
 ## Entity Management
 
-The Agent exposes the Entity Management REST API to manage Entities.
-Entity Management API is protected by the Admin API Key authentication method.
+The Cloud Agent exposes the Entity Management REST API to manage Entities.
+Entity Management API gets  protected by the Admin API Key authentication method.
 
 ### Create Entity
 
@@ -119,8 +119,8 @@ To create a new entity, send a `POST` request to the `/entities` endpoint with t
 | name | string | The name of the entity. | Yes |
 | walletId | string | The ID of the wallet to associate with the entity. | No |
 
-If the walletId parameter is not provided, the entity will be created with a default wallet.
-If the walletId parameter is provided, but the corresponding wallet does not exist, the entity will not be created.
+If not providing the walletId parameter, the entity will get created with a default wallet.
+The entity is not created if the `walletId` parameter is provided and the corresponding wallet does not exist.
 It's possible to set the walletId for the entity later.
 
 Request Example:
@@ -154,7 +154,7 @@ Response Example:
 
 ### Get Entity
 
-To get the entity details, send a `GET` request to the `/entities/{id}` endpoint with the `entityId` path parameter.
+Send a `GET` request to the `/entities/{id}` endpoint with the `entityId` path parameter to get the entity details.
 
 Request Example:
 ```http
@@ -180,7 +180,7 @@ Response Example:
 
 ### Update Name
 
-To update the name of the entity, send a `PUT` request to the `/entities/{id}/name` endpoint with the `entityId` path parameter and the `name` parameter.
+To update the entity's name, send a `PUT` request to the `/entities/{id}/name` endpoint with the `entityId` path parameter and the `name` parameter.
 
 Request Example:
 
@@ -211,7 +211,7 @@ Response Example:
 
 ### Update Wallet
 
-To update the wallet of the entity, send a `PUT` request to the `/entities/{id}/wallet` endpoint with the `entityId` path parameter and the `walletId` parameter.
+To update the entity's wallet, send a `PUT` request to the `/entities/{id}/wallet` endpoint with the `entityId` path parameter and the `walletId` parameter.
 
 |Parameter | Type | Description | Is Required |
 | id | string | The ID of the entity. | Yes |
@@ -257,7 +257,7 @@ curl -X 'DELETE' \
   -H 'x-admin-api-key: ******'
 ```
 
-Http code 200 will be returned in the case of the successful request execution without the body.
+HTTP code 200 returns in the case of the successful request execution without the body.
 
 ### Register `apikey` Authentication Method
 
@@ -281,7 +281,7 @@ curl -X 'POST' \
 }'
 ```
 
-Http code 201 will be returned in the case of the successful request execution.
+HTTP code 201 returns in the case of the successful request execution.
 
 ### Unregister `apikey` Authentication Method
 
@@ -305,7 +305,7 @@ curl -X 'DELETE' \
 }'
 ```
 
-Http code 200 will be returned in the case of the successful request execution without the body.
+HTTP code 200 returns in the case of the successful request execution without the body.
 
 ### Get Entities
 
