@@ -63,7 +63,7 @@ where:
 - `wallet-id` is the unique identity of the Wallet
 - `did-ref` is the DID ref
 - `key-purpose` is the key purpose according to the PRISM DID Method specification
-- `key-index`  is the key index. Starting from 0 and increasing incrementally after each key rotation
+- `key-index` is the key index. Starting from 0 and increasing incrementally after each key rotation
 - `operation-hash` is the reference to the update DID document operation
 - `base64-encoded-value` is the base64-encoded value of the key
 - `metadata` is the key/value metadata attached to the key used to store additional information about the key such as `seed` or `key-derivation-path`

@@ -135,7 +135,7 @@ For a detailed overview of relays refer to the [RFC0046: Mediators and Relays](h
 ## S
 ### secrets storage
 This component securely stores sensitive information, such as private keys associated with an individual's digital identity, wallet seed, etc.
-Secrets storage plays a crucial role in SSI systems because it ensures that sensitive information is securely stored and protected against unauthorized access or disclosure
+Secrets storage plays a crucial role in SSI implementations because it ensures that sensitive information is securely stored and protected against unauthorized access or disclosure
 
 ### SSI
 See [Self-Sovereign Identity](/docs/concepts/glossary#self-sovereign-identity)
