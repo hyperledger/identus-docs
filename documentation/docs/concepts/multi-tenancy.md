@@ -15,6 +15,27 @@ It enables the platform to serve multiple tenants while ensuring the logical iso
 - Enhanced Collaboration: Shared Wallets enable collaboration between entities while maintaining data segregation.
 - Granular Control: administrators have granular control over the resources and permissions assigned to each entity.
 
+## Roles in multi-tenancy
+
+Multi-tenancy permits multiple users or systems to make use of the PRISM Agent within a shared instance,
+enhancing resource utilization while preserving the separation of each tenant and their resources.
+Understanding different roles in multi-tenancy is important for the secure and efficient operation of the Agent.
+
+### Administrator
+
+The administrator's primary responsibilities include setting up, allocating, and managing resources for tenants.
+Administrators have elevated privileges within the system, allowing them to create, modify, or delete multi-tenant resources
+such as entities, wallets, and authentication methods.
+They play a critical role in tenant management but typically don't take part in everyday SSI interactions.
+
+
+### Tenant
+
+Tenants are the users or systems engaged in everyday SSI interactions.
+They are represented by a resource called an entity, and this entity uses a wallet as a container for the assets they own.
+Tenants can only view the assets within the wallet assigned to their entity.
+To access the system, they need an authentication method provided by the administrator.
+
 ## Concepts
 
 ### Tenant

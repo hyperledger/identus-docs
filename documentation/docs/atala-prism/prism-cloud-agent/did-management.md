@@ -16,7 +16,6 @@ the key material from the seed can be found on the HD-key derivation decision re
 ## Managed Peer DID
 
 The PRISM agent also manages Peer DIDs for DIDComm activities.
-It automatically generates a Peer DID upon system startup by default.
 The Key materials for Peer DIDs are randomly generated and stored securely in the
 [secret storage](/docs/concepts/glossary#secrets-storage) allowing control of the Peer DID.
 
