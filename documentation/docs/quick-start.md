@@ -51,7 +51,7 @@ Being part of a decentralized ecosystem with many different technology implement
 ## PRE-REQUISITES
 
 ### Agent Deployment
-For this guide we are going to be using a single tenant deployment with API Key authentication disabled. But detailed and more advanced configuration can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
+For this guide we are going to be using a single tenant deployment with API Key authentication disabled and an in memory ledger for published did storage. But detailed and more advanced configuration can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
 
 In order to spin up an agent you must:
 1. Have Docker installed 
@@ -259,7 +259,7 @@ In order to get the mediator deployed locally for this demonstration, just clone
 Having docker service running, open a new terminal and run:
 
 ```
-MEDIATOR_VERSION=0.9.2-SNAPSHOT docker compose -f "docker-compose.yml" up -d --build 
+docker compose up
 ```
 
 MEDIATOR ENDPOINT is then set to localhost:8080.
@@ -396,12 +396,7 @@ The credential issuance flow consist on multiple steps which will be detailed in
 
 ### Create a Credential Offer **Issuer Agent**
 
-In this step we are going to be creating a credential offer on an existing schemaId, subjectId and connectionId which have been created in previous steps.
-
-1. API ENDPOINT
-2. The [ConnectionId](/docs/quick-start#establish-a-connection-between-holder-and-prismagents) we created in previous step.
-3. The Published [prism DID](/docs/quick-start#3-agent-configuration-steps-pre-requisities) we created in previous step.
-4. The [schemaId](/docs/quick-start#3-agent-configuration-steps-pre-requisities) we created in previous step.
+To trigger the creation of a credential-offer, we call the credential-offers-endpoint, as follows:
 
 ```http
 curl --location \
@@ -417,6 +412,12 @@ curl --location \
     "automaticIssuance": true
 }'
 ```
+
+Attributes:
+
+1. The [ConnectionId](/docs/quick-start#establish-a-connection---agent-side) we created in previous step.
+2. The Published [prism DID](/docs/quick-start#choose-one-published-prismdid) we created in previous step.
+3. The [schemaId](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential) we created in previous step.
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
