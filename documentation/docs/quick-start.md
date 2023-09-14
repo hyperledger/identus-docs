@@ -12,7 +12,7 @@ This quick introduction is designed to make you immediately productive with PRIS
 
 ### A typical Self-Sovereign Identity interaction
 
-![alt text](/img/component-diagram.png)
+![Component Diagram](/static/img/component-diagram.png)
 
 ### An overview of Atala PRISM
 Our solution consists of the following core components that are needed to facilitate typical Self Sovereign Identity interactions between issuers, holders and verifiers. 
