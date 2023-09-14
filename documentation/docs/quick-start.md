@@ -404,7 +404,8 @@ The application will react when the connection is correctly established and show
 <TabItem value="js" label="Typescript">
 
 ```js
-props.agent.addListener(CONNECTION_EVENT, (connectionEvent) => {});
+const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
+await props.agent.acceptDIDCommInvitation(parsed);
 ```
 
 </TabItem>
