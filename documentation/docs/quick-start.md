@@ -482,10 +482,18 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 ### Store the Issued Credential [Holder]
 
-Holder needs to use the same listener we created in previous step but this time filtering other kind of messages and correctly store the issued credential as follows:
+Once the holder reeceives a credential from the CloudAgent it needs to store the credential somewhere:
+
 
 <Tabs>
 <TabItem value="js" label="Typescript">
+
+
+:::caution
+
+The typescript sample application is using an inMemory, insecure storage solution which should only be used for testing purposes and not production environments!
+
+:::
 
 ```typescript
 props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Message[]) => {
