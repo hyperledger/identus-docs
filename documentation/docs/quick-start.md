@@ -105,7 +105,7 @@ The verifier will be accessible on port 9000 (API endpoint http://localhost:9000
 This is an optional step if the PrismAgent already has a published DID. If you want to go straight to the point where the published prism did is used, refer to [this section](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential)
 Run the following API request in your issuer node, in order to create and then publish the prismDID.
 
-```http
+```bash
 curl --location \
 --request POST '[[API ENDPOINT]]/did-registrar/dids' \
 --header 'Accept: application/json' \
@@ -126,9 +126,9 @@ curl --location \
 }'
 ```
 
-Create Prism DID operation and publish the DID just by replacing {didRef} with the previouly created Prism DID.
+Create Prism DID operation and publish the DID just by replacing {didRef} with the previously created Prism DID.
 
-```http
+```bash
 curl --location \
 --request POST '[[API ENDPOINT]]/did-registrar/dids/{didRef}/publications' \
 --header 'Accept: application/json'
@@ -137,7 +137,7 @@ curl --location \
 #### Choose one published PrismDID
 This API endpoint will help you choose the previously published did on the Issuer instance which will be used across the guide.
 
-```http
+```bash
 curl --location \
 --request GET 'http://localhost:8000/prism-agent/did-registrar/dids'
 ```
@@ -148,7 +148,7 @@ curl --location \
 
 In order to create a credential schema, on the issuer instance run the following request:
 
-```http
+```bash
 curl -X 'POST' \
   '[[API ENDPOINT]]/schema-registry/schemas' \
   -H 'accept: application/json' \
@@ -202,7 +202,7 @@ curl -X 'POST' \
 }'
 ```
 
-More in depth docuemntation can be found here [Prism Infrastructure](/docs/category/infrastructure)
+More in depth documentation can be found here [Prism Infrastructure](/docs/category/infrastructure)
 
 ### Starting Sample App
 All of the SDK's are also bundling a sample application which is able to go through all the prism flows which include establishing connections, issuance, verification flows.
@@ -215,13 +215,13 @@ Clone the [Typescript SDK](https://github.com/input-output-hk/atala-prism-wallet
 Run the following commands:
 1. To build the source SDK
 
-```javascript
+```bash
 npm i 
 npm run build
 ```
 
 2. To start the React DEMO
-```javascript
+```bash
 cd demos/browser
 npm i 
 npm run start
@@ -241,7 +241,7 @@ tbd
 
 Clone the [KMM SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm) repository.
 
-1. Open the wallet sdk project on IntelliJ or Android Studio
+1. Open the wallet SDK project on IntelliJ or Android Studio
 2. Select SampleApp in the `Run configuration` dropdown
 3. Select the device or emulator you want to use
 3. Click run
@@ -252,13 +252,13 @@ This will launch the sample app into a devices or emulator.
 </Tabs>
 
 ### Deploy & Establish Mediation
-Mediation is a component which holders need to rely on in order ensure correct routing and storage of messages so that they have them available for later consumption while they are not connected. The mediator then is a service which is always running and can securely store messages and deliver them to the right DID by using DIDCOMM V2 Protocols.
+Mediation is a component which holders need to rely on in order ensure correct routing and storage of messages so that they have them available for later consumption while they are not connected. The mediator then is a service which is always running and can securely store messages and deliver them to the right DID by using DIDComm V2 Protocols.
 
 In order to get the mediator deployed locally for this demonstration, just clone the following [repository](https://github.com/input-output-hk/atala-prism-mediator).
 
 Having docker service running, open a new terminal and run:
 
-```
+```bash
 docker compose up
 ```
 
@@ -275,7 +275,7 @@ If you are running the sample application just click on the "Start Agent" button
 
 In order to complete this step you'll need to connect to the mediators PeerDID which you can fetch by making the following API request.
 
-```http
+```bash
 curl --location \
 --request GET '[[MEDIATOR ENDPOINT]]/invitation' \
 --header 'Content-Type: application/json' \
@@ -342,7 +342,7 @@ You'll need to run this in both issuer and verifier endpoints in order to have t
 ### Establish a connection - Agent side
 A connection must be established between holder and PrismAgents in order to deliver the Issuance + Verification Messages to the holder correctly.
 
-```http
+```bash
 curl --location \
 --request POST '[[API ENDPOINT]]/connections' \
 --header 'Content-Type: application/json' \
@@ -392,13 +392,13 @@ tbd
 
 ## Issue a Credential from the Issuer to the holder
 
-The credential issuance flow consist on multiple steps which will be detailed in this section. It starts by the issuer sending a Credential Offer to the holder which would accept or reject this invitation and create a credentialRequest from it. The credential request is then sent through didcomm v2 to the Issuer which ends up issuing and sending the credential back to the holder.
+The credential issuance flow consist on multiple steps which will be detailed in this section. It starts by the issuer sending a Credential Offer to the holder which would accept or reject this invitation and create a credentialRequest from it. The credential request is then sent through DIDComm v2 to the Issuer which ends up issuing and sending the credential back to the holder.
 
 ### Create a Credential Offer **Issuer Agent**
 
 To trigger the creation of a credential-offer, we call the credential-offers-endpoint, as follows:
 
-```http
+```bash
 curl --location \
 --request POST '[[API ENDPOINT]]/issue-credentials/credential-offers' \
 --header 'Content-Type: application/json' \
@@ -482,7 +482,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 ### Store the Issued Credential [Holder]
 
-Once the holder reeceives a credential from the CloudAgent it needs to store the credential somewhere:
+Once the holder receives a credential from the CloudAgent it needs to store the credential somewhere:
 
 
 <Tabs>
@@ -544,7 +544,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 In order to run this section we are going to be using the second connection we created, the one between the holder and the verifier.
 
-```http
+```bash
 curl --location \ 
 --request POST '[[API ENDPOINT]]/present-proof/presentations' \
 --header 'Content-Type: application/json' \
@@ -620,7 +620,7 @@ tbd
 
 ### Verifier: will then check on the API if the Presentation Request has been completed or not.
 
-```http
+```bash
 curl --location \
 --request GET '[[API ENDPOINT]]/present-proof/presentations/[[presentationRequestId]]' \
 --header 'Accept: application/json'
@@ -635,7 +635,7 @@ The response body can be used then to determine if the request is completed and 
 
 
 Completed sections:
-## [Document Deployment Instructions (pre-requisities)](https://input-output.atlassian.net/browse/ATL-5675)
+## [Document Deployment Instructions (pre-requisites)](https://input-output.atlassian.net/browse/ATL-5675)
 ## [Document steps to set up a credential issuer (Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5676)
 ## [Document the steps to set up a verifier (Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5681)
 ## [Document the steps to set up a credential holder (Edge Agent)](https://input-output.atlassian.net/browse/ATL-5679)
@@ -645,7 +645,7 @@ Completed sections:
 
 Discarded sections:
 ## [Document steps to set up a credential holder (Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5677)
-## [Docuemnt steps to issue a credential (Cloud Agent to Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5678)
+## [Document steps to issue a credential (Cloud Agent to Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5678)
 ## [Document the steps to request a proof presentation (Cloud Agent to Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5683)
 
 
