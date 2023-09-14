@@ -421,7 +421,7 @@ Attributes:
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
-After instanciating the Edge Agent, the holder needs to listen for new messages and respond to any CredentialOffer with a CredentialRequest, as follows:
+After starting the Wallet instance, the holder needs to listen for new messages and respond to any CredentialOffer with a CredentialRequest, as follows:
 
 <Tabs>
 <TabItem value="js" label="Typescript">
