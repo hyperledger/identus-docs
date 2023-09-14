@@ -328,7 +328,34 @@ tbd
 <TabItem value="android" label="Android">
 
 ```kotlin
-tbd
+val apollo = ApolloImpl()
+val castor = CastorImpl(apollo)
+val pluto = Pluto(DbConnection())
+(pluto as PlutoImpl).start(context)
+val mercury = mercury = MercuryImpl(
+    castor,
+    DIDCommWrapper(castor, pluto, apollo),
+    ApiImpl(httpClient())
+)
+val pollux = PolluxImpl(castor)
+val seed = apollo.createRandomSeed()
+val handler = BasicMediatorHandler(
+  mediatorDID = DID(<DID_STRING>),
+  mercury = mercury,
+  store = BasicMediatorHandler.PlutoMediatorRepositoryImpl(pluto)
+)
+agent = PrismAgent(
+    apollo = apollo,
+    castor = castor,
+    pluto = pluto,
+    mercury = mercury,
+    pollux = pollux,
+    seed = seed,
+    mediatorHandler = handler
+)
+agent.start()
+agent.startFetchingMessages()
+
 ```
 
 </TabItem>
@@ -383,8 +410,15 @@ tbd
 </TabItem>
 <TabItem value="android" label="Android">
 
+In the demo application:
+1. Click Start agent
+2. On Contacts tab, click the floating button at the bottom right corner.
+3. On the dialog paste the invitation url that we generated into the PrismAgent connection section and click validate.
+​
+The application will react when the connection is correctly established and show a message under messages.
+
 ```kotlin
-tbd
+agent.handleReceivedMessagesEvents().collect {}
 ```
 
 </TabItem>
@@ -611,7 +645,23 @@ tbd
 <TabItem value="android" label="Android">
 
 ```kotlin
-tbd
+agent.handleReceivedMessagesEvents().collect { list ->
+    list.forEach { message ->
+        if (message.piuri == ProtocolType.DidcommRequestPresentation.value && !presentationDone) {
+            viewModelScope.launch {
+                presentationDone = true
+                agent.getAllCredentials().collect {
+                    val credential = it.first()
+                    val presentation = agent.preparePresentationForRequestProof(
+                        RequestPresentation.fromMessage(message),
+                        credential
+                    )
+                    mercury.sendMessage(presentation.makeMessage())
+                }
+            }
+        }
+    }
+}
 ```
 
 </TabItem>
