@@ -18,7 +18,7 @@ This quick introduction is designed to make you immediately productive with PRIS
 Our solution consists of the following core components that are needed to facilitate typical Self Sovereign Identity interactions between issuers, holders and verifiers. 
 
 #### A Cloud Agent
-A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST api to enable easy integration into your solution, and uses DIDComm as a messaging protocol for agent-to-agent communication. 
+A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST api to enable easy integration into your solution, and uses DIDComm V2 as a messaging protocol for agent-to-agent communication. 
 
 More in depth documentation about Cloud Agent can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
