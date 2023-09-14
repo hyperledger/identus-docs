@@ -18,12 +18,12 @@ This quick introduction is designed to make you immediately productive with PRIS
 Our solution consists of the following core components that are needed to facilitate typical Self Sovereign Identity interactions between issuers, holders and verifiers. 
 
 #### A Cloud Agent
-A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST api to enable easy integration into your solution, and uses DIDComm V2 as a messaging protocol for agent-to-agent communication. 
+A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST API to enable easy integration into your solution, and uses DIDComm V2 as a messaging protocol for agent-to-agent communication. 
 
 More in depth documentation about Cloud Agent can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
 #### Wallet SDKs
-Wallet SDKs for web and mobile (iOS, Android) enable identity holders to safely store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
+Wallet SDKs for web and mobile (iOS, Android, Typescript) enable identity holders to safely store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
 
 More in depth documentation about the different Wallet SDKs can be found here ([Typescript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
@@ -51,11 +51,11 @@ Being part of a decentralized ecosystem with many different technology implement
 ## PRE-REQUISITES
 
 ### Agent Deployment
-For this guide we are going to be using a single tenant deployment with API Key authentication disabled and an in memory ledger for published did storage. But detailed and more advanced configuration can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
+For this guide we are going to be using a single tenant deployment with API Key authentication disabled and an in-memory ledger for published did storage. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
 
 In order to spin up an agent you must:
 1. Have Docker installed 
-2. Clone the (building blocks) [repository](https://github.com/input-output-hk/atala-prism-building-blocks).
+2. Clone the (building blocks) [repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
 
 Once cloned, for the issuer add the following content to the existing environment configuration __infrastructure/local/.env-issuer__
@@ -82,13 +82,15 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 DIDCOMM_SERVICE_URL=http://localhost:9000
 ```
 
-Setting the API_KEY_ENABLED in false disabled the requirement of using APIKeys.
+Setting the `API_KEY_ENABLED` to `false` disables the requirement of using API Keys.
 
 :::caution
 
 API_KEY_ENABLED disables APIKey authentication and should only be used for Development purposes.
 
 :::
+
+3. Start the `issuer` and `verifier` agents
 
 ```bash
  ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
@@ -141,8 +143,6 @@ This API endpoint will help you choose the previously published did on the Issue
 curl --location \
 --request GET 'http://localhost:8000/prism-agent/did-registrar/dids'
 ```
-
-
 
 #### Create a credential schema (JWT W3C Credential)
 
@@ -252,7 +252,7 @@ This will launch the sample app into a devices or emulator.
 </Tabs>
 
 ### Deploy & Establish Mediation
-Mediation is a component which holders need to rely on in order ensure correct routing and storage of messages so that they have them available for later consumption while they are not connected. The mediator then is a service which is always running and can securely store messages and deliver them to the right DID by using DIDComm V2 Protocols.
+Mediation is a component which holders need to rely on in order ensure correct routing and storage of messages so that they have them available for later consumption while they are not connected. The mediator then is a service which is always running and can securely store messages and deliver them to the associated DID by using DIDComm V2 Protocols.
 
 In order to get the mediator deployed locally for this demonstration, just clone the following [repository](https://github.com/input-output-hk/atala-prism-mediator).
 
@@ -262,8 +262,9 @@ Having docker service running, open a new terminal and run:
 docker compose up
 ```
 
-MEDIATOR ENDPOINT is then set to localhost:8080.
-For more advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
+MEDIATOR ENDPOINT is then set to http://localhost:8080.
+
+More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
 
 Mediation runs automatically for you if you run the example application and the agent is started. Mediation is a process where we inform the mediator about how to reach our EdgeAgent and will expose protocols for holder in order to help him fetch messages, change routing, etc.
 
@@ -353,7 +354,7 @@ curl --location \
 
 This request will return you a JSON response with an invitation and its url. The agents (issuer or verifier) would share this url in form of QR code and the Holder would scan it with the wallet APP.
 
-copy the invitationUrl and the connectionId 
+Copy the `invitationUrl` and the `connectionId`.
 
 ### Establish a connection - Holder side
 
