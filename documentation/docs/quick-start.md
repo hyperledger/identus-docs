@@ -51,14 +51,14 @@ Being part of a decentralized ecosystem with many different technology implement
 ## PRE-REQUISITES
 
 ### Agent Deployment
-For this guide we are going to be using a single tenant deployment with API Key authentication disabled and an in-memory ledger for published did storage. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
+For this guide we are going to be using a single tenant deployment with API Key authentication disabled and an in-memory ledger for published did storage. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options. 
 
 In order to spin up an agent you must:
 1. Have Docker installed 
 2. Clone the (building blocks) [repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
 
-Once cloned, for the issuer add the following content to the existing environment configuration __infrastructure/local/.env-issuer__
+Once cloned, for the issuer create a new environment variable configuration file __infrastructure/local/.env-issuer__ with the following content:  
 
 ```
 API_KEY_ENABLED=false 
@@ -70,7 +70,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 DIDCOMM_SERVICE_URL=http://localhost:8000
 ```
 
-For the verifier the following content to the existing environment configuration __infrastructure/local/.env-verifier__
+For the verifier create a new environment variable configuration file __infrastructure/local/.env-verifier__ with the following content:  
 
 ```
 API_KEY_ENABLED=false 
@@ -97,19 +97,22 @@ API_KEY_ENABLED disables APIKey authentication and should only be used for Devel
  ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000
 ```
 
-The issuer will be accessible on port 8000 (API endpoint http://localhost:8000/prism-agent/)
+The issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`
 
-The verifier will be accessible on port 9000 (API endpoint http://localhost:9000/prism-agent/)
+
+The verifier [API endpoint](http://localhost:9000/prism-agent/) will be accessible on port 9000 `http://localhost:9000/prism-agent/` with a [Swagger Interface](http://localhost:9000/prism-agent/redoc) available at `http://localhost:9000/prism-agent/redoc`
 
 ### Agent configuration
 
 #### Creating LongForm PrismDID 
-This is an optional step if the PrismAgent already has a published DID. If you want to go straight to the point where the published prism did is used, refer to [this section](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential)
-Run the following API request in your issuer node, in order to create and then publish the prismDID.
+> Note:
+This is an optional step if the Prism Agent already has a published DID. If you want to go straight to the point where the published prism did is used, refer to [this section](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential)
+
+Run the following API request in against your issuer API, in order to create a prism DID.
 
 ```bash
 curl --location \
---request POST '[[API ENDPOINT]]/did-registrar/dids' \
+--request POST 'http://localhost:8000/prism-agent/did-registrar/dids' \
 --header 'Accept: application/json' \
 --data-raw '{
     "documentTemplate": {
@@ -123,34 +126,37 @@ curl --location \
               "purpose": "assertionMethod"	
         }
       ],
-      "services": [],
+      "services": []
     }
 }'
 ```
 
-Create Prism DID operation and publish the DID just by replacing {didRef} with the previously created Prism DID.
+Create a Prism DID operation and publish the DID by replacing {didRef} with the `longFormDid` output value from the previous create DID step.
 
 ```bash
 curl --location \
---request POST '[[API ENDPOINT]]/did-registrar/dids/{didRef}/publications' \
+--request POST 'http://localhost:8000/prism-agent/did-registrar/dids/{didRef}/publications' \
 --header 'Accept: application/json'
 ```
 
-#### Choose one published PrismDID
-This API endpoint will help you choose the previously published did on the Issuer instance which will be used across the guide.
+#### Choose one published Prism DID
+This API endpoint will help you choose the previously published did on the Issuer instance which will be used throughout the guide.
 
 ```bash
 curl --location \
 --request GET 'http://localhost:8000/prism-agent/did-registrar/dids'
 ```
 
+Copy `did` output value to be used in the next steps.
+
 #### Create a credential schema (JWT W3C Credential)
 
 In order to create a credential schema, on the issuer instance run the following request:
+>NOTE: replace the `[[publishedPrismDID]]` in the example request with the `did` value from the previous step.
 
 ```bash
 curl -X 'POST' \
-  '[[API ENDPOINT]]/schema-registry/schemas' \
+  'http://localhost:8000/prism-agent/schema-registry/schemas' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -227,7 +233,7 @@ npm i
 npm run start
 ```
 
-This will start the react Wallet SDK Typescript Demonstration in localhost:3000
+This will start the react Wallet SDK Typescript Demonstration at [http://localhost:3000](http://localhost:3000).
 
 </TabItem>
 <TabItem value="swift" label="Swift">
@@ -257,16 +263,17 @@ Mediation is a component which holders need to rely on in order ensure correct r
 In order to get the mediator deployed locally for this demonstration, just clone the following [repository](https://github.com/input-output-hk/atala-prism-mediator).
 
 Having docker service running, open a new terminal and run:
+>NOTE: The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/atala-prism-mediator/releases). Change the version in the example if you want to use the latest version.
 
 ```bash
-docker compose up
+MEDIATOR_VERSION=0.9.2 docker-compose up
 ```
 
-MEDIATOR ENDPOINT is then set to http://localhost:8080.
+MEDIATOR ENDPOINT is then set to [http://localhost:8080](http://localhost:8080).
 
 More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
 
-Mediation runs automatically for you if you run the example application and the agent is started. Mediation is a process where we inform the mediator about how to reach our EdgeAgent and will expose protocols for holder in order to help him fetch messages, change routing, etc.
+Mediation runs automatically for you if you run the example application and the agent is started. Mediation is a process where we inform the mediator about how to reach our Edge Agent and will expose protocols for holder in order to help him fetch messages, change routing, etc.
 
 If you are running the sample application just click on the "Start Agent" button.
 
@@ -274,7 +281,7 @@ If you are running the sample application just click on the "Start Agent" button
 <Tabs>
 <TabItem value="js" label="Typescript">
 
-In order to complete this step you'll need to connect to the mediators PeerDID which you can fetch by making the following API request.
+In order to complete this step you'll need to connect to the mediators Peer DID which you can fetch by making the following API request.
 
 ```bash
 curl --location \
@@ -368,7 +375,7 @@ agent.startFetchingMessages()
 You'll need to run this in both issuer and verifier endpoints in order to have the holder connected to both instances.
 
 ### Establish a connection - Agent side
-A connection must be established between holder and PrismAgents in order to deliver the Issuance + Verification Messages to the holder correctly.
+A connection must be established between holder and Prism Agents in order to deliver the Issuance + Verification Messages to the holder correctly.
 
 ```bash
 curl --location \
