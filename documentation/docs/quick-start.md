@@ -51,7 +51,7 @@ Being part of a decentralized ecosystem with many different technology implement
 ## PRE-REQUISITES
 
 ### Agent Deployment
-For this guide we are going to be using a single tenant deployment with API Key authentication disabled. But detailed and more advanced configuration can be found in [Multi-Tenancy Management](/docs/atala-prism/prism-cloud-agent/multi-tenancy-management), [Authentication](/docs/atala-prism/prism-cloud-agent/authentication) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
+For this guide we are going to be using a single tenant deployment with API Key authentication disabled. But detailed and more advanced configuration can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
 
 In order to spin up a Prism Agent locally on your machine you must have docker installed as a requirement and its just required to clone the Prism Agent (building blocks) [repository](https://github.com/input-output-hk/atala-prism-building-blocks).
 
@@ -88,6 +88,7 @@ This disables the requirement of using APIKey authentication in the next API req
 ```
 
 The issuer will be accessible on port 8000 (API endpoint http://localhost:8000/prism-agent/)
+
 The verifier will be accessible on port 9000 (API endpoint http://localhost:9000/prism-agent/)
 
 ### Agent configuration
