@@ -642,10 +642,6 @@ Completed sections:
 ## [Document the steps to issue a credential (Cloud Agent to Edge Agent)](https://input-output.atlassian.net/browse/ATL-5680)
 ## [Document the steps to request a proof presentation (Cloud Agent to Edge Agent)](https://input-output.atlassian.net/browse/ATL-5684)
 
-Pending to complete:
-1. Setup the credential schemas
-2. Setup Prism DID, either use existing or create a new one.
-
 
 Discarded sections:
 ## [Document steps to set up a credential holder (Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5677)
