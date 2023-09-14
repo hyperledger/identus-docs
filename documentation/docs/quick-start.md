@@ -12,7 +12,7 @@ This quick introduction is designed to make you immediately productive with PRIS
 
 ### A typical Self-Sovereign Identity interaction
 
-[<insert sequence diagram of example SSI interaction: establish connection, issue credential, request proof, present proof>]
+![alt text](/img/component-diagram.png)
 
 ### An overview of Atala PRISM
 Our solution consists of the following core components that are needed to facilitate typical Self Sovereign Identity interactions between issuers, holders and verifiers. 
@@ -231,9 +231,14 @@ tbd
 </TabItem>
 <TabItem value="android" label="Android">
 
-```android
-tbd
-```
+Clone the [KMM SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm) repository.
+
+1. Open the wallet sdk project on IntelliJ or Android Studio
+2. Select SampleApp in the `Run configuration` dropdown
+3. Select the device or emulator you want to use
+3. Click run
+
+This will launch the sample app into a devices or emulator.
 
 </TabItem>
 </Tabs>
@@ -443,7 +448,23 @@ tbd
 <TabItem value="android" label="Android">
 
 ```android
-tbd
+agent.handleReceivedMessagesEvents().collect { list ->
+    list.forEach { message ->
+        if (message.piuri == ProtocolType.DidcommOfferCredential.value) {
+            val credentials = pluto.getAllCredentials().first()
+            if (credentials.isEmpty()) {
+                val offer = OfferCredential.fromMessage(message)
+                val subjectDID = agent.createNewPrismDID()
+                val request =
+                agent.prepareRequestCredentialWithIssuer(
+                    subjectDID,
+                    offer
+                )
+                mercury.sendMessage(request.makeMessage())
+            }
+        }
+    }
+}
 ```
 
 </TabItem>
@@ -481,8 +502,19 @@ tbd
 </TabItem>
 <TabItem value="android" label="Android">
 
+
 ```android
-tbd
+agent.handleReceivedMessagesEvents().collect { list ->
+    list.forEach { message ->
+        if (message.piuri == ProtocolType.DidcommIssueCredential.value) {
+                agent.processIssuedCredentialMessage(
+                    IssueCredential.fromMessage(
+                    message
+                )
+            )
+        }
+    }
+}
 ```
 
 </TabItem>
