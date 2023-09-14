@@ -289,6 +289,11 @@ curl --location \
 --header 'Content-Type: application/json' \
 ```
 
+<Tabs>
+<TabItem value="js" label="Typescript">
+
+
+
 This will return an out of band invitation, we just need the from field which will contain the Mediators PeerDID
 
 
@@ -322,9 +327,8 @@ This will return an out of band invitation, we just need the from field which wi
    */
   await agent.start()
 ```
-
-
 </TabItem>
+
 <TabItem value="swift" label="Swift">
 
 ```swift
@@ -394,16 +398,18 @@ Copy the `invitationUrl` and the `connectionId`.
 
 ### Establish a connection - Holder side
 
+
+
+
+<Tabs>
+<TabItem value="js" label="Typescript">
+
 In the demo application:
 1. open your browser at localhost:3000
 2. start the Edge Agent by clicking the button.
 3. Paste the invitation url that we generated in the previous step into the PrismAgent connection section and click in create connection.
 
 The application will react when the connection is correctly established and show you that there's a new connection.
-
-
-<Tabs>
-<TabItem value="js" label="Typescript">
 
 ```js
 const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
@@ -422,9 +428,8 @@ await props.agent.acceptDIDCommInvitation(parsed);
 <TabItem value="android" label="Android">
 
 In the demo application:
-1. Click Start agent
-2. On Contacts tab, click the floating button at the bottom right corner.
-3. On the dialog paste the invitation url that we generated into the PrismAgent connection section and click validate.
+1. On Contacts tab, click the floating button at the bottom right corner.
+2. On the dialog paste the invitation url that we generated into the PrismAgent connection section and click validate.
 ​
 The application will react when the connection is correctly established and show a message under messages.
 
@@ -553,16 +558,16 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 Once the holder receives a credential from the CloudAgent it needs to store the credential somewhere:
 
+:::caution
+
+The  sample application are using an insecure storage solution which should only be used for testing purposes and not production environments!
+
+:::
 
 <Tabs>
 <TabItem value="js" label="Typescript">
 
 
-:::caution
-
-The typescript sample application is using an inMemory, insecure storage solution which should only be used for testing purposes and not production environments!
-
-:::
 
 ```typescript
 props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Message[]) => {
