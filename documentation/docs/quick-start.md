@@ -328,7 +328,9 @@ This will return an out of band invitation, we just need the from field which wi
 <TabItem value="swift" label="Swift">
 
 ```swift
-tbd
+  let agent = PrismAgent(mediatorDID: did)
+  try await agent.start()
+  agent.startFetchingMessages()
 ```
 
 </TabItem>
@@ -412,7 +414,8 @@ await props.agent.acceptDIDCommInvitation(parsed);
 <TabItem value="swift" label="Swift">
 
 ```swift
-tbd
+  let message = try agent.parseOOBInvitation(url: oobUrl)
+  try await agent.acceptDIDCommInvitation(invitation: message)
 ```
 
 </TabItem>
@@ -493,7 +496,30 @@ props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Messag
 <TabItem value="swift" label="Swift">
 
 ```swift
-tbd
+agent
+  .handleMessagesEvents()
+  .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] in
+    guard
+        let message,
+        message.direction == .received,
+        let msgType = ProtocolTypes(rawValue: message.piuri)
+      else { return }
+      
+      Task.detached { [weak self] in
+          do {
+            switch msgType {
+             case .didcommOfferCredential:
+                let newPrismDID = try await agent.createNewPrismDID()
+                guard let requestCredential = try await agent.prepareRequestCredentialWithIssuer(
+                    did: newPrismDID,
+                    offer: try OfferCredential(fromMessage: message)
+                ) else { throw UnknownError.somethingWentWrongError() }
+
+                _ = try await agent.sendMessage(message: try requestCredential.makeMessage())
+          }
+      }
+  })
+
 ```
 
 </TabItem>
@@ -556,7 +582,26 @@ props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Messag
 <TabItem value="swift" label="Swift">
 
 ```swift
-tbd
+agent
+  .handleMessagesEvents()
+  .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] in
+    guard
+        let message = $0
+        message.direction == .received,
+        let msgType = ProtocolTypes(rawValue: message.piuri)
+      else { return }
+      
+      Task.detached { [weak self] in
+          do {
+            switch msgType {
+              case .didcommIssueCredential:
+                  let issueCredential = try IssueCredential(fromMessage: message)
+                  _ = try await agent.processIssuedCredentialMessage(message: issueCredential)
+              
+            }
+          }
+      }
+  })
 ```
 
 </TabItem>
@@ -646,7 +691,32 @@ props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Messag
 <TabItem value="swift" label="Swift">
 
 ```swift
-tbd
+agent
+  .handleMessagesEvents()
+  .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] in
+    guard
+          let message,
+          message.direction == .received,
+          let msgType = ProtocolTypes(rawValue: message.piuri)
+      else { return }
+      
+      Task.detached { [weak self] in
+        do {
+          switch msgType {
+          case .didcommRequestPresentation:
+              let credential = try await agent.verifiableCredentials().map { $0.first }.first().await()
+              guard let credential else {
+                  throw UnknownError.somethingWentWrongError()
+              }
+              let presentation = try await agent.createPresentationForRequestProof(
+                  request: try RequestPresentation(fromMessage: message),
+                  credential: credential
+              )
+              _ = try await agent.sendMessage(message: try presentation.makeMessage())
+          }
+        }
+      }
+  })
 ```
 
 </TabItem>
