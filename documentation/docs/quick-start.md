@@ -326,7 +326,7 @@ tbd
 </TabItem>
 <TabItem value="android" label="Android">
 
-```android
+```kotlin
 tbd
 ```
 
@@ -382,7 +382,7 @@ tbd
 </TabItem>
 <TabItem value="android" label="Android">
 
-```android
+```kotlin
 tbd
 ```
 
@@ -456,7 +456,7 @@ tbd
 </TabItem>
 <TabItem value="android" label="Android">
 
-```android
+```kotlin
 agent.handleReceivedMessagesEvents().collect { list ->
     list.forEach { message ->
         if (message.piuri == ProtocolType.DidcommOfferCredential.value) {
@@ -520,7 +520,7 @@ tbd
 <TabItem value="android" label="Android">
 
 
-```android
+```kotlin
 agent.handleReceivedMessagesEvents().collect { list ->
     list.forEach { message ->
         if (message.piuri == ProtocolType.DidcommIssueCredential.value) {
@@ -609,7 +609,7 @@ tbd
 </TabItem>
 <TabItem value="android" label="Android">
 
-```android
+```kotlin
 tbd
 ```
 
