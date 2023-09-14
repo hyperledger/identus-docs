@@ -53,9 +53,12 @@ Being part of a decentralized ecosystem with many different technology implement
 ### Agent Deployment
 For this guide we are going to be using a single tenant deployment with API Key authentication disabled. But detailed and more advanced configuration can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and environment variables config [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables)
 
-In order to spin up a Prism Agent locally on your machine you must have docker installed as a requirement and its just required to clone the Prism Agent (building blocks) [repository](https://github.com/input-output-hk/atala-prism-building-blocks).
+In order to spin up an agent you must:
+1. Have Docker installed 
+2. Clone the (building blocks) [repository](https://github.com/input-output-hk/atala-prism-building-blocks).
 
-Add the following content to the existing environment configuration __infrastructure/local/.env-issuer__
+
+Once cloned, for the issuer add the following content to the existing environment configuration __infrastructure/local/.env-issuer__
 
 ```
 API_KEY_ENABLED=false 
@@ -67,7 +70,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 DIDCOMM_SERVICE_URL=http://localhost:8000
 ```
 
-Add the following content to the existing environment configuration __infrastructure/local/.env-verifier__
+For the verifier the following content to the existing environment configuration __infrastructure/local/.env-verifier__
 
 ```
 API_KEY_ENABLED=false 
@@ -79,8 +82,13 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 DIDCOMM_SERVICE_URL=http://localhost:9000
 ```
 
+Setting the API_KEY_ENABLED in false disabled the requirement of using APIKeys.
 
-This disables the requirement of using APIKey authentication in the next API requests we run in both issuer and verifier instances.
+:::caution
+
+API_KEY_ENABLED disables APIKey authentication and should only be used for Development purposes.
+
+:::
 
 ```bash
  ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
