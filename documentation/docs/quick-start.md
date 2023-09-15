@@ -397,7 +397,7 @@ This request will return you a JSON response with an invitation and its url. The
 Copy the `invitationUrl` and the `connectionId`.
 
 ### Establish a connection - Holder side
-
+Now that you have the invitation, it's time for the Holder to accept it.
 
 
 
