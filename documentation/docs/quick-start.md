@@ -38,7 +38,7 @@ More in-depth documentation about PRISM Mediator can be found [here](/docs/atala
 To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](documentation/docs/concepts/glossary.md/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
 
 ### Supported Standards
-Being part of a decentralized ecosystem with many different technology implementations requires standardization in order to ensure interoperability between different solutions. The standards currently supported by PRISM are:
+Being part of a decentralized ecosystem with varying technology implementations requires standardization to ensure interoperability between different solutions. The standards currently supported by PRISM are:
 
 1. [W3C Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/)
     1. [DID:Peer](https://identity.foundation/peer-did-method-spec/)
@@ -56,11 +56,11 @@ Being part of a decentralized ecosystem with many different technology implement
 This guide will demonstrate a single-tenant deployment with API Key authentication disabled and an in-memory ledger for published DID storage, which is the simplest configuration to get started as a developer. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options. 
 
 In order to spin up an agent you must:
-1. Have Docker installed 
+1. Have Docker installed.
 2. Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
 
-Once cloned, for the issuer create a new environment variable configuration file __infrastructure/local/.env-issuer__ with the following content:  
+Once cloned, create a new environment variable configuration file to define the Issuer Agent __infrastructure/local/.env-issuer__ with the following content:  
 
 ```
 API_KEY_ENABLED=false 
