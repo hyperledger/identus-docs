@@ -632,6 +632,14 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 
 ## Request a verification from the Verifier Agent to the holder (JWT W3C Credential)
+Now that the Holder has received a credential, it can be used in a verification workflow between a Holder and a Verifier. This requires the following steps:
+
+1. Verifier creates a proof-request
+2. Holder receives the proof-request
+3. Holder creates a proof-presentation and shares this with the verifier
+4. Verifier verifies the proof-presentation
+
+In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connection-less verification.
 
 ### Verifier Agent
 
