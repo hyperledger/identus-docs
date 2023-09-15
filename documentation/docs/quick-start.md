@@ -55,7 +55,7 @@ Being part of a decentralized ecosystem with varying technology implementations 
 ### Agent Deployment
 This guide will demonstrate a single-tenant deployment with API Key authentication disabled and an in-memory ledger for published DID storage, which is the simplest configuration to get started as a developer. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options. 
 
-In order to spin up an agent you must:
+To spin up an Cloud Agent you must:
 1. Have Docker installed.
 2. Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
@@ -72,7 +72,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 DIDCOMM_SERVICE_URL=http://localhost:8000
 ```
 
-For the verifier create a new environment variable configuration file __infrastructure/local/.env-verifier__ with the following content:  
+To define the Verifier Agent, create a new environment variable configuration file __infrastructure/local/.env-verifier__ with the following content:  
 
 ```
 API_KEY_ENABLED=false 
@@ -88,29 +88,30 @@ Setting the `API_KEY_ENABLED` to `false` disables the requirement of using API K
 
 :::caution
 
-API_KEY_ENABLED disables APIKey authentication and should only be used for Development purposes.
+API_KEY_ENABLED disables API Key authentication. This should NOT be used beyond Development purposes.
 
 :::
 
-3. Start the `issuer` and `verifier` agents
+3. Start the `issuer` and `verifier` Cloud Agents.
 
 ```bash
  ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
  ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000
 ```
 
-The issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`
+The Issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`.
 
 
-The verifier [API endpoint](http://localhost:9000/prism-agent/) will be accessible on port 9000 `http://localhost:9000/prism-agent/` with a [Swagger Interface](http://localhost:9000/prism-agent/redoc) available at `http://localhost:9000/prism-agent/redoc`
+The Verifier [API endpoint](http://localhost:9000/prism-agent/) will be accessible on port 9000 `http://localhost:9000/prism-agent/` with a [Swagger Interface](http://localhost:9000/prism-agent/redoc) available at `http://localhost:9000/prism-agent/redoc`.
 
 ### Agent configuration
 
 #### Creating LongForm PrismDID 
-> Note:
-This is an optional step if the Prism Agent already has a published DID. If you want to go straight to the point where the published prism did is used, refer to [this section](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential)
+::: info
+This step is optional if the Cloud Agent already has a published DID. If you want to go straight to the point where the published PRISM DID is used, refer to [this section](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential)
+:::
 
-Run the following API request in against your issuer API, in order to create a prism DID.
+Run the following API request against your Issuer API to create a PRISM DID
 
 ```bash
 curl --location \
@@ -133,7 +134,7 @@ curl --location \
 }'
 ```
 
-Create a Prism DID operation and publish the DID by replacing {didRef} with the `longFormDid` output value from the previous create DID step.
+Create a PRISM DID operation and publish the DID by replacing {didRef} with the `longFormDid` output value from the previous create DID step.
 
 ```bash
 curl --location \
