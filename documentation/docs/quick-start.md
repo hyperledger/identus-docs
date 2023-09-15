@@ -143,19 +143,21 @@ curl --location \
 ```
 
 #### Choose one published Prism DID
-This API endpoint will help you choose the previously published did on the Issuer instance which will be used throughout the guide.
+This API endpoint will help you choose the previously published did on the Issuer instance used throughout the guide.
 
 ```bash
 curl --location \
 --request GET 'http://localhost:8000/prism-agent/did-registrar/dids'
 ```
 
-Copy `did` output value to be used in the next steps.
+Copy the `did` output value for the next steps.
 
 #### Create a credential schema (JWT W3C Credential)
 
-In order to create a credential schema, on the issuer instance run the following request:
->NOTE: replace the `[[publishedPrismDID]]` in the example request with the `did` value from the previous step.
+To create a credential schema on the Issuer instance, run the following request:
+:::info
+Replace the `[[publishedPrismDID]]` in the example request with the `did` value from the previous step.
+:::
 
 ```bash
 curl -X 'POST' \
@@ -211,10 +213,10 @@ curl -X 'POST' \
 }'
 ```
 
-More in depth documentation can be found here [Prism Infrastructure](/docs/category/infrastructure)
+More in-depth documentation can be found here [PRISM Infrastructure](/docs/category/infrastructure)
 
 ### Starting Sample App
-All of the SDK's are also bundling a sample application which is able to go through all the prism flows which include establishing connections, issuance, verification flows.
+All wallet SDK's come bundled with a sample application, that cover all the prism flows, including establishing connections, issuance, and verification flows.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -222,21 +224,21 @@ All of the SDK's are also bundling a sample application which is able to go thro
 Clone the [Typescript SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-ts) repository.
 
 Run the following commands:
-1. To build the source SDK
+1. Build the source SDK:
 
 ```bash
 npm i 
 npm run build
 ```
 
-2. To start the React DEMO
+2. Start the React demo:
 ```bash
 cd demos/browser
 npm i 
 npm run start
 ```
 
-This will start the react Wallet SDK Typescript Demonstration at [http://localhost:3000](http://localhost:3000).
+This will start the react Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
 
 </TabItem>
 <TabItem value="swift" label="Swift">
@@ -250,23 +252,24 @@ tbd
 
 Clone the [KMM SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm) repository.
 
-1. Open the wallet SDK project on IntelliJ or Android Studio
-2. Select SampleApp in the `Run configuration` dropdown
-3. Select the device or emulator you want to use
-3. Click run
+1. Open the Wallet SDK project on IntelliJ or Android Studio.
+2. In the `Run configuration` dropdown, select SampleApp.
+3. Select the device or emulator you want to use.
+3. Click run.
 
-This will launch the sample app into a devices or emulator.
+The SampleApp will launch on the applicable device or emulator.
 
 </TabItem>
 </Tabs>
 
 ### Deploy & Establish Mediation
-Mediation is a component which holders need to rely on in order ensure correct routing and storage of messages so that they have them available for later consumption while they are not connected. The mediator then is a service which is always running and can securely store messages and deliver them to the associated DID by using DIDComm V2 Protocols.
+Mediation is the process that ensures messages get routed and stored correctly between Issuers, Verifiers and Holders, even if they are offline. The mediator offers a service that is always running and can securely store messages and deliver them to the associated DIDs using DIDComm. This enables use-cases where connectivity to a (mobile) wallet cannot be guaranteed.
 
 To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/atala-prism-mediator).
 
-Having docker service running, open a new terminal and run:
->NOTE: The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/atala-prism-mediator/releases). Change the version in the example if you want to use the latest version.
+With a Docker service running, open a new terminal and run:
+:::info The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/atala-prism-mediator/releases). Change the version in the example if you want to use the latest version.
+:::
 
 ```bash
 MEDIATOR_VERSION=0.9.2 docker-compose up
@@ -276,9 +279,9 @@ MEDIATOR ENDPOINT is then set to [http://localhost:8080](http://localhost:8080).
 
 More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
 
-Mediation runs automatically for you if you run the example application and the agent is started. Mediation is a process where we inform the mediator about how to reach our Edge Agent and will expose protocols for holder in order to help him fetch messages, change routing, etc.
+When running the SampleApp, the Cloud Agent starts, and mediation begins automatically. Mediation is a process where we inform the mediator about how to reach our Edge Agent and will expose protocols for the Holder to help him fetch messages, change routing, etc.
 
-If you are running the sample application just click on the "Start Agent" button.
+If you are running the SampleApp, click the "Start Agent" button.
 
 
 <Tabs>
@@ -297,7 +300,7 @@ curl --location \
 
 
 
-This will return an out of band invitation, we just need the from field which will contain the Mediators PeerDID
+An out-of-band invitation gets generated. We need the `from` field containing the Mediators PeerDID.
 
 
 ```typescript
