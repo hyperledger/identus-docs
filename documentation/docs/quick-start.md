@@ -431,7 +431,7 @@ In the demo application:
 1. Click the floating button at the bottom right corner of the Contacts tab.
 2. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click Validate.
 ​
-The application will react when the connection is correctly established and show a message under messages.
+The application will react once the connection gets established correctly and show a message under messages.
 
 ```kotlin
 agent.handleReceivedMessagesEvents().collect {}
