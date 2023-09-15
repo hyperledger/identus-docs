@@ -18,7 +18,7 @@ This quick introduction will get you up and running and immediately productive w
 Atala PRISM consists of core components to facilitate typical SSI interactions between issuers, holders, and verifiers. 
 
 #### A Cloud Agent
-A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST API to enable easy integration into your solution, and uses DIDComm V2 as a messaging protocol for agent-to-agent communication. 
+A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST API to enable easy integration into your solution, and uses DIDComm V2 as a messaging protocol for agent-to-agent communication. It is maintained as an open source component through the [Hyperledger Lab: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html) organisation.
 
 More in depth documentation about Cloud Agent can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
