@@ -381,7 +381,7 @@ agent.startFetchingMessages()
 You'll need to run this in both issuer and verifier endpoints in order to have the holder connected to both instances.
 
 ### Establish a connection - Agent side
-A connection must be established between holder and Prism Agents in order to deliver the Issuance + Verification Messages to the holder correctly.
+A connection must be established between the Holder and PRISM Cloud Agents to correctly deliver the Issuance + Verification Messages to the Holder.
 
 ```bash
 curl --location \
