@@ -35,7 +35,7 @@ Mediators are for storing and relaying messages between Cloud Agents and Wallet 
 More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
-In order to issue and verify verifiable credentials to and from DIDs, we need a Verifiable Data Registry that is globally resolvable and always on. In PRISMs case, this is called prism-node, and it anchors key information required for issuance and verification on the Cardano blockchain.
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](documentation/docs/concepts/glossary.md/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
 
 ### Supported Standards
 Being part of a decentralized ecosystem with many different technology implementations requires standardization in order to ensure interoperability between different solutions. The standards currently supported by PRISM are:
