@@ -260,7 +260,7 @@ This will launch the sample app into a devices or emulator.
 ### Deploy & Establish Mediation
 Mediation is a component which holders need to rely on in order ensure correct routing and storage of messages so that they have them available for later consumption while they are not connected. The mediator then is a service which is always running and can securely store messages and deliver them to the associated DID by using DIDComm V2 Protocols.
 
-In order to get the mediator deployed locally for this demonstration, just clone the following [repository](https://github.com/input-output-hk/atala-prism-mediator).
+To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/atala-prism-mediator).
 
 Having docker service running, open a new terminal and run:
 >NOTE: The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/atala-prism-mediator/releases). Change the version in the example if you want to use the latest version.
