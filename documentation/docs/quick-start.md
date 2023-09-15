@@ -383,7 +383,7 @@ agent.startFetchingMessages()
 
 
 
-## Establish a connection between holder and PrismAgent
+## Establish a connection between the Holder and the Cloud Agent
 To connect the Holder to both instances, you must run this in both Issuer and Verifier endpoints.
 
 ### Establish a connection - Agent side
