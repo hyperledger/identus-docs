@@ -55,7 +55,7 @@ For this guide we are going to be using a single tenant deployment with API Key 
 
 In order to spin up an agent you must:
 1. Have Docker installed 
-2. Clone the (building blocks) [repository](https://github.com/hyperledger-labs/open-enterprise-agent).
+2. Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
 
 Once cloned, for the issuer create a new environment variable configuration file __infrastructure/local/.env-issuer__ with the following content:  
