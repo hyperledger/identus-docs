@@ -51,7 +51,7 @@ Being part of a decentralized ecosystem with many different technology implement
 ## PRE-REQUISITES
 
 ### Agent Deployment
-For this guide we are going to be using a single tenant deployment with API Key authentication disabled and an in-memory ledger for published did storage. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options. 
+This guide will demonstrate a single-tenant deployment with API Key authentication disabled and an in-memory ledger for published DID storage, which is the simplest configuration to get started as a developer. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options. 
 
 In order to spin up an agent you must:
 1. Have Docker installed 
