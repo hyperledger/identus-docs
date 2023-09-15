@@ -27,12 +27,12 @@ More in depth documentation about Cloud Agent can be found [here](/docs/atala-pr
 #### Wallet SDKs
 Wallet SDKs for web and mobile (iOS, Android, Typescript) enable identity holders to safely store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
 
-More in depth documentation about the different Wallet SDKs can be found here ([Typescript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
+More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
 #### A Mediator
-Mediators are used to store and relay messages between cloud agents and wallet SDKs. They act as a proxy which remains connected to the network, and receive any message, credential or proof-request on behalf of the wallet SDKs (which can be offline from time to time).
+Mediators are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof-request on behalf of the Wallet SDKs (which can be offline occasionally).
 
-More in depth documentation about Prism Mediator can be found [here](/docs/atala-prism/prism-mediator).
+More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
 In order to issue and verify verifiable credentials to and from DIDs, we need a Verifiable Data Registry that is globally resolvable and always on. In PRISMs case, this is called prism-node, and it anchors key information required for issuance and verification on the Cardano blockchain.
