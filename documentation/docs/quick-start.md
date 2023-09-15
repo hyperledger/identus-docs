@@ -59,6 +59,10 @@ To spin up an Cloud Agent you must:
 1. Have Docker installed.
 2. Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
+```bash
+git clone https://github.com/hyperledger-labs/open-enterprise-agent
+```
+
 
 Once cloned, create a new environment variable configuration file to define the Issuer Agent __infrastructure/local/.env-issuer__ with the following content:  
 
