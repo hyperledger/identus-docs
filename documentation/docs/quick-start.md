@@ -384,7 +384,7 @@ agent.startFetchingMessages()
 
 
 ## Establish a connection between holder and PrismAgent
-You'll need to run this in both issuer and verifier endpoints in order to have the holder connected to both instances.
+To connect the Holder to both instances, you must run this in both Issuer and Verifier endpoints.
 
 ### Establish a connection - Agent side
 A connection must be established between the Holder and PRISM Cloud Agents to correctly deliver the Issuance + Verification Messages to the Holder.
@@ -398,7 +398,7 @@ curl --location \
 }'
 ```
 
-This request will return you a JSON response with an invitation and its url. The agents (issuer or verifier) would share this url in form of QR code and the Holder would scan it with the wallet APP.
+This request will return a JSON response with an invitation and its URL. The Cloud Agent (issuer or verifier) would share this URL as a QR code, and the holder would scan it with the wallet app.
 
 Copy the `invitationUrl` and the `connectionId`.
 
@@ -411,11 +411,11 @@ Now that you have the invitation, it's time for the Holder to accept it.
 <TabItem value="js" label="Typescript">
 
 In the demo application:
-1. open your browser at localhost:3000
-2. start the Edge Agent by clicking the button.
-3. Paste the invitation url that we generated in the previous step into the PrismAgent connection section and click in create connection.
+1. Open a browser at localhost:3000.
+2. Start the Edge Agent by clicking the button.
+3. Paste the invitation URL generated in the previous step into the `PrismAgent` connection section and click on Create Connection.
 
-The application will react when the connection is correctly established and show you that there's a new connection.
+The application will react when the connection gets established correctly and show a new connection.
 
 ```js
 const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
@@ -449,7 +449,7 @@ agent.handleReceivedMessagesEvents().collect {}
 
 ## Issue a Credential from the Issuer to the holder
 
-The credential issuance flow consist on multiple steps which will be detailed in this section. It starts by the issuer sending a Credential Offer to the holder which would accept or reject this invitation and create a credentialRequest from it. The credential request is then sent through DIDComm v2 to the Issuer which ends up issuing and sending the credential back to the holder.
+The credential issuance flow consists of multiple steps, detailed in this section. It starts with the Issuer sending a Credential Offer to the Holder, which would accept or reject this invitation and create a `credentialRequest` from it. The credential request gets sent through DIDComm to the Issuer, issuing and sending the credential back to the Holder.
 
 ### Create a Credential Offer **Issuer Agent**
 
@@ -472,9 +472,9 @@ curl --location \
 
 Attributes:
 
-1. The [ConnectionId](/docs/quick-start#establish-a-connection---agent-side) we created in previous step.
-2. The Published [prism DID](/docs/quick-start#choose-one-published-prismdid) we created in previous step.
-3. The [schemaId](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential) we created in previous step.
+1. [ConnectionId](/docs/quick-start#establish-a-connection---agent-side)
+2. The published [PRISM DID](/docs/quick-start#choose-one-published-prismdid) 
+3. [SchemaId](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential) 
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
@@ -562,7 +562,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 ### Store the Issued Credential [Holder]
 
-Once the holder receives a credential from the CloudAgent it needs to store the credential somewhere:
+Once the Holder receives a credential from the Cloud Agent, it needs to store the credential somewhere:
 
 :::caution
 
@@ -649,7 +649,7 @@ In the example, we show a verification flow that assumes a connection between Ho
 
 ### Verifier Agent
 
-In order to run this section we are going to be using the second connection we created, the one between the holder and the verifier.
+To run this section, we will use the second connection we created between the Holder and the Verifier.
 
 ```bash
 curl --location \ 
@@ -672,12 +672,12 @@ curl --location \
 }'
 ```
 
-This API request will return a presentationRequestId which the verifier can use later to check the current status of the request.
+This API request will return a `presentationRequestId,` which the verifier can use later to check the request's current status.
 
 
 ### Holder: Receives the Presentation proof request 
 
-Holder again needs to have a running instance of the agent that has the message listener active and is listening for the correct type of messages as detailed below:
+The Holder needs to have a running instance of the Cloud Agent that has the message listener active and is listening for the correct type of messages as detailed below:
 
 <Tabs>
 <TabItem value="js" label="Typescript">
