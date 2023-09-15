@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Quick Start Guide
 ## Introduction into Self Sovereign Identity (SSI) and PRISM
 
-This quick introduction is designed to make you immediately productive with PRISM, and to help you understand how all of the pieces fit together into an SSI interaction.
+This quick introduction will get you up and running and immediately productive with PRISM and help you understand how the pieces fit together into an [SSI](documentation/docs/concepts/glossary.md/#self-sovereign-identity) interaction.
 
 ### A typical Self-Sovereign Identity interaction
 
