@@ -429,7 +429,7 @@ await props.agent.acceptDIDCommInvitation(parsed);
 
 In the demo application:
 1. Click the floating button at the bottom right corner of the Contacts tab.
-2. On the dialog paste the invitation url that we generated into the PrismAgent connection section and click validate.
+2. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click Validate.
 ​
 The application will react when the connection is correctly established and show a message under messages.
 
