@@ -8,17 +8,17 @@ import TabItem from '@theme/TabItem';
 # Quick Start Guide
 ## Introduction into Self Sovereign Identity (SSI) and PRISM
 
-This quick introduction will get you up and running and immediately productive with PRISM and help you understand how the pieces fit together into an [SSI](documentation/docs/concepts/glossary.md/#self-sovereign-identity) interaction.
+This quick introduction will get you up and running and immediately productive with PRISM and help you understand how the pieces fit together into an [SSI](/docs/concepts/glossary.md/#self-sovereign-identity) interaction.
 
 ### A typical Self-Sovereign Identity interaction
 
 ![Component Diagram](/img/component-diagram.png)
 
 ### An overview of Atala PRISM
-Atala PRISM consists of core components to facilitate typical SSI interactions between [issuers](documentation/docs/concepts/glossary.md/#issuer), [holders](documentation/docs/concepts/glossary.md/#holder), and [verifiers](documentation/docs/concepts/glossary.md/#verifier). 
+Atala PRISM consists of core components to facilitate typical SSI interactions between [issuers](/docs/concepts/glossary.md/#issuer), [holders](/docs/concepts/glossary.md/#holder), and [verifiers](/docs/concepts/glossary.md/#verifier). 
 
 #### A Cloud Agent
-A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](documentation/docs/concepts/glossary.md/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](documentation/docs/concepts/glossary.md/#decentralized-identifier) and DID-based connections. The PRISM Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](documentation/docs/concepts/glossary.md/#didcomm) as a messaging protocol for agent-to-agent communication.
+A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary.md/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary.md/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary.md/#didcomm) as a messaging protocol for agent-to-agent communication.
 
 It is maintained as an open source component through the [Hyperledger Lab: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html) organisation.
 
@@ -35,7 +35,7 @@ Mediators are for storing and relaying messages between Cloud Agents and Wallet 
 More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
-To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](documentation/docs/concepts/glossary.md/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary.md/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
 
 ### Supported Standards
 Being part of a decentralized ecosystem with varying technology implementations requires standardization to ensure interoperability between different solutions. The standards currently supported by PRISM are:
@@ -225,7 +225,7 @@ curl -X 'POST' \
 More in-depth documentation can be found here [PRISM Infrastructure](/docs/category/infrastructure)
 
 ### Starting Sample App
-All wallet SDK's come bundled with a sample application, that cover all the prism flows, including establishing connections, issuance, and verification flows.
+All wallet SDK's come bundled with a sample application, that cover all the PRISM flows, including establishing connections, issuance, and verification flows.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
