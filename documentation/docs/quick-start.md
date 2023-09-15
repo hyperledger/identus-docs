@@ -15,7 +15,7 @@ This quick introduction will get you up and running and immediately productive w
 ![Component Diagram](/img/component-diagram.png)
 
 ### An overview of Atala PRISM
-Our solution consists of the following core components that are needed to facilitate typical Self Sovereign Identity interactions between issuers, holders and verifiers. 
+Atala PRISM consists of core components to facilitate typical SSI interactions between issuers, holders, and verifiers. 
 
 #### A Cloud Agent
 A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST API to enable easy integration into your solution, and uses DIDComm V2 as a messaging protocol for agent-to-agent communication. 
