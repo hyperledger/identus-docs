@@ -18,7 +18,9 @@ This quick introduction will get you up and running and immediately productive w
 Atala PRISM consists of core components to facilitate typical SSI interactions between issuers, holders, and verifiers. 
 
 #### A Cloud Agent
-A cloud agent can issue, hold and verify verifiable credentials on behalf of organizations or individuals, and manage DIDs and DID-based connections. Our Cloud Agent comes with an easy to use REST API to enable easy integration into your solution, and uses DIDComm V2 as a messaging protocol for agent-to-agent communication. It is maintained as an open source component through the [Hyperledger Lab: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html) organisation.
+A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](documentation/docs/concepts/glossary.md/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](documentation/docs/concepts/glossary.md/#decentralized-identifier) and DID-based connections. The PRISM Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](documentation/docs/concepts/glossary.md/#didcomm) as a messaging protocol for agent-to-agent communication.
+
+It is maintained as an open source component through the [Hyperledger Lab: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html) organisation.
 
 More in depth documentation about Cloud Agent can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
@@ -472,7 +474,7 @@ Attributes:
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
-After starting the Wallet instance, the holder needs to listen for new messages and respond to any CredentialOffer with a CredentialRequest, as follows:
+After starting the Prism Agent, the holder needs to listen for new messages and respond to any CredentialOffer with a CredentialRequest, as follows:
 
 <Tabs>
 <TabItem value="js" label="Typescript">
