@@ -774,7 +774,7 @@ curl --location \
 --header 'Accept: application/json'
 ```
 
-The response body can be used then to determine if the request is completed and verified correctly.
+The response body establishes the completion of the request and can be verified for correctness.
 
 
 
