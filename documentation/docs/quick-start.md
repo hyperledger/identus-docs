@@ -25,7 +25,7 @@ It is maintained as an open source component through the [Hyperledger Lab: Open 
 More in depth documentation about Cloud Agent can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
 #### Wallet SDKs
-Wallet SDKs for web and mobile (iOS, Android, Typescript) enable identity holders to safely store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
+Wallet SDKs for web and mobile (iOS, Android, TypeScript) enable identity holders to safely store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
 
 More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
@@ -41,10 +41,10 @@ To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (V
 Being part of a decentralized ecosystem with varying technology implementations requires standardization to ensure interoperability between different solutions. The standards currently supported by PRISM are:
 
 1. [W3C Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/)
-    1. [DID:Peer](https://identity.foundation/peer-did-method-spec/)
-    2. [DID:PRISM](https://github.com/input-output-hk/prism-did-method-spec)
+    a. [DID:Peer](https://identity.foundation/peer-did-method-spec/)
+    b. [DID:PRISM](https://github.com/input-output-hk/prism-did-method-spec)
 2. [W3C VC Data Model v1.1](https://www.w3.org/TR/vc-data-model/)
-    1. JWT-VC
+    a. JWT-VC
 3. [DIF DIDComm V2](https://identity.foundation/didcomm-messaging/spec/v2.0/)
 4. [Hyperledger Anoncreds v1](https://www.hyperledger.org/projects/anoncreds)
 5. [A selection of Hyperledger Aries RFCs](https://github.com/hyperledger/aries-rfcs)
@@ -92,7 +92,7 @@ Setting the `API_KEY_ENABLED` to `false` disables the requirement of using API K
 
 :::caution
 
-API_KEY_ENABLED disables API Key authentication. This should NOT be used beyond Development purposes.
+API_KEY_ENABLED disables API Key authentication. This should **not** be used beyond Development purposes.
 
 :::
 
@@ -111,11 +111,13 @@ The Verifier [API endpoint](http://localhost:9000/prism-agent/) will be accessib
 ### Agent configuration
 
 #### Creating LongForm PrismDID 
-::: info
+:::info
+
 This step is optional if the Cloud Agent already has a published DID. If you want to go straight to the point where the published PRISM DID is used, refer to [this section](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential)
+
 :::
 
-Run the following API request against your Issuer API to create a PRISM DID
+Run the following API request against your Issuer API to create a PRISM DID:
 
 ```bash
 curl --location \
@@ -138,7 +140,7 @@ curl --location \
 }'
 ```
 
-Create a PRISM DID operation and publish the DID by replacing {didRef} with the `longFormDid` output value from the previous create DID step.
+Create a PRISM DID operation and publish the DID by replacing `{didRef}` with the `longFormDid` output value from the previous create DID step.
 
 ```bash
 curl --location \
@@ -146,8 +148,8 @@ curl --location \
 --header 'Accept: application/json'
 ```
 
-#### Choose one published Prism DID
-This API endpoint will help you choose the previously published did on the Issuer instance used throughout the guide.
+#### Choose one published PRISM DID
+This API endpoint will help you choose the previously published DID on the Issuer instance used throughout the guide.
 
 ```bash
 curl --location \
@@ -159,8 +161,11 @@ Copy the `did` output value for the next steps.
 #### Create a credential schema (JWT W3C Credential)
 
 To create a credential schema on the Issuer instance, run the following request:
+
 :::info
+
 Replace the `[[publishedPrismDID]]` in the example request with the `did` value from the previous step.
+
 :::
 
 ```bash
@@ -225,7 +230,7 @@ All wallet SDK's come bundled with a sample application, that cover all the pris
 <Tabs>
 <TabItem value="js" label="Typescript">
 
-Clone the [Typescript SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-ts) repository.
+Clone the [TypeScript SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-ts) repository.
 
 Run the following commands:
 1. Build the source SDK:
@@ -259,7 +264,7 @@ Clone the [KMM SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-km
 1. Open the Wallet SDK project on IntelliJ or Android Studio.
 2. In the `Run configuration` dropdown, select SampleApp.
 3. Select the device or emulator you want to use.
-3. Click run.
+3. Click "Run".
 
 The SampleApp will launch on the applicable device or emulator.
 
@@ -272,14 +277,18 @@ Mediation is the process that ensures messages get routed and stored correctly b
 To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/atala-prism-mediator).
 
 With a Docker service running, open a new terminal and run:
-:::info The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/atala-prism-mediator/releases). Change the version in the example if you want to use the latest version.
+
+:::info
+
+The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/atala-prism-mediator/releases). Change the version in the example if you want to use the latest version.
+
 :::
 
 ```bash
 MEDIATOR_VERSION=0.9.2 docker-compose up
 ```
 
-MEDIATOR ENDPOINT is then set to [http://localhost:8080](http://localhost:8080).
+`MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
 
 More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
 
@@ -402,7 +411,7 @@ curl --location \
 }'
 ```
 
-This request will return a JSON response with an invitation and its URL. The Cloud Agent (issuer or verifier) would share this URL as a QR code, and the holder would scan it with the wallet app.
+This request will return a JSON response with an invitation and its URL. The Cloud Agent (Issuer or Verifier) would share this URL as a QR code, and the holder would scan it with the wallet app.
 
 Copy the `invitationUrl` and the `connectionId`.
 
@@ -439,7 +448,7 @@ await props.agent.acceptDIDCommInvitation(parsed);
 
 In the demo application:
 1. Click the floating button at the bottom right corner of the Contacts tab.
-2. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click Validate.
+2. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click "Validate".
 ​
 The application will react once the connection gets established correctly and show a message under messages.
 
@@ -482,7 +491,7 @@ Attributes:
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
-After starting the Prism Agent, the holder needs to listen for new messages and respond to any CredentialOffer with a CredentialRequest, as follows:
+After starting the PRISM Cloud Agent, the holder needs to listen for new messages and respond to any CredentialOffer with a CredentialRequest, as follows:
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -649,7 +658,7 @@ Now that the Holder has received a credential, it can be used in a verification 
 3. Holder creates a proof-presentation and shares this with the verifier
 4. Verifier verifies the proof-presentation
 
-In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connection-less verification.
+In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connectionless verification.
 
 ### Verifier Agent
 
