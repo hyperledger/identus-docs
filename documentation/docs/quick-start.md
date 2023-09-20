@@ -8,17 +8,17 @@ import TabItem from '@theme/TabItem';
 # Quick Start Guide
 ## Introduction into Self Sovereign Identity (SSI) and PRISM
 
-This quick introduction will get you up and running and immediately productive with PRISM and help you understand how the pieces fit together into an [SSI](/docs/concepts/glossary#self-sovereign-identity) interaction.
+This quick introduction will get you up and running and immediately productive with PRISM and help you understand how the pieces fit together into an [SSI](/docs/concepts/glossary.md/#self-sovereign-identity) interaction.
 
 ### A typical Self-Sovereign Identity interaction
 
 ![Component Diagram](/img/component-diagram.png)
 
 ### An overview of Atala PRISM
-Atala PRISM consists of core components to facilitate typical SSI interactions between [issuers](/docs/concepts/glossary#issuer), [holders](/docs/concepts/glossary#holder), and [verifiers](/docs/concepts/glossary#verifier). 
+Atala PRISM consists of core components to facilitate typical SSI interactions between [issuers](/docs/concepts/glossary.md/#issuer), [holders](/docs/concepts/glossary.md/#holder), and [verifiers](/docs/concepts/glossary.md/#verifier). 
 
 #### A Cloud Agent
-A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary#verifiable-credential-vc) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary#didcomm) as a messaging protocol for agent-to-agent communication.
+A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary.md/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary.md/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary.md/#didcomm) as a messaging protocol for agent-to-agent communication.
 
 It is maintained as an open source component through the [Hyperledger Lab: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html) organisation.
 
@@ -35,7 +35,7 @@ Mediators are for storing and relaying messages between Cloud Agents and Wallet 
 More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
-To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary.md/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
 
 ### Supported Standards
 Being part of a decentralized ecosystem with varying technology implementations requires standardization to ensure interoperability between different solutions. The standards currently supported by PRISM are:
@@ -64,7 +64,7 @@ git clone https://github.com/hyperledger-labs/open-enterprise-agent
 ```
 
 
-Once cloned, create a new environment variable configuration file to define the Issuer Agent __infrastructure/local/.env-issuer__ with the following content:  
+Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/local/.env-issuer__ to define the Issuer Agent with the following content:  
 
 ```
 API_KEY_ENABLED=false 
@@ -76,7 +76,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 DIDCOMM_SERVICE_URL=http://localhost:8000
 ```
 
-To define the Verifier Agent, create a new environment variable configuration file __infrastructure/local/.env-verifier__ with the following content:  
+Create a new environment variable configuration file named  __./open-enterprise-agent/local/.env-verifier__ to define the Verifier Agent with the following content: 
 
 ```
 API_KEY_ENABLED=false 
@@ -96,7 +96,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 :::
 
-3. Start the `issuer` and `verifier` Cloud Agents.
+3. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool. 
 
 ```bash
  ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
@@ -149,7 +149,7 @@ curl --location \
 ```
 
 #### Choose one published PRISM DID
-This API endpoint will help you choose the previously published DID on the Issuer instance used throughout the guide.
+This API endpoint will help you list the previously published DID on the Issuer instance used throughout the guide.
 
 ```bash
 curl --location \
