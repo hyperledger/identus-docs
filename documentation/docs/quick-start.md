@@ -65,7 +65,7 @@ git clone https://github.com/hyperledger-labs/open-enterprise-agent
 ```
 
 
-Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/local/.env-issuer__ to define the Issuer Agent with the following content:  
+Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:  
 
 ```
 API_KEY_ENABLED=false 
@@ -77,7 +77,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 DIDCOMM_SERVICE_URL=http://localhost:8000
 ```
 
-Create a new environment variable configuration file named  __./open-enterprise-agent/local/.env-verifier__ to define the Verifier Agent with the following content: 
+Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content: 
 
 ```
 API_KEY_ENABLED=false 
