@@ -56,8 +56,9 @@ Being part of a decentralized ecosystem with varying technology implementations 
 This guide will demonstrate a single-tenant deployment with API Key authentication disabled and an in-memory ledger for published DID storage, which is the simplest configuration to get started as a developer. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options. 
 
 To spin up an Cloud Agent you must:
-1. Have Docker installed.
-2. Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
+1. Have GIT installed.
+2. Have Docker installed.
+3. Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
 ```bash
 git clone https://github.com/hyperledger-labs/open-enterprise-agent
@@ -232,6 +233,11 @@ All wallet SDK's come bundled with a sample application, that cover all the PRIS
 
 Clone the [TypeScript SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-ts) repository.
 
+```bash
+git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-ts
+```
+
+
 Run the following commands:
 1. Build the source SDK:
 
@@ -261,6 +267,10 @@ tbd
 
 Clone the [KMM SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm) repository.
 
+```bash
+git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm
+```
+
 1. Open the Wallet SDK project on IntelliJ or Android Studio.
 2. In the `Run configuration` dropdown, select SampleApp.
 3. Select the device or emulator you want to use.
@@ -275,6 +285,10 @@ The SampleApp will launch on the applicable device or emulator.
 Mediation is the process that ensures messages get routed and stored correctly between Issuers, Verifiers and Holders, even if they are offline. The mediator offers a service that is always running and can securely store messages and deliver them to the associated DIDs using DIDComm. This enables use-cases where connectivity to a (mobile) wallet cannot be guaranteed.
 
 To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/atala-prism-mediator).
+
+```bash
+git clone https://github.com/input-output-hk/atala-prism-mediator
+```
 
 With a Docker service running, open a new terminal and run:
 
