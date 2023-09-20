@@ -74,7 +74,7 @@ PRISM_NODE_VERSION=2.2.1
 PORT=8000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
-DIDCOMM_SERVICE_URL=http://localhost:8000
+DIDCOMM_SERVICE_URL=http://localhost:8000/didcomm
 ```
 
 Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content: 
@@ -86,7 +86,7 @@ PRISM_NODE_VERSION=2.2.1
 PORT=9000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
-DIDCOMM_SERVICE_URL=http://localhost:9000
+DIDCOMM_SERVICE_URL=http://localhost:9000/didcomm
 ```
 
 Setting the `API_KEY_ENABLED` to `false` disables the requirement of using API Keys.
@@ -112,12 +112,6 @@ The Verifier [API endpoint](http://localhost:9000/prism-agent/) will be accessib
 ### Agent configuration
 
 #### Creating LongForm PrismDID 
-:::info
-
-This step is optional if the Cloud Agent already has a published DID. If you want to go straight to the point where the published PRISM DID is used, refer to [this section](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential)
-
-:::
-
 Run the following API request against your Issuer API to create a PRISM DID:
 
 ```bash
@@ -149,15 +143,7 @@ curl --location \
 --header 'Accept: application/json'
 ```
 
-#### Choose one published PRISM DID
-This API endpoint will help you list the previously published DID on the Issuer instance used throughout the guide.
-
-```bash
-curl --location \
---request GET 'http://localhost:8000/prism-agent/did-registrar/dids'
-```
-
-Copy the `did` output value for the next steps.
+The short version of the did is the publishedPrismDID.
 
 #### Create a credential schema (JWT W3C Credential)
 
@@ -300,14 +286,14 @@ The latest mediator version can be found at [Mediator releases](https://github.c
 :::
 
 ```bash
-MEDIATOR_VERSION=0.9.2 docker-compose up
+MEDIATOR_VERSION=0.9.3 docker-compose up
 ```
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
 
 More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
 
-When running the SampleApp, the Cloud Agent starts, and mediation begins automatically. Mediation is a process where we inform the mediator about how to reach our Edge Agent and will expose protocols for the Holder to help him fetch messages, change routing, etc.
+Now you need to capture the Mediator's Peer DID in order to start DIDCOMM V2 Mediation protocol, you can do so by opening you browser at the mediators endpoint.
 
 If you are running the SampleApp, click the "Start Agent" button.
 
@@ -419,7 +405,7 @@ A connection must be established between the Holder and PRISM Cloud Agents to co
 
 ```bash
 curl --location \
---request POST '[[API ENDPOINT]]/connections' \
+--request POST 'http://localhost:8000/connections' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "label": "Prism Agent demo connection with holder"
@@ -485,7 +471,7 @@ To trigger the creation of a credential-offer, we call the credential-offers-end
 
 ```bash
 curl --location \
---request POST '[[API ENDPOINT]]/issue-credentials/credential-offers' \
+--request POST 'http://localhost:8000/issue-credentials/credential-offers' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "claims": {"pass":true},
@@ -681,7 +667,7 @@ To run this section, we will use the second connection we created between the Ho
 
 ```bash
 curl --location \ 
---request POST '[[API ENDPOINT]]/present-proof/presentations' \
+--request POST 'http://localhost:9000/present-proof/presentations' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "connectionId": [[connectionId]],
@@ -798,7 +784,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 ```bash
 curl --location \
---request GET '[[API ENDPOINT]]/present-proof/presentations/[[presentationRequestId]]' \
+--request GET 'http://localhost:9000/present-proof/presentations/[[presentationRequestId]]' \
 --header 'Accept: application/json'
 ```
 
