@@ -245,9 +245,18 @@ This will start the react Wallet SDK TypeScript Demonstration at [http://localho
 </TabItem>
 <TabItem value="swift" label="Swift">
 
-```swift
-tbd
+Clone the [Swift SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-swift) repository.
+
+```bash
+git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-swift
 ```
+
+1. Open the XCode project on __./Sample/AtalaPrismWalletDemo/AtalaPrismWalletDemo.xcodeproj__
+2. On the top left of the XCode window you will see a play/run button, press it.
+3. The app will start.
+4. Click Wallet Demo 2.0
+
+You will be able to run the rest of the guide here.
 
 </TabItem>
 <TabItem value="android" label="Android">
@@ -541,7 +550,7 @@ agent
                 ) else { throw UnknownError.somethingWentWrongError() }
 
                 _ = try await agent.sendMessage(message: try requestCredential.makeMessage())
-          }
+          } catch {}
       }
   })
 
@@ -622,9 +631,8 @@ agent
               case .didcommIssueCredential:
                   let issueCredential = try IssueCredential(fromMessage: message)
                   _ = try await agent.processIssuedCredentialMessage(message: issueCredential)
-              
             }
-          }
+          } catch {}
       }
   })
 ```
@@ -747,7 +755,7 @@ agent
               )
               _ = try await agent.sendMessage(message: try presentation.makeMessage())
           }
-        }
+        } catch {}
       }
   })
 ```
