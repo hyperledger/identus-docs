@@ -60,7 +60,6 @@ const sidebars = {
           items: [
             'atala-prism/prism-cloud-agent/overview',
             'atala-prism/prism-cloud-agent/building-blocks',
-            'atala-prism/prism-cloud-agent/multi-tenancy-management',
             'atala-prism/prism-cloud-agent/authentication',
             'atala-prism/prism-cloud-agent/did-management',
             'atala-prism/prism-cloud-agent/secrets-storage',
