@@ -99,8 +99,13 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 3. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool. 
 
+Issuer Cloud Agent command:
 ```bash
- ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
+./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
+```
+
+Verifier Cloud Agent command:
+```bash
  ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000
 ```
 
@@ -295,7 +300,7 @@ The latest mediator version can be found at [Mediator releases](https://github.c
 :::
 
 ```bash
-MEDIATOR_VERSION=0.9.3 docker-compose up
+MEDIATOR_VERSION=0.10.0 docker-compose up
 ```
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
@@ -321,10 +326,9 @@ curl --location \
 <Tabs>
 <TabItem value="js" label="Typescript">
 
+Now, go back to the sample app and paste the mediator peer DID and click start after.
 
-
-An out-of-band invitation gets generated. We need the `from` field containing the Mediators PeerDID.
-
+Code sample: 
 
 ```typescript
   const mediatorDID = SDK.Domain.DID.fromString(
@@ -356,6 +360,7 @@ An out-of-band invitation gets generated. We need the `from` field containing th
    */
   await agent.start()
 ```
+
 </TabItem>
 
 <TabItem value="swift" label="Swift">
