@@ -813,7 +813,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 
 
-### Verifier: will then check on the API if the Presentation Request has been completed or not.
+### Verifier: Will then check on the API if the Presentation Request has been completed or not.
 
 ```bash
 curl --location \
