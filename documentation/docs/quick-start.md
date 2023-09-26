@@ -496,7 +496,7 @@ The `schemaId` being the following http://host.docker.internal:8000/prism-agent/
 
 The `connectionId` is just the ID of the connection we previously established.
 
-The Issuing DID is the published prism did in its short version which was also used to create and publish the credential schema.
+The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
 
 :::
 
