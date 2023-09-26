@@ -722,7 +722,7 @@ curl --location \
 This API request will return a `presentationRequestId,` which the verifier can use later to check the request's current status.
 
 
-### Holder: Receives the Presentation proof request 
+### Holder: Receives the Presentation proof-request 
 
 The Holder needs to have a running instance of the Cloud Agent that has the message listener active and is listening for the correct type of messages as detailed below:
 
