@@ -492,7 +492,7 @@ To trigger the creation of a credential-offer, we call the credential-offers-end
 
 :::info
 
-The schemaId being the following http://host.docker.internal:8000/prism-agent/schema-registry/schemas/[[schema guid]]
+The `schemaId` being the following http://host.docker.internal:8000/prism-agent/schema-registry/schemas/[[schema guid]]
 
 The connectionId is just the ID of the connection we previously established.
 
