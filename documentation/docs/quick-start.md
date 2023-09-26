@@ -529,7 +529,7 @@ Because this credential Offer was created with the `automaticIssuance` true, as 
 <TabItem value="js" label="Typescript">
 As soon as the CredentialOffer message reaches the browser it will be automatically accepted and in exchange, a credentialRequest Message will be sent back to the PrismAgent.
 
-Because this credential Offer was created with the automaticIssuance true, as soon as the PrismAgent receives this credentialRequest it will respond with the IssuedCredential message and send this back to the holder.
+Because this credential Offer was created with the `automaticIssuance` true, as soon as the `PrismAgent` receives this `credentialRequest` it will respond with the `IssuedCredential` message and send this back to the holder.
 
 ```typescript
 props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Message[]) => {
