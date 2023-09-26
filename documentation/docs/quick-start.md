@@ -41,12 +41,19 @@ To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (V
 Being part of a decentralized ecosystem with varying technology implementations requires standardization to ensure interoperability between different solutions. The standards currently supported by PRISM are:
 
 1. [W3C Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/)
-    a. [DID:Peer](https://identity.foundation/peer-did-method-spec/)
-    b. [DID:PRISM](https://github.com/input-output-hk/prism-did-method-spec)
+
+    1.1 [DID:Peer](https://identity.foundation/peer-did-method-spec/)
+
+    1.2 [DID:PRISM](https://github.com/input-output-hk/prism-did-method-spec)
+
 2. [W3C VC Data Model v1.1](https://www.w3.org/TR/vc-data-model/)
-    a. JWT-VC
+
+    2.1 JWT-VC
+
 3. [DIF DIDComm V2](https://identity.foundation/didcomm-messaging/spec/v2.0/)
+
 4. [Hyperledger Anoncreds v1](https://www.hyperledger.org/projects/anoncreds)
+
 5. [A selection of Hyperledger Aries RFCs](https://github.com/hyperledger/aries-rfcs)
 
 
@@ -74,7 +81,6 @@ PRISM_NODE_VERSION=2.2.1
 PORT=8000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
-DIDCOMM_SERVICE_URL=http://localhost:8000/didcomm
 ```
 
 Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content: 
@@ -86,7 +92,6 @@ PRISM_NODE_VERSION=2.2.1
 PORT=9000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
-DIDCOMM_SERVICE_URL=http://localhost:9000/didcomm
 ```
 
 Setting the `API_KEY_ENABLED` to `false` disables the requirement of using API Keys.
@@ -101,12 +106,12 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 Issuer Cloud Agent command:
 ```bash
-./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
+./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d localhost
 ```
 
 Verifier Cloud Agent command:
 ```bash
- ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000
+ ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d localhost
 ```
 
 The Issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`.
@@ -159,6 +164,8 @@ To create a credential schema on the Issuer instance, run the following request:
 Replace the `[[publishedPrismDID]]` in the example request with the `did` value from the previous step.
 
 :::
+
+We need to capture the schema's guid as its used in further steps.
 
 ```bash
 curl -X 'POST' \
@@ -419,7 +426,7 @@ A connection must be established between the Holder and PRISM Cloud Agents to co
 
 ```bash
 curl --location \
---request POST 'http://localhost:8000/connections' \
+--request POST 'http://localhost:8000/prism-agent/connections' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "label": "Prism Agent demo connection with holder"
@@ -483,20 +490,28 @@ The credential issuance flow consists of multiple steps, detailed in this sectio
 
 To trigger the creation of a credential-offer, we call the credential-offers-endpoint, as follows:
 
+:::info
+
+The schemaId being the following http://host.docker.internal:8000/prism-agent/schema-registry/schemas/[[schema guid]]
+
+The connectionId is just the ID of the connection we previously established.
+
+The Issuing DID is the published prism did in its short version which was also used to create and publish the credential schema.
+
+:::
+
 ```bash
-curl --location \
---request POST 'http://localhost:8000/issue-credentials/credential-offers' \
+curl --location --request POST 'http://localhost:8000/prism-agent/issue-credentials/credential-offers' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "claims": {"pass":true},
+    "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
     "connectionId": [[connectionId]]
     "issuingDID": [[publishedPrismDID]],
     "schemaId": [[schemaId]],
-    "subjectId": [TBD where do we set this from],
-    "validityPeriod": 181818929544448485225254,
     "automaticIssuance": true
 }'
 ```
+
 
 Attributes:
 
@@ -506,10 +521,15 @@ Attributes:
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
-After starting the PRISM Cloud Agent, the holder needs to listen for new messages and respond to any CredentialOffer with a CredentialRequest, as follows:
+As soon as the CredentialOffer message reaches the browser it will be automatically accepted and in exchange, a credentialRequest Message will be sent back to the PrismAgent.
+
+Because this credential Offer was created with the automaticIssuance true, as soon as the PrismAgent receives this credentialRequest it will respond with the IssuedCredential message and send this back to the holder.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
+As soon as the CredentialOffer message reaches the browser it will be automatically accepted and in exchange, a credentialRequest Message will be sent back to the PrismAgent.
+
+Because this credential Offer was created with the automaticIssuance true, as soon as the PrismAgent receives this credentialRequest it will respond with the IssuedCredential message and send this back to the holder.
 
 ```typescript
 props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Message[]) => {
@@ -680,7 +700,7 @@ To run this section, we will use the second connection we created between the Ho
 
 ```bash
 curl --location \ 
---request POST 'http://localhost:9000/present-proof/presentations' \
+--request POST 'http://localhost:9000/prism-agent/present-proof/presentations' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "connectionId": [[connectionId]],
@@ -797,31 +817,8 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 ```bash
 curl --location \
---request GET 'http://localhost:9000/present-proof/presentations/[[presentationRequestId]]' \
+--request GET 'http://localhost:9000/prism-agent/present-proof/presentations/[[presentationRequestId]]' \
 --header 'Accept: application/json'
 ```
 
 The response body establishes the completion of the request and can be verified for correctness.
-
-
-
-
-
-
-
-Completed sections:
-## [Document Deployment Instructions (pre-requisites)](https://input-output.atlassian.net/browse/ATL-5675)
-## [Document steps to set up a credential issuer (Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5676)
-## [Document the steps to set up a verifier (Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5681)
-## [Document the steps to set up a credential holder (Edge Agent)](https://input-output.atlassian.net/browse/ATL-5679)
-## [Document the steps to issue a credential (Cloud Agent to Edge Agent)](https://input-output.atlassian.net/browse/ATL-5680)
-## [Document the steps to request a proof presentation (Cloud Agent to Edge Agent)](https://input-output.atlassian.net/browse/ATL-5684)
-
-
-Discarded sections:
-## [Document steps to set up a credential holder (Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5677)
-## [Document steps to issue a credential (Cloud Agent to Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5678)
-## [Document the steps to request a proof presentation (Cloud Agent to Cloud Agent)](https://input-output.atlassian.net/browse/ATL-5683)
-
-
-## [Style Guide (delete before staging)](https://handbook.atalaprism.io/product/style-guide)
