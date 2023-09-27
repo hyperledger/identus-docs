@@ -62,7 +62,7 @@ Being part of a decentralized ecosystem with varying technology implementations 
 ### Agent Deployment
 This guide will demonstrate a single-tenant deployment with API Key authentication disabled and an in-memory ledger for published DID storage, which is the simplest configuration to get started as a developer. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options. 
 
-We develop on machines that are equipped with modern Intel based x64 processors and Mac ARM processors with a minimum of 4 cores, 16 gb of memory and 128gb+ of SSD type storage.
+We develop on modern machines equipped with either Intel based x64 processors or Apple ARM processors with a minimum of four cores, 16 GB of memory and 128GB+ of SSD-type storage.
 
 To spin up an Cloud Agent you must:
 1. Have GIT installed.
