@@ -1,3 +1,10 @@
+## [1.57.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.56.0...v1.57.0) (2023-10-02)
+
+
+### :rocket: New Content
+
+* tutorial issue credential cloud agent issuer to edge agent holder ([#54](https://github.com/input-output-hk/atala-prism-docs/issues/54)) ([66fae41](https://github.com/input-output-hk/atala-prism-docs/commit/66fae41fd0db02f9ccea94d669cfbf05a11b6083))
+
 ## [1.56.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.55.0...v1.56.0) (2023-10-01)
 
 
