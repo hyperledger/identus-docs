@@ -20,6 +20,7 @@ const sidebars = {
 
   docsSidebar: [
     'getting-started',
+    'quick-start',
     {
       type: 'category',
       label: 'Concepts',
