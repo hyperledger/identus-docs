@@ -320,10 +320,6 @@ Now you need to capture the Mediator's Peer DID in order to start DIDCOMM V2 Med
 
 If you are running the SampleApp, click the "Start Agent" button.
 
-
-<Tabs>
-<TabItem value="js" label="Typescript">
-
 In order to complete this step you'll need to connect to the mediators Peer DID which you can fetch by making the following API request.
 
 ```bash
@@ -788,6 +784,7 @@ agent
 ```
 
 </TabItem>
+
 <TabItem value="android" label="Android">
 
 ```kotlin
@@ -811,6 +808,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 ```
 
 </TabItem>
+
 </Tabs>
 
 
