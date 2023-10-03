@@ -148,7 +148,7 @@ const config = {
                             },
                             {
                                 label: 'Architecture Decision Records',
-                                href: 'pathname://adrs',
+                                href: 'pathname:///adrs',
                             },
                         ],
                     },
