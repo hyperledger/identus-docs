@@ -16,19 +16,24 @@ Default Entity - is an entity with id `00000000-0000-0000-0000-000000000000` and
 
 ## APIKey Authentication
 
-APIKey authentication is a simple method that uses a secret key to authenticate the entity.
-The header `apikey` must be added to the http request with the value of the issued secret.
-The Platform Administrator can configure the APIKey authentication for the entity using the Admin API Key authentication method.
+### Introduction
 
-The Agent maintains a list of APIKeys for each tenant, but the value of the API-Key does not get stored in the Agent.
-The Cloud Agent stores the hash of the APIKey in the database and uses it to authenticate the entity.
-The Cloud Agent uses the `SHA-256` algorithm and the `salt` value to compute the hash value.
+API Key Authentication is a straightforward method used to authenticate entities by utilizing a secret key. 
+This method requires the inclusion of an `apikey` header in HTTP requests, with the value corresponding to the issued secret key. 
+The configuration of API Key Authentication for an entity is managed by the Administrator using the Entity API methods.
 
-|Environment Variable | Value |
-|---------------------|-------|
-| API_KEY_SALT        | salt  |
+### Security and Restrictions
+- **API Key Length:** To maintain robust security, the length of the APIKey value must exceed 16 bytes (128 bits). This length requirement is essential for enhancing the security of your API Key against potential attacks. The max length of the API Key value is limited to 128 bytes.
+**Unique API Keys:** Each API Key is unique to a specific entity. It cannot be shared or reused by other entities. If an attempt to assign the same APIKey value to another entity, the APIKey is considered compromised and must be considered unusable.
+- **Revocation:** In cases where an APIKey is revoked for a tenant, it becomes invalid and cannot be used for authentication.
 
-Based on the configuration APIKey authentication, the PRISM Cloud Agent can support the following interaction models:
+### Agent Responsibilities
+
+The Agent manages API Keys for each tenant and maintains the security of the system:
+- **API Key Storage:** The Agent maintains a list of APIKeys for each tenant. However, it is important to note that the original value of the APIKey is not stored in the Agent, ensuring additional security.
+- **Hashing and Authentication:** The Agent securely stores the hash of the APIKey in the database and uses it to authenticate the entity. The hashing process employs the `SHA-256` algorithm and a `salt` value to compute the hash value, ensuring data integrity and security during authentication. The length of the `salt` value must exceed 16 bytes (128 bits)
+
+Based on the configuration APIKey authentication, the Cloud Agent can support the following interaction models:
 
 ### Single Tenant without apikey authentication
 Disable APIKey authentication and use the Default Wallet for all interactions with the Cloud Agent over the REST API and DIDComm
