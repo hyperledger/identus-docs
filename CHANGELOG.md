@@ -1,3 +1,10 @@
+## [1.57.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.57.0...v1.57.1) (2023-10-03)
+
+
+### :sparkles: Updates
+
+* make adrs accessible from any place ([732fcaf](https://github.com/input-output-hk/atala-prism-docs/commit/732fcaff0a1d7a2f70c71a146d9fe35cc6fefc1f))
+
 ## [1.57.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.56.0...v1.57.0) (2023-10-02)
 
 
