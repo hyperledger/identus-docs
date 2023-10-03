@@ -24,7 +24,7 @@ The configuration of API Key Authentication for an entity is managed by the Admi
 
 ### Security and Restrictions
 - **API Key Length:** To maintain robust security, the length of the APIKey value must exceed 16 bytes (128 bits). This length requirement is essential for enhancing the security of your API Key against potential attacks. The max length of the API Key value is limited to 128 bytes.
-- **Unique API Keys:** Each API Key is unique to a specific entity. It cannot be shared or reused by other entities. If an attempt is made to assign the same APIKey value to another entity, the APIKey is considered compromised and must no longer be used.
+**Unique API Keys:** Each API Key is unique to a specific entity. It cannot be shared or reused by other entities. If an attempt to assign the same APIKey value to another entity, the APIKey is considered compromised and must be considered unusable.
 - **Revocation:** In cases where an APIKey is revoked for a tenant, it becomes invalid and cannot be used for authentication.
 
 ### Agent Responsibilities
