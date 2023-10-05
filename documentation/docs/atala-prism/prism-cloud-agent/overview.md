@@ -41,9 +41,10 @@ This document provides an overview of the PRISM Agent feature set. This document
 
 ## Credential Types
 
-| Credential Type | Supported | Notes |
-| --- | :--: | -- |
-| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWT using the `JsonWebSignature2020` with `ESK256K` signature suite.<br /><br />Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions. |
+| Credential Type                                                               | Supported | Notes                                                                                                                                                                                                                                                                                                                                                                        |
+|-------------------------------------------------------------------------------| :--: |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/)   | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWT using the `JsonWebSignature2020` with `ESK256K` signature suite.<br /><br />Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions.                                                                            |
+| [AnonCreds v1.0 Verifiable Credentials](https://hyperledger.github.io/anoncreds-spec/) | :white_check_mark: | Supports the issuance of [AnonCreds v1.0](https://hyperledger.github.io/anoncreds-spec/) credentials through [DIDComm v2.1](https://identity.foundation/didcomm-messaging/spec/v2.1/), following the [Issue Credential Protocol 3.0](https://github.com/decentralized-identity/waci-didcomm/tree/main/issue_credential#issue-credential-protocol-30) specification. |
 
 ## DID Methods
 
