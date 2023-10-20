@@ -325,7 +325,7 @@ In order to complete this step you'll need to connect to the mediators Peer DID 
 ```bash
 curl --location \
 --request GET '[[MEDIATOR ENDPOINT]]/invitation' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: application/json'
 ```
 
 <Tabs>
