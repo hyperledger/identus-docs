@@ -1,3 +1,11 @@
+## [1.59.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.59.1...v1.59.2) (2023-10-20)
+
+
+### :sparkles: Updates
+
+* Improve the Establishing Connection section. ([#58](https://github.com/input-output-hk/atala-prism-docs/issues/58)) ([95dd96f](https://github.com/input-output-hk/atala-prism-docs/commit/95dd96f27f584a83bec39fb9a9e4d1819e0f90bc))
+* remove safely ([#59](https://github.com/input-output-hk/atala-prism-docs/issues/59)) ([cb97a50](https://github.com/input-output-hk/atala-prism-docs/commit/cb97a5023785d1c62a5865cb22bbfce5a887cf18))
+
 ## [1.59.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.59.0...v1.59.1) (2023-10-20)
 
 
