@@ -1,3 +1,10 @@
+## [1.59.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.59.0...v1.59.1) (2023-10-20)
+
+
+### :sparkles: Updates
+
+* Remove slash ([#57](https://github.com/input-output-hk/atala-prism-docs/issues/57)) ([e3756ff](https://github.com/input-output-hk/atala-prism-docs/commit/e3756ffcb1f351af92bba7718e10f43d2c1ab90c))
+
 ## [1.59.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.58.0...v1.59.0) (2023-10-15)
 
 

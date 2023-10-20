@@ -325,7 +325,7 @@ In order to complete this step you'll need to connect to the mediators Peer DID 
 ```bash
 curl --location \
 --request GET '[[MEDIATOR ENDPOINT]]/invitation' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: application/json'
 ```
 
 <Tabs>
@@ -422,6 +422,7 @@ To connect the Holder to both instances, you must run this in both Issuer and Ve
 ### Establish a connection - Agent side
 A connection must be established between the Holder and PRISM Cloud Agents to correctly deliver the Issuance + Verification Messages to the Holder.
 
+#### Establish connection on the Issuer Agent
 ```bash
 curl --location \
 --request POST 'http://localhost:8000/prism-agent/connections' \
@@ -431,7 +432,21 @@ curl --location \
 }'
 ```
 
-This request will return a JSON response with an invitation and its URL. The Cloud Agent (Issuer or Verifier) would share this URL as a QR code, and the holder would scan it with the wallet app.
+This request will return a JSON response with an invitation and its URL. The Issuer Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
+
+Copy the `invitationUrl` and the `connectionId`.
+
+#### Establish connection on the Verifier Agent
+```bash
+curl --location \
+--request POST 'http://localhost:9000/prism-agent/connections' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "label": "Prism Agent demo connection with holder"
+}'
+```
+
+This request will return a JSON response with an invitation and its URL. The Verifier Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
 
 Copy the `invitationUrl` and the `connectionId`.
 
@@ -492,7 +507,7 @@ To trigger the creation of a credential-offer, we call the credential-offers-end
 
 The `schemaId` being the following http://host.docker.internal:8000/prism-agent/schema-registry/schemas/[[schema guid]]
 
-The `connectionId` is just the ID of the connection we previously established.
+The `connectionId` is just the ID of the connection we previously established with the issuer.
 
 The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
 
@@ -509,13 +524,6 @@ curl --location --request POST 'http://localhost:8000/prism-agent/issue-credenti
     "automaticIssuance": true
 }'
 ```
-
-
-Attributes:
-
-1. [ConnectionId](/docs/quick-start#establish-a-connection---agent-side)
-2. The published [PRISM DID](/docs/quick-start#choose-one-published-prismdid) 
-3. [SchemaId](/docs/quick-start#create-a-credential-schema-jwt-w3c-credential) 
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
@@ -694,7 +702,7 @@ In the example, we show a verification flow that assumes a connection between Ho
 
 ### Verifier Agent
 
-To run this section, we will use the second connection we created between the Holder and the Verifier.
+To run this section, we will use [the connection](/docs/quick-start#establish-connection-on-the-verifier-agent) we created between the Holder and the Verifier.
 
 ```bash
 curl --location \ 
