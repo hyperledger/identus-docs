@@ -1,3 +1,10 @@
+## [1.62.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.62.0...v1.62.1) (2023-11-10)
+
+
+### :sparkles: Updates
+
+* remove unused env vars from doc ([#61](https://github.com/input-output-hk/atala-prism-docs/issues/61)) ([6add307](https://github.com/input-output-hk/atala-prism-docs/commit/6add307202f9d9444cd7755ea4c79c56f7e5a27b))
+
 ## [1.62.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.61.0...v1.62.0) (2023-11-05)
 
 
