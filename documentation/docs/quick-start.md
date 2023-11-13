@@ -6,30 +6,44 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Quick Start Guide
-## Introduction into Self Sovereign Identity (SSI) and PRISM
+## Introduction into Self Sovereign Identity (SSI)
+[Self-sovereign identity (SSI)](/docs/concepts/glossary/#self-sovereign-identity) is complex. This Quick Start Guide explains the fundamental concepts to get up and running with Atala PRISM. Refer to the Concepts and Components sections for a more in-depth understanding.
 
-This quick introduction will get you up and running and immediately productive with PRISM and help you understand how the pieces fit together into an [SSI](/docs/concepts/glossary/#self-sovereign-identity) interaction.
+The trust triangle is the most basic process for conveying trust in the digital world. There are three roles in an SSI ecosystem: Holders, Issuers, and Verifiers.
 
-### A typical Self-Sovereign Identity interaction
+![Component Diagram](/img/trust-triangle.png)
+
+Holders can be any entity, such as individuals, organizations, and digital or physical things. They will hold verifiable credentials (VCs) and use a proof presentation to share their VCs.
+
+Issuers can also be any entity that makes claims about an entity. These claims are attestations, or evidence of something, about the Holder. As an example, an insurance company would provide proof of valid insurance.
+
+Verifiers are the relying party in the triangle. They will request information from the Holder, such as proof of insurance, and the Holder will use a proof presentation to share the appropriate VCs with the Verifier. The Holder's digital signature, the issuer DID get verified, and the contents therein to ensure nothing has been tampered with.
+
+
+
+## PRISM flow
+The diagram details how the concepts fit alongside the PRISM components in a typical SSI interaction.
 
 ![Component Diagram](/img/component-diagram.png)
 
-### An overview of Atala PRISM
-Atala PRISM consists of core components to facilitate typical SSI interactions between [issuers](/docs/concepts/glossary/#issuer), [holders](/docs/concepts/glossary/#holder), and [verifiers](/docs/concepts/glossary/#verifier). 
 
-#### A Cloud Agent
+
+## An overview of Atala PRISM components
+Atala PRISM consists of core libraries that facilitate typical SSI interactions between [Issuers](/docs/concepts/glossary/#issuer), [Holders](/docs/concepts/glossary/#holder), and [Verifiers](/docs/concepts/glossary/#verifier). 
+
+### A Cloud Agent
 A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for agent-to-agent communication.
 
-It is maintained as an open source component through the [Hyperledger Lab: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html) organisation.
+It is maintained as an open source lab through the [Hyperledger Foundation: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html).
 
 More in depth documentation about Cloud Agent can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
-#### Wallet SDKs
+### Wallet SDKs
 Wallet SDKs for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
 
 More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
-#### A Mediator
+### A Mediator
 Mediators are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof-request on behalf of the Wallet SDKs (which can be offline occasionally).
 
 More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
@@ -37,24 +51,6 @@ More in-depth documentation about PRISM Mediator can be found [here](/docs/atala
 #### A Node for a Verifiable Data Registry (VDR)
 To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
 
-### Supported Standards
-Being part of a decentralized ecosystem with varying technology implementations requires standardization to ensure interoperability between different solutions. The standards currently supported by PRISM are:
-
-1. [W3C Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/)
-
-    1.1 [DID:Peer](https://identity.foundation/peer-did-method-spec/)
-
-    1.2 [DID:PRISM](https://github.com/input-output-hk/prism-did-method-spec)
-
-2. [W3C VC Data Model v1.1](https://www.w3.org/TR/vc-data-model/)
-
-    2.1 JWT-VC
-
-3. [DIF DIDComm V2](https://identity.foundation/didcomm-messaging/spec/v2.0/)
-
-4. [Hyperledger Anoncreds v1](https://www.hyperledger.org/projects/anoncreds)
-
-5. [A selection of Hyperledger Aries RFCs](https://github.com/hyperledger/aries-rfcs)
 
 
 ## PRE-REQUISITES
@@ -157,6 +153,13 @@ curl --location \
 
 The short version of the did is the publishedPrismDID.
 
+:::info
+
+Learn more about PRISM DIDs and why it is necessary to publish specific DIDs [here](https://staging-docs.atalaprism.io/tutorials/dids/publish).
+
+:::
+
+
 #### Create a credential schema (JWT W3C Credential)
 
 To create a credential schema on the Issuer instance, run the following request:
@@ -229,14 +232,13 @@ More in-depth documentation can be found here [PRISM Infrastructure](/docs/categ
 All wallet SDK's come bundled with a sample application, that cover all the PRISM flows, including establishing connections, issuance, and verification flows.
 
 <Tabs>
-<TabItem value="js" label="Typescript">
+<TabItem value="js" label="Typescript Sample APP">
 
 Clone the [TypeScript SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-ts) repository.
 
 ```bash
 git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-ts
 ```
-
 
 Run the following commands:
 1. Build the source SDK:
@@ -257,7 +259,7 @@ npm run start
 This will start the react Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
 
 </TabItem>
-<TabItem value="swift" label="Swift">
+<TabItem value="swift" label="Swift Sample APP">
 
 Clone the [Swift SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-swift) repository.
 
@@ -273,7 +275,7 @@ git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-swift
 You will be able to run the rest of the guide here.
 
 </TabItem>
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android Sample APP">
 
 Clone the [KMM SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm) repository.
 
@@ -294,6 +296,7 @@ The SampleApp will launch on the applicable device or emulator.
 ### Deploy & Establish Mediation
 Mediation is the process that ensures messages get routed and stored correctly between Issuers, Verifiers and Holders, even if they are offline. The mediator offers a service that is always running and can securely store messages and deliver them to the associated DIDs using DIDComm. This enables use-cases where connectivity to a (mobile) wallet cannot be guaranteed.
 
+#### Preparation
 To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/atala-prism-mediator).
 
 ```bash
@@ -318,7 +321,9 @@ More advanced documentation and configuration options can be found [here](https:
 
 Now you need to capture the Mediator's Peer DID in order to start DIDCOMM V2 Mediation protocol, you can do so by opening you browser at the mediators endpoint.
 
-If you are running the SampleApp, click the "Start Agent" button.
+#### Demo application
+
+:::info
 
 In order to complete this step you'll need to connect to the mediators Peer DID which you can fetch by making the following API request.
 
@@ -328,12 +333,42 @@ curl --location \
 --header 'Content-Type: application/json'
 ```
 
+:::
+
+Follow the steps in your desired platform as stated below:
+
+<Tabs>
+<TabItem value="js" label="Typescript Sample APP">
+
+Open http://localhost:3000 in your browser, paste the mediator peer DID, and click **Start** after.
+
+</TabItem>
+
+<TabItem value="swift" label="Swift Sample APP">
+
+In the app, go to Wallet Demo, and on the Mediator tab, insert the mediator DID.
+
+</TabItem>
+<TabItem value="android" label="Android  Sample APP">
+
+Now, go back to the sample app. In the main screen, you can provide the mediator DID of your choice or use that is there already. Proceed and click **Start** after.
+
+</TabItem>
+</Tabs>
+
+
+
+
+If you are running the SampleApp, click the **Start Agent** button.
+
+
+
+<details><summary>Code examples</summary>
+The following code examples represent establishing mediation and instantiating the Cloud Agent.
+
 <Tabs>
 <TabItem value="js" label="Typescript">
 
-Now, go back to the sample app and paste the mediator peer DID and click start after.
-
-Code sample: 
 
 ```typescript
   const mediatorDID = SDK.Domain.DID.fromString(
@@ -370,6 +405,7 @@ Code sample:
 
 <TabItem value="swift" label="Swift">
 
+
 ```swift
   let agent = PrismAgent(mediatorDID: did)
   try await agent.start()
@@ -378,6 +414,7 @@ Code sample:
 
 </TabItem>
 <TabItem value="android" label="Android">
+
 
 ```kotlin
 val apollo = ApolloImpl()
@@ -412,17 +449,17 @@ agent.startFetchingMessages()
 
 </TabItem>
 </Tabs>
+</details>
 
 
 
-
-## Establish a connection between the Holder and the Cloud Agent
-To connect the Holder to both instances, you must run this in both Issuer and Verifier endpoints.
+## Establish Holder connections
+To connect the Holder to both Cloud Agent instances, you must run this in both Issuer and Verifier endpoints.
 
 ### Establish a connection - Agent side
 A connection must be established between the Holder and PRISM Cloud Agents to correctly deliver the Issuance + Verification Messages to the Holder.
 
-#### Establish connection on the Issuer Agent
+#### Establish connection on the Issuer Cloud Agent
 ```bash
 curl --location \
 --request POST 'http://localhost:8000/prism-agent/connections' \
@@ -432,11 +469,11 @@ curl --location \
 }'
 ```
 
-This request will return a JSON response with an invitation and its URL. The Issuer Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
+This request will return a JSON response with an invitation and its URL. The Issuer Cloud Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
 
 Copy the `invitationUrl` and the `connectionId`.
 
-#### Establish connection on the Verifier Agent
+#### Establish connection on the Verifier Cloud Agent
 ```bash
 curl --location \
 --request POST 'http://localhost:9000/prism-agent/connections' \
@@ -446,24 +483,46 @@ curl --location \
 }'
 ```
 
-This request will return a JSON response with an invitation and its URL. The Verifier Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
+This request will return a JSON response with an invitation and its URL. The Verifier Cloud Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
 
 Copy the `invitationUrl` and the `connectionId`.
 
 ### Establish a connection - Holder side
 Now that you have the invitation, it's time for the Holder to accept it.
 
-
-
+#### Demo application
 <Tabs>
-<TabItem value="js" label="Typescript">
+<TabItem value="js" label="Typescript Sample APP">
 
-In the demo application:
 1. Open a browser at localhost:3000.
 2. Start the Edge Agent by clicking the button.
 3. Paste the invitation URL generated in the previous step into the `PrismAgent` connection section and click on Create Connection.
 
 The application will react when the connection gets established correctly and show a new connection.
+
+
+</TabItem>
+<TabItem value="swift" label="Swift Sample APP">
+
+1. On the OOB dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click **Validate**.
+
+​The application will respond once the connection gets established correctly and show a message under messages.
+
+</TabItem>
+<TabItem value="android" label="Android Sample APP">
+
+1. Go back to the Application: 
+2. Click the floating button at the bottom right corner of the Contacts tab.
+3. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click **Validate**.
+
+The application will react once the connection gets established correctly and show a message under messages.
+
+</TabItem>
+</Tabs>
+
+<details><summary>Code examples</summary>
+<Tabs>
+<TabItem value="js" label="Typescript">
 
 ```js
 const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
@@ -481,19 +540,14 @@ await props.agent.acceptDIDCommInvitation(parsed);
 </TabItem>
 <TabItem value="android" label="Android">
 
-In the demo application:
-1. Click the floating button at the bottom right corner of the Contacts tab.
-2. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click "Validate".
-​
-The application will react once the connection gets established correctly and show a message under messages.
-
 ```kotlin
-agent.handleReceivedMessagesEvents().collect {}
+val invitation = agent.parseInvitation(oobUrl)
+agent.acceptOutOfBandInvitation(invitation)
 ```
 
 </TabItem>
 </Tabs>
-
+</details>
 
 ## Issue a Credential from the Issuer to the holder
 
@@ -527,15 +581,39 @@ curl --location --request POST 'http://localhost:8000/prism-agent/issue-credenti
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
-As soon as the `CredentialOffer` message reaches the browser it will be automatically accepted and in exchange, a `credentialRequest` Message will be sent back to the `PrismAgent`.
-
 Because this credential Offer was created with the `automaticIssuance` true, as soon as the `PrismAgent` receives this `credentialRequest` it will respond with the `IssuedCredential` message and send this back to the holder.
+
+:::info 
+
+automaticIssuance is optional. It can also be manually triggered and confirmed by the Holder.```
+
+:::
+
+
+#### Demo application
+The holder will at some point receive a `CredentialOffer`, which the holder must accept, and then, a `CredentialRequest` is created and sent back to the Issuer through DIDComm V2 protocols.
+
+<Tabs>
+<TabItem value="js" label="Typescript Sample APP">
+The <code>CredentialOffer</code> message will be automatically accepted as soon as it reaches the browser. In exchange, a <code>CredentialRequest</code> message will get sent back to the `PrismAgent.`
+
+</TabItem>
+<TabItem value="swift" label="Swift Sample APP">
+As soon as the <code>CredentialOffer</code> message reaches the Swift mobile app, it will display to the user to accept or reject, and in exchange, a <code>CredentialRequest</code> message will get sent back to the <code>PrismAgent</code>.
+
+</TabItem>
+<TabItem value="android" label="Android Sample APP">
+As soon as the <code>CredentialOffer</code> message reaches the Android mobile app, it will be automatically accepted, and in exchange, a <code>CredentialRequest</code> message will get sent back to the <code>PrismAgent</code>.
+
+</TabItem>
+</Tabs>
+
+
+<details><summary>Code examples</summary>
+The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.	
 
 <Tabs>
 <TabItem value="js" label="Typescript">
-As soon as the `CredentialOffer` message reaches the browser it will be automatically accepted and in exchange, a `credentialRequest` Message will be sent back to the `PrismAgent`.
-
-Because this credential Offer was created with the `automaticIssuance` true, as soon as the `PrismAgent` receives this `credentialRequest` it will respond with the `IssuedCredential` message and send this back to the holder.
 
 ```typescript
 props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Message[]) => {
@@ -612,17 +690,17 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 </TabItem>
 </Tabs>
-
+</details>
 
 ### Store the Issued Credential [Holder]
-
-Once the Holder receives a credential from the Cloud Agent, it needs to store the credential somewhere:
-
 :::caution
 
 The sample application are using an insecure storage solution which should only be used for testing purposes and not production environments!
 
 :::
+
+<details><summary>Code examples</summary>
+Once the Holder receives a credential from the Cloud Agent, it needs to store the credential somewhere:
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -688,7 +766,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 </TabItem>
 </Tabs>
-
+</details>
 
 ## Request a verification from the Verifier Cloud Agent to the Holder (JWT W3C Credential)
 Now that the Holder has received a credential, it can be used in a verification workflow between a Holder and a Verifier. This requires the following steps:
@@ -730,7 +808,9 @@ This API request will return a `presentationRequestId,` which the verifier can u
 
 ### Holder: Receives the Presentation proof-request 
 
-The Holder needs to have a running instance of the Cloud Agent that has the message listener active and is listening for the correct type of messages as detailed below:
+The Holder needs an Edge Agent running with the message listener active. It will receive the presentation proof request from the Verifier Cloud Agent for the correct type of messages as detailed below:
+
+<details><summary>Code examples</summary>
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -818,7 +898,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 </TabItem>
 
 </Tabs>
-
+</details>
 
 
 ### Verifier: Will then check on the API if the Presentation Request has been completed or not.
