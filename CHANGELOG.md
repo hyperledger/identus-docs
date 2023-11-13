@@ -1,3 +1,10 @@
+## [1.63.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.63.0...v1.63.1) (2023-11-13)
+
+
+### :sparkles: Updates
+
+* make code samples more consistent ([#60](https://github.com/input-output-hk/atala-prism-docs/issues/60)) ([dc59136](https://github.com/input-output-hk/atala-prism-docs/commit/dc59136703a7de2d971aa1ea111e8164c8354683))
+
 ## [1.63.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.62.1...v1.63.0) (2023-11-12)
 
 
