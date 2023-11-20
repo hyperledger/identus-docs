@@ -135,6 +135,9 @@ The PRISM Cloud Agent utilizes the following Keycloak features:
   on [UMA 2.0 specification](https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html#:~:text=This%20specification%20defines%20a%20means,a%20resource%20owner%20authorizes%20access.)
   and [ADR](https://staging-docs.atalaprism.io/adrs/adr/20230926-use-keycloak-authorisation-service-for-managing-wallet-permissions/)
 
+When the JWT Token authentication is enabled, all multi-tenant endpoints of the Cloud Agent are protected by the JWT
+token as well.
+
 ### Sequence Diagrams
 
 The following sequence diagrams illustrate the interaction between the Cloud Agent and Keycloak during the
@@ -218,3 +221,22 @@ The migration from apikey authentication to jwt authentication is possible and c
 - Call the REST API endpoint to configure permissions in Keycloak with a valid apikey token.
 - Authenticate with Keycloak and obtain the JWT token.
 - Call the REST API endpoints with a valid JWT token.
+
+## Self-Service Wallet Registration
+
+The Cloud Agent supports self-service wallet registration for the users.
+When the user is registered in the Keycloak and has the valid JWT token, the user can register the wallet in the Cloud
+Agent.
+The regular wallet management REST API endpoints are used for the wallet registration:
+
+```mermaid
+POST /wallets 
+{
+    "seed": "secured-seed-value",
+    "name": "wallet-name"
+}
+```
+
+The user can register the wallet only for himself, so the `x-api-key` header is not required and the `seed` value is not
+shared.
+The corresponding wallet resource is created in Keycloak, and the user is granted access to this resource.
