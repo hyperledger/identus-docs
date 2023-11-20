@@ -218,7 +218,7 @@ The migration from API key authentication to JWT authentication is possible usin
 The Cloud Agent supports self-service wallet registration for the users.
 When the user is registered in the Keycloak and has the valid JWT token, the user can register the wallet in the Cloud
 Agent.
-The regular wallet management REST API endpoints are used for the wallet registration:
+You can use the wallet management endpoints of the REST API for wallet registration:
 
 ```
 POST /wallets 
