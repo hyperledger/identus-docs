@@ -229,7 +229,7 @@ When the user is registered in the Keycloak and has the valid JWT token, the use
 Agent.
 The regular wallet management REST API endpoints are used for the wallet registration:
 
-```mermaid
+```
 POST /wallets 
 {
     "seed": "secured-seed-value",
