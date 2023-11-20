@@ -209,7 +209,7 @@ The migration from API key authentication to JWT authentication is possible usin
 
 - Create a user in Keycloak.
 - Configure the authentication flow in Keycloak.
-- Call the REST API endpoint to configure permissions in Keycloak with a valid apikey token.
+- Call the REST API endpoint to configure permissions in Keycloak with a valid API key token.
 - Authenticate with Keycloak and obtain the JWT token.
 - Call the REST API endpoints with a valid JWT token.
 
