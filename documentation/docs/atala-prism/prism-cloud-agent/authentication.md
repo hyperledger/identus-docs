@@ -39,7 +39,6 @@ The configuration of API Key Authentication for an entity is managed by the Admi
   an attempt to assign the same APIKey value to another entity, the APIKey is considered compromised and must be
   considered unusable.
 - **Revocation:** In cases where an APIKey revocation for a tenant occurs, it becomes invalid and unusable.
-  authentication.
 
 ### Agent Responsibilities
 
