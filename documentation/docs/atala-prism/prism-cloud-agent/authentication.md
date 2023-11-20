@@ -188,7 +188,6 @@ sequenceDiagram
 ### UMA permission configuration
 
 The current authorization logic is built on the UMA specification, configuring permissions as user A has control over
-resource W. In this model, user A is a registered user in Keycloak, and wallet W is a resource registered in Keycloak.
 
 These configurations can be performed manually in Keycloak. However, for a better experience, the Agent can execute
 these actions through the REST API endpoint. For each wallet, a corresponding resource is created with the name
