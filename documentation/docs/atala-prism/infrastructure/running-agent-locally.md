@@ -44,7 +44,7 @@ the `agent/README.md` file.
 
 ### Exposing PRISM Cloud Agent to the internet
 
-Interacting with other agents requires exposing your agent over the internet. External parties must be able to connect
+Interacting with other agents requires exposing your agent over the Internet. External parties must be able to connect
 to your instance through a publicly available address without being blocked by security defenses like firewalls.
 
 Running applications on your computer or server using docker-compose will not expose ports/services to the internet - it
