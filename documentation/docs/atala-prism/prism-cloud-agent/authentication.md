@@ -1,7 +1,7 @@
 # Authentication and Authorisation
 
 Authentication is the process of verifying an entity's identity and the tenant associated with the entity.
-Authorisation is the process of verifying that the entity has the necessary permissions to access the requested
+Authorization verifies that an entity has the necessary permissions to access the requested information.
 resource.
 
 Authentication and authorisation are critical to any identity management system, as it ensures that only authorized
