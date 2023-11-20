@@ -134,7 +134,7 @@ The PRISM Cloud Agent utilizes the following Keycloak features:
   on [UMA 2.0 specification](https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html#:~:text=This%20specification%20defines%20a%20means,a%20resource%20owner%20authorizes%20access.)
   and [ADR](https://staging-docs.atalaprism.io/adrs/adr/20230926-use-keycloak-authorisation-service-for-managing-wallet-permissions/)
 
-When the JWT Token authentication is enabled, all multi-tenant endpoints of the Cloud Agent are protected by the JWT
+When the JWT Token authentication is enabled, it includes protection for all multi-tenant endpoints of the Cloud Agent.
 token as well.
 
 ### Sequence Diagrams
