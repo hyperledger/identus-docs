@@ -87,7 +87,7 @@ over the REST API.
 ### Multi-Tenant with apikey authentication and auto-provisioning
 
 Enable APIKey authentication and use the Wallet associated with the APIKey for all interactions with the Cloud Agent.
-Automatically register the Entity, Wallet, and APIKey for the tenant during the first interaction with the Cloud Agent
+Automatically register the Entity, Wallet, and API key for the tenant during the first interaction with the Cloud Agent
 over the REST API.
 
 | Environment Variable                 | Value |
