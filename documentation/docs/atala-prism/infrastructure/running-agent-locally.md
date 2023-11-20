@@ -37,7 +37,7 @@ An agent will be up and running on and accessible on `http://localhost/`
 
 :::info
 
-Detailed instructions on using the `run.sh` script is available in the PRISM Playground project within
+Detailed instructions on using the `run.sh` script are available in the PRISM Playground project within
 the `agent/README.md` file.
 
 :::
