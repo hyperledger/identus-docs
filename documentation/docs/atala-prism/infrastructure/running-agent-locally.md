@@ -1,7 +1,7 @@
 # Running Agent Locally
 
 The PRISM Cloud Agent can be downloaded and run in a self-hosted instance. It allows anyone to run an agent on their computer
-or server to interact with other agents in the decentralized identity ecossytems.
+or server to interact with other agents in the decentralized identity ecosystems.
 
 :::note
 
