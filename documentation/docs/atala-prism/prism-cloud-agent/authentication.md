@@ -64,7 +64,7 @@ DIDComm
 
 ### Single Tenant with apikey authentication
 
-Enable APIKey authentication and use the Default Wallet for all interactions with the Cloud Agent over the REST API and
+Enable API key authentication and use the Default Wallet for all interactions with the Cloud Agent over the REST API and
 DIDComm
 
 | Environment Variable                 | Value |
