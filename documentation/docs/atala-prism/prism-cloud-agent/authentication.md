@@ -18,7 +18,7 @@ entity is verified and authenticated during interactions with the platform:
 
 The PRISM Cloud Agent uses the Default Entity and the Default Wallet for all interactions with the Agent over the REST
 API and DIDComm in the single-tenant mode.
-Default Entity - is an entity with id `00000000-0000-0000-0000-000000000000` and Default Wallet - is a wallet with
+Default Entity - is an entity with id `00000000-0000-0000-0000-000000000000`, and Default Wallet - is a wallet with
 id `00000000-0000-0000-0000-000000000000`.
 
 ## APIKey Authentication
