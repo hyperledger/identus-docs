@@ -12,7 +12,7 @@ entity is verified and authenticated during interactions with the platform:
 
 - apikey authentication with internal IAM service
 - admin-api-key authentication
-- JWT token authentication and authorisation with external IAM service Keycloak
+- JWT token authentication and authorization with external IAM service Keycloak
 
 ## Default Entity and Wallet
 
