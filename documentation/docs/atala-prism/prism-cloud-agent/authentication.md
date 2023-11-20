@@ -205,7 +205,7 @@ Authenticated users (admin or the user owning the wallet) can configure permissi
 
 The `apikey` authentication can work in parallel with the JWT authentication to call the REST API endpoints together with the JWT token.
 
-The migration from apikey authentication to jwt authentication is possible and can be performed as follows:
+The migration from API key authentication to JWT authentication is possible using the following steps:
 
 - Create a user in Keycloak.
 - Configure the authentication flow in Keycloak.
