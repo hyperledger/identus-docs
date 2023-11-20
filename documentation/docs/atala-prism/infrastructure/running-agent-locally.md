@@ -207,7 +207,7 @@ keycloak {
 
 When the topology runs, access the Keycloak instance
 on [http://localhost:9980](http://localhost:9980)
-Authentication flow must be configured in the Keycloak.
+You must configure the Authentication flow in Keycloak.
 The simplest way to start is to create the users with passwords in the Keycloak admin console and use the `Direct Grant.`
 
 This setup ensures a seamless integration between the PRISM Cloud Agent and Keycloak, providing a secure and efficient
