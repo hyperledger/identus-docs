@@ -169,7 +169,7 @@ many. We use APISIX as an API Gateway that provides security and protection to p
 ### Running the agent without the Keycloak
 
 The PRISM Cloud Agent relies on a running Keycloak instance to provide essential authentication and authorization
-services. The Keycloak instance handles user authentication and issues access tokens to the agent for utilization in API
+services. The Keycloak instance handles user authentication and issues access tokens to the Agent for utilization in API
 calls.
 
 To seamlessly run the Agent with a locally deployed Keycloak instance, follow the steps outlined below:
