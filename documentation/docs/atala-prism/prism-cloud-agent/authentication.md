@@ -138,7 +138,7 @@ When the JWT Token authentication is enabled, it includes protection for all mul
 
 ### Sequence Diagrams
 
-The following sequence diagrams illustrate the interaction between the Cloud Agent and Keycloak during the
+The following sequence diagrams illustrate the Cloud Agent and Keycloak interaction during the authentication and authorization processes.
 authentication and authorization processes.
 
 #### User onboarding and configuration
