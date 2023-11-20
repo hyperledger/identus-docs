@@ -205,7 +205,7 @@ keycloak {
 }
 ```
 
-When the topology is up and running the Keycloak instance can be accessed
+When the topology runs, access the Keycloak instance
 on [http://localhost:9980](http://localhost:9980)
 Authentication flow must be configured in the Keycloak.
 The simplest way to start is to create the users with passwords in the Keycloak admin console and use the `Direct Grant`
