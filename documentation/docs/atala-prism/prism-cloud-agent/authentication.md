@@ -204,7 +204,6 @@ Authenticated users (admin or the user owning the wallet) can configure permissi
 ### Migration from `apikey` authentication
 
 The `apikey` authentication can work in parallel with the JWT authentication to call the REST API endpoints together with the JWT token.
-call the REST API endpoints together with the JWT token.
 
 The migration from apikey authentication to jwt authentication is possible and can be performed as follows:
 
