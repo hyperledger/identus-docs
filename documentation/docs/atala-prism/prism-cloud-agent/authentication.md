@@ -7,7 +7,7 @@ resource.
 Authentication and authorization are critical to any identity management system, ensuring only authorized
 users can access the system and its resources.
 
-PRISM Cloud Agent provides the following authentication and authorisation methods to ensure that the identity of the
+PRISM Cloud Agent provides the following authentication and authorization methods to ensure that the identity of the
 entity is verified and authenticated during interactions with the platform:
 
 - apikey authentication with internal IAM service
