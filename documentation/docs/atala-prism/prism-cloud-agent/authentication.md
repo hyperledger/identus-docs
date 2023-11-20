@@ -4,7 +4,7 @@ Authentication is the process of verifying an entity's identity and the tenant a
 Authorization verifies that an entity has the necessary permissions to access the requested information.
 resource.
 
-Authentication and authorisation are critical to any identity management system, as it ensures that only authorized
+Authentication and authorization are critical to any identity management system, ensuring only authorized
 users can access the system and its resources.
 
 PRISM Cloud Agent provides the following authentication and authorisation methods to ensure that the identity of the
