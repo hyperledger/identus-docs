@@ -64,7 +64,7 @@ your machine without the need for complex networking configuration such as firew
 Ngrok assigns a unique domain name to each tunnel created with it, which lives for the duration that ngrok is running.
 This domain is the externally accessible ingress point for other agents to communicate with your agent.
 
-Please visit the [ngrok website](https://ngrok.com/) and sign-up for a free account. Once you have completed the sign-up
+Please visit the [ngrok website](https://ngrok.com/) and sign up for a free account. Once you have completed the sign-up
 process, the ngrok website will take you through an installation guide that will help you configure a ngrok agent on
 your machine.
 
