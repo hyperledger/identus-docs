@@ -13,7 +13,7 @@ Authentication is critical to any identity management system, as it ensures that
 The PRISM Cloud Agent uses the Default Entity and the Default Wallet for all interactions with the Agent over the REST API and DIDComm in the single-tenant mode.
 A Default Entity is an entity with the id `00000000-0000-0000-0000-000000000000`, and a Default Wallet is a wallet with the id `00000000-0000-0000-0000-000000000000`.
 
-## APIKey Authentication
+## API Key Authentication
 
 ### Introduction
 
