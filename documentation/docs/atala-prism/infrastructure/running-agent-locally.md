@@ -160,7 +160,7 @@ on [http://localhost:4040](http://localhost:4040)
 :::
 
 The PRISM Cloud Agent docker-compose files include running and configuring an API Gateway - APISIX. An API Gateway is
-required when running the PRISM Cloud Agent as it is built as a microservice architecture and comprises multiple
+required when running the PRISM Cloud Agent, as it is built as a microservice architecture and comprises multiple
 services running on different network ports.
 
 The API Gateway unifies these different services into a single ingress plane where a single port is exposed rather than
