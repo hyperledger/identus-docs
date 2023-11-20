@@ -75,7 +75,7 @@ DIDComm
 
 ### Multi-Tenant with apikey authentication
 
-Enable APIKey authentication and use the Entity and the Wallet associated with the API-Key for all interactions with the
+Enable API key authentication and use the Entity and the Wallet associated with the API-Key for all interactions with the
 Cloud Agent.
 The Administrator must register the Entity and Wallet for the tenant before the first interaction with the Cloud Agent
 over the REST API.
