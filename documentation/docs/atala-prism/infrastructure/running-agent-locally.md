@@ -178,7 +178,7 @@ To seamlessly run the Agent with a locally deployed Keycloak instance, follow th
 - run docker-compose with the Keycloak configuration located in `infrastructure/shared/docker-compose-mt-keycloak.yml`
 - configure the Keycloak instance with the authentication flow and users
 
-The following section in the Agent application.conf file is used to integrate the Agent with the Keycloak:
+The following section in the Agent application.conf file is for integrating the Agent with the Keycloak:
 
 ```hocon
 keycloak {
