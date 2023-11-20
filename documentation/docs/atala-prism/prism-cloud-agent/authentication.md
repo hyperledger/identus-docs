@@ -203,7 +203,7 @@ Authenticated users (admin or the user owning the wallet) can configure permissi
 
 ### Migration from `apikey` authentication
 
-The `apikey` authentication can work in parallel with the JWT authentication, so the valid `apikey` token can be used to
+The `apikey` authentication can work in parallel with the JWT authentication to call the REST API endpoints together with the JWT token.
 call the REST API endpoints together with the JWT token.
 Later the `apikey` authentication can be disabled, and the JWT token will be the only authentication method.
 
