@@ -137,7 +137,7 @@ After you have created a tunnel - run the PRISM Cloud Agent using the following 
 run.sh --ngrok
 ```
 
-The `DIDComm Service Endpoint` in your agent will need to be the ngrok tunnel address. Interactions with other agents
+The `DIDComm Service Endpoint` in your agent must be the ngrok tunnel address. Interactions with other agents
 will result in communication flowing back into your agent.
 
 #### Additional information
