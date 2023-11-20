@@ -62,7 +62,7 @@ ngrok is a software package you can download and install that when executed, cre
 your machine without the need for complex networking configuration such as firewall management or port forwarding.
 
 Ngrok assigns a unique domain name to each tunnel created with it, which lives for the duration that ngrok is running.
-This domain is the externally accessible ingress point for other agents to communicate with your agent with
+This domain is the externally accessible ingress point for other agents to communicate with your agent.
 
 Please visit the [ngrok website](https://ngrok.com/) and sign-up for a free account. Once you have completed the sign-up
 process, the ngrok website will take you through an installation guide that will help you configure an ngrok agent on
