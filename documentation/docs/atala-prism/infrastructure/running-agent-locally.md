@@ -58,7 +58,7 @@ operate your agent.
 As an alternative, for quickly getting up and running with a local PRISM Cloud Agent, we recommend using a tunneling
 solution such as [ngrok](https://ngrok.com/).
 
-ngrok is a software package you can download and install that when executed, creates an externally accessible tunnel to
+ngrok is a software package you can download and install that, when executed, creates an externally accessible tunnel to
 your machine without the need for complex networking configuration such as firewall management or port forwarding.
 
 Ngrok assigns a unique domain name to each tunnel created with it, which lives for the duration that ngrok is running.
