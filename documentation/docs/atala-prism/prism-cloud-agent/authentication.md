@@ -55,7 +55,7 @@ Based on the configuration APIKey authentication, the Cloud Agent can support th
 
 ### Single Tenant without apikey authentication
 
-Disable APIKey authentication and use the Default Wallet for all interactions with the Cloud Agent over the REST API and
+Disable API key authentication and use the Default Wallet for all interactions with the Cloud Agent over the REST API and
 DIDComm
 
 | Environment Variable | Value |
