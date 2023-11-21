@@ -5,6 +5,9 @@
 Access control mechanisms define how tenants/entities can access and interact with their data and resources and control who can access them. 
 It helps enforce security and privacy policies in a multi-tenant environment.
 
+### Administrator
+An administrator is a role who oversees the agent and releated resources, including tenant, wallet management, or external services. Admistrator typically does not participate in day-to-day SSI interactions.
+
 ## C
 ### claim
 An assertion made about a [subject](/docs/concepts/glossary#did-subject).
@@ -75,6 +78,12 @@ An entity will take on this role by possessing one or more [verifiable credentia
 
 
 ## I
+### IAM
+IAM (Identity and Access Management), is a framework that controls and manages user access to computing resources. It ensures secure authentication, appropriate authorization, and effective auditing to protect against unauthorized access in a computing environment.
+
+### IDP
+An Identity Provider (IDP) is a centralized service that manages and authenticates user identities, allowing individuals to access multiple applications and services with a single set of credentials. IDPs play a crucial role in Single Sign-On (SSO) systems, simplifying user access management across various platforms and services.
+
 ### invitation
 Sent by the [inviter](/docs/concepts/glossary#inviter) to the [invitee](/docs/concepts/glossary#invitee) to request and establish a connection.
 
@@ -90,6 +99,9 @@ An entity that asserts claim(s) about one or more [subjects](/docs/concepts/glos
 ### Issue Credential Protocol
 Allows you to create, retrieve, and manage issued [verifiable credentials (VCs)](/docs/concepts/glossary#verifiable-credentials) between a VC issuer and a VC holder.
 
+## K
+### Keycloak Service
+Keycloak is an open-source [IAM](/docs/concepts/glossary#iam) solution that provides authentication, authorization, and single sign-on capabilities for applications and services. It allows organizations to secure their applications by managing user identities, enforcing security policies, and facilitating seamless and secure user authentication.
 
 ## M
 ### mediator
@@ -101,6 +113,10 @@ For a detailed overview of mediators refer to the [RFC0046: Mediators and Relays
 ### mutli-tenancy
 Multi-tenancy is a core capability of the PRISM platform, allowing it to serve numerous users/identities while logically isolating their Wallet assets. 
 This segregation maintains data privacy and security, enhancing scalability and resource sharing within the SSI ecosystem.
+
+## O
+### OIDC
+OIDC (OpenID Connect), is an authentication protocol built on top of OAuth 2.0. It enables secure user authentication and allows applications to obtain information about users, facilitating single sign-on (SSO) and identity verification in web and mobile applications.
 
 ## P
 
@@ -122,6 +138,9 @@ A cryptographic mechanism that proves the information in a [verifiable credentia
 ### proof-presentation
 See [Present Proof Protocol](/docs/concepts/glossary#present-proof-protocol)
 
+### Protection API
+The Protection API in User-Managed Access ([UMA](/docs/concepts/glossary#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
+
 ### protocol buffer
 Also known as protobuf.
 
@@ -131,6 +150,8 @@ Also known as protobuf.
 A relay is an entity that passes along agent-to-agent messages depending on the sender's encryption choices. It does not decrypt anything. Relays can change the transport for a message (e.g., accept an HTTP POST, then turn around and emit an email, or accept a Bluetooth transmission, then turn around and transmit something in a message queue). Mix networks like TOR are a type of relay.
 For a detailed overview of relays refer to the [RFC0046: Mediators and Relays](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0046-mediators-and-relays).
 
+### RPT
+Requesting Party Token (RPT) is a concept within the [UMA](/docs/concepts/glossary#uma) framework. It represents a token obtained by a client application from an authorization server, allowing the client to access protected resources on behalf of the requesting party (user), based on the user's policies and consent.
 
 ## S
 ### secrets storage
@@ -159,6 +180,10 @@ A governing body that establishes rules, requirements, establishes operating pro
 
 ### Trust Registry
 A document that lists authorized issuers and verifiers established by the [Trust framework](/docs/concepts/glossary#trust-framework).
+
+## U
+### UMA
+User-Managed Access (UMA) is an authorization framework that allows users to control and manage access to their online resources. UMA enables individuals to share their digital assets with others while maintaining control over who can access the information and for what purposes.
 
 ## V
 ### Vault Service
