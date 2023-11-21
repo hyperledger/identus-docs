@@ -1,23 +1,11 @@
 # Overview
 
-The Atala PRISM suite contains the following core components:
+Atala PRISM is a toolset designed for Decentralized Identity enablement. These tools work together to establish a framework for implementing Decentralized Identity Solutions. They can be combined to fit various use cases and requirements. Here's an overview of the key components:
 
-- PRISM Cloud Agent, a fully featured cloud agent used for interacting with other identity agents in a standards-based and interoperable way
-- PRISM Node, a [Verifiable Data Registry](/docs/concepts/glossary#verifiable-data-registry) (VDR) which provides on-chain persistence using the Cardano blockchain.
-- PRISM Mediator allows mobile applications to route messages to and from PRISM Agents
-- PRISM Cloud Agent Enterprise, built on top of the fully featured PRISM Cloud Agent as its foundation, provides additional capabilities and enterprise-ready business controller logic
+* [PRISM Cloud Agent](prism-cloud-agent/overview): It is a W3C/Aries standards-based agent that provides decentralized identity services. It exposes a REST API for integration, enabling the development of solutions based on SSI technology.
 
-Atala offers a hosted service for PRISM, which provides a dedicated, single-tenant instance powered by the above components.
+* [PRISM Node](prism-node): Serves as a [verifiable data registry](/docs/concepts/glossary#verifiable-data-registry) (VDR). The PRISM Node stores and retrieves data securely is tamper-proof and is responsible for publishing PRISM's protocol transactions to the Cardano blockchain. It also plays a critical role in resolving [DIDs](/docs/concepts/glossary#did) efficiently without requiring access to the underlying blockchain​​​​​​.
 
-Atala builds its services using a set of functionally decomposed building blocks which are re-usable libraries with strong domain context bounds.
+* [PRISM Mediator](prism-mediator): The Mediator acts as a bridge between the [holder's](/docs/concepts/glossary#holder) device and other actors, such as [issuers](/docs/concepts/glossary#issuer) and [verifiers](/docs/concepts/glossary#verifier), ensuring secure and reliable communication without centralized management​​​​.
 
-For more information regarding each component, please see the following links:
-  - [PRISM Cloud Agent](prism-cloud-agent/overview)
-  - [Building Blocks](prism-cloud-agent/building-blocks)
-  - [PRISM Node](prism-node)
-  - [Hosted Instances](infrastructure/hosted-instances)
-  
-Atala PRISM also provides feature-rich SDKs with documentation:
-  - For building Apple SSI Applications, please see [Swift SDK](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/)
-  - For building Web SSI Applications, please see [Typescript SDK](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/)
-  - For building JVM-based SSI Applications, please see [Kotlin Multiplatform SDK](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/)
+* Wallet SDKs: The Wallet SDKs allow the development of edge agents —Decentralized Identity mobile apps and browser extensions. The SDKs are available in [SWIFT](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/) (iOS), [TS](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/) (Browser and Node.js), and [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/) (Android and Desktop) 
