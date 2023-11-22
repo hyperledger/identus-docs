@@ -4,7 +4,7 @@ Atala PRISM is a toolset designed for Decentralized Identity enablement. These t
 
 * [PRISM Cloud Agent](prism-cloud-agent/overview): It is a W3C/Aries standards-based agent that provides decentralized identity services. It exposes a REST API for integration, enabling the development of solutions based on SSI technology.
 
-* [PRISM Node](prism-node): Serves as a [verifiable data registry](/docs/concepts/glossary#verifiable-data-registry) (VDR). The PRISM Node stores and retrieves data securely is tamper-proof and is responsible for publishing PRISM's protocol transactions to the Cardano blockchain. It also plays a critical role in resolving [DIDs](/docs/concepts/glossary#did) efficiently without requiring access to the underlying blockchain​​​​​​.
+* [PRISM Node](prism-node): Serves as a [verifiable data registry](/docs/concepts/glossary#verifiable-data-registry) (VDR). The PRISM Node stores and retrieves data securely, is tamper-proof, and is responsible for publishing PRISM's protocol transactions to the Cardano blockchain. It also plays a critical role in resolving [DIDs](/docs/concepts/glossary#did) efficiently without requiring access to the underlying blockchain​​​​​​.
 
 * [PRISM Mediator](prism-mediator): The Mediator acts as a bridge between the [holder's](/docs/concepts/glossary#holder) device and other actors, such as [issuers](/docs/concepts/glossary#issuer) and [verifiers](/docs/concepts/glossary#verifier), ensuring secure and reliable communication without centralized management​​​​.
 
