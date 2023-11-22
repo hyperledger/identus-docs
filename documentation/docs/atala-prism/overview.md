@@ -1,6 +1,6 @@
 # Overview
 
-Atala PRISM is a toolset designed for Decentralized Identity enablement. These tools work together to establish a framework for implementing Decentralized Identity Solutions. They can be combined to fit various use cases and requirements. Here's an overview of the key components:
+Atala PRISM is a toolset designed for Decentralized Identity enablement. These tools work together to establish a framework for implementing Decentralized Identity Solutions. Here's an overview of the key components:
 
 * [PRISM Cloud Agent](prism-cloud-agent/overview): It is a W3C/Aries standards-based agent that provides decentralized identity services. It exposes a REST API for integration, enabling the development of solutions based on SSI technology.
 
