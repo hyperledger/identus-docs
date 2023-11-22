@@ -1,6 +1,6 @@
 # Overview
 
-The **PRISM Agent** is a scaleable, easy-to-use, robust, and W3C/Aries standards-based agent that provides self-sovereign identity services to build products and solutions based on it. The PRISM Agent exposes REST API for integration with any programming language.
+The **PRISM Agent** is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides self-sovereign identity services to build products and solutions based on it. The PRISM Agent exposes REST API for integration with any programming language.
 
 The PRISM Agent provides all the required capabilities to leverage the power of decentralized identity through the support of W3C standards, DIDComm, and the Aries protocols, solutions based on the PRISM Agent are interoperable with the [self-sovereign identity (SSI)](/docs/concepts/glossary#self-sovereign-identity) ecosystem. The PRISM Agent includes the following high-level features:
 
