@@ -1,7 +1,5 @@
 # PRISM Mediator
 
-> The Linchpin of Decentralized Identity Management.
-
 ## Introduction
 
 [Mediators](/docs/concepts/glossary#mediator) are indispensable in identity wallets, especially when dealing with mobile devices or edge agents. These mobile devices usually lack static IP addresses. They may only sometimes be online, posing a challenge in establishing reliable, direct connections between various parties in a decentralized ecosystem and guaranteeing delivery of [DIDComm](/docs/concepts/glossary#didcomm) messages. The PRISM Mediator functions similarly to an email inbox for the recipient, storing "Forward" messages and their final encrypted content until retrieved by the intended party.
