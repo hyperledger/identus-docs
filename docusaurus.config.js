@@ -110,13 +110,8 @@ const config = {
                                 to: '/agent-api/',
                                 label: 'Agent API',
                                 activeBaseRegex: `/agent-api/`
-                            },
-                            {
-                                to: '/enterprise-api/',
-                                label: 'Enterprise API',
-                                activeBaseRegex: `/enterprise-api/`
                             }
-                        ],
+                        ]
                     },
                     {
                         type: 'dropdown',
