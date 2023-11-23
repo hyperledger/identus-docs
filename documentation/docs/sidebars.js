@@ -67,38 +67,6 @@ const sidebars = {
             'atala-prism/prism-cloud-agent/environment-variables'
           ]
         },
-        {
-          type: 'category',
-          label: 'PRISM Cloud Agent Enterprise',
-          collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'PRISM Cloud Agent Enterprise',
-            description: 'Learn about the Atala PRISM Cloud Agent Enterprise Services!'
-          },
-          items: [
-            'atala-prism/prism-cloud-agent-enterprise/overview',
-            'atala-prism/prism-cloud-agent-enterprise/onboard',
-            'atala-prism/prism-cloud-agent-enterprise/authenticate',
-            {
-              type: 'category',
-              label: 'Manage',
-              collapsed: true,
-              link: {
-                type: 'generated-index',
-                title: 'Manage',
-                description: 'Learn about the Manage product!'
-              },
-              items: [
-                'atala-prism/prism-cloud-agent-enterprise/manage/overview',
-                'atala-prism/prism-cloud-agent-enterprise/manage/definitions',
-                'atala-prism/prism-cloud-agent-enterprise/manage/setup',
-                'atala-prism/prism-cloud-agent-enterprise/manage/schemas',
-                'atala-prism/prism-cloud-agent-enterprise/manage/policies',
-              ]
-            }
-          ]
-        },
         'atala-prism/prism-node',
         'atala-prism/prism-mediator',
         {
