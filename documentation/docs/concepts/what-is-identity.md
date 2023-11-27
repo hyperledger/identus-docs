@@ -22,7 +22,7 @@ There are two primary identity models in use today: Centralized and Federated. T
 ### Centralized model
 One of the most common models includes government IDs, passports, social media handles, cell phone or internet providers, etc. These accounts or identities are granted or issued by a centralized authority, such as a government or service provider. Users must get an identity from the central administration.
 
-![Centralized model](/src/img/centralized_model.png)
+![Centralized model](src/img/centralized_model.png)
 
 
 The operating model is straightforward. An identity is created by registering for a new account. Typically, this new account requires a username or email address and a password. This combination is the credential that authenticates us as identity holders in the ecosystem. The central service stores all of our information, and users have limited access to control our accounts and data.
@@ -30,14 +30,14 @@ The operating model is straightforward. An identity is created by registering fo
 ### Federated model
 The industry developed an improvement for the centralized model, named the federated model. It did not solve the root issues but alleviated some account management challenges. This revision introduced identity providers (IDPs). Some common examples of IDPs people encounter online are Google, Facebook, Apple, etc.
 
-![Federated model](/src/img/federated_model.png)
+![Federated model](src/img/federated_model.png)
 
 The idea is to insert an IDP between the user and the service or organization. The user has an account with an IDP, and with those credentials, they can access other services. The credentials are called a single-sign-on (SSO). Sites that use the same IDP are called a federation, hence the federated model name.
 
 ### Self-Sovereign Identity (SSI)
 SSI introduces new concepts that flip the existing models. The control shifts from the central authorities to the edges, with individuals. There are quite a lot of new ideas and components involved. Here, we will only cover these concepts at a high level. We cover these concepts in-depth in our blog.
 
-![Self-Sovereign Identity model](/src/img/ssi_model.png)
+![Self-Sovereign Identity model](src/img/ssi_model.png)
 
 
 #### Decentralized Identifiers
