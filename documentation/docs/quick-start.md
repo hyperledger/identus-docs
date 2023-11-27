@@ -7,17 +7,17 @@ import TabItem from '@theme/TabItem';
 
 # Quick Start Guide
 ## Introduction into Self Sovereign Identity (SSI)
-[Self-sovereign identity (SSI)](/docs/concepts/glossary/#self-sovereign-identity) is complex. This Quick Start Guide explains the fundamental concepts to get up and running with Atala PRISM. This guide will familiarize you with the general concepts and how to create DIDs, issue credentials, make connections, and verify credentials through presentations. Refer to the Concepts and Components sections for a more in-depth explanation.
+[Self-sovereign identity (SSI)](/docs/concepts/glossary/#self-sovereign-identity) is complex. This Quick Start Guide explains the fundamental concepts to get up and running with Atala PRISM. This guide will familiarize you with the general concepts and how to create [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier), issue credentials, make connections, and verify credentials with [verifiable presentations](/docs/concepts/glossaary/#verifiable-presentation). Refer to the Concepts and Components sections for a more in-depth explanation.
 
-The trust triangle is the most basic process for conveying trust in the digital world. There are three roles in an SSI ecosystem: Holders, Issuers, and Verifiers.
+The trust triangle is the most basic process for conveying trust in the digital world. There are three roles in an SSI ecosystem: [Holders](/docs/concepts/glossary/#holder), [Issuers](/docs/concepts/glossary/#issuer), and [Verifiers](/docs/concepts/glossary/#verifier).
 
 ![Component Diagram](/img/trust-triangle.png)
 
-Holders can be any entity, such as individuals, organizations, and digital or physical things. They will hold [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) and use a proof presentation to share their VCs.
+Holders can be any entity, such as individuals, organizations, and digital or physical things. They will hold [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credential) and use a verifiable presentations to share their VCs.
 
-Issuers can also be any entity that makes claims about an entity. These claims are attestations, or evidence of something, about the Holder. As an example, an insurance company would provide proof of valid insurance.
+Issuers can also be any entity that makes [claims](/docs/concepts/glossary/#claim) about an [entity](/docs/concepts/glossary/#entity). These claims are attestations, or evidence of something, about the Holder. As an example, an insurance company would provide proof of valid insurance.
 
-Verifiers are the relying party in the triangle. They will request information from the Holder, such as proof of insurance, and the Holder will use a proof presentation to share the appropriate VCs with the Verifier. The Holder's digital signature, the issuer DID get verified, and the contents therein to ensure nothing has been tampered with.
+Verifiers are the [relying party](/docs/concepts/glossary/#relying-party) in the triangle. They will request information from the Holder, such as proof of insurance, and the Holder will use a verifiable presentation to share the appropriate VCs with the Verifier. The Holder's digital signature, the issuer DID get verified, and the contents therein to ensure nothing has been tampered with.
 
 
 
@@ -32,24 +32,24 @@ The diagram details how the concepts fit alongside the PRISM components in a typ
 Atala PRISM consists of core libraries that facilitate typical SSI interactions between [Issuers](/docs/concepts/glossary/#issuer), [Holders](/docs/concepts/glossary/#holder), and [Verifiers](/docs/concepts/glossary/#verifier). 
 
 ### A Cloud Agent
-A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for agent-to-agent communication.
+A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
 
-It is maintained as an open-source lab through the [Hyperledger Foundation: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html).
+It is maintained as an open source lab through the [Hyperledger Foundation: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html).
 
-More in depth documentation about Cloud Agent can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
+More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-agent) can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
 ### Wallet SDKs
-Wallet SDKs for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
+[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to [proof requests](/docs/concepts/glossary/#proof-request). They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
 
 More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
 ### A Mediator
-Mediators are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof-request on behalf of the Wallet SDKs (which can be offline occasionally).
+[Mediators](/docs/concepts/glossary/#mediator) are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof request on behalf of the Wallet SDKs (which can be offline occasionally).
 
 More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
-To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, anchoring key information required for issuance and verification on the Cardano blockchain.
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Cardano blockchain.
 
 
 
@@ -61,7 +61,7 @@ This guide will demonstrate a single-tenant deployment with API Key authenticati
 We develop on modern machines equipped with either Intel based x64 processors or Apple ARM processors with a minimum of four cores, 16 GB of memory and 128GB+ of SSD-type storage.
 
 To spin up an Cloud Agent you must:
-1. Have GIT installed.
+1. Have Git installed.
 2. Have Docker installed.
 3. Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
 
@@ -162,7 +162,7 @@ Learn more about PRISM DIDs and why it is necessary to publish specific DIDs [he
 
 #### Create a credential schema (JWT W3C Credential)
 
-To create a credential schema on the Issuer instance, run the following request:
+To create a [credential schema](/docs/concepts/glossary/#credential-schema) on the Issuer instance, run the following request:
 
 :::info
 
@@ -319,7 +319,7 @@ MEDIATOR_VERSION=0.10.0 docker-compose up
 
 More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
 
-Now you need to capture the Mediator's Peer DID in order to start DIDCOMM V2 Mediation protocol, you can do so by opening you browser at the mediators endpoint.
+Now you need to capture the Mediator's [Peer DID](/docs/concepts/glossary/#peer-did) in order to start DIDCOMM V2 Mediation protocol, you can do so by opening you browser at the mediators [endpoint](/docs/concepts/glossary/#).
 
 #### Demo application
 
@@ -551,7 +551,7 @@ agent.acceptOutOfBandInvitation(invitation)
 
 ## Issue a Credential from the Issuer to the holder
 
-The credential issuance flow consists of multiple steps, detailed in this section. It starts with the Issuer sending a Credential Offer to the Holder, which would accept or reject this invitation and create a `credentialRequest` from it. The credential request gets sent through DIDComm to the Issuer, issuing and sending the credential back to the Holder.
+The credential issuance flow consists of multiple steps, detailed in this section. It starts with the Issuer sending a [Credential Offer](/docs/concepts/glossary/#credential-offer) to the Holder, which would accept or reject this invitation and create a `credentialRequest` from it. The [credential request](/docs/concepts/glossary/#credential-request) gets sent through DIDComm to the Issuer, issuing and sending the credential back to the Holder.
 
 ### Create a Credential Offer **Issuer Agent**
 
@@ -771,10 +771,10 @@ agent.handleReceivedMessagesEvents().collect { list ->
 ## Request a verification from the Verifier Cloud Agent to the Holder (JWT W3C Credential)
 Now that the Holder has received a credential, it can be used in a verification workflow between a Holder and a Verifier. This requires the following steps:
 
-1. Verifier creates a proof-request
-2. Holder receives the proof-request
-3. Holder creates a proof-presentation and shares this with the verifier
-4. Verifier verifies the proof-presentation
+1. Verifier creates a proof request
+2. Holder receives the proof request
+3. Holder creates a proof presentation and shares this with the verifier
+4. Verifier verifies the proof presentation
 
 In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connectionless verification.
 
@@ -806,7 +806,7 @@ curl --location \
 This API request will return a `presentationRequestId,` which the verifier can use later to check the request's current status.
 
 
-### Holder: Receives the Presentation proof-request 
+### Holder: Receives the Presentation proof request 
 
 The Holder needs an Edge Agent running with the message listener active. It will receive the presentation proof request from the Verifier Cloud Agent for the correct type of messages as detailed below:
 
