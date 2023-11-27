@@ -13,5 +13,8 @@ The documentation herein will explain the following:
 * PRISM Quick Start Guide
 
 ## Supported Standards
+* W3C DID Specification
 * DIDComm v2
+* W3C VC-JWT
+* Hyperledger Anoncreds
 
