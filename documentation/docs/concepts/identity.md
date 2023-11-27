@@ -9,10 +9,8 @@ Identity is about access. It is the key that unlocks doors we wish to enter. To 
 
 This example is repeatable across all interactions: banking, insurance, online services, shopping, investing, education, traveling, driving, etc. Identity may be the most essential thing we undervalue in our lives. We use it to physically and digitally access goods and services locally and globally.
 
-Verifying Identity / Data
+## Verifying Identity / Data
 Verifying identity is crucial for the relying party authenticating identity information and data. Relying parties need high assurance or trust when authenticating identities or data. In the digital sphere with the current identity models, there needs to be more clarity in verifying who a person is with confidence.
-
-This theory is easily verifiable by simply looking at the identity protection industry. Identity theft is rampant in the digital world. It occurs to individuals through social engineering and servicers like credit reporting services through breaches of databases. In [2022](https://www.factmr.com/report/2455/identity-theft-protection-services-market#:~:text=Global%20Identity%20Theft%20Protection%20Services,9.4%25%20during%202022%2D2032.), the industry was valued at around $10 billion, proving how much of a problem identity and data theft is.
 
 
 ## Identity models
@@ -24,8 +22,8 @@ One of the most common models includes government IDs, passports, social media h
 
 ![Centralized model](/img/centralized_model.png)
 
-
 The operating model is straightforward. An identity is created by registering for a new account. Typically, this new account requires a username or email address and a password. This combination is the credential that authenticates us as identity holders in the ecosystem. The central service stores all of our information, and users have limited access to control our accounts and data.
+
 
 ### Federated model
 The industry developed an improvement for the centralized model, named the federated model. It did not solve the root issues but alleviated some account management challenges. This revision introduced identity providers (IDPs). Some common examples of IDPs people encounter online are Google, Facebook, Apple, etc.
@@ -34,21 +32,22 @@ The industry developed an improvement for the centralized model, named the feder
 
 The idea is to insert an IDP between the user and the service or organization. The user has an account with an IDP, and with those credentials, they can access other services. The credentials are called a single-sign-on (SSO). Sites that use the same IDP are called a federation, hence the federated model name.
 
+
 ### Self-Sovereign Identity (SSI)
-SSI introduces new concepts that flip the existing models. The control shifts from the central authorities to the edges, with individuals. There are quite a lot of new ideas and components involved. Here, we will only cover these concepts at a high level. We cover these concepts in-depth in our blog.
+[SSI](/docs/concepts/glossary/#self-sovereign-identity) introduces new concepts that flip the existing models. The control shifts from the central authorities to the edges, with individuals. There are quite a lot of new ideas and components involved. Here, we will only cover these concepts at a high level. We cover these concepts in-depth in our blog.
 
 ![Self-Sovereign Identity model](/img/ssi_model.png)
 
 
 #### Decentralized Identifiers
-A decentralized identifier (DID) is at the core of SSI. A DID is not magical. It is a string of random characters randomly generated through cryptography. A DID is like a fingerprint; it is unique to the individual, and we can have more than one, just like we have multiple fingerprints. 
+A [decentralized identifier (DID)](/docs/concepts/glossary/#decentralized-identifier) is at the core of SSI. A DID is not magical. It is a string of random characters randomly generated through cryptography. A DID is like a fingerprint; it is unique to the individual, and we can have more than one, just like we have multiple fingerprints. 
 
 The DID resolves to a DID Document containing metadata about the entity. The information can be as limiting or extensive as an entity enters. Publishing personal identifying information (PII) is not recommended for privacy reasons. In some instances, where a DID will belong to an entity that issues verifiable credentials, it may be required to have identifying information about the entity for transparency and establish trust.
 
 DIDs use public and private key cryptography. The controller, commonly the entity that creates the DID, controls public and private keys. Cryptographic digital signatures sign verifiable presentations that are a means of authenticating the DID and the controller of the DID. It would be nearly impossible to fake one of these signatures.
 
-Verifiable Credentials (VCs)
-VCs are claims about a subject, similar to physical documents in our wallets today, like driver's licenses, insurance, bank/credit accounts, etc. VCs are slightly different because they are purely digital, requiring an issuer to digitally sign the credential, proving the issuer issued it to a holder. This feature can cut down on fraudulent activity in a significant way. 
+#### Verifiable Credentials (VCs)
+[VCs]((/docs/concepts/glossary/#verifiable-credentials) are claims about a subject, similar to physical documents in our wallets today, like driver's licenses, insurance, bank/credit accounts, etc. VCs are slightly different because they are purely digital, requiring an issuer to digitally sign the credential, proving the issuer issued it to a holder. This feature can cut down on fraudulent activity in a significant way. 
 
 To push this idea further, the holder, when presenting a VC to a verifier, also has to sign it, proving they were the holder that received the VC originally, and verifying the issuer is possible through a diverse means of anchoring.
 
