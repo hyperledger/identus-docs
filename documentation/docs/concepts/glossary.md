@@ -5,9 +5,14 @@
 Access control mechanisms define how tenants/entities can access and interact with their data and resources and control who can access them. 
 It helps enforce security and privacy policies in a multi-tenant environment.
 
+### anchoring
+
+
 ## C
 ### claim
 An assertion made about a [subject](/docs/concepts/glossary#did-subject).
+
+### Cloud Agent
 
 ### controller
 See [DID Controller](/docs/concepts/glossary#did-controller).
@@ -119,11 +124,13 @@ The protocol provides endpoints for a Verifier to request new proof presentation
 ### proof
 A cryptographic mechanism that proves the information in a [verifiable credential](/docs/concepts/glossary#verifiable-credentials) or [verifiable presentation](/docs/concepts/glossary#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
 
-### proof-presentation
+### proof presentation
 See [Present Proof Protocol](/docs/concepts/glossary#present-proof-protocol)
 
 ### protocol buffer
 Also known as protobuf.
+
+### proof request
 
 
 ## R
@@ -181,5 +188,8 @@ An entity that receives one or more [verifiable credentials](/docs/concepts/glos
 
 
 ## W
+### Wallet SDK
+
 ### wallet
 A wallet can perform DID operations, like create, update, and deactivate. It also enables management of verifiable credentials, and communications.
+
