@@ -39,7 +39,7 @@ It is maintained as an open source lab through the [Hyperledger Foundation: Open
 More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-agent) can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
 ### Wallet SDKs
-[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to [proof requests](/docs/concepts/glossary/#proof-request). They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
+[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
 
 More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
