@@ -12,7 +12,7 @@ It helps enforce security and privacy policies in a multi-tenant environment.
 ### claim
 An assertion made about a [subject](/docs/concepts/glossary#did-subject).
 
-### Cloud Agent
+### Cloud Agent (aka PRISM Cloud Agent)
 The PRISM Cloud Agent is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides self-sovereign identity (SSI) services to build products and solutions based on it. The PRISM Cloud Agent exposes REST API for integration with any programming language.
 
 ### controller
