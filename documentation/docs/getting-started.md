@@ -11,3 +11,7 @@ The documentation herein will explain the following:
 * The concepts of SSI
 * How PRISM works
 * PRISM Quick Start Guide
+
+## Supported Standards
+* DIDComm v2
+
