@@ -2,13 +2,13 @@
 
 ## Managed PRISM DID
 
-The PRISM Cloud Agent simplifies identity management by effectively handling PRISM DIDs for users. Relying on a PRISM Cloud Agent-managed DID, users entrust the Cloud Agent with tasks such as creating, updating, storing, and using the PRISM DID.
+The [PRISM Cloud Agent](/docs/concepts/glossary#cloud-agent) simplifies identity management by effectively handling PRISM [DIDs](/docs/concepts/glossary#decentralized-identifier) for users. Relying on a PRISM Cloud Agent-managed DID, users entrust the Cloud Agent with tasks such as creating, updating, storing, and using the PRISM DID.
 
 The PRISM Cloud Agent employs hierarchical deterministic key derivation to manage the keys of the PRISM DID. The Cloud Agent calculates and stores the derivation path whenever an activity involves new key information, such as creating a new DID or adding a new key. It internally tracks the DID counter and key counter to increment the derivation path accordingly. Details about the Cloud Agent constructs key material from the seed are on the HD-key derivation decision record.
 
 ## Managed Peer DID
 
-The PRISM Cloud Agent also manages Peer DIDs for DIDComm activities. The Key materials for Peer DIDs are randomly generated and stored securely in [secret storage](/docs/concepts/glossary#secrets-storage), allowing control of the Peer DID.
+The PRISM Cloud Agent also manages [Peer DIDs](/docs/concepts/glossary#peer-did) for [DIDComm](/docs/concepts/glossary#didcomm) activities. The Key materials for Peer DIDs are randomly generated and stored securely in [secret storage](/docs/concepts/glossary#secrets-storage), allowing control of the Peer DID.
 
 ## Storing key material
 
