@@ -29,6 +29,10 @@ A request to establish a connection.
 ### credential schema
 A data template for verifiable credentials (VCs). It contains claims of the VCs, credential schema author, type, name, version, and proof of authorship.
 
+### credential offer
+
+### credential request
+
 
 ## D
 ### decentralized identifier
@@ -108,6 +112,8 @@ Multi-tenancy is a core capability of the PRISM platform, allowing it to serve n
 This segregation maintains data privacy and security, enhancing scalability and resource sharing within the SSI ecosystem.
 
 ## P
+
+### Peer DID
 
 ### Peer DID Method
 A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers. See the [Peer DID Method specification](https://github.com/decentralized-identity/peer-did-method-spec).
