@@ -40,7 +40,7 @@ Castor gives users complete control over their DIDs, including creating new DIDs
 
 Pollux is a building block of Atala PRISM that provides a set of operations for managing and verifying verifiable credentials (VCs). This building block is a vital aspect of the [self-sovereign identity](/docs/concepts/glossary#self-sovereign-identity) paradigm. With Pollux, users can issue, manage, and verify VCs in a privacy-preserving manner. Pollux ensures that users can share their credentials with others while maintaining control over their personal information and protecting it from unauthorized access and exposure.
 
-In terms of issuing credentials, Pollux provides the necessary infrastructure to create and issue VCs, including the ability to specify the type of credential, the attributes it represents, and the trusted party attesting to the credentials.
+In terms of issuing credentials, Pollux provides the necessary functions to create and issue VCs, including the ability to specify the type of credential, the attributes it represents, and the trusted party attesting to the credentials.
 
 For managing credentials, Pollux allows users to store and manage their VCs in a secure and easily accessible manner, which includes adding, updating, or revoking credentials as needed.
 
