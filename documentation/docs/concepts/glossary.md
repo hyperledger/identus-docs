@@ -127,7 +127,7 @@ This segregation maintains data privacy and security, enhancing scalability and 
 ## P
 
 ### Peer DID
-They are different from DIDs as they can be created and maintained for their lifecycle without the internet, and will experience no degradation of trust.
+They are specialized DIDs for peer-to-peer relationships.
 
 ### Peer DID Method
 A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers. See the [Peer DID Method specification](https://github.com/decentralized-identity/peer-did-method-spec).
