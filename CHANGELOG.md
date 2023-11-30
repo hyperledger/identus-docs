@@ -1,3 +1,10 @@
+## [1.65.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.65.0...v1.65.1) (2023-11-30)
+
+
+### :sparkles: Updates
+
+* correct typo in running locally with keycloak ([#66](https://github.com/input-output-hk/atala-prism-docs/issues/66)) ([5f1fcf5](https://github.com/input-output-hk/atala-prism-docs/commit/5f1fcf509c0aa1450028a3330a0a7e22766e0066))
+
 ## [1.65.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.64.0...v1.65.0) (2023-11-26)
 
 
