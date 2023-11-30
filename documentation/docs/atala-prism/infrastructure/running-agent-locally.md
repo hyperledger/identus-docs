@@ -166,7 +166,7 @@ services running on different network ports.
 The API Gateway unifies these different services into a single ingress plane where a single port is exposed rather than
 many. We use APISIX as an API Gateway that provides security and protection to prevent unauthorized access.
 
-### Running the agent without the Keycloak
+### Running the agent with the Keycloak
 
 The PRISM Cloud Agent relies on a running Keycloak instance to provide essential authentication and authorization
 services. The Keycloak instance handles user authentication and issues access tokens to the Agent for utilization in API
