@@ -1,3 +1,10 @@
+## [1.66.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.65.1...v1.66.0) (2023-12-01)
+
+
+### :rocket: New Content
+
+* remove out-of-date infrastructure section ([#67](https://github.com/input-output-hk/atala-prism-docs/issues/67)) ([c3d3831](https://github.com/input-output-hk/atala-prism-docs/commit/c3d38312854b9f71182c59cf103b7852a1d8866c))
+
 ## [1.65.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.65.0...v1.65.1) (2023-11-30)
 
 

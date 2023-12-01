@@ -1,6 +1,6 @@
 {
   "name": "prism-documentation-portal",
-  "version": "1.65.1",
+  "version": "1.66.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
