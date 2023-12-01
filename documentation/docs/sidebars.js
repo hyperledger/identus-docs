@@ -69,20 +69,6 @@ const sidebars = {
         },
         'atala-prism/prism-node',
         'atala-prism/prism-mediator',
-        {
-          type: 'category',
-          label: 'Infrastructure',
-          collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'PRISM Infrastructure',
-            description: 'Learn about the Atala PRISM Infrastructure!'
-          },
-          items: [
-            'atala-prism/infrastructure/hosted-instances',
-            'atala-prism/infrastructure/running-agent-locally'
-          ]
-        },
         'atala-prism/getting-help'
       ],
     },
