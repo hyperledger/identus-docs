@@ -74,7 +74,7 @@ Once cloned, create a new environment variable configuration file named  __./ope
 
 ```
 API_KEY_ENABLED=false
-PRISM_AGENT_VERSION=1.12.0
+PRISM_AGENT_VERSION=1.18.0
 PRISM_NODE_VERSION=2.2.1
 PORT=8000
 NETWORK=prism
@@ -85,7 +85,7 @@ Create a new environment variable configuration file named  __./open-enterprise-
 
 ```
 API_KEY_ENABLED=false
-PRISM_AGENT_VERSION=1.12.0
+PRISM_AGENT_VERSION=1.18.0
 PRISM_NODE_VERSION=2.2.1
 PORT=9000
 NETWORK=prism
@@ -310,7 +310,7 @@ The latest mediator version can be found at [Mediator releases](https://github.c
 :::
 
 ```bash
-MEDIATOR_VERSION=0.10.0 docker-compose up
+MEDIATOR_VERSION=0.10.2 docker-compose up
 ```
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
