@@ -1,3 +1,10 @@
+## [1.66.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.66.0...v1.66.1) (2023-12-01)
+
+
+### :sparkles: Updates
+
+* Update mediator and oas to latest working version with the TS SDK. ([#68](https://github.com/input-output-hk/atala-prism-docs/issues/68)) ([b207e8e](https://github.com/input-output-hk/atala-prism-docs/commit/b207e8e42a0c450257055b46347bf2c47cd162b8))
+
 ## [1.66.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.65.1...v1.66.0) (2023-12-01)
 
 
