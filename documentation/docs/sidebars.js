@@ -31,11 +31,9 @@ const sidebars = {
         description: 'Learn about the most important SSI concepts!'
       },
       items: [
-        'concepts/what-is-identity',
-        'concepts/digital-wallets',
-        'concepts/verifiable-data',
-        'concepts/trust-frameworks',
-        'concepts/multi-tenancy'
+        'concepts/identity',
+        'concepts/multi-tenancy',
+        'concepts/glossary'
       ],
     },
     {
