@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Quick Start Guide
 ## Introduction into Self Sovereign Identity (SSI)
-[Self-sovereign identity (SSI)](/docs/concepts/glossary/#self-sovereign-identity) is complex. This Quick Start Guide explains the fundamental concepts to get up and running with Atala PRISM. This guide will familiarize you with the general concepts and how to create [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier), issue credentials, make connections, and verify credentials with [verifiable presentations](/docs/concepts/glossaary/#verifiable-presentation). Refer to the Concepts and Components sections for a more in-depth explanation.
+[Self-sovereign identity (SSI)](/docs/concepts/glossary/#self-sovereign-identity) is complex. This Quick Start Guide explains the fundamental concepts to get up and running with Atala PRISM. This guide will familiarize you with the general concepts and how to create [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier), issue credentials, make connections, and verify credentials with [verifiable presentations](/docs/concepts/glossary/#verifiable-presentation). Refer to the Concepts and Components sections for a more in-depth explanation.
 
 The trust triangle is the most basic process for conveying trust in the digital world. There are three roles in an SSI ecosystem: [Holders](/docs/concepts/glossary/#holder), [Issuers](/docs/concepts/glossary/#issuer), and [Verifiers](/docs/concepts/glossary/#verifier).
 
