@@ -8,6 +8,8 @@ It helps enforce security and privacy policies in a multi-tenant environment.
 ### anchoring
 The act of anchoring is tying to something that is trusted by assumption. Usually some sort of an entity with authority.
 
+### Administrator
+An administrator is a role who oversees the agent and releated resources, including tenant, wallet management, or external services. Admistrator typically does not participate in day-to-day SSI interactions.
 
 
 ## C
@@ -94,6 +96,12 @@ An entity will take on this role by possessing one or more [verifiable credentia
 
 
 ## I
+### IAM
+IAM (Identity and Access Management), is a framework that controls and manages user access to computing resources. It ensures secure authentication, appropriate authorization, and effective auditing to protect against unauthorized access in a computing environment.
+
+### IDP
+An Identity Provider (IDP) is a centralized service that manages and authenticates user identities, allowing individuals to access multiple applications and services with a single set of credentials. IDPs play a crucial role in Single Sign-On (SSO) systems, simplifying user access management across various platforms and services.
+
 ### invitation
 Sent by the [inviter](/docs/concepts/glossary#inviter) to the [invitee](/docs/concepts/glossary#invitee) to request and establish a connection.
 
@@ -109,6 +117,9 @@ An entity that asserts claim(s) about one or more [subjects](/docs/concepts/glos
 ### Issue Credential Protocol
 Allows you to create, retrieve, and manage issued [verifiable credentials (VCs)](/docs/concepts/glossary#verifiable-credentials) between a VC issuer and a VC holder.
 
+## K
+### Keycloak Service
+Keycloak is an open-source [IAM](/docs/concepts/glossary#iam) solution that provides authentication, authorization, and single sign-on capabilities for applications and services. It allows organizations to secure their applications by managing user identities, enforcing security policies, and facilitating seamless and secure user authentication.
 
 
 ## M
@@ -123,9 +134,12 @@ Multi-tenancy is a core capability of the PRISM platform, allowing it to serve n
 This segregation maintains data privacy and security, enhancing scalability and resource sharing within the SSI ecosystem.
 
 
+## O
+### OIDC
+OIDC (OpenID Connect), is an authentication protocol built on top of OAuth 2.0. It enables secure user authentication and allows applications to obtain information about users, facilitating single sign-on (SSO) and identity verification in web and mobile applications.
+
 
 ## P
-
 ### Peer DID
 They are specialized DIDs for peer-to-peer relationships.
 
@@ -147,6 +161,9 @@ A cryptographic mechanism that proves the information in a [verifiable credentia
 ### proof presentation
 See [verifiable presentation](/docs/concepts/glossary#verifiable-presentation). Also see [Present Proof Protocol](/docs/concepts/glossary#present-proof-protocol).
 
+### Protection API
+The Protection API in User-Managed Access ([UMA](/docs/concepts/glossary#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
+
 ### protocol buffer
 Also known as protobuf.
 
@@ -160,6 +177,8 @@ For a detailed overview of relays refer to the [RFC0046: Mediators and Relays](h
 ### relying party
 A party that depends on the authenticity of digital signatures.
 
+### RPT
+Requesting Party Token (RPT) is a concept within the [UMA](/docs/concepts/glossary#uma) framework. It represents a token obtained by a client application from an authorization server, allowing the client to access protected resources on behalf of the requesting party (user), based on the user's policies and consent.
 
 
 ## S
@@ -192,6 +211,10 @@ A governing body that establishes rules, requirements, establishes operating pro
 ### Trust Registry
 A document that lists authorized issuers and verifiers established by the [Trust framework](/docs/concepts/glossary#trust-framework).
 
+
+## U
+### UMA
+User-Managed Access (UMA) is an authorization framework that allows users to control and manage access to their online resources. UMA enables individuals to share their digital assets with others while maintaining control over who can access the information and for what purposes.
 
 
 ## V

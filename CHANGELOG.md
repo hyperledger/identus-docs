@@ -1,3 +1,38 @@
+## [1.67.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.66.1...v1.67.0) (2023-12-03)
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([b58d76d](https://github.com/input-output-hk/atala-prism-docs/commit/b58d76dba49134d3c084ac793e2cf7a08d62dc1f))
+
+## [1.66.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.66.0...v1.66.1) (2023-12-01)
+
+
+### :sparkles: Updates
+
+* Update mediator and oas to latest working version with the TS SDK. ([#68](https://github.com/input-output-hk/atala-prism-docs/issues/68)) ([b207e8e](https://github.com/input-output-hk/atala-prism-docs/commit/b207e8e42a0c450257055b46347bf2c47cd162b8))
+
+## [1.66.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.65.1...v1.66.0) (2023-12-01)
+
+
+### :rocket: New Content
+
+* remove out-of-date infrastructure section ([#67](https://github.com/input-output-hk/atala-prism-docs/issues/67)) ([c3d3831](https://github.com/input-output-hk/atala-prism-docs/commit/c3d38312854b9f71182c59cf103b7852a1d8866c))
+
+## [1.65.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.65.0...v1.65.1) (2023-11-30)
+
+
+### :sparkles: Updates
+
+* correct typo in running locally with keycloak ([#66](https://github.com/input-output-hk/atala-prism-docs/issues/66)) ([5f1fcf5](https://github.com/input-output-hk/atala-prism-docs/commit/5f1fcf509c0aa1450028a3330a0a7e22766e0066))
+
+## [1.65.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.64.0...v1.65.0) (2023-11-26)
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([983b3da](https://github.com/input-output-hk/atala-prism-docs/commit/983b3da8feafeaada0708794b14a61ddea4a1b07))
+
 ## [1.64.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.63.1...v1.64.0) (2023-11-19)
 
 
