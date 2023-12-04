@@ -241,13 +241,6 @@ curl -X 'POST' \
 ```
 
 
-:::info 
-
-More in-depth documentation can be found here [PRISM Infrastructure](/docs/category/infrastructure)
-
-:::
-
-
 ### Starting Sample App
 All wallet SDK's come bundled with a sample application, that cover all the PRISM flows, including establishing connections, issuance, and verification flows.
 
