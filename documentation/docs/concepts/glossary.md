@@ -164,6 +164,9 @@ See [verifiable presentation](/docs/concepts/glossary#verifiable-presentation). 
 ### Protection API
 The Protection API in User-Managed Access ([UMA](/docs/concepts/glossary#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
 
+### Protection API
+The Protection API in User-Managed Access ([UMA](/docs/concepts/glossary#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
+
 ### protocol buffer
 Also known as protobuf.
 

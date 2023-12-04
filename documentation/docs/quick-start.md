@@ -32,7 +32,6 @@ The diagram details how the concepts fit alongside the PRISM components in a typ
 Atala PRISM consists of core libraries that facilitate typical SSI interactions between [Issuers](/docs/concepts/glossary/#issuer), [Holders](/docs/concepts/glossary/#holder), and [Verifiers](/docs/concepts/glossary/#verifier).
 
 
-
 ### A Cloud Agent
 A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
 
@@ -92,6 +91,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 3. Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content: 
 
 
+
 ```
 API_KEY_ENABLED=false
 PRISM_AGENT_VERSION=1.18.0
@@ -112,6 +112,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 5. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool. 
 
 
+
   * Issuer Cloud Agent command:
 ```bash
 ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d localhost
@@ -130,7 +131,6 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 
 ### Agent configuration
-
 
 #### Creating LongForm PrismDID 
 1. Run the following API request against your Issuer API to create a PRISM DID:
@@ -240,11 +240,13 @@ curl -X 'POST' \
 }'
 ```
 
+
 :::info 
 
 More in-depth documentation can be found here [PRISM Infrastructure](/docs/category/infrastructure)
 
 :::
+
 
 ### Starting Sample App
 All wallet SDK's come bundled with a sample application, that cover all the PRISM flows, including establishing connections, issuance, and verification flows.
@@ -334,6 +336,7 @@ MEDIATOR_VERSION=0.10.2 docker-compose up
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
 
 3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
+
 
 
 4. Now you need to capture the Mediator's [Peer DID](/docs/concepts/glossary/#peer-did) in order to start DIDCOMM V2 Mediation protocol, you can do so by opening you browser at the mediators [endpoint](/docs/concepts/glossary/#).
@@ -525,7 +528,6 @@ curl --location \
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
 
-
 4. Go back to the Application: 
 5. Click the floating button at the bottom right corner of the Contacts tab.
 6. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click **Validate**.
@@ -627,7 +629,6 @@ automaticIssuance is optional. It can also be manually triggered and confirmed b
 <details><summary>Code examples</summary>
 
 5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.	
-
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -828,8 +829,8 @@ curl --location \
   * This API request will return a `presentationRequestId,` which the verifier can use later to check the request's current status.
 
 
-### Holder: Receives the Presentation proof request 
 
+### Holder: Receives the Presentation proof request 
 
 6. The Holder needs an Edge Agent running with the message listener active. It will receive the presentation proof request from the Verifier Cloud Agent for the correct type of messages as detailed below:
 

@@ -1,6 +1,5 @@
 # Authentication and Authorisation
 
-
 Authentication is the process of verifying an entity's identity and the tenant associated with the entity.
 Authorization verifies that an entity has the necessary permissions to access the requested information.
 resource.
@@ -20,6 +19,7 @@ entity is verified and authenticated during interactions with the platform:
 The PRISM Cloud Agent uses the Default Entity and the Default Wallet for all interactions with the Agent over the REST API and DIDComm in the single-tenant mode.
 A Default Entity is an entity with the id `00000000-0000-0000-0000-000000000000`, and a Default Wallet is a wallet with the id `00000000-0000-0000-0000-000000000000`.
 
+
 ## API Key Authentication
 
 ### Introduction
@@ -32,12 +32,14 @@ API Key Authentication is a straightforward method used to authenticate entities
 - **Unique API Keys:** Each API Key is unique to a specific entity. It cannot be shared or reused by other entities. If an attempt to assign the same APIKey value to another entity, the APIKey is considered compromised and must be considered unusable.
 - **Revocation:** In case of a tenant's API Key revocation, it becomes invalid for authentication.
 
+
 ### Agent Responsibilities
 
 The Agent manages API Keys for each tenant and maintains the security of the system:
 
 - **API Key Storage:** The Agent maintains each tenant's APIKeys list. However, it is essential to note that the original value of the APIKey is not stored in the Agent, ensuring additional security.
 - **Hashing and Authentication:** The Agent securely stores the hash of the APIKey in the database and uses it to authenticate the entity. The hashing process employs the `SHA-256` algorithm and a `salt` value to compute the hash value, ensuring data integrity and security during authentication. The length of the `salt` value must exceed 16 bytes (128 bits)
+
 
 
 Based on the configuration API Key authentication, the Cloud Agent can support the following interaction models:
@@ -49,6 +51,7 @@ Disable API key authentication and use the Default Wallet for all interactions w
 | Environment Variable | Value |
 |----------------------|-------|
 | API_KEY_ENABLED      | false |
+
 
 
 ### Single Tenant with apikey authentication
@@ -213,4 +216,6 @@ POST /wallets
 
 The user can register the wallet only for himself, so the `x-api-key` header is not required and the `seed` value is not
 shared.
+
 The corresponding wallet resource is created in Keycloak, and the user is granted access to this resource.
+
