@@ -42,7 +42,7 @@ More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-a
 
 
 ### Wallet SDKs
-[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
+[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers.
 
 More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
@@ -76,7 +76,7 @@ git clone https://github.com/hyperledger-labs/open-enterprise-agent
 ```
 
 
-2. Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:  
+2. Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:
 
 
 ```
@@ -86,9 +86,10 @@ PRISM_NODE_VERSION=2.2.1
 PORT=8000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
+PG_PORT=5432
 ```
 
-3. Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content: 
+3. Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content:
 
 
 
@@ -99,6 +100,7 @@ PRISM_NODE_VERSION=2.2.1
 PORT=9000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
+PG_PORT=5433
 ```
 
 4. Setting the `API_KEY_ENABLED` to `false` disables the requirement of using API Keys.
@@ -109,7 +111,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 :::
 
-5. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool. 
+5. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool.
 
 
 
@@ -132,7 +134,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 ### Agent configuration
 
-#### Creating LongForm PrismDID 
+#### Creating LongForm PrismDID
 1. Run the following API request against your Issuer API to create a PRISM DID:
 
 
@@ -328,7 +330,7 @@ MEDIATOR_VERSION=0.10.2 docker-compose up
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
 
-3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
+3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator).
 
 
 
@@ -521,7 +523,7 @@ curl --location \
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
 
-4. Go back to the Application: 
+4. Go back to the Application:
 5. Click the floating button at the bottom right corner of the Contacts tab.
 6. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click **Validate**.
   * The application will react once the connection gets established correctly and show a message under messages.
@@ -621,7 +623,7 @@ automaticIssuance is optional. It can also be manually triggered and confirmed b
 
 <details><summary>Code examples</summary>
 
-5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.	
+5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -823,7 +825,7 @@ curl --location \
 
 
 
-### Holder: Receives the Presentation proof request 
+### Holder: Receives the Presentation proof request
 
 6. The Holder needs an Edge Agent running with the message listener active. It will receive the presentation proof request from the Verifier Cloud Agent for the correct type of messages as detailed below:
 
