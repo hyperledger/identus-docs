@@ -571,11 +571,16 @@ The credential issuance flow consists of multiple steps, detailed in this sectio
 
 :::info
 
-The `schemaId` being the following http://host.docker.internal:8000/prism-agent/schema-registry/schemas/[[schema guid]]
+Please replace the following variables in the example request before sending:
+
+- `connectionId`: The ID of the connection previously established between agent and holder. This is part of the response of the POST message from the agent when calling the `prism-agent/connections` endpoint. It is returned in the `connectionId` attribute. There is a unique connection ID for the relationship between issuer and holder and verifier and holder. In this example, please use the `connectionId` returned when creating the connection between issuer and holder
+- `publishedPrismDID`: The short form of the PRISM DID created when setting up the Issuer agent
 
 The `connectionId` is just the ID of the connection we previously established with the issuer.
 
 The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
+
+- ``
 
 :::
 
@@ -584,9 +589,8 @@ curl --location --request POST 'http://localhost:8000/prism-agent/issue-credenti
 --header 'Content-Type: application/json' \
 --data-raw '{
     "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
-    "connectionId": [[connectionId]]
+    "connectionId": [[connectionId]],
     "issuingDID": [[publishedPrismDID]],
-    "schemaId": [[schemaId]],
     "automaticIssuance": true
 }'
 ```
