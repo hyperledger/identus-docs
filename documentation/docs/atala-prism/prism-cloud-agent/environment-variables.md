@@ -60,3 +60,4 @@ The following enviroment variables can be used to configure Prism Agent:
 | KEYCLOAK_CLIENT_ID                         | The Keycloak client ID.                                                                                                                                            | String                | `prism-agent`             |
 | KEYCLOAK_CLIENT_SECRET                     | The Keycloak client secret.                                                                                                                                        | String                | `prism-agent-demo-secret` |
 | KEYCLOAK_UMA_AUTO_UPGRADE_RPT              | Whether or not to enable automatic upgrade of RPT tokens. If disabled, `accessToken` must be RPT and include the permission claims.                                | Boolean               | true                      |
+

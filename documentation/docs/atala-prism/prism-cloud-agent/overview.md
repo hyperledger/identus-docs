@@ -1,20 +1,20 @@
 # Overview
 
-The **PRISM Agent** is a scaleable, easy-to-use, robust, and W3C/Aries standards-based agent that provides self-sovereign identity services to build products and solutions based on it. The PRISM Agent exposes REST API for integration with any programming language.
+The [PRISM Cloud Agent](/docs/concepts/glossary#cloud-agent) is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides [self-sovereign identity (SSI)](/docs/concepts/glossary#self-sovereign-identity) services to build products and solutions based on it. The PRISM Cloud Agent exposes REST API for integration with any programming language.
 
-The PRISM Agent provides all the required capabilities to leverage the power of decentralized identity through the support of W3C standards, DIDComm, and the Aries protocols, solutions based on the PRISM Agent are interoperable with the [self-sovereign identity (SSI)](/docs/concepts/glossary#self-sovereign-identity) ecosystem. The PRISM Agent includes the following high-level features:
+The PRISM Cloud Agent provides all the required capabilities to leverage the power of decentralized identity through the support of W3C standards, [DIDComm](/docs/concepts/glossary#didcomm), and the Hyperledger Aries protocols, solutions based on the Cloud Agent are interoperable with the SSI ecosystem. The PRISM Cloud Agent includes the following high-level features:
 
-- Use the PRISM Agent API to develop [controllers](/docs/concepts/glossary#controller) that implement specific business logic according to use case requirements.
+- Use the Cloud Agent API to develop [controllers](/docs/concepts/glossary#controller) that implement specific business logic according to use case requirements.
 - Develop controllers in any programming language and remove the requirement for developers to interact or learn the nuts and bolts of the various standards.
-- The PRISM Agent is written in Scala, supports the `did:prism` method, interacts with the PRISM Node over gRPC protocol, and uses it as the [Verifiable Data Registry](/docs/concepts/glossary#verifiable-data-registry). 
+- The Cloud Agent is written in Scala, supports the `did:prism` method, interacts with the PRISM Node over gRPC protocol, and uses it as the [Verifiable Data Registry](/docs/concepts/glossary#verifiable-data-registry). 
 - The PRISM Node interacts with the Cardano blockchain, providing high security, scalability, and availability.
-- The PRISM Agent is a cloud agent accessible from anywhere.
+- The Cloud Agent is a cloud agent accessible from anywhere.
 - Highly scalable and flexible, making it well-suited for a wide range of use cases and applications.
 
 
 ## PRISM Agent Features
 
-This document provides an overview of the PRISM Agent feature set. This document is manually updated; as such, it may not be up to date with the most recent release of PRISM Agent.
+This document provides an overview of the Cloud Agent feature set. This document is manually updated; as such, it may not be up to date with the most recent release of PRISM Cloud Agent.
 
 **Last Update**: 2023-03-06, Release 0.48.3
 
@@ -24,7 +24,7 @@ This document provides an overview of the PRISM Agent feature set. This document
 | -------- | :-------: |  ------- |
 | Server   | :white_check_mark: |    |
 | Kubernetes | :white_check_mark: |  |
-| Docker   | :white_check_mark: | IOG will publish docker images on Docker Hub in future. A link to the IOG Docker Hub for PRISM Agent will be provided once published. |
+| Docker   | :white_check_mark: | IOG will publish docker images on Docker Hub in future. A link to the IOG Docker Hub for PRISM Cloud Agent will be provided once published. |
 | Desktop  | :warning:         | Could be run as a local service on the computer |
 | iOS      | :x:        |    |
 | Android  | :x:        |    |
@@ -49,7 +49,7 @@ This document provides an overview of the PRISM Agent feature set. This document
 
 | Method | Supported | Notes |
 | --- | :--: | -- |
-| `did:PRISM` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) compliant [PRISM DID Method](https://github.com/input-output-hk/PRISM-did-method-spec/blob/main/w3c-spec/PRISM-method.md) specification. Cardano is the default Verifiable Data Registry (VDR) to anchor DIDs. PRISM DID Method is used for Verifiable Credentials and Verifiable Presentations.  |
+| `did:PRISM` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) compliant [PRISM DID Method](https://github.com/input-output-hk/PRISM-did-method-spec/blob/main/w3c-spec/PRISM-method.md) specification. Cardano is the default [Verifiable Data Registry (VDR)](/docs/concepts/glossary#verifiable-data-registry) to anchor DIDs. PRISM DID Method is used for [Verifiable Credentials](/docs/concepts/glossary#verifiable-credential) and [Verifiable Presentations](/docs/concepts/glossary#verifiable-presentation).  |
 | `did:peer` | :white_check_mark:| Used for P2P connections |
 | Universal Resolver | :construction: |  |
 
