@@ -344,7 +344,7 @@ In order to complete this step you'll need to connect to the mediators Peer DID 
 
 ```bash
 curl --location \
---request GET '[[MEDIATOR ENDPOINT]]/invitation' \
+--request GET 'localhost:8080/invitation' \
 --header 'Content-Type: application/json'
 ```
 
@@ -355,7 +355,7 @@ Follow the steps in your desired platform as stated below:
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
 
-1. Open http://localhost:3000 in your browser, paste the mediator peer DID, and click **Start** after.
+1. Open http://localhost:3000 in your browser, paste the mediator peer DID (obtained from the `from` attribute after fetching from the mediator's invitation endpoint), and click **Start** after.
 
 </TabItem>
 
@@ -375,7 +375,7 @@ Follow the steps in your desired platform as stated below:
 
 2. If you are running the SampleApp, click the **Start Agent** button.
 
-
+The below code examples show how to establish mediation when building your own application.
 
 <details><summary>Code examples</summary>
 3. The following code examples represent establishing mediation and instantiating the Cloud Agent.
