@@ -14,16 +14,27 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Install wasm-pack
+        run: |
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+          
       - uses: actions/checkout@v3
         with:
           submodules: recursive
           token: ${{ secrets.ATALA_GITHUB_TOKEN }}
           ref: ${{ github.event.inputs.release-branch }}
           fetch-depth: 0
+          
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - uses: crazy-max/ghaction-import-gpg@v5
         id: import_gpg
         with:

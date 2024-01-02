@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "generate-ts-docs":"cd atala-prism-wallet-sdk-ts && npm i && npm run dependencies && cd .. && npx typedoc --options typedoc.json --hideGenerator",
+    "start": "npm run generate-ts-docs && docusaurus start",
+    "build": "npm run generate-ts-docs && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -34,8 +35,13 @@
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "docusaurus-plugin-typedoc": "^0.22.0",
     "semantic-release": "^19.0.3",
-    "semantic-release-slack-bot": "^3.5.3"
+    "semantic-release-slack-bot": "^3.5.3",
+    "typedoc": "^0.25.6",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typedoc-plugin-rename-defaults": "^0.7.0",
+    "typescript": "^4.9.5"
   },
   "browserslist": {
     "production": [
@@ -50,6 +56,7 @@
     ]
   },
   "engines": {
-    "node": ">=16.14"
+    "node": ">=20.9.0",
+    "npm":">=10.1.0"
   }
 }

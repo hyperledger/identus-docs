@@ -19,17 +19,28 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Install wasm-pack
+        run: |
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+          
       - uses: actions/checkout@v3
         with:
           submodules: recursive
           token: ${{ secrets.ATALA_GITHUB_TOKEN }}
           fetch-depth: 0
+          
       - name: Update submodules
         run: |
           git submodule update --remote --recursive
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - name: Install dependencies
         run: yarn install
       - name: Build website
