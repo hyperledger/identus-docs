@@ -1,3 +1,10 @@
+## [1.72.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.72.1...v1.72.2) (2024-01-03)
+
+
+### :sparkles: Updates
+
+* add sidebar to documentation for typescript. ([#72](https://github.com/input-output-hk/atala-prism-docs/issues/72)) ([a73c19f](https://github.com/input-output-hk/atala-prism-docs/commit/a73c19f4d9ed2eff9de6e74cbe548e72263f8b29))
+
 ## [1.72.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.72.0...v1.72.1) (2024-01-03)
 
 
