@@ -1,0 +1,19 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./atala-prism-wallet-sdk-ts/src/index.ts"],
+  "out": "./atala-prism-wallet-sdk-ts/docs-generated",
+  "tsconfig": "./atala-prism-wallet-sdk-ts/tsconfig.json",
+  "name": "@input-output-hk/atala-prism-wallet-sdk",
+  "useTsLinkResolution": true,
+  "hideGenerator": true,
+  "entryPointStrategy": "resolve",
+  "excludePrivate": false,
+  "excludeReferences": false,
+  "excludeProtected": false,
+  "excludeInternal": false,
+  "excludeNotDocumented": false,
+  "theme": "default",
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ]
+}

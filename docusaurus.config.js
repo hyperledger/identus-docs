@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const path = require('path')
 // const {useColorMode} = require('@docusaurus/theme-common');
 // const {colorMode} = useColorMode()
 // console.log(colorMode)
@@ -40,7 +41,7 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
-            }),
+            })
         ],
 
         /**
@@ -56,13 +57,14 @@ const config = {
                         spec: 'atala-prism-building-blocks/prism-agent/service/api/http/prism-agent-openapi-spec.yaml',
                         route: '/agent-api/',
                     },
-                    {
-                        spec: "atala-prism-products/enterprise-services/api-spec/enterprise-services-spec.yml",
-                        route: "/enterprise-api/",
-                    }
+                    // {
+                    //     spec: "atala-prism-products/enterprise-services/api-spec/enterprise-services-spec.yml",
+                    //     route: "/enterprise-api/",
+                    // }
                 ]
             },
         ],
+
     ],
     plugins: [
         [
@@ -74,7 +76,15 @@ const config = {
                 sidebarPath: require.resolve('./atala-prism-building-blocks/docs/docusaurus/sidebars.js'),
             },
         ],
-        require.resolve('docusaurus-lunr-search')
+        require.resolve('docusaurus-lunr-search'),
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'atala-prism-wallet-sdk-ts',
+                path: 'atala-prism-wallet-sdk-ts/docs/sdk',
+                routeBasePath: 'atala-prism-wallet-sdk-ts',
+            },
+        ]
     ],
 
     themes: ["docusaurus-theme-openapi-docs", '@docusaurus/theme-mermaid', "docusaurus-theme-redoc"],
@@ -89,6 +99,7 @@ const config = {
                     srcDark: "img/logo-navbar-light.png",
                 },
                 items: [
+                   
                     {
                         type: 'doc',
                         docId: 'getting-started',
@@ -123,8 +134,9 @@ const config = {
                                 href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/',
                             },
                             {
-                                label: 'Wallet SDK TS',
-                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/',
+                                to: '/atala-prism-wallet-sdk-ts/',
+                                label: 'Wallet SDK Typescript',
+                                activeBaseRegex: `/atala-prism-wallet-sdk-ts/`
                             },
                             {
                                 label: 'Wallet SDK Kotlin Multiplatform',
