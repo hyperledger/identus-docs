@@ -83,6 +83,7 @@ const config = {
                 id: 'atala-prism-wallet-sdk-ts',
                 path: 'atala-prism-wallet-sdk-ts/docs/sdk',
                 routeBasePath: 'atala-prism-wallet-sdk-ts',
+                sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
             },
         ]
     ],
