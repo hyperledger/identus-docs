@@ -1,3 +1,11 @@
+## [1.72.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.72.0...v1.72.1) (2024-01-03)
+
+
+### :sparkles: Updates
+
+* build the typescript SDK through submodules. ([#70](https://github.com/input-output-hk/atala-prism-docs/issues/70)) ([2304a45](https://github.com/input-output-hk/atala-prism-docs/commit/2304a4543380ac18172bd5a14e0fd6f2761e5596))
+* revert back to nodejs 16 to fix ci ([#71](https://github.com/input-output-hk/atala-prism-docs/issues/71)) ([983b67c](https://github.com/input-output-hk/atala-prism-docs/commit/983b67caf3c7cf261a830e0095b827a8ced2a1d1))
+
 ## [1.72.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.71.0...v1.72.0) (2023-12-24)
 
 
