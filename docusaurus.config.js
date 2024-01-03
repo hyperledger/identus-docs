@@ -78,34 +78,10 @@ const config = {
         ],
         require.resolve('docusaurus-lunr-search'),
         [
-            'docusaurus-plugin-typedoc',
-                {
-                    // TypeDoc options
-                    entryPoints: ['./atala-prism-wallet-sdk-ts/src/index.ts'],
-                    tsconfig: './atala-prism-wallet-sdk-ts/tsconfig.json',
-                    "name": "@input-output-hk/atala-prism-wallet-sdk",
-                    "excludeExternals": false,
-                    "plugin": ["typedoc-plugin-rename-defaults", "typedoc-plugin-markdow"],
-                    "useTsLinkResolution": true,
-                    "hideGenerator": true,
-                    "entryPointStrategy": "resolve",
-                    "excludePrivate": false,
-                    "excludeReferences": false,
-                    "excludeProtected": false,
-                    "excludeInternal": false,
-                    "excludeNotDocumented": true,
-                    "excludeNotDocumentedKinds": [
-                        "Variable"
-                    ],
-                    // Plugin options
-                    out: path.resolve(__dirname, './atala-prism-wallet-sdk-ts/docs-generated')
-                },
-          ],
-          [
             '@docusaurus/plugin-content-docs',
             {
                 id: 'atala-prism-wallet-sdk-ts',
-                path: 'atala-prism-wallet-sdk-ts/docs-generated',
+                path: 'atala-prism-wallet-sdk-ts/docs/sdk',
                 routeBasePath: 'atala-prism-wallet-sdk-ts',
             },
         ]

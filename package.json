@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "generate-ts-docs":"cd atala-prism-wallet-sdk-ts && npm i && npm run dependencies && cd .. && npx typedoc --options typedoc.json --hideGenerator",
-    "start": "npm run generate-ts-docs && docusaurus start",
-    "build": "npm run generate-ts-docs && docusaurus build",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
