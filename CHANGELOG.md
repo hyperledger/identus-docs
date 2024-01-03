@@ -1,3 +1,10 @@
+## [1.72.3](https://github.com/input-output-hk/atala-prism-docs/compare/v1.72.2...v1.72.3) (2024-01-03)
+
+
+### :sparkles: Updates
+
+* removing unused dependencies. ([#73](https://github.com/input-output-hk/atala-prism-docs/issues/73)) ([1b47473](https://github.com/input-output-hk/atala-prism-docs/commit/1b474733f5d6c2cc3ffd0276cebd391b2516255b))
+
 ## [1.72.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.72.1...v1.72.2) (2024-01-03)
 
 
