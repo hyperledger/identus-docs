@@ -30,7 +30,7 @@ jobs:
           git submodule update --remote --recursive
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 16
       - name: Install dependencies
         run: yarn install
       - name: Build website
