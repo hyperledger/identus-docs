@@ -7,6 +7,8 @@ on:
   # By manual trigger
   workflow_dispatch:
   workflow_call:
+  repository_dispatch:
+    types: [trigger-docs-update-submodules]
 
 defaults:
   run:

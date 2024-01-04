@@ -24,6 +24,8 @@ on:
   push:
     tags:
       - "v*"
+  repository_dispatch:
+    types: [trigger-docs-deployment]
 
 jobs:
   trigger-deployment:
