@@ -130,7 +130,7 @@ Two mechanisms get utilized in JWT authorization:
    Administrators are permitted to oversee the wallet management, while tenants are allowed to utilize the wallet and engage in SSI interactions.
 
 2. __UMA resource permission__  
-   When the role is tenant, the Agent needs to know which wallet the tenant has access to.
+   When the role is tenant, the Agent must know which wallet the tenant can access.
    This is where the UMA permission model is employed to configure the tenant's permissions for the wallet.
 
 ### Sequence Diagrams
