@@ -189,7 +189,7 @@ It expects the JWT to include a `roles` claim in the payload, which is expected 
 The user must belong to one of these roles but not both. If the role is unspecified, the Agent infers the `tenant` role.
 The location of the `roles` claim is also configurable, allowing flexible IAM configuration.
 As a result, the Agent can support both Keycloak `RealmRoles` and `ClientRoles` based on the configuration.
-The path for this can be set using the environment variable `KEYCLOAK_ROLES_CLAIM_PATH`.
+Using the environment variable, set the path as: `KEYCLOAK_ROLES_CLAIM_PATH`.
 
 If Keycloak `RealmrRole` is used, follow this [instruction](https://www.keycloak.org/docs/latest/server_admin/#proc-creating-realm-roles_server_administration_guide) on Keycloak
 and the `KEYCLOAK_ROLES_CLAIM_PATH` should be set to `realm_access.roles`.
