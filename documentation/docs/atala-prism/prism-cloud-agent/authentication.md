@@ -122,7 +122,7 @@ The PRISM Cloud Agent utilizes the following Keycloak features:
   and [ADR](https://staging-docs.atalaprism.io/adrs/adr/20230926-use-keycloak-authorisation-service-for-managing-wallet-permissions/)
 
 When the JWT Token authentication is enabled, it includes protection for all multi-tenant and administrative endpoints of the Cloud Agent.
-Two mechanisms are utilized in JWT authorization under the hood.
+Two mechanisms get utilized in JWT authorization:
 
 1. __Role-based authorization__  
    It implements this [ADR](https://staging-docs.atalaprism.io/adrs/adr/20240103-use-jwt-claims-for-agent-admin-auth/), and it is used for authorizing both administrator and tenant role.
