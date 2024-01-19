@@ -194,7 +194,7 @@ The path for this can be set using the environment variable `KEYCLOAK_ROLES_CLAI
 If Keycloak `RealmrRole` is used, follow this [instruction](https://www.keycloak.org/docs/latest/server_admin/#proc-creating-realm-roles_server_administration_guide) on Keycloak
 and the `KEYCLOAK_ROLES_CLAIM_PATH` should be set to `realm_access.roles`.
 
-If Keycloak `ClientRole` is used, the following [instruction](https://www.keycloak.org/docs/latest/server_admin/#con-client-roles_server_administration_guide) should be followed on Keycloak
+If Keycloak `ClientRole` is used, follow this [instruction](https://www.keycloak.org/docs/latest/server_admin/#con-client-roles_server_administration_guide) on Keycloak
 and the `KEYCLOAK_ROLES_CLAIM_PATH` should be set to `resource_access.<KEYCLOAK_CLIENT_ID>.roles`.
 
 ### UMA permission configuration
