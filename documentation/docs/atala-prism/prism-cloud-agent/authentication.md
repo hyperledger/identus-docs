@@ -191,7 +191,7 @@ The location of the `roles` claim is also configurable, allowing flexible IAM co
 As a result, the Agent can support both Keycloak `RealmRoles` and `ClientRoles` based on the configuration.
 The path for this can be set using the environment variable `KEYCLOAK_ROLES_CLAIM_PATH`.
 
-If Keycloak `RealmrRole` is used, the following [instruction](https://www.keycloak.org/docs/latest/server_admin/#proc-creating-realm-roles_server_administration_guide) should be followed on Keycloak
+If Keycloak `RealmrRole` is used, follow this [instruction](https://www.keycloak.org/docs/latest/server_admin/#proc-creating-realm-roles_server_administration_guide) on Keycloak
 and the `KEYCLOAK_ROLES_CLAIM_PATH` should be set to `realm_access.roles`.
 
 If Keycloak `ClientRole` is used, the following [instruction](https://www.keycloak.org/docs/latest/server_admin/#con-client-roles_server_administration_guide) should be followed on Keycloak
