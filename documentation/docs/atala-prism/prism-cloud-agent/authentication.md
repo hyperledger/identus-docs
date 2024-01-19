@@ -125,7 +125,7 @@ When the JWT Token authentication is enabled, it includes protection for all mul
 Two mechanisms get utilized in JWT authorization:
 
 1. __Role-based authorization__  
-   It implements this [ADR](https://staging-docs.atalaprism.io/adrs/adr/20240103-use-jwt-claims-for-agent-admin-auth/), and it is used for authorizing both administrator and tenant role.
+   It implements this [ADR](https://staging-docs.atalaprism.io/adrs/adr/20240103-use-jwt-claims-for-agent-admin-auth/), which can authorize both the administrator and tenant role.
    Each role is allowed to operate on different parts of the Agent
    Administrators are permitted to oversee the wallet management, while tenants are allowed to utilize the wallet and engage in SSI interactions.
 
