@@ -185,7 +185,7 @@ sequenceDiagram
 ### Role-based authorization
 
 The Agent has a simple mechanism for role-based authorization.
-It expects the JWT to include a `roles` claim in the payload, which is expected to be a list of strings identifying the role such as `admin` or `tenant`.
+It expects the JWT to include a `roles` claim in the payload, identifying the role such as `admin` or `tenant`.
 The user must belong to one of these roles but not both. If unspecified, the Agent infers the `tenant` role.
 The location of the `roles` claim is also configurable, allowing flexible IAM configuration.
 As a result, the Agent can support both Keycloak `RealmRoles` and `ClientRoles` based on the configuration.
