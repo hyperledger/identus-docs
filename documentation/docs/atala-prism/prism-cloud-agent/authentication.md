@@ -114,13 +114,24 @@ The PRISM Cloud Agent utilizes the following Keycloak features:
   the [ADR](https://staging-docs.atalaprism.io/adrs/adr/20230527-use-keycloak-and-jwt-tokens-for-authentication-and-authorisation-to-facilitate-multitenancy-in-cloud-agent/)
 - Authentication with JWT Token
   using [token exchange](https://www.keycloak.org/docs/latest/securing_apps/index.html#_token-exchange)
+- Authorization with `roles` claim supporting both Keycloak [RealmRole](https://www.keycloak.org/docs/latest/server_admin/#proc-creating-realm-roles_server_administration_guide) and [ClientRole](https://www.keycloak.org/docs/latest/server_admin/#con-client-roles_server_administration_guide)
 - Authorization with JWT Token and RPT according
   to [authorization services](https://www.keycloak.org/docs/latest/authorization_services/index.html#authorization-services)
   based
   on [UMA 2.0 specification](https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html#:~:text=This%20specification%20defines%20a%20means,a%20resource%20owner%20authorizes%20access.)
   and [ADR](https://staging-docs.atalaprism.io/adrs/adr/20230926-use-keycloak-authorisation-service-for-managing-wallet-permissions/)
 
-When the JWT Token authentication is enabled, it includes protection for all multi-tenant endpoints of the Cloud Agent.
+When the JWT Token authentication is enabled, it includes protection for all multi-tenant and administrative endpoints of the Cloud Agent.
+Two mechanisms get utilized in JWT authorization:
+
+1. __Role-based authorization__  
+   It implements this [ADR](https://staging-docs.atalaprism.io/adrs/adr/20240103-use-jwt-claims-for-agent-admin-auth/), which can authorize both the administrator and tenant role.
+   Each role is allowed to operate on different parts of the Agent
+   Administrators are permitted to oversee the wallet management, while tenants are allowed to utilize the wallet and engage in SSI interactions.
+
+2. __UMA resource permission__  
+   When the role is tenant, the Agent must know which wallet the tenant can access.
+The UMA permission model is employed to configure the tenant's permissions for the wallet.
 
 ### Sequence Diagrams
 
@@ -170,6 +181,21 @@ sequenceDiagram
   Agent->>Agent: 10. Performs Operation
   Agent-->>User: 11. Returns Result
 ```
+
+### Role-based authorization
+
+The Agent has a simple mechanism for role-based authorization.
+It expects the JWT to include a `roles` claim in the payload, identifying the role such as `admin` or `tenant`.
+The user must belong to one of these roles but not both. If unspecified, the Agent infers the `tenant` role.
+The location of the `roles` claim is also configurable, allowing flexible IAM configuration.
+As a result, the Agent can support both Keycloak `RealmRoles` and `ClientRoles` based on the configuration.
+Using the environment variable, set the path as: `KEYCLOAK_ROLES_CLAIM_PATH`.
+
+If Keycloak `RealmrRole` is used, follow this [instruction](https://www.keycloak.org/docs/latest/server_admin/#proc-creating-realm-roles_server_administration_guide) on Keycloak
+and the `KEYCLOAK_ROLES_CLAIM_PATH` should be set to `realm_access.roles`.
+
+If Keycloak `ClientRole` is used, follow this [instruction](https://www.keycloak.org/docs/latest/server_admin/#con-client-roles_server_administration_guide) on Keycloak
+and the `KEYCLOAK_ROLES_CLAIM_PATH` should be set to `resource_access.<KEYCLOAK_CLIENT_ID>.roles`.
 
 ### UMA permission configuration
 
