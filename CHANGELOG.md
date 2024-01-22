@@ -1,3 +1,10 @@
+## [1.75.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.75.0...v1.75.1) (2024-01-22)
+
+
+### :sparkles: Updates
+
+* add jwt role to authz doc and env vars ([#75](https://github.com/input-output-hk/atala-prism-docs/issues/75)) ([ac2802a](https://github.com/input-output-hk/atala-prism-docs/commit/ac2802a5cd049334fd859ced3ef176337330826b))
+
 ## [1.75.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.74.0...v1.75.0) (2024-01-21)
 
 
