@@ -86,6 +86,7 @@ PRISM_NODE_VERSION=2.2.1
 PORT=8000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
+PG_PORT=5432
 ```
 
 3. Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content: 
@@ -99,6 +100,7 @@ PRISM_NODE_VERSION=2.2.1
 PORT=9000
 NETWORK=prism
 VAULT_DEV_ROOT_TOKEN_ID=root
+PG_PORT=5433
 ```
 
 4. Setting the `API_KEY_ENABLED` to `false` disables the requirement of using API Keys.
