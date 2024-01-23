@@ -1,3 +1,10 @@
+## [1.75.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.75.1...v1.75.2) (2024-01-23)
+
+
+### :sparkles: Updates
+
+* ensure postgres port is set correctly in qsg ([#76](https://github.com/input-output-hk/atala-prism-docs/issues/76)) ([1c143d2](https://github.com/input-output-hk/atala-prism-docs/commit/1c143d2be8a39c5feda94ab5cbe7ed9da8026a25))
+
 ## [1.75.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.75.0...v1.75.1) (2024-01-22)
 
 
