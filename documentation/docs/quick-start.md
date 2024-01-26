@@ -255,11 +255,23 @@ All wallet SDK's come bundled with a sample application, that cover all the PRIS
 git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-ts
 ```
 
-2. Run the following commands:
+2. Ensure you have all applications installed for building the SDK and it's dependencies
+
+[rust](https://www.rust-lang.org/tools/install) and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) are leveraged to build and use the AnonCreds and DIDComm rust libraries within typescript. To build the SDK locally or run demonstration applications, you must have these applications installed.
+
+The following should work Linux and MacOS, if you experience any issues - please check the latest installation instructions for your platform.
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+```
+
+3. Run the following commands:
   * Build the source SDK:
 
 ```bash
 cd atala-prism-wallet-sdk-ts
+git submodule update --init --recursive
 npm i
 npm run build
 ```
