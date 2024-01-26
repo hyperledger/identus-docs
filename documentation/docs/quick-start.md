@@ -117,12 +117,12 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
   * Issuer Cloud Agent command:
 ```bash
-./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d localhost
+./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
 ```
 
   * Verifier Cloud Agent command:
 ```bash
- ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d localhost
+ ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000
 ```
 
   * The Issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`.
