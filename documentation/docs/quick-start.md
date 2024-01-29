@@ -115,14 +115,26 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 
 
-  * Issuer Cloud Agent command:
+  * Issuer Cloud Agent command: 
+    
+  Mac OSX  terminal shell
 ```bash
-./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000
+ ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d "$(ipconfig getifaddr $(route get default | grep interface | awk '{print $2}'))"
+```
+ Linux terminal shell
+```bash
+ ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
   * Verifier Cloud Agent command:
+
+ For Mac OSX  terminal shell
 ```bash
- ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000
+ ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d "$(ipconfig getifaddr $(route get default | grep interface | awk '{print $2}'))"
+```
+ For Linux terminal shell
+```bash
+ ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
   * The Issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`.
