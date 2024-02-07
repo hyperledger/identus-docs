@@ -42,7 +42,7 @@ More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-a
 
 
 ### Wallet SDKs
-[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers. 
+[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers.
 
 More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
@@ -76,7 +76,7 @@ git clone https://github.com/hyperledger-labs/open-enterprise-agent
 ```
 
 
-2. Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:  
+2. Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:
 
 
 ```
@@ -89,7 +89,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 PG_PORT=5432
 ```
 
-3. Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content: 
+3. Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content:
 
 
 
@@ -111,18 +111,30 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 :::
 
-5. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool. 
+5. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool.
 
 
 
-  * Issuer Cloud Agent command:
+  * Issuer Cloud Agent command: 
+    
+  Mac OSX  terminal shell
 ```bash
-./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d localhost
+ ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d "$(ipconfig getifaddr $(route get default | grep interface | awk '{print $2}'))"
+```
+ Linux terminal shell
+```bash
+ ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
   * Verifier Cloud Agent command:
+
+ For Mac OSX  terminal shell
 ```bash
- ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d localhost
+ ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d "$(ipconfig getifaddr $(route get default | grep interface | awk '{print $2}'))"
+```
+ For Linux terminal shell
+```bash
+ ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
   * The Issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`.
@@ -134,7 +146,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 ### Agent configuration
 
-#### Creating LongForm PrismDID 
+#### Creating LongForm PrismDID
 1. Run the following API request against your Issuer API to create a PRISM DID:
 
 
@@ -255,11 +267,23 @@ All wallet SDK's come bundled with a sample application, that cover all the PRIS
 git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-ts
 ```
 
-2. Run the following commands:
+2. Ensure you have all applications installed for building the SDK and it's dependencies
+
+[rust](https://www.rust-lang.org/tools/install) and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) are leveraged to build and use the AnonCreds and DIDComm rust libraries within typescript. To build the SDK locally or run demonstration applications, you must have these applications installed.
+
+The following should work Linux and MacOS, if you experience any issues - please check the latest installation instructions for your platform.
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+```
+
+3. Run the following commands:
   * Build the source SDK:
 
 ```bash
 cd atala-prism-wallet-sdk-ts
+git submodule update --init --recursive
 npm i
 npm run build
 ```
@@ -330,7 +354,7 @@ MEDIATOR_VERSION=0.10.2 docker-compose up
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
 
-3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator). 
+3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator).
 
 
 
@@ -344,7 +368,7 @@ In order to complete this step you'll need to connect to the mediators Peer DID 
 
 ```bash
 curl --location \
---request GET '[[MEDIATOR ENDPOINT]]/invitation' \
+--request GET 'localhost:8080/invitation' \
 --header 'Content-Type: application/json'
 ```
 
@@ -355,7 +379,7 @@ Follow the steps in your desired platform as stated below:
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
 
-1. Open http://localhost:3000 in your browser, paste the mediator peer DID, and click **Start** after.
+1. Open http://localhost:3000 in your browser, paste the mediator peer DID (obtained from the `from` attribute after fetching from the mediator's invitation endpoint), and click **Start** after.
 
 </TabItem>
 
@@ -375,7 +399,7 @@ Follow the steps in your desired platform as stated below:
 
 2. If you are running the SampleApp, click the **Start Agent** button.
 
-
+The below code examples show how to establish mediation when building your own application.
 
 <details><summary>Code examples</summary>
 3. The following code examples represent establishing mediation and instantiating the Cloud Agent.
@@ -523,7 +547,7 @@ curl --location \
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
 
-4. Go back to the Application: 
+4. Go back to the Application:
 5. Click the floating button at the bottom right corner of the Contacts tab.
 6. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click **Validate**.
   * The application will react once the connection gets established correctly and show a message under messages.
@@ -571,11 +595,16 @@ The credential issuance flow consists of multiple steps, detailed in this sectio
 
 :::info
 
-The `schemaId` being the following http://host.docker.internal:8000/prism-agent/schema-registry/schemas/[[schema guid]]
+Please replace the following variables in the example request before sending:
+
+- `connectionId`: The ID of the connection previously established between agent and holder. This is part of the response of the POST message from the agent when calling the `prism-agent/connections` endpoint. It is returned in the `connectionId` attribute. There is a unique connection ID for the relationship between issuer and holder and verifier and holder. In this example, please use the `connectionId` returned when creating the connection between issuer and holder
+- `publishedPrismDID`: The short form of the PRISM DID created when setting up the Issuer agent
 
 The `connectionId` is just the ID of the connection we previously established with the issuer.
 
 The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
+
+- ``
 
 :::
 
@@ -584,9 +613,8 @@ curl --location --request POST 'http://localhost:8000/prism-agent/issue-credenti
 --header 'Content-Type: application/json' \
 --data-raw '{
     "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
-    "connectionId": [[connectionId]]
+    "connectionId": [[connectionId]],
     "issuingDID": [[publishedPrismDID]],
-    "schemaId": [[schemaId]],
     "automaticIssuance": true
 }'
 ```
@@ -623,7 +651,7 @@ automaticIssuance is optional. It can also be manually triggered and confirmed b
 
 <details><summary>Code examples</summary>
 
-5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.	
+5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -825,7 +853,7 @@ curl --location \
 
 
 
-### Holder: Receives the Presentation proof request 
+### Holder: Receives the Presentation proof request
 
 6. The Holder needs an Edge Agent running with the message listener active. It will receive the presentation proof request from the Verifier Cloud Agent for the correct type of messages as detailed below:
 
