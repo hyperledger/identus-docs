@@ -1,3 +1,10 @@
+## [1.78.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.77.0...v1.78.0) (2024-02-07)
+
+
+### :rocket: New Content
+
+* ensure qsg works 1.19.1 ([#77](https://github.com/input-output-hk/atala-prism-docs/issues/77)) ([a2f426f](https://github.com/input-output-hk/atala-prism-docs/commit/a2f426fb235d059d91fc98e0c8ad5de86f6ed43c))
+
 ## [1.77.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.76.0...v1.77.0) (2024-02-04)
 
 
