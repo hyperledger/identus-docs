@@ -1,3 +1,10 @@
+## [1.78.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.78.0...v1.78.1) (2024-02-09)
+
+
+### :sparkles: Updates
+
+* update swift sdk docs url ([#78](https://github.com/input-output-hk/atala-prism-docs/issues/78)) ([a367792](https://github.com/input-output-hk/atala-prism-docs/commit/a367792966a12e47d0f6cba6801dcbad859f2dcd))
+
 ## [1.78.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.77.0...v1.78.0) (2024-02-07)
 
 
