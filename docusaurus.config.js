@@ -132,7 +132,7 @@ const config = {
                         items: [
                             {
                                 label: 'Wallet SDK Swift',
-                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/',
+                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/documentation/atalaprismsdk',
                             },
                             {
                                 to: '/atala-prism-wallet-sdk-ts/',
