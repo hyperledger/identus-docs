@@ -13,7 +13,7 @@ The trust triangle is the most basic process for conveying trust in the digital 
 
 ![Component Diagram](/img/trust-triangle.png)
 
-Holders can be any entity, such as individuals, organizations, and digital or physical things. They will hold [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credential) and use a verifiable presentations to share their VCs.
+Holders can be any entity, such as individuals, organizations, and digital or physical things. They will hold [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credential) and use a verifiable presentation to share their VCs.
 
 Issuers can also be any entity that makes [claims](/docs/concepts/glossary/#claim) about an [entity](/docs/concepts/glossary/#entity). These claims are attestations, or evidence of something, about the Holder. As an example, an insurance company would provide proof of valid insurance.
 
