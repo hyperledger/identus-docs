@@ -37,7 +37,7 @@ A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/c
 
 It is maintained as an open source lab through the [Hyperledger Foundation: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html).
 
-More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-agent) can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
+More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-agent-aka-prism-cloud-agent) can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
 
 
 
@@ -358,7 +358,7 @@ MEDIATOR_VERSION=0.10.2 docker-compose up
 
 
 
-4. Now you need to capture the Mediator's [Peer DID](/docs/concepts/glossary/#peer-did) in order to start DIDCOMM V2 Mediation protocol, you can do so by opening you browser at the mediators [endpoint](/docs/concepts/glossary/#).
+4. Now you need to capture the Mediator's [Peer DID](/docs/concepts/glossary/#peer-did) in order to start DIDCOMM V2 Mediation protocol, you can do so by opening you browser at the mediators [endpoint](/docs/concepts/glossary/#endpoints).
 
 #### Demo application
 
