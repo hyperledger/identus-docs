@@ -1,3 +1,10 @@
+## [1.85.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.85.0...v1.85.1) (2024-03-29)
+
+
+### :sparkles: Updates
+
+* Broken link in quick start guide ([#85](https://github.com/input-output-hk/atala-prism-docs/issues/85)) ([a195075](https://github.com/input-output-hk/atala-prism-docs/commit/a1950750459677cd80bcc377147cf7f784f5da9d))
+
 ## [1.85.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.84.0...v1.85.0) (2024-03-24)
 
 
