@@ -826,7 +826,7 @@ In the example, we show a verification flow that assumes a connection between Ho
 
 ### Verifier Agent
 
-5. To run this section, we will use [the connection](/docs/quick-start#establish-connection-on-the-verifier-agent) we created between the Holder and the Verifier.
+5. To run this section, we will use [the connection](/docs/quick-start#establish-connection-on-the-verifier-cloud-agent) we created between the Holder and the Verifier.
 
 ```bash
 curl --location \
