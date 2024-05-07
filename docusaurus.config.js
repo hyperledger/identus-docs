@@ -54,7 +54,7 @@ const config = {
                 // Plugin Options for loading OpenAPI files
                 specs: [
                     {
-                        spec: 'atala-prism-building-blocks/prism-agent/service/api/http/prism-agent-openapi-spec.yaml',
+                        spec: 'atala-prism-building-blocks/cloud-agent/service/api/http/cloud-agent-openapi-spec.yaml',
                         route: '/agent-api/',
                     },
                     // {
