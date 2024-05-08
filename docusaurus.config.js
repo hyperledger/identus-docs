@@ -81,7 +81,7 @@ const config = {
             '@docusaurus/plugin-content-docs',
             {
                 id: 'atala-prism-wallet-sdk-ts',
-                path: 'atala-prism-wallet-sdk-ts/docs/sdk',
+                path: 'atala-prism-wallet-sdk-ts/docs',
                 routeBasePath: 'atala-prism-wallet-sdk-ts',
                 sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
             },
