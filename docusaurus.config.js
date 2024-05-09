@@ -54,7 +54,7 @@ const config = {
                 // Plugin Options for loading OpenAPI files
                 specs: [
                     {
-                        spec: 'atala-prism-building-blocks/prism-agent/service/api/http/prism-agent-openapi-spec.yaml',
+                        spec: 'atala-prism-building-blocks/cloud-agent/service/api/http/cloud-agent-openapi-spec.yaml',
                         route: '/agent-api/',
                     },
                     // {
@@ -81,7 +81,7 @@ const config = {
             '@docusaurus/plugin-content-docs',
             {
                 id: 'atala-prism-wallet-sdk-ts',
-                path: 'atala-prism-wallet-sdk-ts/docs/sdk',
+                path: 'atala-prism-wallet-sdk-ts/docs',
                 routeBasePath: 'atala-prism-wallet-sdk-ts',
                 sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
             },
