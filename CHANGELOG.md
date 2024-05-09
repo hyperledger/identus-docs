@@ -1,3 +1,10 @@
+## [1.90.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.90.0...v1.90.1) (2024-05-09)
+
+
+### :sparkles: Updates
+
+* Snyk security upgrade nginx from 1.23.3 to 1 ([#88](https://github.com/input-output-hk/atala-prism-docs/issues/88)) ([9bf1b59](https://github.com/input-output-hk/atala-prism-docs/commit/9bf1b598df2af8377e1d4279da8b3bc83b73d4f6))
+
 ## [1.90.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.89.0...v1.90.0) (2024-05-09)
 
 
