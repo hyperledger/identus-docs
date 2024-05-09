@@ -1,4 +1,4 @@
-FROM nginx:1.23.3
+FROM nginx:1
 COPY ./infra/website/ /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY ./infra/nginx/nginx.conf /etc/nginx/conf.d
