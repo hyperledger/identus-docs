@@ -49,11 +49,11 @@ const sidebars = {
         'atala-prism/overview',
         {
           type: 'category',
-          label: 'PRISM Cloud Agent',
+          label: 'Cloud Agent',
           collapsed: true,
           link: {
             type: 'generated-index',
-            title: 'PRISM Cloud Agent',
+            title: 'Cloud Agent',
             description: 'Learn about the Atala PRISM Cloud Agent!'
           },
           items: [

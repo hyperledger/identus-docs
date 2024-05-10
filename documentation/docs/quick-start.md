@@ -495,7 +495,7 @@ agent.startFetchingMessages()
 To connect the Holder to both Cloud Agent instances, you must run this in both Issuer and Verifier endpoints.
 
 ### Establish a connection - Agent side
-A connection must be established between the Holder and PRISM Cloud Agents to correctly deliver the Issuance + Verification Messages to the Holder.
+A connection must be established between the Holder and Cloud Agents to correctly deliver the Issuance + Verification Messages to the Holder.
 
 #### Establish connection on the Issuer Cloud Agent
 ```bash
