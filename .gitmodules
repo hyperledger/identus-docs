@@ -9,3 +9,4 @@
 [submodule "atala-prism-wallet-sdk-ts"]
 	path = atala-prism-wallet-sdk-ts
 	url = https://github.com/input-output-hk/atala-prism-wallet-sdk-ts.git
+	branch = main
