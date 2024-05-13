@@ -1,3 +1,10 @@
+## [1.92.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.92.0...v1.92.1) (2024-05-13)
+
+
+### :sparkles: Updates
+
+* Edge SDK Release brings improvements to documentation 5.1.0 Version ([#87](https://github.com/input-output-hk/atala-prism-docs/issues/87)) ([e093009](https://github.com/input-output-hk/atala-prism-docs/commit/e093009ce73561ceacc852b25a4a9f2424371488))
+
 ## [1.92.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.91.0...v1.92.0) (2024-05-12)
 
 
