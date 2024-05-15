@@ -4,13 +4,15 @@ sidebar_position: 1
 
 # Getting Started
 
-Atala PRISM is a toolset that provides infrastructure for decentralized identity. It is a layer-2 blockchain solution that leverages the Cardano blockchain as a [verifiable data registry (VDR)](/docs/concepts/glossary#verifiable-data-registry). PRISM's roots are in [self-sovereign identity (SSI)](/docs/concepts/glossary#self-sovereign-identity), which empowers users to control their identity and personal information, including selectively disclosing with whom to share their data using asymmetric cryptography.
+Hyperledger Identus is a comprehensive toolset that provides the necessary infrastructure for decentralized identity systems. It operates as a layer-2 blockchain solution, using the Cardano blockchain as a [verifiable data registry (VDR)](/docs/concepts/glossary#verifiable-data-registry). This innovative toolset facilitates the creation and management of decentralized identifiers (DIDs) and supports the issuance, updating, and revocation of verifiable credentials. With this technology, users can securely and efficiently manage their digital identities while ensuring the integrity and authenticity of their credentials.
+
+Hyperledger Identus is deeply rooted in the concept of [self-sovereign identity (SSI)](/docs/concepts/glossary#self-sovereign-identity), a powerful feature that empowers users to control their identity and personal information. With SSI, users can selectively disclose their data using asymmetric cryptography, giving them full control over their digital identity.
 
 The documentation herein will explain the following:
 
-* The concepts of SSI
-* How PRISM works
-* PRISM Quick Start Guide
+* Decentralized identity concepts
+* How Hyperledger Identus works
+* Hyperledger Identus Quick Start Guide
 
 ## Supported Standards
 * W3C DID Specification
