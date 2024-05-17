@@ -1,3 +1,10 @@
+## [1.93.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.93.0...v1.93.1) (2024-05-17)
+
+
+### :sparkles: Updates
+
+* link to edge agent swift ([#93](https://github.com/input-output-hk/atala-prism-docs/issues/93)) ([63314cb](https://github.com/input-output-hk/atala-prism-docs/commit/63314cb8a2b7df4f69b4a053445284de09cb4236))
+
 ## [1.93.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.92.1...v1.93.0) (2024-05-17)
 
 
