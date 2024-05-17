@@ -1,3 +1,10 @@
+## [1.93.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.93.1...v1.93.2) (2024-05-17)
+
+
+### :sparkles: Updates
+
+* doc-fixes ([#94](https://github.com/input-output-hk/atala-prism-docs/issues/94)) ([2663f44](https://github.com/input-output-hk/atala-prism-docs/commit/2663f446b7aeb7362f7d3e695b1ea07cb68c40f8))
+
 ## [1.93.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.93.0...v1.93.1) (2024-05-17)
 
 
