@@ -10,3 +10,6 @@ This example is repeatable across all interactions: banking, insurance, online s
 
 The World Wide Web Consortium (W3C) organization has been setting the standards for the Internet as we know it. Similarly, they are also working on next-generation technologies such as decentralized identity. In July 2022, the W3C approved the DID specification to become a [recommendation](https://www.w3.org/press-releases/2022/did-rec/).
 
+The W3C has compiled a list in addition to the specifications for all DID methods available [here](https://www.w3.org/TR/did-spec-registries/).
+
+For a deep dive into the DID specification itself, the W3C standard is [here](https://www.w3.org/TR/did-core/). 
