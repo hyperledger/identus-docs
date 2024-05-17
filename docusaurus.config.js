@@ -131,16 +131,16 @@ const config = {
                         position: 'left',
                         items: [
                             {
-                                label: 'Edge SDK Swift',
-                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/documentation/atalaprismsdk',
+                                label: 'Edge Agent SDK Swift',
+                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/documentation/edgeagentsdk',
                             },
                             {
                                 to: '/atala-prism-wallet-sdk-ts/sdk',
-                                label: 'Edge SDK Typescript',
+                                label: 'Edge Agent SDK Typescript',
                                 activeBaseRegex: `/atala-prism-wallet-sdk-ts/sdk`
                             },
                             {
-                                label: 'Edge SDK Kotlin Multiplatform',
+                                label: 'Edge Agent SDK Kotlin Multiplatform',
                                 href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/',
                             },
                         ],
