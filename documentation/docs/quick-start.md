@@ -54,7 +54,7 @@ More in-depth documentation about the different Wallet SDKs can be found here ([
 More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
-To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Cardano blockchain.
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Distributed Ledger blockchain.
 
 
 
