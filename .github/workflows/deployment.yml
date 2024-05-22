@@ -15,10 +15,10 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Version to deploy, e.g. v1.0.0"
+        description: "Document tag to deploy, e.g v1.76.1"
         required: true
       env:
-        description: "Environment to trigger update on"
+        description: "Target environment: staging or production"
         required: false
         default: "staging"
   push:

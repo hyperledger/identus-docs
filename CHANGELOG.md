@@ -1,3 +1,45 @@
+## [1.94.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.93.2...v1.94.0) (2024-05-19)
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([375a937](https://github.com/input-output-hk/atala-prism-docs/commit/375a937e0ebdbea552505b2ea76bdd8b0d703378))
+
+## [1.93.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.93.1...v1.93.2) (2024-05-17)
+
+
+### :sparkles: Updates
+
+* doc-fixes ([#94](https://github.com/input-output-hk/atala-prism-docs/issues/94)) ([2663f44](https://github.com/input-output-hk/atala-prism-docs/commit/2663f446b7aeb7362f7d3e695b1ea07cb68c40f8))
+
+## [1.93.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.93.0...v1.93.1) (2024-05-17)
+
+
+### :sparkles: Updates
+
+* link to edge agent swift ([#93](https://github.com/input-output-hk/atala-prism-docs/issues/93)) ([63314cb](https://github.com/input-output-hk/atala-prism-docs/commit/63314cb8a2b7df4f69b4a053445284de09cb4236))
+
+## [1.93.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.92.1...v1.93.0) (2024-05-17)
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([e7e2df1](https://github.com/input-output-hk/atala-prism-docs/commit/e7e2df104868f59c9d86fa8beb4684e50b09aaff))
+
+## [1.92.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.92.0...v1.92.1) (2024-05-13)
+
+
+### :sparkles: Updates
+
+* Edge SDK Release brings improvements to documentation 5.1.0 Version ([#87](https://github.com/input-output-hk/atala-prism-docs/issues/87)) ([e093009](https://github.com/input-output-hk/atala-prism-docs/commit/e093009ce73561ceacc852b25a4a9f2424371488))
+
+## [1.92.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.91.0...v1.92.0) (2024-05-12)
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([3baec6f](https://github.com/input-output-hk/atala-prism-docs/commit/3baec6fa68a5f82e665d7b9fca3dd4eeefbbfe9c))
+
 ## [1.91.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.90.2...v1.91.0) (2024-05-09)
 
 
