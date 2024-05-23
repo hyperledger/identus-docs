@@ -1,10 +1,10 @@
 # Building Blocks
 
-Atala PRISM is a toolset for implementing decentralized identity and consists of several core building blocks. These building blocks are modular components that can be easily combined and configured to meet various use cases and product requirements. By abstracting these fundamental components into modular building blocks, Atala PRISM allows for rapid development and deployment of new features and capabilities for its [Cloud Agents](/docs/concepts/glossary#cloud-agent).
+Identus is a toolset for implementing decentralized identity and consists of several core building blocks. These building blocks are modular components that can be easily combined and configured to meet various use cases and product requirements. By abstracting these fundamental components into modular building blocks, Identus allows for rapid development and deployment of new features and capabilities for its [Cloud Agents](/docs/concepts/glossary#cloud-agent).
 
 This modular architecture also provides excellent flexibility and customization options, as different building blocks can be combined in various ways to fit specific use case requirements. However, in the future, some unique use cases may arise that require designing and developing new building blocks. The Atala team continuously improves and expands the suite's capabilities to meet its users' evolving needs.
 
-Below is a brief overview of the current building blocks of Atala PRISM:
+Below is a brief overview of the current building blocks of Identus:
 
 **Building Block**|**Definition**|**Code Name**
 :-----:|:-----:|:-----:
@@ -14,7 +14,7 @@ Cryptography|A set of cryptographic primitives that ensure the integrity, authen
 [DIDComm](/docs/concepts/glossary#didcomm) V2|A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.|Mercury
 
 ## Apollo - Cryptography Module
-Apollo is one of the building blocks of Atala PRISM. It is a suite of cryptographic primitives ensuring data security during storage and handling. Cryptographic primitives are mathematical algorithms and protocols that form the foundation for secure communication and data protection.
+Apollo is one of the building blocks of Identus. It is a suite of cryptographic primitives ensuring data security during storage and handling. Cryptographic primitives are mathematical algorithms and protocols that form the foundation for secure communication and data protection.
 
 The primary purpose of Apollo is to provide data integrity, authenticity, and confidentiality, which are essential components of secure information systems. Apollo ensures that tampering, unauthorized access, and other security threats do not compromise the protection of user data, giving users confidence in its security.
 
@@ -24,11 +24,11 @@ For authenticity, Apollo uses digital signatures to authenticate the identity of
 
 Finally, for confidentiality, Apollo uses encryption algorithms to protect sensitive data from unauthorized access and exposure. This feature helps ensure that sensitive information remains confidential and protected against cyber-attacks and data breaches.
 
-Overall, the Apollo building block is an essential component of Atala PRISM, providing a secure and reliable means of protecting data stored and processed within the platform.
+Overall, the Apollo building block is an essential component of Identus, providing a secure and reliable means of protecting data stored and processed within the platform.
 
 ## Castor - DID Module
 
-Castor is a building block of Atala PRISM that provides a set of DID operations, allowing users to create, manage, and resolve DIDs.
+Castor is a building block of Identus that provides a set of DID operations, allowing users to create, manage, and resolve DIDs.
 
 A [DID Document](/docs/concepts/glossary#did-document) is a JSON-LD document that contains information about a DID. It includes information such as the public keys associated with the DID, the authentication mechanisms, and linked services. Castor consists of a resolver that resolves a DID to its associated DID Document. The lookup service allows users to retrieve the DID Document for a given DID.
 
@@ -38,7 +38,7 @@ Castor gives users complete control over their DIDs, including creating new DIDs
 
 ## Pollux - Verifiable Credential Module
 
-Pollux is a building block of Atala PRISM that provides a set of operations for managing and verifying verifiable credentials (VCs). This building block is a vital aspect of the [self-sovereign identity](/docs/concepts/glossary#self-sovereign-identity) paradigm. With Pollux, users can issue, manage, and verify VCs in a privacy-preserving manner. Pollux ensures that users can share their credentials with others while maintaining control over their personal information and protecting it from unauthorized access and exposure.
+Pollux is a building block of Identus that provides a set of operations for managing and verifying verifiable credentials (VCs). This building block is a vital aspect of the [self-sovereign identity](/docs/concepts/glossary#self-sovereign-identity) paradigm. With Pollux, users can issue, manage, and verify VCs in a privacy-preserving manner. Pollux ensures that users can share their credentials with others while maintaining control over their personal information and protecting it from unauthorized access and exposure.
 
 In terms of issuing credentials, Pollux provides the necessary functions to create and issue VCs, including the ability to specify the type of credential, the attributes it represents, and the trusted party attesting to the credentials.
 
@@ -48,6 +48,6 @@ Finally, for verifying credentials, Pollux provides the tools to check a given c
 
 ## Mercury - DIDComm Module
 
-Mercury is a building block of Atala PRISM that provides a set of secure, standards-based communication protocols and infrastructure for establishing and managing trusted, peer-to-peer connections between decentralized identifiers. DIDs allow their owners to manage their identity and interact with others in a privacy-preserving manner.
+Mercury is a building block of Identus that provides a set of secure, standards-based communication protocols and infrastructure for establishing and managing trusted, peer-to-peer connections between decentralized identifiers. DIDs allow their owners to manage their identity and interact with others in a privacy-preserving manner.
 
 Additionally, using standards-based protocols ensures that the communication between DIDs is interoperable, meaning that different systems and platforms can communicate seamlessly.
