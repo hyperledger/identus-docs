@@ -7,7 +7,7 @@ resource.
 Authentication and authorization are critical to any identity management system, ensuring only authorized
 users can access the system and its resources.
 
-PRISM Cloud Agent provides the following authentication and authorization methods to ensure that the identity of the
+Cloud Agent provides the following authentication and authorization methods to ensure that the identity of the
 entity is verified and authenticated during interactions with the platform:
 
 - apikey authentication with internal IAM service
@@ -16,7 +16,7 @@ entity is verified and authenticated during interactions with the platform:
 
 ## Default Entity and Wallet
 
-The PRISM Cloud Agent uses the Default Entity and the Default Wallet for all interactions with the Agent over the REST API and DIDComm in the single-tenant mode.
+The Cloud Agent uses the Default Entity and the Default Wallet for all interactions with the Agent over the REST API and DIDComm in the single-tenant mode.
 A Default Entity is an entity with the id `00000000-0000-0000-0000-000000000000`, and a Default Wallet is a wallet with the id `00000000-0000-0000-0000-000000000000`.
 
 
@@ -108,7 +108,7 @@ processes.
 Keycloak supports various identity protocols, including OAuth 2.0 and OpenID Connect, making it a versatile solution for
 securing modern web applications.
 
-The PRISM Cloud Agent utilizes the following Keycloak features:
+The Cloud Agent utilizes the following Keycloak features:
 
 - Authentication with JWT Token with a configured flow according to
   the [ADR](https://staging-docs.atalaprism.io/adrs/adr/20230527-use-keycloak-and-jwt-tokens-for-authentication-and-authorisation-to-facilitate-multitenancy-in-cloud-agent/)

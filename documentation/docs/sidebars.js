@@ -38,36 +38,36 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Atala PRISM V2',
+      label: 'Identus',
       link: {
         type: 'generated-index',
-        title: 'Atala PRISM V2',
-        description: 'Learn about the Atala PRISM ecosystem!'
+        title: 'Identus',
+        description: 'Learn about the Identus ecosystem!'
       },
       collapsed: false,
       items: [
-        'atala-prism/overview',
+        'identus/overview',
         {
           type: 'category',
-          label: 'PRISM Cloud Agent',
+          label: 'Cloud Agent',
           collapsed: true,
           link: {
             type: 'generated-index',
-            title: 'PRISM Cloud Agent',
-            description: 'Learn about the Atala PRISM Cloud Agent!'
+            title: 'Cloud Agent',
+            description: 'Learn about the Identus Cloud Agent!'
           },
           items: [
-            'atala-prism/prism-cloud-agent/overview',
-            'atala-prism/prism-cloud-agent/building-blocks',
-            'atala-prism/prism-cloud-agent/authentication',
-            'atala-prism/prism-cloud-agent/did-management',
-            'atala-prism/prism-cloud-agent/secrets-storage',
-            'atala-prism/prism-cloud-agent/environment-variables'
+            'identus/cloud-agent/overview',
+            'identus/cloud-agent/building-blocks',
+            'identus/cloud-agent/authentication',
+            'identus/cloud-agent/did-management',
+            'identus/cloud-agent/secrets-storage',
+            'identus/cloud-agent/environment-variables'
           ]
         },
-        'atala-prism/prism-node',
-        'atala-prism/prism-mediator',
-        'atala-prism/getting-help'
+        'identus/prism-node',
+        'identus/mediator',
+        'identus/getting-help'
       ],
     },
   'concepts/glossary'
