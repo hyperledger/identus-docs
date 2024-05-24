@@ -1,4 +1,4 @@
-# Atala PRISM V2 Website
+# Identus Website
 
 This has the necessary stuff to prepare the website for deployment.
 
@@ -14,8 +14,8 @@ yarn build website
 ## Building docker image
 
 1. Copy prebuilt `website` to this directory (`infra`) so that docker can find it
-2. Build the docker image: `docker build -t prism-documentation-portal .`
-3. Run the container: `docker run -p 8000:80 -it prism-documentation-portal`
+2. Build the docker image: `docker build -t identus-documentation-portal .`
+3. Run the container: `docker run -p 8000:80 -it identus-documentation-portal`
 4. Go to [localhost:8000](http://localhost:8000) to find the website
 
 ## CI/CD

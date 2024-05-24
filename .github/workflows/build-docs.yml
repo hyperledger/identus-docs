@@ -12,7 +12,7 @@ defaults:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: prism-documentation-portal
+  IMAGE_NAME: identus-documentation-portal
 
 jobs:
   build:
