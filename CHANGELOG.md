@@ -1,3 +1,11 @@
+## [1.94.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.94.0...v1.94.1) (2024-05-24)
+
+
+### :sparkles: Updates
+
+* missing branch will prevent submodule update ([#91](https://github.com/input-output-hk/atala-prism-docs/issues/91)) ([d660e9f](https://github.com/input-output-hk/atala-prism-docs/commit/d660e9fa87049fb03308114aac79bfeaa007f75d))
+* Renaming ([#92](https://github.com/input-output-hk/atala-prism-docs/issues/92)) ([48f0373](https://github.com/input-output-hk/atala-prism-docs/commit/48f03732a8d8c781119e55ea683bb26677088b49))
+
 ## [1.94.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.93.2...v1.94.0) (2024-05-19)
 
 
