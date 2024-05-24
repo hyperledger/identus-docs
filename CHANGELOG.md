@@ -1,3 +1,10 @@
+## [1.94.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.94.1...v1.94.2) (2024-05-24)
+
+
+### :sparkles: Updates
+
+* Renaming Landing Page ([#96](https://github.com/input-output-hk/atala-prism-docs/issues/96)) ([d5a857d](https://github.com/input-output-hk/atala-prism-docs/commit/d5a857d715500ea0b69a3e60a4213f44fd2af182))
+
 ## [1.94.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.94.0...v1.94.1) (2024-05-24)
 
 
