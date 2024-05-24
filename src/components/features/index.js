@@ -9,7 +9,7 @@ const FeatureList = [
         Svg: require('@site/static/img/modularity-and-flexibility.svg').default,
         description: (
             <>
-                Atala PRISM’s suite of infrastructure products provides easy-to-use and easy-to-integrate verifiable
+                Identus’ suite of infrastructure products provides easy-to-use and easy-to-integrate verifiable
                 data and identity components that power diverse and scalable solutions.
             </>
         ),
