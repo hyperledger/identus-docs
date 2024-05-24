@@ -21,8 +21,8 @@ Verifiers are the [relying party](/docs/concepts/glossary/#relying-party) in the
 
 
 
-## PRISM flow
-The diagram details how the concepts fit alongside the PRISM components in a typical SSI interaction.
+## Identus flow
+The diagram details how the concepts fit alongside the Identus components in a typical SSI interaction.
 
 ![Component Diagram](/img/component-diagram.png)
 
@@ -37,7 +37,7 @@ A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/c
 
 It is maintained as an open source lab through the [Hyperledger Foundation: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html).
 
-More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-agent-aka-prism-cloud-agent) can be found [here](/docs/atala-prism/prism-cloud-agent/overview).
+More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-agent) can be found [here](/docs/identus/cloud-agent/overview).
 
 
 
@@ -51,10 +51,10 @@ More in-depth documentation about the different Wallet SDKs can be found here ([
 ### A Mediator
 [Mediators](/docs/concepts/glossary/#mediator) are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof request on behalf of the Wallet SDKs (which can be offline occasionally).
 
-More in-depth documentation about PRISM Mediator can be found [here](/docs/atala-prism/prism-mediator).
+More in-depth documentation about Mediator can be found [here](/docs/identus/mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
-To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In PRISM's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Distributed Ledger blockchain.
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In Identus's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Distributed Ledger.
 
 
 
@@ -62,17 +62,17 @@ To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (V
 
 
 ### Agent Deployment
-This guide will demonstrate a single-tenant deployment with API Key authentication disabled and an in-memory ledger for published DID storage, which is the simplest configuration to get started as a developer. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/atala-prism/prism-cloud-agent/environment-variables) configuration options.
+This guide will demonstrate a single-tenant deployment with API Key authentication disabled and an in-memory ledger for published DID storage, which is the simplest configuration to get started as a developer. More advanced configuration options can be found in [Multi-Tenancy Management](/tutorials/multitenancy/tenant-onboarding) and associated [Environment Variables](/docs/identus/cloud-agent/environment-variables) configuration options.
 
 We develop on modern machines equipped with either Intel based x64 processors or Apple ARM processors with a minimum of four cores, 16 GB of memory and 128GB+ of SSD-type storage.
 
 1. To spin up an Cloud Agent you must:
   * Have Git installed.
   * Have Docker installed.
-  * Clone the [Open Enterprise Agent repository](https://github.com/hyperledger-labs/open-enterprise-agent).
+  * Clone the [Open Enterprise Agent repository](https://github.com/hyperledger/identus-cloud-agent).
 
 ```bash
-git clone https://github.com/hyperledger-labs/open-enterprise-agent
+git clone https://github.com/hyperledger/identus-cloud-agent
 ```
 
 
@@ -81,10 +81,10 @@ git clone https://github.com/hyperledger-labs/open-enterprise-agent
 
 ```
 API_KEY_ENABLED=false
-PRISM_AGENT_VERSION=1.18.0
-PRISM_NODE_VERSION=2.2.1
+AGENT_VERSION=1.18.0
+NODE_VERSION=2.2.1
 PORT=8000
-NETWORK=prism
+NETWORK=identus
 VAULT_DEV_ROOT_TOKEN_ID=root
 PG_PORT=5432
 ```
@@ -95,10 +95,10 @@ PG_PORT=5432
 
 ```
 API_KEY_ENABLED=false
-PRISM_AGENT_VERSION=1.18.0
-PRISM_NODE_VERSION=2.2.1
+AGENT_VERSION=1.18.0
+NODE_VERSION=2.2.1
 PORT=9000
-NETWORK=prism
+NETWORK=identus
 VAULT_DEV_ROOT_TOKEN_ID=root
 PG_PORT=5433
 ```
@@ -137,10 +137,10 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
  ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
-  * The Issuer [API endpoint](http://localhost:8000/prism-agent/) will be accessible on port 8000 `http://localhost:8000/prism-agent/` with a [Swagger Interface](http://localhost:8000/prism-agent/redoc) available at `http://localhost:8000/prism-agent/redoc`.
+  * The Issuer [API endpoint](http://localhost:8000/cloud-agent/) will be accessible on port 8000 `http://localhost:8000/cloud-agent/` with a [Swagger Interface](http://localhost:8000/cloud-agent/redoc) available at `http://localhost:8000/cloud-agent/redoc`.
 
 
-  * The Verifier [API endpoint](http://localhost:9000/prism-agent/) will be accessible on port 9000 `http://localhost:9000/prism-agent/` with a [Swagger Interface](http://localhost:9000/prism-agent/redoc) available at `http://localhost:9000/prism-agent/redoc`.
+  * The Verifier [API endpoint](http://localhost:9000/cloud-agent/) will be accessible on port 9000 `http://localhost:9000/cloud-agent/` with a [Swagger Interface](http://localhost:9000/cloud-agent/redoc) available at `http://localhost:9000/cloud-agent/redoc`.
 
 
 
@@ -152,7 +152,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 ```bash
 curl --location \
---request POST 'http://localhost:8000/prism-agent/did-registrar/dids' \
+--request POST 'http://localhost:8000/cloud-agent/did-registrar/dids' \
 --header 'Accept: application/json' \
 --data-raw '{
     "documentTemplate": {
@@ -202,7 +202,7 @@ Replace the `[[publishedPrismDID]]` in the example request with the `did` value 
 
 ```bash
 curl -X 'POST' \
-  'http://localhost:8000/prism-agent/schema-registry/schemas' \
+  'http://localhost:8000/cloud-agent/schema-registry/schemas' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -256,7 +256,7 @@ curl -X 'POST' \
 
 
 ### Starting Sample App
-All wallet SDK's come bundled with a sample application, that cover all the PRISM flows, including establishing connections, issuance, and verification flows.
+All wallet SDK's come bundled with a sample application, that cover all the Identus flows, including establishing connections, issuance, and verification flows.
 
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
@@ -300,10 +300,10 @@ npm run start
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
 
-1. Clone the [Swift SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-swift) repository.
+1. Clone the [Swift SDK](https://github.com/input-output-hk/identus-edge-agent-sdk-swift) repository.
 
 ```bash
-git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-swift
+git clone https://github.com/input-output-hk/identus-edge-agent-sdk-swift
 ```
 
 2. Open the XCode project on __./Sample/AtalaPrismWalletDemo/AtalaPrismWalletDemo.xcodeproj__
@@ -315,10 +315,10 @@ git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-swift
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
 
-1. Clone the [KMM SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm) repository.
+1. Clone the [KMM SDK](https://github.com/input-output-hk/identus-edge-agent-sdk-kmm) repository.
 
 ```bash
-git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm
+git clone https://github.com/input-output-hk/identus-edge-agent-sdk-kmm
 ```
 
 2. Open the Wallet SDK project on IntelliJ or Android Studio.
@@ -334,17 +334,17 @@ git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-kmm
 Mediation is the process that ensures messages get routed and stored correctly between Issuers, Verifiers and Holders, even if they are offline. The mediator offers a service that is always running and can securely store messages and deliver them to the associated DIDs using DIDComm. This enables use-cases where connectivity to a (mobile) wallet cannot be guaranteed.
 
 #### Preparation
-1. To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/atala-prism-mediator).
+1. To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/identus-mediator).
 
 ```bash
-git clone https://github.com/input-output-hk/atala-prism-mediator
+git clone https://github.com/input-output-hk/identus-mediator
 ```
 
 2. With a Docker service running, open a new terminal and run:
 
 :::info
 
-The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/atala-prism-mediator/releases). Change the version in the example if you want to use the latest version.
+The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/identus-mediator/releases). Change the version in the example if you want to use the latest version.
 
 :::
 
@@ -354,7 +354,7 @@ MEDIATOR_VERSION=0.10.2 docker-compose up
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
 
-3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/atala-prism-mediator).
+3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/identus-mediator).
 
 
 
@@ -445,7 +445,7 @@ The below code examples show how to establish mediation when building your own a
 
 
 ```swift
-  let agent = PrismAgent(mediatorDID: did)
+  let agent = CloudAgent(mediatorDID: did)
   try await agent.start()
   agent.startFetchingMessages()
 ```
@@ -471,7 +471,7 @@ val handler = BasicMediatorHandler(
   mercury = mercury,
   store = BasicMediatorHandler.PlutoMediatorRepositoryImpl(pluto)
 )
-agent = PrismAgent(
+agent = CloudAgent(
     apollo = apollo,
     castor = castor,
     pluto = pluto,
@@ -500,10 +500,10 @@ A connection must be established between the Holder and Cloud Agents to correctl
 #### Establish connection on the Issuer Cloud Agent
 ```bash
 curl --location \
---request POST 'http://localhost:8000/prism-agent/connections' \
+--request POST 'http://localhost:8000/cloud-agent/connections' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "label": "Prism Agent demo connection with holder"
+    "label": "Cloud Agent demo connection with holder"
 }'
 ```
 
@@ -514,10 +514,10 @@ curl --location \
 #### Establish connection on the Verifier Cloud Agent
 ```bash
 curl --location \
---request POST 'http://localhost:9000/prism-agent/connections' \
+--request POST 'http://localhost:9000/cloud-agent/connections' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "label": "Prism Agent demo connection with holder"
+    "label": "Cloud Agent demo connection with holder"
 }'
 ```
 
@@ -534,14 +534,14 @@ curl --location \
 
 4. Open a browser at localhost:3000.
 5. Start the Edge Agent by clicking the button.
-6. Paste the invitation URL generated in the previous step into the `PrismAgent` connection section and click on Create Connection.
+6. Paste the invitation URL generated in the previous step into the `CloudAgent` connection section and click on Create Connection.
   * The application will react when the connection gets established correctly and show a new connection.
 
 
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
 
-4. On the OOB dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click **Validate**.
+4. On the OOB dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
   * The application will respond once the connection gets established correctly and show a message under messages.
 
 </TabItem>
@@ -549,7 +549,7 @@ curl --location \
 
 4. Go back to the Application:
 5. Click the floating button at the bottom right corner of the Contacts tab.
-6. On the dialog, paste the invitation URL we generated into the `PrismAgent` connection section and click **Validate**.
+6. On the dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
   * The application will react once the connection gets established correctly and show a message under messages.
 
 
@@ -597,7 +597,7 @@ The credential issuance flow consists of multiple steps, detailed in this sectio
 
 Please replace the following variables in the example request before sending:
 
-- `connectionId`: The ID of the connection previously established between agent and holder. This is part of the response of the POST message from the agent when calling the `prism-agent/connections` endpoint. It is returned in the `connectionId` attribute. There is a unique connection ID for the relationship between issuer and holder and verifier and holder. In this example, please use the `connectionId` returned when creating the connection between issuer and holder
+- `connectionId`: The ID of the connection previously established between agent and holder. This is part of the response of the POST message from the agent when calling the `cloud-agent/connections` endpoint. It is returned in the `connectionId` attribute. There is a unique connection ID for the relationship between issuer and holder and verifier and holder. In this example, please use the `connectionId` returned when creating the connection between issuer and holder
 - `publishedPrismDID`: The short form of the PRISM DID created when setting up the Issuer agent
 
 The `connectionId` is just the ID of the connection we previously established with the issuer.
@@ -609,7 +609,7 @@ The Issuing DID is the published PRISM DID in its short version which was also u
 :::
 
 ```bash
-curl --location --request POST 'http://localhost:8000/prism-agent/issue-credentials/credential-offers' \
+curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credentials/credential-offers' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
@@ -621,7 +621,7 @@ curl --location --request POST 'http://localhost:8000/prism-agent/issue-credenti
 
 ### Create CredentialRequest from CredentialOffer **Holder**
 
-2. Because this credential Offer was created with the `automaticIssuance` true, as soon as the `PrismAgent` receives this `credentialRequest` it will respond with the `IssuedCredential` message and send this back to the holder.
+2. Because this credential Offer was created with the `automaticIssuance` true, as soon as the `CloudAgent` receives this `credentialRequest` it will respond with the `IssuedCredential` message and send this back to the holder.
 
 :::info
 
@@ -635,15 +635,15 @@ automaticIssuance is optional. It can also be manually triggered and confirmed b
 
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
-4. The <code>CredentialOffer</code> message will be automatically accepted as soon as it reaches the browser. In exchange, a <code>CredentialRequest</code> message will get sent back to the `PrismAgent.`
+4. The <code>CredentialOffer</code> message will be automatically accepted as soon as it reaches the browser. In exchange, a <code>CredentialRequest</code> message will get sent back to the `CloudAgent.`
 
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
-4. As soon as the <code>CredentialOffer</code> message reaches the Swift mobile app, it will display to the user to accept or reject, and in exchange, a <code>CredentialRequest</code> message will get sent back to the <code>PrismAgent</code>.
+4. As soon as the <code>CredentialOffer</code> message reaches the Swift mobile app, it will display to the user to accept or reject, and in exchange, a <code>CredentialRequest</code> message will get sent back to the <code>CloudAgent</code>.
 
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
-4. As soon as the <code>CredentialOffer</code> message reaches the Android mobile app, it will be automatically accepted, and in exchange, a <code>CredentialRequest</code> message will get sent back to the <code>PrismAgent</code>.
+4. As soon as the <code>CredentialOffer</code> message reaches the Android mobile app, it will be automatically accepted, and in exchange, a <code>CredentialRequest</code> message will get sent back to the <code>CloudAgent</code>.
 
 </TabItem>
 </Tabs>
@@ -830,7 +830,7 @@ In the example, we show a verification flow that assumes a connection between Ho
 
 ```bash
 curl --location \
---request POST 'http://localhost:9000/prism-agent/present-proof/presentations' \
+--request POST 'http://localhost:9000/cloud-agent/present-proof/presentations' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "connectionId": [[connectionId]],
@@ -952,7 +952,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 ```bash
 curl --location \
---request GET 'http://localhost:9000/prism-agent/present-proof/presentations/[[presentationRequestId]]' \
+--request GET 'http://localhost:9000/cloud-agent/present-proof/presentations/[[presentationRequestId]]' \
 --header 'Accept: application/json'
 ```
 
