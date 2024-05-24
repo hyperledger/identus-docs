@@ -22,7 +22,7 @@ Verifiers are the [relying party](/docs/concepts/glossary/#relying-party) in the
 
 
 ## Identus flow
-The diagram details how the concepts fit alongside the PRISM components in a typical SSI interaction.
+The diagram details how the concepts fit alongside the Identus components in a typical SSI interaction.
 
 ![Component Diagram](/img/component-diagram.png)
 
@@ -54,7 +54,7 @@ More in-depth documentation about the different Wallet SDKs can be found here ([
 More in-depth documentation about Mediator can be found [here](/docs/identus/mediator).
 
 #### A Node for a Verifiable Data Registry (VDR)
-To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In Identus's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Cardano blockchain.
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In Identus's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Distributed Ledger.
 
 
 
@@ -261,10 +261,10 @@ All wallet SDK's come bundled with a sample application, that cover all the Iden
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
 
-1. Clone the [TypeScript SDK](https://github.com/input-output-hk/identus-edge-agent-sdk-ts) repository.
+1. Clone the [TypeScript SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-ts) repository.
 
 ```bash
-git clone https://github.com/input-output-hk/identus-edge-agent-sdk-ts
+git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-ts
 ```
 
 2. Ensure you have all applications installed for building the SDK and it's dependencies
