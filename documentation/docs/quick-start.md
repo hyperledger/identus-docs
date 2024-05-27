@@ -41,15 +41,15 @@ More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-a
 
 
 
-### Wallet SDKs
-[Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers.
+### Edge Agent SDKs
+[Edge Agent SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers.
 
-More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
+More in-depth documentation about the different Edge Agent SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
 
 
 ### A Mediator
-[Mediators](/docs/concepts/glossary/#mediator) are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof request on behalf of the Wallet SDKs (which can be offline occasionally).
+[Mediators](/docs/concepts/glossary/#mediator) are for storing and relaying messages between Cloud Agents and Edge Agent SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof request on behalf of the Edge Agent SDKs (which can be offline occasionally).
 
 More in-depth documentation about Mediator can be found [here](/docs/identus/mediator).
 
@@ -256,7 +256,7 @@ curl -X 'POST' \
 
 
 ### Starting Sample App
-All wallet SDK's come bundled with a sample application, that cover all the Identus flows, including establishing connections, issuance, and verification flows.
+All Edge Agent SDK's come bundled with a sample application, that cover all the Identus flows, including establishing connections, issuance, and verification flows.
 
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
@@ -295,7 +295,7 @@ npm i
 npm run start
 ```
 
-  * This will start the react Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
+  * This will start the react Edge Agent SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
 
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
@@ -309,7 +309,7 @@ git clone https://github.com/input-output-hk/identus-edge-agent-sdk-swift
 2. Open the XCode project on __./Sample/AtalaPrismWalletDemo/AtalaPrismWalletDemo.xcodeproj__
 3. On the top left of the XCode window you will see a play/run button, press it.
 4. The app will start.
-5. Click Wallet Demo 2.0
+5. Click Edge Agent Demo 2.0
   * You will be able to run the rest of the guide here.
 
 </TabItem>
@@ -321,7 +321,7 @@ git clone https://github.com/input-output-hk/identus-edge-agent-sdk-swift
 git clone https://github.com/input-output-hk/identus-edge-agent-sdk-kmm
 ```
 
-2. Open the Wallet SDK project on IntelliJ or Android Studio.
+2. Open the Edge Agent SDK project on IntelliJ or Android Studio.
 3. In the `Run configuration` dropdown, select SampleApp.
 4. Select the device or emulator you want to use.
 5. Click "Run".
@@ -331,7 +331,7 @@ git clone https://github.com/input-output-hk/identus-edge-agent-sdk-kmm
 </Tabs>
 
 ### Deploy & Establish Mediation
-Mediation is the process that ensures messages get routed and stored correctly between Issuers, Verifiers and Holders, even if they are offline. The mediator offers a service that is always running and can securely store messages and deliver them to the associated DIDs using DIDComm. This enables use-cases where connectivity to a (mobile) wallet cannot be guaranteed.
+Mediation is the process that ensures messages get routed and stored correctly between Issuers, Verifiers and Holders, even if they are offline. The mediator offers a service that is always running and can securely store messages and deliver them to the associated DIDs using DIDComm. This enables use-cases where connectivity to a (mobile) Edge Agent cannot be guaranteed.
 
 #### Preparation
 1. To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/identus-mediator).
@@ -385,7 +385,7 @@ Follow the steps in your desired platform as stated below:
 
 <TabItem value="swift" label="Swift Sample APP">
 
-1. In the app, go to Wallet Demo, and on the Mediator tab, insert the mediator DID.
+1. In the app, go to Edge Agent Demo, and on the Mediator tab, insert the mediator DID.
 
 </TabItem>
 <TabItem value="android" label="Android  Sample APP">
@@ -507,7 +507,7 @@ curl --location \
 }'
 ```
 
-1. This request will return a JSON response with an invitation and its URL. The Issuer Cloud Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
+1. This request will return a JSON response with an invitation and its URL. The Issuer Cloud Agent would share this URL as a QR code, and the holder would scan it with the Edge Agent app.
 
   * Copy the `invitationUrl` and the `connectionId`.
 
@@ -521,7 +521,7 @@ curl --location \
 }'
 ```
 
-2. This request will return a JSON response with an invitation and its URL. The Verifier Cloud Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
+2. This request will return a JSON response with an invitation and its URL. The Verifier Cloud Agent would share this URL as a QR code, and the holder would scan it with the Edge Agent app.
 
   * Copy the `invitationUrl` and the `connectionId`.
 

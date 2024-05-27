@@ -126,19 +126,19 @@ const RESOURCES = [
         linkTo: "/tutorials"
     },
     {
-        title: "Wallet SDK Swift",
+        title: "Edge Agent SDK Swift",
         Svg: Graphics.walletSdkSwift,
         content: "Build Swift-based applications using our SDKs",
-        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/documentation/atalaprismsdk/"
+        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/"
     },
     {
-        title: "Wallet SDK TypeScript",
+        title: "Edge Agent SDK TS",
         Svg: Graphics.walletSdkTS,
         content: "Build web-based applications using our SDKs",
-        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/"
+        linkTo: "#"
     },
     {
-        title: "Wallet SDK KMM",
+        title: "Edge Agent SDK KMM",
         Svg: Graphics.walletSdkKmm,
         content: "Build KMM-based applications using our SDKs",
         linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/"
