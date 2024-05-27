@@ -1,8 +1,8 @@
 # Overview
 
-The [PRISM Cloud Agent](/docs/concepts/glossary#cloud-agent) is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides [self-sovereign identity (SSI)](/docs/concepts/glossary#self-sovereign-identity) services to build products and solutions based on it. The PRISM Cloud Agent exposes REST API for integration with any programming language.
+The [Cloud Agent](/docs/concepts/glossary#cloud-agent) is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides [self-sovereign identity (SSI)](/docs/concepts/glossary#self-sovereign-identity) services to build products and solutions based on it. The Cloud Agent exposes REST API for integration with any programming language.
 
-The PRISM Cloud Agent provides all the required capabilities to leverage the power of decentralized identity through the support of W3C standards, [DIDComm](/docs/concepts/glossary#didcomm), and the Hyperledger Aries protocols, solutions based on the Cloud Agent are interoperable with the SSI ecosystem. The PRISM Cloud Agent includes the following high-level features:
+The Cloud Agent provides all the required capabilities to leverage the power of decentralized identity through the support of W3C standards, [DIDComm](/docs/concepts/glossary#didcomm), and the Hyperledger Aries protocols, solutions based on the Cloud Agent are interoperable with the SSI ecosystem. The Cloud Agent includes the following high-level features:
 
 - Use the Cloud Agent API to develop [controllers](/docs/concepts/glossary#controller) that implement specific business logic according to use case requirements.
 - Develop controllers in any programming language and remove the requirement for developers to interact or learn the nuts and bolts of the various standards.
@@ -12,9 +12,9 @@ The PRISM Cloud Agent provides all the required capabilities to leverage the pow
 - Highly scalable and flexible, making it well-suited for a wide range of use cases and applications.
 
 
-## PRISM Agent Features
+## Cloud Agent Features
 
-This document provides an overview of the Cloud Agent feature set. This document is manually updated; as such, it may not be up to date with the most recent release of PRISM Cloud Agent.
+This document provides an overview of the Cloud Agent feature set. This document is manually updated; as such, it may not be up to date with the most recent release of Cloud Agent.
 
 **Last Update**: 2023-03-06, Release 0.48.3
 
@@ -24,7 +24,7 @@ This document provides an overview of the Cloud Agent feature set. This document
 | -------- | :-------: |  ------- |
 | Server   | :white_check_mark: |    |
 | Kubernetes | :white_check_mark: |  |
-| Docker   | :white_check_mark: | IOG will publish docker images on Docker Hub in future. A link to the IOG Docker Hub for PRISM Cloud Agent will be provided once published. |
+| Docker   | :white_check_mark: | IOG will publish docker images on Docker Hub in future. A link to the IOG Docker Hub for Cloud Agent will be provided once published. |
 | Desktop  | :warning:         | Could be run as a local service on the computer |
 | iOS      | :x:        |    |
 | Android  | :x:        |    |

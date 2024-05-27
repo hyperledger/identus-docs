@@ -10,14 +10,14 @@ const path = require('path')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Unlock the power of your digital identity.',
-    tagline: 'ATALA PRISM V2 Docs',
+    tagline: 'IDENTUS Docs',
     url: 'https://docs.atalaprism.io',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'input-output-hk',
-    projectName: 'atala-prisim-docs',
+    organizationName: 'Hyperledger',
+    projectName: 'identus-docs',
     markdown: {
         mermaid: true,
     },
@@ -95,7 +95,7 @@ const config = {
         {
             navbar: {
                 logo: {
-                    alt: 'Atala PRISM logo',
+                    alt: ' Identus logo',
                     src: 'img/logo-navbar-dark.png',
                     srcDark: "img/logo-navbar-light.png",
                 },
@@ -163,7 +163,7 @@ const config = {
                 ],
             },
             footer: {
-                copyright: `© ${new Date().getFullYear()} Atala PRISM. All rights reserved.`,
+                copyright: `© ${new Date().getFullYear()} Identus. All rights reserved.`,
             },
             prism: {
                 theme: lightCodeTheme,
