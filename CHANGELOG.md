@@ -1,3 +1,10 @@
+## [1.95.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.95.0...v1.95.1) (2024-05-28)
+
+
+### :sparkles: Updates
+
+* Adding remaining fixes (links to repos) after Bassam's big PR ([#100](https://github.com/input-output-hk/atala-prism-docs/issues/100)) ([116015a](https://github.com/input-output-hk/atala-prism-docs/commit/116015af4a841a185985d194b3510d16357000ec))
+
 ## [1.95.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.94.2...v1.95.0) (2024-05-26)
 
 
