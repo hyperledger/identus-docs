@@ -9,7 +9,7 @@ It helps enforce security and privacy policies in a multi-tenant environment.
 The act of anchoring is tying to something that is trusted by assumption. Usually some sort of an entity with authority.
 
 ### Administrator
-An administrator is a role who oversees the agent and releated resources, including tenant, edge agent management, or external services. Admistrator typically does not participate in day-to-day SSI interactions.
+An administrator is a role who oversees the agent and releated resources, including tenant, Edge Agent management, or external services. Admistrator typically does not participate in day-to-day SSI interactions.
 
 
 ## C
