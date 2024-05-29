@@ -9,15 +9,15 @@ It helps enforce security and privacy policies in a multi-tenant environment.
 The act of anchoring is tying to something that is trusted by assumption. Usually some sort of an entity with authority.
 
 ### Administrator
-An administrator is a role who oversees the agent and releated resources, including tenant, wallet management, or external services. Admistrator typically does not participate in day-to-day SSI interactions.
+An administrator is a role who oversees the agent and releated resources, including tenant, Edge Agent management, or external services. Admistrator typically does not participate in day-to-day SSI interactions.
 
 
 ## C
 ### claim
 An assertion made about a [subject](/docs/concepts/glossary#did-subject).
 
-### Cloud Agent (aka PRISM Cloud Agent)
-The PRISM Cloud Agent is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides self-sovereign identity (SSI) services to build products and solutions based on it. The PRISM Cloud Agent exposes REST API for integration with any programming language.
+### Cloud Agent
+The Cloud Agent is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides self-sovereign identity (SSI) services to build products and solutions based on it. The Cloud Agent exposes REST API for integration with any programming language.
 
 ### controller
 See [DID Controller](/docs/concepts/glossary#did-controller).
@@ -77,8 +77,8 @@ A distributed database or ledger establishes confidence for the participants to 
 A network address at which services operate on behalf of a [DID subject](/docs/concepts/glossary#did-subject).
 
 ### entity
-An `entity,` in the context of the PRISM platform, is an identity representing a user or system. 
-Each entity possesses a Wallet and is associated with an authentication method. 
+An `entity,` in the context of the Identus platform, is an identity representing a user or system. 
+Each entity possesses an Edge Agent and is associated with an authentication method. 
 Entities are crucial for secure and verifiable transactions within the SSI ecosystem.
 
 
@@ -130,7 +130,7 @@ A mediator participates in agent-to-agent message delivery that the sender must 
 For a detailed overview of mediators refer to the [RFC0046: Mediators and Relays](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0046-mediators-and-relays).
 
 ### mutli-tenancy
-Multi-tenancy is a core capability of the PRISM platform, allowing it to serve numerous users/identities while logically isolating their Wallet assets. 
+Multi-tenancy is a core capability of the Identus platform, allowing it to serve numerous users/identities while logically isolating their Edge Agent assets. 
 This segregation maintains data privacy and security, enhancing scalability and resource sharing within the SSI ecosystem.
 
 
@@ -146,10 +146,10 @@ They are specialized DIDs for peer-to-peer relationships.
 ### Peer DID Method
 A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers. See the [Peer DID Method specification](https://github.com/decentralized-identity/peer-did-method-spec).
 
-### PRISM
+### Identus
 A suite of products that provides infrastructure for decentralized identity.
 
-### PRISM Agent
+### Cloud Agent
 Responsible for handling the connection to other agents in the network using a provided Mediator Service Endpoint and seed data.
 
 ### Present Proof Protocol
@@ -186,7 +186,7 @@ Requesting Party Token (RPT) is a concept within the [UMA](/docs/concepts/glossa
 
 ## S
 ### secrets storage
-This component securely stores sensitive information, such as private keys associated with an individual's digital identity, wallet seed, etc.
+This component securely stores sensitive information, such as private keys associated with an individual's digital identity, Edge Agent seed, etc.
 Secrets storage plays a crucial role in SSI implementations because it ensures that sensitive information is securely stored and protected against unauthorized access or disclosure
 
 ### SSI
@@ -203,7 +203,7 @@ A tenant is an individual user, organization, or entity that utilizes the SSI pl
 Each tenant has its isolated area within the system, maintaining the separation of assets.
 
 ### Tenant Isolation
-Tenant isolation is a core capability of the PRISM platform, allowing it to serve numerous users/identities while logically isolating their Wallet assets.
+Tenant isolation is a core capability of the Identus platform, allowing it to serve numerous users/identities while logically isolating their Edge Agent assets.
 
 ### Tenant Management
 Tenant management encompasses the processes and tools used to onboard, provision, and manage tenants within the SSI platform, including user registration, role assignment, authentication method configuring, and access permissions.
@@ -240,9 +240,9 @@ An entity that receives one or more [verifiable credentials](/docs/concepts/glos
 
 
 ## W
-### Wallet SDK
+### Edge Agent SDK
 For use with web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests.
 
-### wallet
-A wallet can perform DID operations, like create, update, and deactivate. It also enables management of verifiable credentials, and communications.
+### Edge Agent
+A Edge Agent can perform DID operations, like create, update, and deactivate. It also enables management of verifiable credentials, and communications.
 
