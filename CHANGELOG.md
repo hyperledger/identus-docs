@@ -1,3 +1,10 @@
+## [1.95.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.95.1...v1.95.2) (2024-05-29)
+
+
+### :sparkles: Updates
+
+* Rename Glossary ([#99](https://github.com/input-output-hk/atala-prism-docs/issues/99)) ([b1bb3e3](https://github.com/input-output-hk/atala-prism-docs/commit/b1bb3e3cecdf285a8754ced7167dd24762104853))
+
 ## [1.95.1](https://github.com/input-output-hk/atala-prism-docs/compare/v1.95.0...v1.95.1) (2024-05-28)
 
 
