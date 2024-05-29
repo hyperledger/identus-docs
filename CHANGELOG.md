@@ -1,3 +1,10 @@
+## [1.95.3](https://github.com/input-output-hk/atala-prism-docs/compare/v1.95.2...v1.95.3) (2024-05-29)
+
+
+### :sparkles: Updates
+
+* Rename Infra documentation ([#98](https://github.com/input-output-hk/atala-prism-docs/issues/98)) ([18be685](https://github.com/input-output-hk/atala-prism-docs/commit/18be685efd7c01ede970495edfa3705c8cd567cd))
+
 ## [1.95.2](https://github.com/input-output-hk/atala-prism-docs/compare/v1.95.1...v1.95.2) (2024-05-29)
 
 
