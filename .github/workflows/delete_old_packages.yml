@@ -17,7 +17,7 @@ jobs:
       - uses: actions/delete-package-versions@v4
         with:
           owner: input-output-hk
-          package-name: prism-documentation-portal
+          package-name: identus-documentation-portal
           package-type: container
           min-versions-to-keep: 10
           token: ${{ secrets.ATALA_GITHUB_TOKEN }}
