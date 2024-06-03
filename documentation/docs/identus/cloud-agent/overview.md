@@ -7,7 +7,7 @@ The Cloud Agent provides all the required capabilities to leverage the power of 
 - Use the Cloud Agent API to develop [controllers](/docs/concepts/glossary#controller) that implement specific business logic according to use case requirements.
 - Develop controllers in any programming language and remove the requirement for developers to interact or learn the nuts and bolts of the various standards.
 - The Cloud Agent is written in Scala, supports the `did:prism` method, interacts with the PRISM Node over gRPC protocol, and uses it as the [Verifiable Data Registry](/docs/concepts/glossary#verifiable-data-registry). 
-- The PRISM Node interacts with the Distributed Ledger, providing high security, scalability, and availability.
+- The PRISM Node interacts with a distributed ledger, providing high security, scalability, and availability.
 - The Cloud Agent is a cloud agent accessible from anywhere.
 - Highly scalable and flexible, making it well-suited for a wide range of use cases and applications.
 
