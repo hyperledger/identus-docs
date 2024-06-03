@@ -1,7 +1,7 @@
 # PRISM Node
 The PRISM Node acts as a second-layer node for the distributed ledger. It functions as a [verifiable data registry](/docs/concepts/glossary#verifiable-data-registry), providing a secure and reliable way to store and manage data.
 
-PRISM Node's primary purpose is to provide a secure and trustworthy platform for storing and managing data on the Distributed Ledger. By leveraging the blockchain's security and decentralization, the PRISM Node stores and retrieves data in a secure and immutable manner. All operations are independently verified and authenticated using cryptographic signatures and other security measures, so all data is accurate and trustworthy.
+PRISM Node's primary purpose is to provide a secure and trustworthy platform for storing and managing data on the distributed ledger. By leveraging the blockchain's security and decentralization, the PRISM Node stores and retrieves data in a secure and immutable manner. All operations are independently verified and authenticated using cryptographic signatures and other security measures, so all data is accurate and trustworthy.
 
 The PRISM Node runs alongside a blockchain. It keeps the internal state synchronized with the underlying blockchain and indexed for efficient lookup operations. Furthermore, it implements `did:prism` method in an efficient and scalable way by publishing transactions to the Distributed Ledger. These transactions support the PRISM Node's protocol and perform the creation, update, resolution, and deactivation of [decentralized identifiers (DIDs)](/docs/concepts/glossary#decentralized-identifiers).
 
