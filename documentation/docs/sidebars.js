@@ -19,58 +19,71 @@ const sidebars = {
   // But you can create a sidebar manually
 
   docsSidebar: [
-    'getting-started',
-    'quick-start',
+    "getting-started",
+    "quick-start",
     {
-      type: 'category',
-      label: 'Concepts',
+      type: "category",
+      label: "Concepts",
       collapsed: false,
       link: {
-        type: 'generated-index',
-        title: 'Concepts',
-        description: 'Learn about the most important SSI concepts!'
+        type: "generated-index",
+        title: "Concepts",
+        description: "Learn about the most important SSI concepts!",
       },
       items: [
-        'concepts/identity',
-        'concepts/multi-tenancy',
-        'concepts/glossary'
+        "concepts/identity",
+        "concepts/multi-tenancy",
+        "concepts/glossary",
       ],
     },
     {
-      type: 'category',
-      label: 'Identus',
+      type: "category",
+      label: "Identus",
       link: {
-        type: 'generated-index',
-        title: 'Identus',
-        description: 'Learn about the Identus ecosystem!'
+        type: "generated-index",
+        title: "Identus",
+        description: "Learn about the Identus ecosystem!",
       },
       collapsed: false,
       items: [
-        'identus/overview',
+        "identus/overview",
         {
-          type: 'category',
-          label: 'Cloud Agent',
+          type: "category",
+          label: "Cloud Agent",
           collapsed: true,
           link: {
-            type: 'generated-index',
-            title: 'Cloud Agent',
-            description: 'Learn about the Identus Cloud Agent!'
+            type: "generated-index",
+            title: "Cloud Agent",
+            description: "Learn about the Identus Cloud Agent!",
           },
           items: [
-            'identus/cloud-agent/overview',
-            'identus/cloud-agent/building-blocks',
-            'identus/cloud-agent/authentication',
-            'identus/cloud-agent/did-management',
-            'identus/cloud-agent/secrets-storage',
-            'identus/cloud-agent/environment-variables'
-          ]
+            "identus/cloud-agent/overview",
+            "identus/cloud-agent/building-blocks",
+            "identus/cloud-agent/authentication",
+            "identus/cloud-agent/did-management",
+            "identus/cloud-agent/secrets-storage",
+            "identus/cloud-agent/environment-variables",
+          ],
         },
-        'identus/prism-node',
-        'identus/mediator',
-        'identus/getting-help'
+        {
+          type: "category",
+          label: "Prism Node",
+          collapsed: true,
+          link: {
+            type: "generated-index",
+            title: "Prism Node",
+            description: "Learn about the Identus Prism Node!",
+          },
+          items: [
+            "identus/prism-node/overview",
+            "identus/prism-node/running-node",
+          ],
+        },
+        "identus/mediator",
+        "identus/getting-help",
       ],
     },
-  'concepts/glossary'
+    "concepts/glossary",
   ],
 };
 
