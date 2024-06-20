@@ -81,8 +81,8 @@ git clone https://github.com/hyperledger/identus-cloud-agent
 
 ```
 API_KEY_ENABLED=false
-AGENT_VERSION=1.18.0
-NODE_VERSION=2.2.1
+AGENT_VERSION=1.36.1
+PRISM_NODE_VERSION=2.4.1
 PORT=8000
 NETWORK=identus
 VAULT_DEV_ROOT_TOKEN_ID=root
@@ -95,8 +95,8 @@ PG_PORT=5432
 
 ```
 API_KEY_ENABLED=false
-AGENT_VERSION=1.18.0
-NODE_VERSION=2.2.1
+AGENT_VERSION=1.36.1
+PRISM_NODE_VERSION=2.4.1
 PORT=9000
 NETWORK=identus
 VAULT_DEV_ROOT_TOKEN_ID=root
@@ -148,7 +148,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 #### Creating LongForm PrismDID
 1. Run the following API request against your Issuer API to create a PRISM DID:
-
+- 📌 **Note:** [To create DIDs with various supported curves](/tutorials/dids/create#2-create-the-cloud-agent-managed-did-using-did-registrar-endpoint).
 
 ```bash
 curl --location \
