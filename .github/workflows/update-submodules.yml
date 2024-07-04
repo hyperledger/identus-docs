@@ -17,25 +17,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ATALA_GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           submodules: true
           fetch-depth: 0
+
       - name: Update submodules
         run: |
           git pull --recurse-submodules
           git submodule update --remote --recursive
+
       - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@v3
+        uses: crazy-max/ghaction-import-gpg@v5
         id: import_gpg
         with:
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-private-key: ${{ secrets.HYP_BOT_GPG_PRIVATE }}
+          passphrase: ${{ secrets.HYP_BOT_GPG_PASSWORD }}
           git-user-signingkey: true
           git-commit-gpgsign: true
+          git_config_global: true
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
+          github_token: ${{ secrets.IDENTUS_CI }}
           commit_message: "feat: update submodules documentation to latest"
           commit_user_name: ${{ steps.import_gpg.outputs.name }}
           commit_user_email: ${{ steps.import_gpg.outputs.email }}
+          commit_signoff: true
+          commit_gpg_sign: true
