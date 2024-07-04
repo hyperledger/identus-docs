@@ -26,7 +26,7 @@ on:
       - "v*"
 
 permissions:
-  contents: read & write
+  contents: write
 
 jobs:
   trigger-deployment:
