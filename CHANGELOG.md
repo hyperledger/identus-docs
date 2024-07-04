@@ -1,3 +1,10 @@
+## [1.101.0](https://github.com/hyperledger/identus-docs/compare/v1.100.0...v1.101.0) (2024-07-04)
+
+
+### :rocket: New Content
+
+* add submodule directories ([#119](https://github.com/hyperledger/identus-docs/issues/119)) ([2337264](https://github.com/hyperledger/identus-docs/commit/2337264e8b75337ae045d76998defde6949f7e77))
+
 ## [1.100.0](https://github.com/input-output-hk/atala-prism-docs/compare/v1.99.0...v1.100.0) (2024-06-30)
 
 
