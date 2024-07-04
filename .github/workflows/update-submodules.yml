@@ -45,5 +45,4 @@ jobs:
           commit_message: "feat: update submodules documentation to latest"
           commit_user_name: ${{ steps.import_gpg.outputs.name }}
           commit_user_email: ${{ steps.import_gpg.outputs.email }}
-          commit_signoff: true
-          commit_gpg_sign: true
+          commit_options: "--no-verify --signoff -S"
