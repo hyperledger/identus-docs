@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.IDENTUS_CI }}
           submodules: true
           fetch-depth: 0
 
@@ -41,7 +41,6 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.IDENTUS_CI }}
           commit_message: "feat: update submodules documentation to latest"
           commit_user_name: ${{ steps.import_gpg.outputs.name }}
           commit_user_email: ${{ steps.import_gpg.outputs.email }}
