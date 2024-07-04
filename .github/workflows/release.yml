@@ -45,7 +45,7 @@ jobs:
 
       - name: Build ADRs
         run: |
-          cd ./atala-prism-building-blocks 
+          cd ./identus-cloud-agent
           npm install -g log4brains
           log4brains build --out ../static/adrs --basePath /adrs
           touch ../static/adrs/.nojekyll

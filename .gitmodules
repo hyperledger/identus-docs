@@ -1,12 +1,6 @@
-[submodule "atala-prism-building-blocks"]
-	path = atala-prism-building-blocks
-	url = https://github.com/input-output-hk/atala-prism-building-blocks.git
-	branch = main
-[submodule "atala-prism-products"]
-	path = atala-prism-products
-	url = https://github.com/input-output-hk/atala-prism-products.git
-	branch = main
-[submodule "atala-prism-wallet-sdk-ts"]
-	path = atala-prism-wallet-sdk-ts
-	url = https://github.com/input-output-hk/atala-prism-wallet-sdk-ts.git
-	branch = main
+[submodule "identus-cloud-agent"]
+	path = identus-cloud-agent
+	url = https://github.com/hyperledger/identus-cloud-agent.git
+[submodule "identus-edge-agent-sdk-ts"]
+	path = identus-edge-agent-sdk-ts
+	url = https://github.com/hyperledger/identus-edge-agent-sdk-ts.git

@@ -54,13 +54,9 @@ const config = {
                 // Plugin Options for loading OpenAPI files
                 specs: [
                     {
-                        spec: 'atala-prism-building-blocks/cloud-agent/service/api/http/cloud-agent-openapi-spec.yaml',
+                        spec: 'identus-cloud-agent/cloud-agent/service/api/http/cloud-agent-openapi-spec.yaml',
                         route: '/agent-api/',
-                    },
-                    // {
-                    //     spec: "atala-prism-products/enterprise-services/api-spec/enterprise-services-spec.yml",
-                    //     route: "/enterprise-api/",
-                    // }
+                    }
                 ]
             },
         ],
@@ -71,19 +67,19 @@ const config = {
             '@docusaurus/plugin-content-docs',
             {
                 id: 'tutorials',
-                path: 'atala-prism-building-blocks/docs/docusaurus',
+                path: 'identus-cloud-agent/docs/docusaurus',
                 routeBasePath: 'tutorials',
-                sidebarPath: require.resolve('./atala-prism-building-blocks/docs/docusaurus/sidebars.js'),
+                sidebarPath: require.resolve('./identus-cloud-agent/docs/docusaurus/sidebars.js'),
             },
         ],
         require.resolve('docusaurus-lunr-search'),
         [
             '@docusaurus/plugin-content-docs',
             {
-                id: 'atala-prism-wallet-sdk-ts',
-                path: 'atala-prism-wallet-sdk-ts/docs',
-                routeBasePath: 'atala-prism-wallet-sdk-ts',
-                sidebarPath: require.resolve('./atala-prism-wallet-sdk-ts/docs/sidebars.js'),
+                id: 'identus-edge-agent-sdk-ts',
+                path: 'identus-edge-agent-sdk-ts/docs',
+                routeBasePath: 'identus-edge-agent-sdk-ts',
+                sidebarPath: require.resolve('./identus-edge-agent-sdk-ts/docs/sidebars.js'),
             },
         ]
     ],
@@ -131,15 +127,17 @@ const config = {
                         position: 'left',
                         items: [
                             {
+                                // TODO: figure out the new link
                                 label: 'Edge Agent SDK Swift',
                                 href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/documentation/edgeagentsdk',
                             },
                             {
-                                to: '/atala-prism-wallet-sdk-ts/sdk',
+                                to: '/identus-edge-agent-sdk-ts/sdk',
                                 label: 'Edge Agent SDK Typescript',
-                                activeBaseRegex: `/atala-prism-wallet-sdk-ts/sdk`
+                                activeBaseRegex: `/identus-edge-agent-sdk-ts/sdk`
                             },
                             {
+                                // TODO: figure out the new link
                                 label: 'Edge Agent SDK Kotlin Multiplatform',
                                 href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/',
                             },
