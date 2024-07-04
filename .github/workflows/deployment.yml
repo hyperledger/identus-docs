@@ -25,6 +25,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: read & write
+
 jobs:
   trigger-deployment:
     runs-on: ubuntu-latest
@@ -43,9 +46,9 @@ jobs:
             echo "ENV=staging" >> "${GITHUB_OUTPUT}"
           fi
       - name: Trigger deployment
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.ATALA_GITHUB_TOKEN }}
+          token: ${{ secrets.ATALA_GITHUB_TOKEN }} # Personal access token that triggers the deployment (Hyperledger => IOG)
           repository: input-output-hk/atala-prism-non-prod-argocd-state
           event-type: trigger-prism-documentation-deployment
           client-payload: '{"version": "${{ steps.parse-params.outputs.VERSION }}", "env": "${{ steps.parse-params.outputs.ENV }}"}'

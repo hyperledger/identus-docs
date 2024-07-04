@@ -49,7 +49,7 @@ brew install yarn
 
 # Create new projects directory
 cd ~ && mkdir projects && cd projects
-git clone https://github.com/input-output-hk/atala-prism-docs.git
+git clone https://github.com/hyperledger/identus-docs.git
 # Initialize submodules
 git submodule init
 # Update submodules
@@ -59,7 +59,7 @@ git submodule update --remote --recursive
 # git checkout feature-branch
 
 # Deploy local version of the website
-cd atala-prism-docs
+cd identus-docs
 yarn install
 yarn start
 ```
@@ -76,5 +76,6 @@ This command starts a local development server and opens up a browser window. Mo
 
 ```
 $ yarn build --out-dir infra/website
+```
 
 This command creates a set of static resources which can be hosted to serve the full site.
