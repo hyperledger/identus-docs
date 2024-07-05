@@ -1,3 +1,10 @@
+## [1.101.1](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.101.1) (2024-07-05)
+
+
+### :sparkles: Updates
+
+* update QSG after transferring repositories under the Hyperledger org ([#122](https://github.com/hyperledger/identus-docs/issues/122)) ([ba8a035](https://github.com/hyperledger/identus-docs/commit/ba8a035d2654b65c4066269459e641481111f2bb))
+
 ## [1.101.0](https://github.com/hyperledger/identus-docs/compare/v1.100.0...v1.101.0) (2024-07-04)
 
 
