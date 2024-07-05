@@ -35,7 +35,7 @@ Hyperledger Identus consists of core libraries that facilitate typical SSI inter
 ### A Cloud Agent
 A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
 
-It is maintained as an open source lab through the [Hyperledger Foundation: Open Enterprise Agent](https://labs.hyperledger.org/labs/open-enterprise-agent.html).
+It is maintained as an open source through the [Hyperledger Identus](https://www.hyperledger.org/projects/identus).
 
 More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-agent) can be found [here](/docs/identus/cloud-agent/overview).
 
@@ -69,14 +69,14 @@ We develop on modern machines equipped with either Intel based x64 processors or
 1. To spin up an Cloud Agent you must:
   * Have Git installed.
   * Have Docker installed.
-  * Clone the [Open Enterprise Agent repository](https://github.com/hyperledger/identus-cloud-agent).
+  * Clone the [Identus Cloud Agent repository](https://github.com/hyperledger/identus-cloud-agent).
 
 ```bash
 git clone https://github.com/hyperledger/identus-cloud-agent
 ```
 
 
-2. Once cloned, create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:
+2. Once cloned, create a new environment variable configuration file named  __./identus-cloud-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:
 
 
 ```
@@ -89,7 +89,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 PG_PORT=5432
 ```
 
-3. Create a new environment variable configuration file named  __./open-enterprise-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content:
+3. Create a new environment variable configuration file named  __./identus-cloud-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content:
 
 
 
@@ -261,10 +261,10 @@ All wallet SDK's come bundled with a sample application, that cover all the Iden
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
 
-1. Clone the [TypeScript SDK](https://github.com/input-output-hk/atala-prism-wallet-sdk-ts) repository.
+1. Clone the [TypeScript SDK](https://github.com/hyperledger/identus-edge-agent-sdk-ts) repository.
 
 ```bash
-git clone https://github.com/input-output-hk/atala-prism-wallet-sdk-ts
+git clone https://github.com/hyperledger/identus-edge-agent-sdk-ts
 ```
 
 2. Ensure you have all applications installed for building the SDK and it's dependencies
@@ -282,7 +282,7 @@ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
   * Build the source SDK:
 
 ```bash
-cd atala-prism-wallet-sdk-ts
+cd identus-edge-agent-sdk-ts
 git submodule update --init --recursive
 npm i
 npm run build
@@ -300,10 +300,10 @@ npm run start
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
 
-1. Clone the [Swift SDK](https://github.com/input-output-hk/identus-edge-agent-sdk-swift) repository.
+1. Clone the [Swift SDK](https://github.com/hyperledger/identus-edge-agent-sdk-swift) repository.
 
 ```bash
-git clone https://github.com/input-output-hk/identus-edge-agent-sdk-swift
+git clone https://github.com/hyperledger/identus-edge-agent-sdk-swift
 ```
 
 2. Open the XCode project on __./Sample/AtalaPrismWalletDemo/AtalaPrismWalletDemo.xcodeproj__
@@ -315,10 +315,10 @@ git clone https://github.com/input-output-hk/identus-edge-agent-sdk-swift
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
 
-1. Clone the [KMM SDK](https://github.com/input-output-hk/identus-edge-agent-sdk-kmm) repository.
+1. Clone the [KMM SDK](https://github.com/hyperledger/identus-edge-agent-sdk-kmm) repository.
 
 ```bash
-git clone https://github.com/input-output-hk/identus-edge-agent-sdk-kmm
+git clone https://github.com/hyperledger/identus-edge-agent-sdk-kmm
 ```
 
 2. Open the Wallet SDK project on IntelliJ or Android Studio.
@@ -334,17 +334,17 @@ git clone https://github.com/input-output-hk/identus-edge-agent-sdk-kmm
 Mediation is the process that ensures messages get routed and stored correctly between Issuers, Verifiers and Holders, even if they are offline. The mediator offers a service that is always running and can securely store messages and deliver them to the associated DIDs using DIDComm. This enables use-cases where connectivity to a (mobile) wallet cannot be guaranteed.
 
 #### Preparation
-1. To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/input-output-hk/identus-mediator).
+1. To get the mediator deployed locally for the demo, clone the [Mediator repository](https://github.com/hyperledger/identus-mediator).
 
 ```bash
-git clone https://github.com/input-output-hk/identus-mediator
+git clone https://github.com/hyperledger/identus-mediator
 ```
 
 2. With a Docker service running, open a new terminal and run:
 
 :::info
 
-The latest mediator version can be found at [Mediator releases](https://github.com/input-output-hk/identus-mediator/releases). Change the version in the example if you want to use the latest version.
+The latest mediator version can be found at [Mediator releases](https://github.com/hyperledger/identus-mediator/releases). Change the version in the example if you want to use the latest version.
 
 :::
 
@@ -354,7 +354,7 @@ MEDIATOR_VERSION=0.10.2 docker-compose up
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
 
-3. More advanced documentation and configuration options can be found [here](https://github.com/input-output-hk/identus-mediator).
+3. More advanced documentation and configuration options can be found [here](https://github.com/hyperledger/identus-mediator).
 
 
 
