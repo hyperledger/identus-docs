@@ -1,3 +1,15 @@
+## [1.102.0](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0) (2024-07-07)
+
+
+### :sparkles: Updates
+
+* update QSG after transferring repositories under the Hyperledger org ([#122](https://github.com/hyperledger/identus-docs/issues/122)) ([ba8a035](https://github.com/hyperledger/identus-docs/commit/ba8a035d2654b65c4066269459e641481111f2bb))
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([5afa216](https://github.com/hyperledger/identus-docs/commit/5afa216215c8011d4902d9e1454224f1591acd7d))
+
 ## [1.101.1](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.101.1) (2024-07-05)
 
 
