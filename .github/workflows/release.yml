@@ -3,6 +3,11 @@ name: Release docs image
 on:
   workflow_call:
   workflow_dispatch:
+    inputs:
+      release-branch:
+        description: "Branch to release from"
+        required: false
+        default: "main"
 
 jobs:
   release:
