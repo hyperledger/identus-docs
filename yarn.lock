@@ -2607,19 +2607,6 @@
     lodash "^4.17.4"
     parse-json "^5.0.0"
 
-"@semantic-release/git-wrapped@github:patextreme/semantic-release-git#wrap-10_0_1":
-  version "0.0.0-development"
-  resolved "git+ssh://git@github.com/patextreme/semantic-release-git.git#2fedaf12ef614b7821a2cb693caca705566dfd60"
-  dependencies:
-    "@semantic-release/error" "^3.0.0"
-    aggregate-error "^3.0.0"
-    debug "^4.0.0"
-    dir-glob "^3.0.0"
-    execa "^5.0.0"
-    lodash "^4.17.4"
-    micromatch "^4.0.0"
-    p-reduce "^2.0.0"
-
 "@semantic-release/git@^10.0.1":
   version "10.0.1"
   resolved "https://registry.npmjs.org/@semantic-release/git/-/git-10.0.1.tgz"
@@ -11763,10 +11750,9 @@ semantic-release-slack-bot@^3.5.3:
     node-fetch "^2.3.0"
     slackify-markdown "^4.3.0"
 
-semantic-release@^19.0.3, "semantic-release@>=11.0.0 <20.0.0", semantic-release@>=18.0.0, semantic-release@>=18.0.0-beta.1, semantic-release@>=19.0.0:
-  version "19.0.5"
-  resolved "https://registry.npmjs.org/semantic-release/-/semantic-release-19.0.5.tgz"
-  integrity sha512-NMPKdfpXTnPn49FDogMBi36SiBfXkSOJqCkk0E4iWOY1tusvvgBwqUmxTX1kmlT6kIYed9YwNKD1sfPpqa5yaA==
+"semantic-release@>=11.0.0 <20.0.0", semantic-release@>=18.0.0, semantic-release@>=18.0.0-beta.1, semantic-release@>=19.0.0, "semantic-release@github:patextreme/semantic-release#wrap-19":
+  version "19.0.3"
+  resolved "git+ssh://git@github.com/patextreme/semantic-release.git#87d512a4cb79ee4d8098c9fbbc62d7b62cc184d0"
   dependencies:
     "@semantic-release/commit-analyzer" "^9.0.2"
     "@semantic-release/error" "^3.0.0"

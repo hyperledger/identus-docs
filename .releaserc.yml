@@ -31,7 +31,7 @@ plugins:
   - [ '@semantic-release/exec', {
     prepareCmd: 'npm version ${nextRelease.version} --git-tag-version false && ./infra/release-docs-container.sh ${nextRelease.version}',
     } ]
-  - [ '@semantic-release/git-wrapped', {
+  - [ '@semantic-release/git', {
     assets: [ 'package.json' , 'package-lock.json', 'CHANGELOG.md' ],
     message: 'chore(release): release the Identus documentation portal ${nextRelease.version}
 
