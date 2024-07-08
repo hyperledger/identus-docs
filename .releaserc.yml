@@ -3,7 +3,7 @@ branches:
   - name: 'beta'
     prerelease: "snapshot"
   - name: gamma
-    prerelease: gamme
+    prerelease: gamma
 
 plugins:
   - '@semantic-release/commit-analyzer'
