@@ -1,3 +1,17 @@
+## [1.102.0-snapshot.1](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0-snapshot.1) (2024-07-08)
+
+### :rocket: New Content
+
+* revert release ([a5b250c](https://github.com/hyperledger/identus-docs/commit/a5b250c873b4ca6a27cf54f1852f5c004229e4ee))
+* start another try ([4d7e168](https://github.com/hyperledger/identus-docs/commit/4d7e168ebe36cf8f18ff16ac2880797a9c361679))
+* update submodules documentation to latest ([5afa216](https://github.com/hyperledger/identus-docs/commit/5afa216215c8011d4902d9e1454224f1591acd7d))
+* upgrade docusaurus and semantic-release packages ([8c935e9](https://github.com/hyperledger/identus-docs/commit/8c935e97e2fc183e8c117f5c99493c053fa3120e))
+* with dispatch ([5a81547](https://github.com/hyperledger/identus-docs/commit/5a81547edf7890eaa9da34ed2dbb7cfeed234377))
+
+### :sparkles: Updates
+
+* update QSG after transferring repositories under the Hyperledger org ([#122](https://github.com/hyperledger/identus-docs/issues/122)) ([ba8a035](https://github.com/hyperledger/identus-docs/commit/ba8a035d2654b65c4066269459e641481111f2bb))
+
 ## [1.102.0](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0) (2024-07-07)
 
 
