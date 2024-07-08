@@ -1,3 +1,16 @@
+## [1.102.0-gamme.1](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0-gamme.1) (2024-07-08)
+
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([5afa216](https://github.com/hyperledger/identus-docs/commit/5afa216215c8011d4902d9e1454224f1591acd7d))
+
+
+### :sparkles: Updates
+
+* dummy patch ([3838d7f](https://github.com/hyperledger/identus-docs/commit/3838d7f8a5bc0a8dd920572890f748b03590bcc2))
+* update QSG after transferring repositories under the Hyperledger org ([#122](https://github.com/hyperledger/identus-docs/issues/122)) ([ba8a035](https://github.com/hyperledger/identus-docs/commit/ba8a035d2654b65c4066269459e641481111f2bb))
+
 ## [1.102.0](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0) (2024-07-07)
 
 
