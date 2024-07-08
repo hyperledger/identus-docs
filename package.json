@@ -18,26 +18,28 @@
     "@docusaurus/preset-classic": "^3.4.0",
     "@docusaurus/theme-mermaid": "^3.4.0",
     "@mdx-js/react": "^3.0.1",
-    "clsx": "^2.1.1",
+    "clsx": "^2.0.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "docusaurus-lunr-search": "^3.4.0",
     "docusaurus-plugin-openapi-docs": "^3.0.1",
     "docusaurus-theme-openapi-docs": "^2.2.1",
     "docusaurus-theme-redoc": "^2.1.1",
-    "prism-react-renderer": "^2.3.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "redocusaurus": "^2.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.4.0",
+    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/tsconfig": "3.4.0",
+    "@docusaurus/types": "3.4.0",
+    "typescript": "~5.2.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "docusaurus-plugin-typedoc": "^1.0.2",
     "semantic-release": "^24.0.0",
-    "semantic-release-slack-bot": "^4.0.2",
-    "typescript": "^5.5.3"
+    "semantic-release-slack-bot": "^4.0.2"
   },
   "browserslist": {
     "production": [
@@ -52,6 +54,6 @@
     ]
   },
   "engines": {
-    "node": ">=20.15.0"
+    "node": ">=18.0"
   }
 }
