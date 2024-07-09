@@ -1,3 +1,13 @@
+## [1.102.0-snapshot.3](https://github.com/hyperledger/identus-docs/compare/v1.102.0-snapshot.2...v1.102.0-snapshot.3) (2024-07-09)
+
+### :rocket: New Content
+
+* add megalinter github action ([6a6630d](https://github.com/hyperledger/identus-docs/commit/6a6630d8a2cc5bcbc7161d139082c2d106eaa0ca))
+
+### :sparkles: Updates
+
+* rendering issues ([85bc2cd](https://github.com/hyperledger/identus-docs/commit/85bc2cd90f4aec51d4bcf40c5dbaa48c29e41691))
+
 ## [1.102.0-snapshot.2](https://github.com/hyperledger/identus-docs/compare/v1.102.0-snapshot.1...v1.102.0-snapshot.2) (2024-07-09)
 
 ### :rocket: New Content
