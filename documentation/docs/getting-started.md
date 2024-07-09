@@ -19,4 +19,5 @@ The documentation herein will explain the following:
 * DIDComm v2
 * W3C VC-JWT
 * Hyperledger Anoncreds
+* SD-JWT
 
