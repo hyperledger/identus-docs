@@ -69,4 +69,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.IDENTUS_CI }}
         run: |
           npm install
-          npx semantic-release --debug
+          npx semantic-release
