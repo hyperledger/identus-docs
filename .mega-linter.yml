@@ -1,0 +1,61 @@
+# MegaLinter configuration for Docusaurus
+
+ENABLE:
+  - JAVASCRIPT_ES
+  - TYPESCRIPT_ES
+  - MARKDOWN_MARKDOWNLINT
+  - YAML_YAMLLINT
+  - JSON_JSONLINT
+  - HTML_HTMLHINT
+
+FILE_EXTENSIONS:
+  - js
+  - jsx
+  - ts
+  - tsx
+  - md
+  - yml
+  - yaml
+  - json
+  - html
+
+DIRECTORY_INCLUDE:
+  #  - src TODO: consider to uncomment this line later
+  - infra
+  - documentation
+
+DIRECTORY_EXCLUDE:
+  - node_modules
+  - static
+  - identus-cloud-agent
+  - identus-edge-agent-ts
+  - .docusaurus
+  - src
+
+MARKDOWN_MARKDOWNLINT:
+  config: .markdownlint.json
+
+YAML_YAMLLINT:
+  config: .yamllint
+
+JSON_JSONLINT:
+  config: .jsonlintrc
+
+HTML_HTMLHINT:
+  config: .htmlhintrc
+
+JAVASCRIPT_ES:
+  config: .eslintrc.js
+  prettier: true
+
+TYPESCRIPT_ES:
+  config: .eslintrc.js
+  prettier: true
+
+REPORT_OUTPUTS:
+  - json
+  - html
+  - markdown
+
+DISABLE_LINTERS_ERRORS_REPORT: false
+LINTERS_CLI_OPTIONS: '--fix'
