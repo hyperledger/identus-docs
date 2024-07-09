@@ -401,7 +401,7 @@ Follow the steps in your desired platform as stated below:
 
 The below code examples show how to establish mediation when building your own application.
 
-<details><summary>Code examples</summary>
+<summary>Code examples</summary>
 3. The following code examples represent establishing mediation and instantiating the Cloud Agent.
 
 <Tabs>
@@ -487,9 +487,6 @@ agent.startFetchingMessages()
 
 </TabItem>
 </Tabs>
-</details>
-
-
 
 ## Establish Holder connections
 To connect the Holder to both Cloud Agent instances, you must run this in both Issuer and Verifier endpoints.
@@ -556,7 +553,7 @@ curl --location \
 </TabItem>
 </Tabs>
 
-<details><summary>Code examples</summary>
+<summary>Code examples</summary>
 <Tabs>
 <TabItem value="js" label="Typescript">
 
@@ -583,7 +580,6 @@ agent.acceptOutOfBandInvitation(invitation)
 
 </TabItem>
 </Tabs>
-</details>
 
 ## Issue a Credential from the Issuer to the holder
 
@@ -649,7 +645,7 @@ automaticIssuance is optional. It can also be manually triggered and confirmed b
 </Tabs>
 
 
-<details><summary>Code examples</summary>
+<summary>Code examples</summary>
 
 5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.
 
@@ -731,7 +727,6 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 </TabItem>
 </Tabs>
-</details>
 
 ### Store the Issued Credential [Holder]
 :::caution
@@ -740,7 +735,7 @@ The sample application are using an insecure storage solution which should only 
 
 :::
 
-<details><summary>Code examples</summary>
+<summary>Code examples</summary>
 6. Once the Holder receives a credential from the Cloud Agent, it needs to store the credential somewhere:
 
 <Tabs>
@@ -807,7 +802,6 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 </TabItem>
 </Tabs>
-</details>
 
 ## Request a verification from the Verifier Cloud Agent to the Holder (JWT W3C Credential)
 Now that the Holder has received a credential, it can be used in a verification workflow between a Holder and a Verifier. This requires the following steps:
@@ -857,7 +851,7 @@ curl --location \
 
 6. The Holder needs an Edge Agent running with the message listener active. It will receive the presentation proof request from the Verifier Cloud Agent for the correct type of messages as detailed below:
 
-<details><summary>Code examples</summary>
+<summary>Code examples</summary>
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -945,8 +939,6 @@ agent.handleReceivedMessagesEvents().collect { list ->
 </TabItem>
 
 </Tabs>
-</details>
-
 
 ### Verifier: Will then check on the API if the Presentation Request has been completed or not.
 

@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes as prismThemes} from 'prism-react-renderer';
+
 const path = require('path')
 // const {useColorMode} = require('@docusaurus/theme-common');
 // const {colorMode} = useColorMode()
@@ -164,8 +164,8 @@ const config = {
                 copyright: `© ${new Date().getFullYear()} Identus. All rights reserved.`,
             },
             prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
+                theme: prismThemes.github,
+                darkTheme: prismThemes.dracula,
             },
 
         },
