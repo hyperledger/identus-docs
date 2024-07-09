@@ -3,6 +3,7 @@
 .idea
 # Production
 /build
+/megalinter-reports
 
 # Generated files
 .docusaurus
