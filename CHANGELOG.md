@@ -1,3 +1,18 @@
+## [1.102.0](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0) (2024-07-09)
+
+### :rocket: New Content
+
+* fix the release flow and upgrade the docusaurus to the latest version ([#125](https://github.com/hyperledger/identus-docs/issues/125)) ([8fdd093](https://github.com/hyperledger/identus-docs/commit/8fdd0937d68835009920d9948e36e28881469041))
+* set identus token ([#134](https://github.com/hyperledger/identus-docs/issues/134)) ([e76a4ef](https://github.com/hyperledger/identus-docs/commit/e76a4ef8cab6ca509de31d75520a30fdf46fac25))
+* update submodules documentation to latest ([5afa216](https://github.com/hyperledger/identus-docs/commit/5afa216215c8011d4902d9e1454224f1591acd7d))
+* update supported standards list (test release) ([#127](https://github.com/hyperledger/identus-docs/issues/127)) ([c564cb4](https://github.com/hyperledger/identus-docs/commit/c564cb4c05813c37f4818212f84beb51b162fb9f))
+* update supported standards list (test release) ([#130](https://github.com/hyperledger/identus-docs/issues/130)) ([1b29a74](https://github.com/hyperledger/identus-docs/commit/1b29a74d24b7779939ed535da22b0e5e75676174))
+* update supported standards list (test release) ([#132](https://github.com/hyperledger/identus-docs/issues/132)) ([72ca04f](https://github.com/hyperledger/identus-docs/commit/72ca04f7c97bbe6c37582042e9a4a9a641668c3d))
+
+### :sparkles: Updates
+
+* update QSG after transferring repositories under the Hyperledger org ([#122](https://github.com/hyperledger/identus-docs/issues/122)) ([ba8a035](https://github.com/hyperledger/identus-docs/commit/ba8a035d2654b65c4066269459e641481111f2bb))
+
 ## [1.102.0](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0) (2024-07-07)
 
 
