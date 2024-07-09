@@ -1,3 +1,9 @@
+## [1.102.0-snapshot.2](https://github.com/hyperledger/identus-docs/compare/v1.102.0-snapshot.1...v1.102.0-snapshot.2) (2024-07-09)
+
+### :rocket: New Content
+
+* updated CODEOWNERS to protect the main branch ([450f95b](https://github.com/hyperledger/identus-docs/commit/450f95b95a9233b85441712f1f4f1ec98910f76c))
+
 ## [1.102.0-snapshot.1](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0-snapshot.1) (2024-07-08)
 
 ### :rocket: New Content
