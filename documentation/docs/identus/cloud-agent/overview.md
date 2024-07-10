@@ -7,7 +7,7 @@ The Cloud Agent provides all the required capabilities to leverage the power of 
 - Use the Cloud Agent API to develop [controllers](/docs/concepts/glossary#controller) that implement specific business logic according to use case requirements.
 - Develop controllers in any programming language and remove the requirement for developers to interact or learn the nuts and bolts of the various standards.
 - The Cloud Agent is written in Scala, supports the `did:prism` method, interacts with the PRISM Node over gRPC protocol, and uses it as the [Verifiable Data Registry](/docs/concepts/glossary#verifiable-data-registry). 
-- The PRISM Node interacts with the Cardano blockchain, providing high security, scalability, and availability.
+- The PRISM Node interacts with a distributed ledger, providing high security, scalability, and availability.
 - The Cloud Agent is a cloud agent accessible from anywhere.
 - Highly scalable and flexible, making it well-suited for a wide range of use cases and applications.
 
@@ -47,11 +47,11 @@ This document provides an overview of the Cloud Agent feature set. This document
 
 ## DID Methods
 
-| Method | Supported | Notes |
-| --- | :--: | -- |
-| `did:PRISM` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) compliant [PRISM DID Method](https://github.com/input-output-hk/PRISM-did-method-spec/blob/main/w3c-spec/PRISM-method.md) specification. Cardano is the default [Verifiable Data Registry (VDR)](/docs/concepts/glossary#verifiable-data-registry) to anchor DIDs. PRISM DID Method is used for [Verifiable Credentials](/docs/concepts/glossary#verifiable-credential) and [Verifiable Presentations](/docs/concepts/glossary#verifiable-presentation).  |
-| `did:peer` | :white_check_mark:| Used for P2P connections |
-| Universal Resolver | :construction: |  |
+| Method | Supported | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --- | :--: |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `did:PRISM` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) compliant [PRISM DID Method](https://github.com/input-output-hk/PRISM-did-method-spec/blob/main/w3c-spec/PRISM-method.md) specification. A distributed ledger is the default [Verifiable Data Registry (VDR)](/docs/concepts/glossary#verifiable-data-registry) to anchor DIDs. PRISM DID Method is used for [Verifiable Credentials](/docs/concepts/glossary#verifiable-credential) and [Verifiable Presentations](/docs/concepts/glossary#verifiable-presentation). |
+| `did:peer` | :white_check_mark:| Used for P2P connections                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Universal Resolver | :construction: |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ## DIDComm
 

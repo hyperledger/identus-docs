@@ -1,7 +1,7 @@
 # Overview
 
 Enterprise services is a comprehensive suite of services available exclusively
-as part of the Enterprise edition of the Atala PRISM platform. These services
+as part of the Enterprise edition of the Identus platform. These services
 aim to empower businesses to integrate SSI-based (Self-Sovereign Identity)
 effortlessly into their existing solutions, providing their users and business
 partners with greater control over their identity and personal data. At the same
