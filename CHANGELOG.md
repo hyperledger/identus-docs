@@ -1,3 +1,9 @@
+## [1.102.1](https://github.com/hyperledger/identus-docs/compare/v1.102.0...v1.102.1) (2024-07-10)
+
+### :sparkles: Updates
+
+* rebranding changes from the PR [#101](https://github.com/hyperledger/identus-docs/issues/101) ([#135](https://github.com/hyperledger/identus-docs/issues/135)) ([fdbc97d](https://github.com/hyperledger/identus-docs/commit/fdbc97dfa1ceece46565e5448509f23e16de5835))
+
 ## [1.102.0](https://github.com/hyperledger/identus-docs/compare/v1.101.0...v1.102.0) (2024-07-09)
 
 ### :rocket: New Content

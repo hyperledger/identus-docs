@@ -1,6 +1,6 @@
 {
   "name": "identus-documentation-portal",
-  "version": "1.102.0",
+  "version": "1.102.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
