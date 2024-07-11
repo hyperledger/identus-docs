@@ -127,9 +127,8 @@ const config = {
                         position: 'left',
                         items: [
                             {
-                                // TODO: figure out the new link
                                 label: 'Edge Agent SDK Swift',
-                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/documentation/edgeagentsdk',
+                                href: 'https://hyperledger.github.io/identus-edge-agent-sdk-swift/documentation/edgeagentsdk/',
                             },
                             {
                                 to: '/identus-edge-agent-sdk-ts/sdk',
@@ -137,9 +136,8 @@ const config = {
                                 activeBaseRegex: `/identus-edge-agent-sdk-ts/sdk`
                             },
                             {
-                                // TODO: figure out the new link
                                 label: 'Edge Agent SDK Kotlin Multiplatform',
-                                href: 'https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/',
+                                href: 'https://hyperledger.github.io/identus-edge-agent-sdk-kmp/',
                             },
                         ],
                     },
