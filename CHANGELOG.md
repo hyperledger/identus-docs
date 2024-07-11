@@ -1,3 +1,9 @@
+## [1.102.2](https://github.com/hyperledger/identus-docs/compare/v1.102.1...v1.102.2) (2024-07-11)
+
+### :sparkles: Updates
+
+* links to the Swift and the Kotlin SDKs ([#136](https://github.com/hyperledger/identus-docs/issues/136)) ([07eef77](https://github.com/hyperledger/identus-docs/commit/07eef771a7aaa53ceed64467e95be2832169ae2e))
+
 ## [1.102.1](https://github.com/hyperledger/identus-docs/compare/v1.102.0...v1.102.1) (2024-07-10)
 
 ### :sparkles: Updates
