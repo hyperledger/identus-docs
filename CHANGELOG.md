@@ -1,3 +1,9 @@
+## [1.103.0](https://github.com/hyperledger/identus-docs/compare/v1.102.2...v1.103.0) (2024-07-14)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([b8b5df5](https://github.com/hyperledger/identus-docs/commit/b8b5df545bf378f745d42bee4cb5cadd26fb6b71))
+
 ## [1.102.2](https://github.com/hyperledger/identus-docs/compare/v1.102.1...v1.102.2) (2024-07-11)
 
 ### :sparkles: Updates
