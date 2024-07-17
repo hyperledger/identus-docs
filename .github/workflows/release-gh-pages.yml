@@ -1,0 +1,57 @@
+name: Release gh-pages docs image
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_deploy_ghpages:
+        description: "Force deploy gb-pages"
+        default: false
+        type: boolean
+        required: false
+  pull_request:
+    branches-ignore:
+      - "gh-pages"
+  push:
+    branches: [main,  gh-pages-test]
+    tags: ["v*"]
+
+jobs:
+  ghpages:
+    name: Deploy gh-pages
+    runs-on: ubuntu-latest
+    if: (inputs.force_deploy_ghpages == true) || (github.ref == 'refs/heads/main') || startsWith(github.ref, 'refs/tags/v') || (github.ref == 'refs/heads/gh-pages-test')
+    steps:
+      # https://github.com/japgolly/setup-everything-scala
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0 # Needed for the release tag // `git fetch --tags` will also work
+      # - name: Setup Java and Scala
+      #   uses: olafurpg/setup-scala@v14
+      #   with:
+      #     java-version: adopt@1.11
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      # - name: Setup Scala.JS
+      #   uses: japgolly/setup-scalajs@v1
+      # - name: Cache sbt
+      #   uses: coursier/cache-action@v6.3
+
+      # ### create build deploy gh-pages ###
+      # - name: sbt "docAll; siteAll"
+      #   run: sbt -v "docAll; siteAll"
+
+      - name: Build
+        run: |
+          npm install
+          npm build
+
+      - name: Deploy
+        # https://github.com/marketplace/actions/github-pages-action
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          # cname: doc.did.fmgp.app

@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 16
 
       - uses: crazy-max/ghaction-import-gpg@v6
         id: import_gpg
@@ -55,6 +55,11 @@ jobs:
           log4brains build --out ../static/adrs --basePath /adrs
           touch ../static/adrs/.nojekyll
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+
       - name: Release
         env:
           GIT_AUTHOR_EMAIL: ${{ steps.import_gpg.outputs.email }}
@@ -65,44 +70,3 @@ jobs:
         run: |
           npm install
           npx semantic-release
-
-  ghpages:
-    name: Deploy gh-pages
-    needs: release
-    runs-on: ubuntu-latest
-    if: (inputs.force_deploy_ghpages == true) || (github.ref == 'refs/heads/main') || startsWith(github.ref, 'refs/tags/v') || (github.ref == 'refs/heads/gh-pages-test')
-    steps:
-      # https://github.com/japgolly/setup-everything-scala
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0 # Needed for the release tag // `git fetch --tags` will also work
-      # - name: Setup Java and Scala
-      #   uses: olafurpg/setup-scala@v14
-      #   with:
-      #     java-version: adopt@1.11
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
-      # - name: Setup Scala.JS
-      #   uses: japgolly/setup-scalajs@v1
-      # - name: Cache sbt
-      #   uses: coursier/cache-action@v6.3
-
-      # ### create build deploy gh-pages ###
-      # - name: sbt "docAll; siteAll"
-      #   run: sbt -v "docAll; siteAll"
-
-      - name: Build
-        run: |
-          npm install
-          npm build
-
-      - name: Deploy
-        # https://github.com/marketplace/actions/github-pages-action
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          # cname: doc.did.fmgp.app
