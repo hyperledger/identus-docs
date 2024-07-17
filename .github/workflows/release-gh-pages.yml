@@ -45,8 +45,8 @@ jobs:
 
       - name: Build
         run: |
-          npm install
-          npm build
+          yarn install
+          yarn build
 
       - name: Deploy
         # https://github.com/marketplace/actions/github-pages-action
