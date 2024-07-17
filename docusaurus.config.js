@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 const path = require('path')
 // const {useColorMode} = require('@docusaurus/theme-common');
@@ -12,8 +12,8 @@ const config = {
     title: 'Unlock the power of your digital identity.',
     tagline: 'IDENTUS Docs',
     // url: 'https://docs.atalaprism.io',
-    url: 'https://hyperledger.github.io/identus-docs/',
-    baseUrl: '/',
+    url: 'https://hyperledger.github.io/',
+    baseUrl: '/identus-docs/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
@@ -89,85 +89,85 @@ const config = {
 
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-        {
-            navbar: {
-                logo: {
-                    alt: ' Identus logo',
-                    src: 'img/logo-navbar-dark.png',
-                    srcDark: "img/logo-navbar-light.png",
-                },
-                items: [
-                   
-                    {
-                        type: 'doc',
-                        docId: 'getting-started',
-                        position: 'left',
-                        label: 'Docs',
-                    },
-                    {
-                        to: '/tutorials/',
-                        label: 'Tutorials',
-                        position: 'left',
-                        activeBaseRegex: `/tutorials/`
-                    },
-                    {
-                        type: 'dropdown',
-                        label: 'API',
-                        position: 'left',
-                        items: [
-                            {
-                                to: '/agent-api/',
-                                label: 'Agent API',
-                                activeBaseRegex: `/agent-api/`
-                            }
-                        ]
-                    },
-                    {
-                        type: 'dropdown',
-                        label: 'SDK',
-                        position: 'left',
-                        items: [
-                            {
-                                label: 'Edge Agent SDK Swift',
-                                href: 'https://hyperledger.github.io/identus-edge-agent-sdk-swift/documentation/edgeagentsdk/',
-                            },
-                            {
-                                to: '/identus-edge-agent-sdk-ts/sdk',
-                                label: 'Edge Agent SDK Typescript',
-                                activeBaseRegex: `/identus-edge-agent-sdk-ts/sdk`
-                            },
-                            {
-                                label: 'Edge Agent SDK Kotlin Multiplatform',
-                                href: 'https://hyperledger.github.io/identus-edge-agent-sdk-kmp/',
-                            },
-                        ],
-                    },
-                    {
-                        type: 'dropdown',
-                        label: 'Resources',
-                        position: 'left',
-                        items: [
-                            {
-                                label: 'PRISM DID Spec',
-                                href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
-                            },
-                            {
-                                label: 'Architecture Decision Records',
-                                href: 'pathname:///adrs',
-                            },
-                        ],
-                    },
-                ],
+    {
+        navbar: {
+            logo: {
+                alt: ' Identus logo',
+                src: 'img/logo-navbar-dark.png',
+                srcDark: "img/logo-navbar-light.png",
             },
-            footer: {
-                copyright: `© ${new Date().getFullYear()} Identus. All rights reserved.`,
-            },
-            prism: {
-                theme: prismThemes.github,
-                darkTheme: prismThemes.dracula,
-            },
+            items: [
 
+                {
+                    type: 'doc',
+                    docId: 'getting-started',
+                    position: 'left',
+                    label: 'Docs',
+                },
+                {
+                    to: '/tutorials/',
+                    label: 'Tutorials',
+                    position: 'left',
+                    activeBaseRegex: `/tutorials/`
+                },
+                {
+                    type: 'dropdown',
+                    label: 'API',
+                    position: 'left',
+                    items: [
+                        {
+                            to: '/agent-api/',
+                            label: 'Agent API',
+                            activeBaseRegex: `/agent-api/`
+                        }
+                    ]
+                },
+                {
+                    type: 'dropdown',
+                    label: 'SDK',
+                    position: 'left',
+                    items: [
+                        {
+                            label: 'Edge Agent SDK Swift',
+                            href: 'https://hyperledger.github.io/identus-edge-agent-sdk-swift/documentation/edgeagentsdk/',
+                        },
+                        {
+                            to: '/identus-edge-agent-sdk-ts/sdk',
+                            label: 'Edge Agent SDK Typescript',
+                            activeBaseRegex: `/identus-edge-agent-sdk-ts/sdk`
+                        },
+                        {
+                            label: 'Edge Agent SDK Kotlin Multiplatform',
+                            href: 'https://hyperledger.github.io/identus-edge-agent-sdk-kmp/',
+                        },
+                    ],
+                },
+                {
+                    type: 'dropdown',
+                    label: 'Resources',
+                    position: 'left',
+                    items: [
+                        {
+                            label: 'PRISM DID Spec',
+                            href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
+                        },
+                        {
+                            label: 'Architecture Decision Records',
+                            href: 'pathname:///adrs',
+                        },
+                    ],
+                },
+            ],
         },
+        footer: {
+            copyright: `© ${new Date().getFullYear()} Identus. All rights reserved.`,
+        },
+        prism: {
+            theme: prismThemes.github,
+            darkTheme: prismThemes.dracula,
+        },
+
+    },
 
 };
 
