@@ -11,7 +11,8 @@ const path = require('path')
 const config = {
     title: 'Unlock the power of your digital identity.',
     tagline: 'IDENTUS Docs',
-    url: 'https://docs.atalaprism.io',
+    // url: 'https://docs.atalaprism.io',
+    url: 'https://hyperledger.github.io/identus-docs/',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
