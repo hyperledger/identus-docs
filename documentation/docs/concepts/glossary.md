@@ -99,6 +99,9 @@ An entity will take on this role by possessing one or more [verifiable credentia
 ### IAM
 IAM (Identity and Access Management), is a framework that controls and manages user access to computing resources. It ensures secure authentication, appropriate authorization, and effective auditing to protect against unauthorized access in a computing environment.
 
+### Identus
+A suite of products that provides infrastructure for decentralized identity.
+
 ### IDP
 An Identity Provider (IDP) is a centralized service that manages and authenticates user identities, allowing individuals to access multiple applications and services with a single set of credentials. IDPs play a crucial role in Single Sign-On (SSO) systems, simplifying user access management across various platforms and services.
 
@@ -138,6 +141,9 @@ This segregation maintains data privacy and security, enhancing scalability and 
 ### OIDC
 OIDC (OpenID Connect), is an authentication protocol built on top of OAuth 2.0. It enables secure user authentication and allows applications to obtain information about users, facilitating single sign-on (SSO) and identity verification in web and mobile applications.
 
+### OID4VCI
+[OID4VCI](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) (OpenID for Verifiable Credential Issuance)
+defines an authorization mechanism for issuing credentials using the OAuth2 protocol. It grants the holder access to credentials protected by the issuer's authorization server.
 
 ## P
 ### Peer DID
@@ -145,12 +151,6 @@ They are specialized DIDs for peer-to-peer relationships.
 
 ### Peer DID Method
 A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers. See the [Peer DID Method specification](https://github.com/decentralized-identity/peer-did-method-spec).
-
-### Identus
-A suite of products that provides infrastructure for decentralized identity.
-
-### Cloud Agent
-Responsible for handling the connection to other agents in the network using a provided Mediator Service Endpoint and seed data.
 
 ### Present Proof Protocol
 The protocol provides endpoints for a Verifier to request new proof presentations from Holder/Provers and for a Holder/Prover to respond to the presentation request using a specific verifiable credential they own.
