@@ -1,3 +1,9 @@
+## [1.106.0](https://github.com/hyperledger/identus-docs/compare/v1.105.0...v1.106.0) (2024-07-31)
+
+### :rocket: New Content
+
+* gh-pages ([#141](https://github.com/hyperledger/identus-docs/issues/141)) ([1903975](https://github.com/hyperledger/identus-docs/commit/1903975b58824359056375cd56cc3d77c22d32e3))
+
 ## [1.105.0](https://github.com/hyperledger/identus-docs/compare/v1.104.0...v1.105.0) (2024-07-28)
 
 ### :rocket: New Content
