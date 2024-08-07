@@ -20,7 +20,7 @@ To preview the knowledge base locally, run:
 log4brains preview
 ```
 
-In preview mode, the Hot Reload feature is enabled: any change you make to a markdown file is applied live in the UI.
+In preview mode, the Hot Reload feature is enabled: any change you make to a Markdown file is applied live in the UI.
 
 To create a new ADR interactively, run:
 
