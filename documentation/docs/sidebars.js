@@ -33,7 +33,6 @@ const sidebars = {
       items: [
         "concepts/identity",
         "concepts/multi-tenancy",
-        "concepts/glossary",
       ],
     },
     {
