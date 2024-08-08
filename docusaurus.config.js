@@ -160,7 +160,7 @@ const config = {
             ],
         },
         footer: {
-            copyright: `© ${new Date().getFullYear()} Identus. All rights reserved.`,
+            `Hyperledger Identus CC BY 4.0`,
         },
         prism: {
             theme: prismThemes.github,
