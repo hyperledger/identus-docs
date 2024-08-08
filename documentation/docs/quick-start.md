@@ -290,7 +290,7 @@ npm run build
 
   * Start the React demo:
 ```bash
-cd demos/browser
+cd demos/next
 npm i
 npm run start
 ```
