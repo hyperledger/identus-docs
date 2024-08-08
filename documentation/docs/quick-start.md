@@ -44,7 +44,7 @@ More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-a
 ### Wallet SDKs
 [Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers.
 
-More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
+More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/identus-docs/identus-edge-agent-sdk-ts/sdk), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
 
 
@@ -175,7 +175,7 @@ curl --location \
 
 ```bash
 curl --location \
---request POST 'http://localhost:8000/prism-agent/did-registrar/dids/{didRef}/publications' \
+--request POST 'http://localhost:8000/cloud-agent/did-registrar/dids/{didRef}/publications' \
 --header 'Accept: application/json'
 ```
 
