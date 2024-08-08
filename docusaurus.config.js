@@ -10,7 +10,7 @@ const path = require('path')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Unlock the power of your digital identity.',
-    tagline: 'IDENTUS Docs',
+    tagline: 'Hyperledger Identus Docs',
     // url: 'https://docs.atalaprism.io',
     url: 'https://hyperledger.github.io/',
     baseUrl: '/identus-docs/',
