@@ -33,7 +33,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`Hyperledger Identus`}
       description="Description will go into a meta tag in <head />">
         <Blob/>
       <HomepageHeader />
