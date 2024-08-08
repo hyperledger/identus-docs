@@ -10,7 +10,7 @@ const path = require('path')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Unlock the power of your digital identity.',
-    tagline: 'IDENTUS Docs',
+    tagline: 'Hyperledger Identus Docs',
     // url: 'https://docs.atalaprism.io',
     url: 'https://hyperledger.github.io/',
     baseUrl: '/identus-docs/',
@@ -93,8 +93,8 @@ const config = {
         navbar: {
             logo: {
                 alt: ' Identus logo',
-                src: 'img/logo-navbar-dark.png',
-                srcDark: "img/logo-navbar-light.png",
+                src: 'img/identus-navbar-dark.png',
+                srcDark: "img/identus-navbar-light.png",
             },
             items: [
 
@@ -160,7 +160,7 @@ const config = {
             ],
         },
         footer: {
-            copyright: `© ${new Date().getFullYear()} Identus. All rights reserved.`,
+            `Hyperledger Identus CC BY 4.0`,
         },
         prism: {
             theme: prismThemes.github,

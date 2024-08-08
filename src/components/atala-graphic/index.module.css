@@ -17,7 +17,7 @@
     height: clamp(15.6875rem, 100vw, 58.6875rem);
     overflow: hidden;
     margin-right: auto;
-    mask-image: url("/static/img/graphics/hero.svg");
+    mask-image: url("/static/img/graphics/identus-hero.svg");
     mask-size: 100% 100%;
     color: var(--ifm-color-primary);
     font-size: 14px;
