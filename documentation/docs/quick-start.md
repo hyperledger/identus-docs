@@ -292,6 +292,7 @@ npm run build
 ```bash
 cd demos/next
 npm i
+npm run build
 npm run start
 ```
 
@@ -349,7 +350,7 @@ The latest mediator version can be found at [Mediator releases](https://github.c
 :::
 
 ```bash
-MEDIATOR_VERSION=0.10.2 docker-compose up
+MEDIATOR_VERSION=0.15.0 docker-compose up
 ```
 
 `MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
