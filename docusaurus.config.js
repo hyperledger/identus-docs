@@ -73,6 +73,15 @@ const config = {
                 sidebarPath: require.resolve('./identus-cloud-agent/docs/docusaurus/sidebars.js'),
             },
         ],
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'adrs',
+                path: 'documentation/adrs',
+                routeBasePath: 'adrs',
+                sidebarPath: require.resolve('./documentation/adrs/sidebars.js'),
+            },
+        ],
         require.resolve('docusaurus-lunr-search'),
         [
             '@docusaurus/plugin-content-docs',
@@ -97,12 +106,17 @@ const config = {
                 srcDark: "img/logo-navbar-light.png",
             },
             items: [
-
                 {
                     type: 'doc',
                     docId: 'getting-started',
                     position: 'left',
                     label: 'Docs',
+                },
+                {
+                    to: '/adrs/',
+                    label: 'ADRs',
+                    position: 'left',
+                    activeBaseRegex: `/adrs/`
                 },
                 {
                     to: '/tutorials/',
