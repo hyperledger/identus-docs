@@ -20,7 +20,6 @@ const sidebars = {
 
   tutorialsSidebar: [
     "README",
-    "adr",
     "template",
     {
       type: 'category',

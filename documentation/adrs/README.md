@@ -1,50 +1,32 @@
-# Architecture Decision Records
+<!-- This file is the homepage of your Log4brains knowledge base. You are free to edit it as you want -->
 
-ADRs are automatically published to our Log4brains architecture knowledge base:
+# Architecture knowledge base
 
-**http://INSERT-YOUR-LOG4BRAINS-URL**
+Welcome 👋 to the architecture knowledge base of the Identus platform.
 
-Please use this link to browse them.
+You will find here all the Architecture Decision Records (ADR) of the project.
 
-## Development
+The introduction of ADRs was approved in [RFC-0016](https://input-output.atlassian.net/wiki/spaces/ATB/pages/3580559403/RFC+0016+-+Use+Architectural+Design+Records)
 
-If not already done, install Log4brains:
+Engeering guidance on creating and managing ADRs can be found [here](https://input-output.atlassian.net/wiki/spaces/AV2/pages/3599237263/Architectural+Decision+Records+ADRs)
 
-```bash
-npm install -g log4brains
-```
+## Definition and purpose
 
-To preview the knowledge base locally, run:
+> An Architectural Decision (AD) is a software design choice that addresses a functional or non-functional requirement that is architecturally significant.
+> An Architectural Decision Record (ADR) captures a single AD, such as often done when writing personal notes or meeting minutes; the collection of ADRs created and maintained in a project constitutes its decision log.
 
-```bash
-log4brains preview
-```
+An ADR is immutable: only its status can change (i.e. become deprecated or superseded). That way, you can become familiar with the whole project history just by reading its decision log in chronological order.
+Moreover, maintaining this documentation aims at:
 
-In preview mode, the Hot Reload feature is enabled: any change you make to a Markdown file is applied live in the UI.
+- 🚀 Improving and speeding up the onboarding of a new team member
+- 🔭 Avoiding blind acceptance/reversal of a past decision (cf [Michael Nygard's famous article on ADRs](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html))
+- 🤝 Formalizing the decision process of the team
 
-To create a new ADR interactively, run:
+## Usage
 
-```bash
-log4brains adr new
-```
-
-## Mermaid support
-
-Log4brains does not support [Github Mermaid Diagrams](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams) diagrams by default.
-
-To successfully render Mermaid diagrams on the server side, add the following code to your ADR:
-```
-<pre class="mermaid">
-  ... your mermaid code here ...
-</pre>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.2.1/mermaid.min.js"/>
-<script>
-  mermaid.initialize({ startOnLoad: true });
-</script>
-```
-
-> Unfortunately, this diagram won't be automatically rendered in your preview mode.
-> So, you could debug using github mermaid diagrams, but then integrate the code above in your ADR.
+This website is automatically updated after a change on the `main` branch of the project's Git repository.
+In fact, the developers manage this documentation directly with markdown files located next to their code, so it is more convenient for them to keep it up-to-date.
+You can browse the ADRs by using the left menu or the search bar.
 
 ## More information
 
@@ -53,3 +35,4 @@ To successfully render Mermaid diagrams on the server side, add the following co
 - [Log4brains documentation](https://github.com/thomvaill/log4brains/tree/master#readme)
 - [What is an ADR and why should you use them](https://github.com/thomvaill/log4brains/tree/master#-what-is-an-adr-and-why-should-you-use-them)
 - [ADR GitHub organization](https://adr.github.io/)
+
