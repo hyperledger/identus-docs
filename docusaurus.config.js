@@ -113,32 +113,25 @@ const config = {
                     label: 'Docs',
                 },
                 {
-                    to: '/adrs/',
-                    label: 'ADRs',
-                    position: 'left',
-                    activeBaseRegex: `/adrs/`
-                },
-                {
                     to: '/tutorials/',
                     label: 'Tutorials',
                     position: 'left',
                     activeBaseRegex: `/tutorials/`
                 },
                 {
-                    type: 'dropdown',
-                    label: 'API',
+                    to: '/adrs/',
+                    label: 'ADRs',
                     position: 'left',
-                    items: [
-                        {
-                            to: '/agent-api/',
-                            label: 'Agent API',
-                            activeBaseRegex: `/agent-api/`
-                        }
-                    ]
+                    activeBaseRegex: `/adrs/`
+                },
+                {
+                    to: '/agent-api/',
+                    label: 'Agent API',
+                    activeBaseRegex: `/agent-api/`
                 },
                 {
                     type: 'dropdown',
-                    label: 'SDK',
+                    label: 'SDKs',
                     position: 'left',
                     items: [
                         {
@@ -157,19 +150,8 @@ const config = {
                     ],
                 },
                 {
-                    type: 'dropdown',
-                    label: 'Resources',
-                    position: 'left',
-                    items: [
-                        {
-                            label: 'PRISM DID Spec',
-                            href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
-                        },
-                        {
-                            label: 'Architecture Decision Records',
-                            href: 'pathname:///adrs',
-                        },
-                    ],
+                    label: 'PRISM DID Spec',
+                    href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
                 },
             ],
         },
