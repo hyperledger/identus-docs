@@ -840,7 +840,7 @@ curl --location \
             "trustIssuers": [
                 [[PUBLISHED PRISM DID FROM THE ISSUER]]
             ]
-        },
+        }
     ],
     "options": {
         "challenge": "A challenge for the holder to sign",
