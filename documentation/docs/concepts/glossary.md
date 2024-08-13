@@ -14,13 +14,13 @@ An administrator is a role who oversees the agent and releated resources, includ
 
 ## C
 ### claim
-An assertion made about a [subject](/docs/concepts/glossary#did-subject).
+An assertion made about a [subject](#did-subject).
 
 ### Cloud Agent
 The Cloud Agent is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides self-sovereign identity (SSI) services to build products and solutions based on it. The Cloud Agent exposes REST API for integration with any programming language.
 
 ### controller
-See [DID Controller](/docs/concepts/glossary#did-controller).
+See [DID Controller](#did-controller).
 
 ### Connection Protocol
 The protocol provides endpoints for creating and managing connections, as well as for accepting invitations.
@@ -47,7 +47,7 @@ When the Holder accepts or rejects a credential offer, a credential request is c
 A globally unique persistent identifier that does not require a centralized registration authority and is often cryptographically generated. All DIDs use distributed ledger technology (DLT) or some other decentralized network.
 
 ### DID
-See [decentralized identifier](/docs/concepts/glossary#decentralized-identifer)
+See [decentralized identifier](#decentralized-identifer)
 
 ### DIDComm
 A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.
@@ -59,13 +59,13 @@ The entity that has control of the DID
 A set of data that describes the DID subject, including mechanisms such as cryptographic public keys. The entire W3C DID specification is [here](https://www.w3.org/TR/did-spec-registries/).
 
 ### DID method
-The DID method defines how to implement a specific DID method schema. The specification defines the DID method, including precise operations to create DIDs and [DID documents](/docs/concepts/glossary#did-document) and how to resolve, update, and deactivate them.
+The DID method defines how to implement a specific DID method schema. The specification defines the DID method, including precise operations to create DIDs and [DID documents](#did-document) and how to resolve, update, and deactivate them.
 
 ### DID resolution
-The process for retrieving a [DID document](/docs/concepts/glossary#did-document).
+The process for retrieving a [DID document](#did-document).
 
 ### DID subject
-The entity is identified by a [DID](/docs/concepts/glossary#decentralized-identifer) and described by a [DID documents](/docs/concepts/glossary#did-document). Anything can be a DID subject: person, group, organization, physical thing, digital thing, etc.
+The entity is identified by a [DID](#decentralized-identifer) and described by a [DID documents](#did-document). Anything can be a DID subject: person, group, organization, physical thing, digital thing, etc.
 
 ### distributed ledger technology (DLT)
 A distributed database or ledger establishes confidence for the participants to rely on the data recorded. Typically these databases use nodes and a consensus protocol to confirm the order of cryptographically signed transactions. Linking the transactions over time creates a historical ledger that is effectively immutable.
@@ -74,7 +74,7 @@ A distributed database or ledger establishes confidence for the participants to 
 
 ## E
 ### endpoints
-A network address at which services operate on behalf of a [DID subject](/docs/concepts/glossary#did-subject).
+A network address at which services operate on behalf of a [DID subject](#did-subject).
 
 ### entity
 An `entity,` in the context of the Identus platform, is an identity representing a user or system. 
@@ -85,13 +85,13 @@ Entities are crucial for secure and verifiable transactions within the SSI ecosy
 
 ## G
 ### governance framework
-See [Trust Framework](/docs/concepts/glossary#trust-framework)
+See [Trust Framework](#trust-framework)
 
 
 
 ## H
 ### holder 
-An entity will take on this role by possessing one or more [verifiable credentials](/docs/concepts/glossary#verifiable-credentials) and generating [verifiable presentations](/docs/concepts/glossary#verifiable-presentations). Also takes the role of a prover when presenting verifiable credentials for verification.
+An entity will take on this role by possessing one or more [verifiable credentials](#verifiable-credentials) and generating [verifiable presentations](#verifiable-presentations). Also takes the role of a prover when presenting verifiable credentials for verification.
 
 
 
@@ -106,7 +106,7 @@ A suite of products that provides infrastructure for decentralized identity.
 An Identity Provider (IDP) is a centralized service that manages and authenticates user identities, allowing individuals to access multiple applications and services with a single set of credentials. IDPs play a crucial role in Single Sign-On (SSO) systems, simplifying user access management across various platforms and services.
 
 ### invitation
-Sent by the [inviter](/docs/concepts/glossary#inviter) to the [invitee](/docs/concepts/glossary#invitee) to request and establish a connection.
+Sent by the [inviter](#inviter) to the [invitee](#invitee) to request and establish a connection.
 
 ### invitee
 A subject that receives a connection invitation and accepts it by sending a connection request.
@@ -115,14 +115,14 @@ A subject that receives a connection invitation and accepts it by sending a conn
 A subject that initiates a connection request by sending a connection invitation.
 
 ### issuer
-An entity that asserts claim(s) about one or more [subjects](/docs/concepts/glossary#did-subject) then creates a [verifiable credentials](/docs/concepts/glossary#verifiable-credentials) from these claims and transmits the VC to a holder.
+An entity that asserts claim(s) about one or more [subjects](#did-subject) then creates a [verifiable credentials](#verifiable-credentials) from these claims and transmits the VC to a holder.
 
 ### Issue Credential Protocol
-Allows you to create, retrieve, and manage issued [verifiable credentials (VCs)](/docs/concepts/glossary#verifiable-credentials) between a VC issuer and a VC holder.
+Allows you to create, retrieve, and manage issued [verifiable credentials (VCs)](#verifiable-credentials) between a VC issuer and a VC holder.
 
 ## K
 ### Keycloak Service
-Keycloak is an open-source [IAM](/docs/concepts/glossary#iam) solution that provides authentication, authorization, and single sign-on capabilities for applications and services. It allows organizations to secure their applications by managing user identities, enforcing security policies, and facilitating seamless and secure user authentication.
+Keycloak is an open-source [IAM](#iam) solution that provides authentication, authorization, and single sign-on capabilities for applications and services. It allows organizations to secure their applications by managing user identities, enforcing security policies, and facilitating seamless and secure user authentication.
 
 
 ## M
@@ -156,16 +156,16 @@ A rich DID method that has no blockchain dependencies. The verifiable data regis
 The protocol provides endpoints for a Verifier to request new proof presentations from Holder/Provers and for a Holder/Prover to respond to the presentation request using a specific verifiable credential they own.
 
 ### proof
-A cryptographic mechanism that proves the information in a [verifiable credential](/docs/concepts/glossary#verifiable-credentials) or [verifiable presentation](/docs/concepts/glossary#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
+A cryptographic mechanism that proves the information in a [verifiable credential](#verifiable-credentials) or [verifiable presentation](#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
 
 ### proof presentation
-See [verifiable presentation](/docs/concepts/glossary#verifiable-presentation). Also see [Present Proof Protocol](/docs/concepts/glossary#present-proof-protocol).
+See [verifiable presentation](#verifiable-presentation). Also see [Present Proof Protocol](#present-proof-protocol).
 
 ### Protection API
-The Protection API in User-Managed Access ([UMA](/docs/concepts/glossary#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
+The Protection API in User-Managed Access ([UMA](#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
 
 ### Protection API
-The Protection API in User-Managed Access ([UMA](/docs/concepts/glossary#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
+The Protection API in User-Managed Access ([UMA](#uma)) is a set of endpoints that enables resource servers to enforce access policies and protect resources. It provides a mechanism for resource servers to interact with the authorization server to obtain necessary information and permissions, ensuring that access to user-managed resources aligns with the user's specified policies.
 
 ### protocol buffer
 Also known as protobuf.
@@ -181,7 +181,7 @@ For a detailed overview of relays refer to the [RFC0046: Mediators and Relays](h
 A party that depends on the authenticity of digital signatures.
 
 ### RPT
-Requesting Party Token (RPT) is a concept within the [UMA](/docs/concepts/glossary#uma) framework. It represents a token obtained by a client application from an authorization server, allowing the client to access protected resources on behalf of the requesting party (user), based on the user's policies and consent.
+Requesting Party Token (RPT) is a concept within the [UMA](#uma) framework. It represents a token obtained by a client application from an authorization server, allowing the client to access protected resources on behalf of the requesting party (user), based on the user's policies and consent.
 
 
 ## S
@@ -190,7 +190,7 @@ This component securely stores sensitive information, such as private keys assoc
 Secrets storage plays a crucial role in SSI implementations because it ensures that sensitive information is securely stored and protected against unauthorized access or disclosure
 
 ### SSI
-See [Self-Sovereign Identity](/docs/concepts/glossary#self-sovereign-identity)
+See [Self-Sovereign Identity](#self-sovereign-identity)
 
 ### Self-Sovereign Identity
 An identity model that shifts control to the edges, focused on security, privacy using public/private key encryption.
@@ -209,10 +209,10 @@ Tenant isolation is a core capability of the Identus platform, allowing it to se
 Tenant management encompasses the processes and tools used to onboard, provision, and manage tenants within the SSI platform, including user registration, role assignment, authentication method configuring, and access permissions.
 
 ### Trust Framework
-A governing body that establishes rules, requirements, establishes operating procedures, and a [trust registry](/docs/concepts/glossary#trust-registry) for specific ecosystems.
+A governing body that establishes rules, requirements, establishes operating procedures, and a [trust registry](#trust-registry) for specific ecosystems.
 
 ### Trust Registry
-A document that lists authorized issuers and verifiers established by the [Trust framework](/docs/concepts/glossary#trust-framework).
+A document that lists authorized issuers and verifiers established by the [Trust framework](#trust-framework).
 
 
 ## U
@@ -226,16 +226,16 @@ HashiCorp Vault is a widely used open-source and enterprise-grade solution desig
 It offers a centralized platform for managing cryptographic keys, passwords, API keys, tokens, and other secrets.
 
 ### verifiable credential (VC)
-A verifiable credential is a tamper-evident credential that contains one or more claims made by an issuer whose authorship can be cryptographically verified. It is possible to use VCs to create a [verifiable presentation](/docs/concepts/glossary#verifiable-presentation). Also, the claims in a VC can be about different subjects.
+A verifiable credential is a tamper-evident credential that contains one or more claims made by an issuer whose authorship can be cryptographically verified. It is possible to use VCs to create a [verifiable presentation](#verifiable-presentation). Also, the claims in a VC can be about different subjects.
 
 ### verifiable data registry
 A system that mediates the creation and verification of identifiers, keys, and other relevant data.
 
 ### verifiable presentation
-Data is derived from one or more [verifiable credentials](/docs/concepts/glossary#verifiable-credential), issued by issuers, and shared (presented) to a specific verifier. The verifiable presentation is tamper-evident and encoded in a way to trust the authorship of the data after a cryptographic verification. 
+Data is derived from one or more [verifiable credentials](#verifiable-credential), issued by issuers, and shared (presented) to a specific verifier. The verifiable presentation is tamper-evident and encoded in a way to trust the authorship of the data after a cryptographic verification. 
 
 ### verifier
-An entity that receives one or more [verifiable credentials](/docs/concepts/glossary#verifiable-credential) optionally, inside a [verifiable presentation](/docs/concepts/glossary#verifiable-presentation). Also known as a relying party.
+An entity that receives one or more [verifiable credentials](#verifiable-credential) optionally, inside a [verifiable presentation](#verifiable-presentation). Also known as a relying party.
 
 
 
