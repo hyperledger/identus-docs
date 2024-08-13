@@ -156,7 +156,7 @@ const config = {
             ],
         },
         footer: {
-            `Hyperledger Identus CC BY 4.0`,
+           copyright: `Hyperledger Identus CC BY 4.0`,
         },
         prism: {
             theme: prismThemes.github,
