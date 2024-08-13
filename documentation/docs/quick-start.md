@@ -44,7 +44,7 @@ More in depth documentation about [Cloud Agent](/docs/concepts/glossary/#cloud-a
 ### Wallet SDKs
 [Wallet SDKs](/docs/concepts/glossary/#wallet-sdk) for web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests. They are typically used in applications that allow identity holders to interact with issuers and verifiers.
 
-More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
+More in-depth documentation about the different Wallet SDKs can be found here ([TypeScript](https://input-output-hk.github.io/identus-docs/identus-edge-agent-sdk-ts/sdk), [Swift](https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/), [KMM](https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/))
 
 
 
@@ -175,7 +175,7 @@ curl --location \
 
 ```bash
 curl --location \
---request POST 'http://localhost:8000/prism-agent/did-registrar/dids/{didRef}/publications' \
+--request POST 'http://localhost:8000/cloud-agent/did-registrar/dids/{didRef}/publications' \
 --header 'Accept: application/json'
 ```
 
@@ -290,8 +290,9 @@ npm run build
 
   * Start the React demo:
 ```bash
-cd demos/browser
+cd demos/next
 npm i
+npm run build
 npm run start
 ```
 
@@ -348,11 +349,16 @@ The latest mediator version can be found at [Mediator releases](https://github.c
 
 :::
 
+  Mac OSX  terminal shell
 ```bash
-MEDIATOR_VERSION=0.10.2 docker-compose up
+MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ipconfig getifaddr $(route get default | grep interface | awk '{print $2}')):8080;ws://$(ipconfig getifaddr $(route get default | grep interface | awk '{print $2}')):8080/ws" docker-compose up
+```
+ Linux terminal shell
+```bash
+MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080;ws://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080/ws" docker-compose up
 ```
 
-`MEDIATOR_ENDPOINT` is then set to [http://localhost:8080](http://localhost:8080).
+`MEDIATOR_ENDPOINT` is then set to your local ip address:8080.
 
 3. More advanced documentation and configuration options can be found [here](https://github.com/hyperledger/identus-mediator).
 
@@ -834,7 +840,7 @@ curl --location \
             "trustIssuers": [
                 [[PUBLISHED PRISM DID FROM THE ISSUER]]
             ]
-        },
+        }
     ],
     "options": {
         "challenge": "A challenge for the holder to sign",

@@ -73,6 +73,15 @@ const config = {
                 sidebarPath: require.resolve('./identus-cloud-agent/docs/docusaurus/sidebars.js'),
             },
         ],
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'adrs',
+                path: 'documentation/adrs',
+                routeBasePath: 'adrs',
+                sidebarPath: require.resolve('./documentation/adrs/sidebars.js'),
+            },
+        ],
         require.resolve('docusaurus-lunr-search'),
         [
             '@docusaurus/plugin-content-docs',
@@ -97,7 +106,6 @@ const config = {
                 srcDark: "img/identus-navbar-light.png",
             },
             items: [
-
                 {
                     type: 'doc',
                     docId: 'getting-started',
@@ -111,20 +119,19 @@ const config = {
                     activeBaseRegex: `/tutorials/`
                 },
                 {
-                    type: 'dropdown',
-                    label: 'API',
+                    to: '/adrs/',
+                    label: 'ADRs',
                     position: 'left',
-                    items: [
-                        {
-                            to: '/agent-api/',
-                            label: 'Agent API',
-                            activeBaseRegex: `/agent-api/`
-                        }
-                    ]
+                    activeBaseRegex: `/adrs/`
+                },
+                {
+                    to: '/agent-api/',
+                    label: 'Agent API',
+                    activeBaseRegex: `/agent-api/`
                 },
                 {
                     type: 'dropdown',
-                    label: 'SDK',
+                    label: 'SDKs',
                     position: 'left',
                     items: [
                         {
@@ -143,19 +150,8 @@ const config = {
                     ],
                 },
                 {
-                    type: 'dropdown',
-                    label: 'Resources',
-                    position: 'left',
-                    items: [
-                        {
-                            label: 'PRISM DID Spec',
-                            href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
-                        },
-                        {
-                            label: 'Architecture Decision Records',
-                            href: 'pathname:///adrs',
-                        },
-                    ],
+                    label: 'PRISM DID Spec',
+                    href: 'https://github.com/input-output-hk/prism-did-method-spec/blob/main/w3c-spec/PRISM-method.md',
                 },
             ],
         },
