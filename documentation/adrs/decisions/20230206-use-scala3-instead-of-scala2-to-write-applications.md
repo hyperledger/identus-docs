@@ -1,6 +1,6 @@
 # Use Scala3 instead of Scala2 to write applications
 
-- Status: [ accepted | deprecated | superseded by [xxx](yyyymmdd-xxx.md)] <!-- optional -->
+- Status: [ accepted | deprecated | superseded by \[xxx\](yyyymmdd-xxx.md)] <!-- optional -->
 - Deciders: [list everyone involved in the decision] <!-- optional -->
 - Date: [YYYY-MM-DD when the decision was last updated] <!-- optional. To customize the ordering without relying on Git creation dates and filenames -->
 - Tags: [space and/or comma separated list of tags] <!-- optional -->
@@ -69,5 +69,5 @@ Chosen option: "[option 1]", because [justification. e.g. only option, which mee
 
 ## Links <!-- optional -->
 
-- [Link type](link to adr) <!-- example: Refined by [xxx](yyyymmdd-xxx.md) -->
+- [Link type](link to adr) <!-- example: Refined by \[xxx\](yyyymmdd-xxx.md) -->
 - … <!-- numbers of links can vary -->

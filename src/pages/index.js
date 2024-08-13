@@ -10,32 +10,32 @@ import AtalaGraphic from '../components/atala-graphic';
 import Blob from '../components/blob';
 import Button from '../components/button';
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className={clsx('container', styles.container)}>
-          <div className={styles.hero__content}>
-              <span className={clsx('hero__subtitle', styles.hero__tagline)}>{siteConfig.tagline}</span>
-              <h1 className={clsx('hero__title', styles.hero__title)} dangerouslySetInnerHTML={{__html: siteConfig.title}}/>
-                  <Button
-                      className={clsx("button button--lg", styles.hero__button)}
-                      to="/docs/getting-started">
-                      Get Started
-                  </Button>
-          </div>
-          <AtalaGraphic/>
+        <div className={styles.hero__content}>
+          <span className={clsx('hero__subtitle', styles.hero__tagline)}>{siteConfig.tagline}</span>
+          <h1 className={clsx('hero__title', styles.hero__title)} dangerouslySetInnerHTML={{ __html: siteConfig.title }} />
+          <Button
+            className={clsx("button button--lg", styles.hero__button)}
+            to="/docs/getting-started">
+            Get Started
+          </Button>
+        </div>
+        <AtalaGraphic />
       </div>
     </header>
   );
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`H${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-        <Blob/>
+      <Blob />
       <HomepageHeader />
       <main>
         <HomepageFeatures />
