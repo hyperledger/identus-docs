@@ -9,7 +9,7 @@ const path = require('path')
 // console.log(colorMode)
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Unlock the power of your digital identity.',
+    title: '',
     tagline: 'Hyperledger Identus Docs',
     // url: 'https://docs.atalaprism.io',
     url: 'https://hyperledger.github.io/',
@@ -103,7 +103,7 @@ const config = {
             logo: {
                 alt: ' Identus logo',
                 src: 'img/identus-navbar-dark.png',
-                srcDark: "img/identus-navbar-light.png",
+                srcDark: "img/identus-navbar-dark.png",
             },
             items: [
                 {
