@@ -21,7 +21,7 @@ Verifiers are the [relying party](/docs/concepts/glossary/#relying-party) in the
 
 
 
-## Identus flow
+## Hyperledger Identus flow
 The diagram details how the concepts fit alongside the Identus components in a typical SSI interaction.
 
 ![Component Diagram](/img/component-diagram.png)
@@ -29,11 +29,11 @@ The diagram details how the concepts fit alongside the Identus components in a t
 
 
 ## An overview of Hyperledger Identus components
-Hyperledger Identus consists of core libraries that facilitate typical SSI interactions between [Issuers](/docs/concepts/glossary/#issuer), [Holders](/docs/concepts/glossary/#holder), and [Verifiers](/docs/concepts/glossary/#verifier).
+Identus consists of core libraries that facilitate typical SSI interactions between [Issuers](/docs/concepts/glossary/#issuer), [Holders](/docs/concepts/glossary/#holder), and [Verifiers](/docs/concepts/glossary/#verifier).
 
 
-### A Cloud Agent
-A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
+### Cloud Agent
+A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
 
 It is maintained as an open source through the [Hyperledger Identus](https://www.hyperledger.org/projects/identus).
 
@@ -48,13 +48,13 @@ More in-depth documentation about the different Wallet SDKs can be found here ([
 
 
 
-### A Mediator
+### Mediator
 [Mediators](/docs/concepts/glossary/#mediator) are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof request on behalf of the Wallet SDKs (which can be offline occasionally).
 
 More in-depth documentation about Mediator can be found [here](/docs/identus/mediator).
 
-#### A Node for a Verifiable Data Registry (VDR)
-To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In Identus's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Distributed Ledger.
+#### Node for a Verifiable Data Registry (VDR)
+To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In Hyperledger Identus's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Distributed Ledger.
 
 
 
@@ -76,7 +76,7 @@ git clone https://github.com/hyperledger/identus-cloud-agent
 ```
 
 
-2. Once cloned, create a new environment variable configuration file named  __./identus-cloud-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:
+2. Once cloned, create a new file named  __./identus-cloud-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent environment variable configuration with the following content:
 
 
 ```
@@ -89,7 +89,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 PG_PORT=5432
 ```
 
-3. Create a new environment variable configuration file named  __./identus-cloud-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content:
+3. Create a new file named  __./identus-cloud-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent environment variable configuration with the following content:
 
 
 
@@ -111,7 +111,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 :::
 
-5. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool.
+5. Start the `issuer` and `verifier` Cloud Agents by running the below commands in the terminal.
 
 
 
@@ -126,6 +126,9 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
  ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
+  * The Issuer [API endpoint](http://localhost:8000/cloud-agent/) will be accessible on port 8000 `http://localhost:8000/cloud-agent/` with a [Swagger Interface](http://localhost:8000/cloud-agent/redoc) available at `http://localhost:8000/cloud-agent/redoc`.
+
+
   * Verifier Cloud Agent command:
 
  For Mac OSX  terminal shell
@@ -137,8 +140,6 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
  ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
-  * The Issuer [API endpoint](http://localhost:8000/cloud-agent/) will be accessible on port 8000 `http://localhost:8000/cloud-agent/` with a [Swagger Interface](http://localhost:8000/cloud-agent/redoc) available at `http://localhost:8000/cloud-agent/redoc`.
-
 
   * The Verifier [API endpoint](http://localhost:9000/cloud-agent/) will be accessible on port 9000 `http://localhost:9000/cloud-agent/` with a [Swagger Interface](http://localhost:9000/cloud-agent/redoc) available at `http://localhost:9000/cloud-agent/redoc`.
 
@@ -146,7 +147,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 ### Agent configuration
 
-#### Creating LongForm PrismDID
+#### Creating a LongForm PrismDID
 1. Run the following API request against your Issuer API to create a PRISM DID:
 - 📌 **Note:** [To create DIDs with various supported curves](/tutorials/dids/create#2-create-the-cloud-agent-managed-did-using-did-registrar-endpoint).
 
@@ -171,7 +172,7 @@ curl --location \
 }'
 ```
 
-2. Create a PRISM DID operation and publish the DID by replacing `{didRef}` with the `longFormDid` output value from the previous create DID step.
+2. Publish the DID by replacing `{didRef}` with the `longFormDid` output value from the previous step.
 
 ```bash
 curl --location \
@@ -179,22 +180,22 @@ curl --location \
 --header 'Accept: application/json'
 ```
 
-3. The short version of the did is the publishedPrismDID.
+3. The short version of the DID is the publishedPrismDID.
 
 :::info
 
-Learn more about PRISM DIDs and why it is necessary to publish specific DIDs [here](https://staging-docs.atalaprism.io/tutorials/dids/publish).
+📖 Learn more about PRISM DIDs and why it is necessary to publish specific DIDs [here](https://staging-docs.atalaprism.io/tutorials/dids/publish).
 
 :::
 
 
 #### Create a credential schema (JWT W3C Credential)
 
-1. To create a [credential schema](/docs/concepts/glossary/#credential-schema) on the Issuer instance, run the following request:
+1. To create a [credential schema](/docs/concepts/glossary/#credential-schema) on the Issuer API instance, run the following request:
 
 :::info
 
-Replace the `[[publishedPrismDID]]` in the example request with the `did` value from the previous step.
+Replace the `[[publishedPrismDID]]` in the example request with the `did` value from the [**Agent Configuration**](/docs/quick-start/#agent-configuration) steps.
 
 :::
 
@@ -267,18 +268,18 @@ All wallet SDK's come bundled with a sample application, that cover all the Iden
 git clone https://github.com/hyperledger/identus-edge-agent-sdk-ts
 ```
 
-2. Ensure you have all applications installed for building the SDK and it's dependencies
+2. Ensure you have all applications installed for building the SDK and their dependencies.
 
-[rust](https://www.rust-lang.org/tools/install) and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) are leveraged to build and use the AnonCreds and DIDComm rust libraries within typescript. To build the SDK locally or run demonstration applications, you must have these applications installed.
+[rust](https://www.rust-lang.org/tools/install) and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) are leveraged to build and use the AnonCreds and DIDComm Rust libraries within TypeScript. To build the SDK locally or run demonstration applications, you must have these installed.
 
-The following should work Linux and MacOS, if you experience any issues - please check the latest installation instructions for your platform.
+The following should work Linux and MacOS. If you experience any issues, please check the latest installation instructions for your platform.
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ```
 
-3. Run the following commands:
+3. Run the following:
   * Build the source SDK:
 
 ```bash
@@ -296,7 +297,7 @@ npm run build
 npm run start
 ```
 
-  * This will start the react Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
+  * This will start the React Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
 
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
@@ -308,7 +309,7 @@ git clone https://github.com/hyperledger/identus-edge-agent-sdk-swift
 ```
 
 2. Open the XCode project on __./Sample/AtalaPrismWalletDemo/AtalaPrismWalletDemo.xcodeproj__
-3. On the top left of the XCode window you will see a play/run button, press it.
+3. On the top left of the XCode window you will see a Play/Run button, click it.
 4. The app will start.
 5. Click Wallet Demo 2.0
   * You will be able to run the rest of the guide here.
@@ -358,7 +359,7 @@ MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ipconfig getifaddr $(route g
 MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080;ws://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080/ws" docker-compose up
 ```
 
-`MEDIATOR_ENDPOINT` is then set to your local ip address:8080.
+`MEDIATOR_ENDPOINT` is then set to your local IP address:8080.
 
 3. More advanced documentation and configuration options can be found [here](https://github.com/hyperledger/identus-mediator).
 
@@ -396,7 +397,7 @@ Follow the steps in your desired platform as stated below:
 </TabItem>
 <TabItem value="android" label="Android  Sample APP">
 
-1. Go back to the Sample app. In the main screen, you can provide the mediator DID of your choice or use that is there already. Proceed and click **Start** after.
+1. Go back to the Sample app. In the main screen, you can provide the mediator DID of your choice or use what is there already. Proceed and click **Start** after.
 
 </TabItem>
 </Tabs>
@@ -408,7 +409,7 @@ Follow the steps in your desired platform as stated below:
 The below code examples show how to establish mediation when building your own application.
 
 <summary>Code examples</summary>
-3. The following code examples represent establishing mediation and instantiating the Cloud Agent.
+3. The following code examples represent establishing mediation and creating a Cloud Agent instance.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -495,7 +496,7 @@ agent.startFetchingMessages()
 </Tabs>
 
 ## Establish Holder connections
-To connect the Holder to both Cloud Agent instances, you must run this in both Issuer and Verifier endpoints.
+To connect the Holder to both Cloud Agent instances, you must run this in both Issuer and Verifier API endpoints.
 
 ### Establish a connection - Agent side
 A connection must be established between the Holder and Cloud Agents to correctly deliver the Issuance + Verification Messages to the Holder.
@@ -537,14 +538,14 @@ curl --location \
 
 4. Open a browser at localhost:3000.
 5. Start the Edge Agent by clicking the button.
-6. Paste the invitation URL generated in the previous step into the `CloudAgent` connection section and click on Create Connection.
+6. Paste the invitation URL generated in the previous step into the `CloudAgent` [connection section](/docs/quick-start/#establish-holder-connections) and click on Create Connection.
   * The application will react when the connection gets established correctly and show a new connection.
 
 
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
 
-4. On the OOB dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
+4. On the Out of Bounds (OOB) dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
   * The application will respond once the connection gets established correctly and show a message under messages.
 
 </TabItem>
@@ -627,7 +628,7 @@ curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credenti
 
 :::info
 
-automaticIssuance is optional. It can also be manually triggered and confirmed by the Holder.```
+`automaticIssuance` is optional. It can also be manually triggered and confirmed by the Holder.
 
 :::
 
@@ -737,7 +738,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 ### Store the Issued Credential [Holder]
 :::caution
 
-The sample application are using an insecure storage solution which should only be used for testing purposes and not production environments!
+🛑 The sample application are using an insecure storage solution which should only be used for testing purposes and not production environments!
 
 :::
 
@@ -812,14 +813,14 @@ agent.handleReceivedMessagesEvents().collect { list ->
 ## Request a verification from the Verifier Cloud Agent to the Holder (JWT W3C Credential)
 Now that the Holder has received a credential, it can be used in a verification workflow between a Holder and a Verifier. This requires the following steps:
 
-1. Verifier creates a proof request
-2. Holder receives the proof request
-3. Holder creates a proof presentation and shares this with the verifier
-4. Verifier verifies the proof presentation
+1. Verifier creates a proof request.
+2. Holder receives the proof request.
+3. Holder creates a proof presentation and shares this with the verifier.
+4. Verifier verifies the proof presentation.
 
 :::info
 
-In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connectionless verification.
+🗒️ In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connectionless verification.
 
 :::
 
@@ -849,7 +850,7 @@ curl --location \
 }'
 ```
 
-  * This API request will return a `presentationRequestId,` which the verifier can use later to check the request's current status.
+  * This API request will return a `presentationRequestId,` which the verifier can use later to check the current status of the request.
 
 
 
