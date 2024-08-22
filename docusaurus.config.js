@@ -9,7 +9,7 @@ const path = require('path')
 // console.log(colorMode)
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: '',
+    title: 'Hyperledger Identus',
     tagline: 'Hyperledger Identus Docs',
     // url: 'https://docs.atalaprism.io',
     url: 'https://hyperledger.github.io/',
