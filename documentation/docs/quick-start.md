@@ -149,7 +149,13 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 #### Creating a LongForm PrismDID
 1. Run the following API request against your Issuer API to create a PRISM DID:
-- 📌 **Note:** [To create DIDs with various supported curves](/tutorials/dids/create#2-create-the-cloud-agent-managed-did-using-did-registrar-endpoint).
+   
+:::note
+
+📌 **Note:** [To create DIDs with various supported curves](/tutorials/dids/create#2-create-the-cloud-agent-managed-did-using-did-registrar-endpoint).
+
+:::
+
 
 ```bash
 curl --location \
