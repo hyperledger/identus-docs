@@ -2,7 +2,7 @@ import React from 'react';
 import {useThemeConfig, useColorMode} from '@docusaurus/theme-common';
 import styles from './index.module.css';
 
-const Logo = ()
+const Logo = ();
 
 function Footer() {
     const {footer} = useThemeConfig();
