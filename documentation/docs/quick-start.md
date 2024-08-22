@@ -58,7 +58,7 @@ To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (V
 
 
 
-## PRE-REQUISITES
+## Pre-Requisites
 
 
 ### Agent Deployment
@@ -126,10 +126,10 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
  ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
-  * The Issuer [API endpoint](http://localhost:8000/cloud-agent/) will be accessible on port 8000 `http://localhost:8000/cloud-agent/` with a [Swagger Interface](http://localhost:8000/cloud-agent/redoc) available at `http://localhost:8000/cloud-agent/redoc`.
+  - The Issuer [API endpoint](http://localhost:8000/cloud-agent/) will be accessible on port 8000 `http://localhost:8000/cloud-agent/` with a [Swagger Interface](http://localhost:8000/cloud-agent/redoc) available at `http://localhost:8000/cloud-agent/redoc`.
 
 
-  * Verifier Cloud Agent command:
+  - Verifier Cloud Agent command:
 
  For Mac OSX  terminal shell
 ```bash
@@ -280,7 +280,7 @@ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ```
 
 3. Run the following:
-  * Build the source SDK:
+   - Build the source SDK:
 
 ```bash
 cd identus-edge-agent-sdk-ts
@@ -289,7 +289,7 @@ npm i
 npm run build
 ```
 
-  * Start the React demo:
+   - Start the React demo:
 ```bash
 cd demos/next
 npm i
@@ -297,7 +297,7 @@ npm run build
 npm run start
 ```
 
-  * This will start the React Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
+   - This will start the React Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
 
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
@@ -317,16 +317,16 @@ git clone https://github.com/hyperledger/identus-edge-agent-sdk-swift
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
 
-1. Clone the [KMM SDK](https://github.com/hyperledger/identus-edge-agent-sdk-kmm) repository.
+6. Clone the [KMM SDK](https://github.com/hyperledger/identus-edge-agent-sdk-kmm) repository.
 
 ```bash
 git clone https://github.com/hyperledger/identus-edge-agent-sdk-kmm
 ```
 
-2. Open the Wallet SDK project on IntelliJ or Android Studio.
-3. In the `Run configuration` dropdown, select SampleApp.
-4. Select the device or emulator you want to use.
-5. Click "Run".
+7. Open the Wallet SDK project on IntelliJ or Android Studio.
+8. In the `Run configuration` dropdown, select SampleApp.
+9. Select the device or emulator you want to use.
+10. Click "Run".
   * The SampleApp will launch on the applicable device or emulator.
 
 </TabItem>
@@ -550,7 +550,7 @@ curl --location \
 <TabItem value="swift" label="Swift Sample APP">
 
 4. On the Out of Bounds (OOB) dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
-  * The application will respond once the connection gets established correctly and show a message under messages.
+   - The application will respond once the connection gets established correctly and show a message under messages.
 
 </TabItem>
 <TabItem value="android" label="Android Sample APP">
@@ -558,7 +558,7 @@ curl --location \
 4. Go back to the Application:
 5. Click the floating button at the bottom right corner of the Contacts tab.
 6. On the dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
-  * The application will react once the connection gets established correctly and show a message under messages.
+   - The application will react once the connection gets established correctly and show a message under messages.
 
 
 </TabItem>
