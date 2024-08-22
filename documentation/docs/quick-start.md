@@ -392,24 +392,28 @@ Follow the steps in your desired platform as stated below:
 
 <TabItem value="swift" label="Swift Sample APP">
 
-1. In the app, go to Wallet Demo, and on the Mediator tab, insert the mediator DID.
+2. In the app, go to Wallet Demo, and on the Mediator tab, insert the mediator DID.
 
 </TabItem>
 <TabItem value="android" label="Android  Sample APP">
 
-1. Go back to the Sample app. In the main screen, you can provide the mediator DID of your choice or use what is there already. Proceed and click **Start** after.
+3. Go back to the Sample app. In the main screen, you can provide the mediator DID of your choice or use what is there already. Proceed and click **Start** after.
 
 </TabItem>
 </Tabs>
 
 
 
-2. If you are running the SampleApp, click the **Start Agent** button.
+4. If you are running the SampleApp, click the **Start Agent** button.
+
+:::info 
 
 The below code examples show how to establish mediation when building your own application.
 
-<summary>Code examples</summary>
-3. The following code examples represent establishing mediation and creating a Cloud Agent instance.
+:::
+
+
+5. The following code examples represent establishing mediation and creating a Cloud Agent instance.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
@@ -513,7 +517,7 @@ curl --location \
 
 1. This request will return a JSON response with an invitation and its URL. The Issuer Cloud Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
 
-  * Copy the `invitationUrl` and the `connectionId`.
+  - Copy the `invitationUrl` and the `connectionId`.
 
 #### Establish connection on the Verifier Cloud Agent
 ```bash
@@ -527,7 +531,7 @@ curl --location \
 
 2. This request will return a JSON response with an invitation and its URL. The Verifier Cloud Agent would share this URL as a QR code, and the holder would scan it with the wallet app.
 
-  * Copy the `invitationUrl` and the `connectionId`.
+  - Copy the `invitationUrl` and the `connectionId`.
 
 ### Establish a connection - Holder side
 3. Now that you have the invitation, it's time for the Holder to accept it.
@@ -652,7 +656,6 @@ curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credenti
 </Tabs>
 
 
-<summary>Code examples</summary>
 
 5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.
 
@@ -742,7 +745,7 @@ agent.handleReceivedMessagesEvents().collect { list ->
 
 :::
 
-<summary>Code examples</summary>
+
 6. Once the Holder receives a credential from the Cloud Agent, it needs to store the credential somewhere:
 
 <Tabs>
