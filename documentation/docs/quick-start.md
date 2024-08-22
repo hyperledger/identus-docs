@@ -201,7 +201,7 @@ curl --location \
 
 :::info
 
-Replace the `[[publishedPrismDID]]` in the example request with the `did` value from the [**Agent Configuration**](/docs/quick-start/#agent-configuration) steps.
+Replace the `[[publishedPrismDID]]` in the example request with the `did` value from the [**Agent Configuration**](/docs/quick-start#agent-configuration) steps.
 
 :::
 
