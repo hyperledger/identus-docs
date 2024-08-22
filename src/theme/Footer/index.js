@@ -2,7 +2,7 @@ import React from 'react';
 import {useThemeConfig, useColorMode} from '@docusaurus/theme-common';
 import styles from './index.module.css';
 
-const Logo = ();
+const Logo = ("img/identus-logo.svg");
 
 function Footer() {
     const {footer} = useThemeConfig();
