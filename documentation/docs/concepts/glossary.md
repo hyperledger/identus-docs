@@ -47,7 +47,7 @@ When the Holder accepts or rejects a credential offer, a credential request is c
 A globally unique persistent identifier that does not require a centralized registration authority and is often cryptographically generated. All DIDs use distributed ledger technology (DLT) or some other decentralized network.
 
 ### DID
-See [decentralized identifier](#decentralized-identifer)
+See [decentralized identifier](#decentralized-identifer-(did))
 
 ### DIDComm
 A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.
@@ -65,7 +65,7 @@ The DID method defines how to implement a specific DID method schema. The specif
 The process for retrieving a [DID document](#did-document).
 
 ### DID subject
-The entity is identified by a [DID](#decentralized-identifer) and described by a [DID documents](#did-document). Anything can be a DID subject: person, group, organization, physical thing, digital thing, etc.
+The entity is identified by a [DID](#decentralized-identifer-(did)) and described by a [DID documents](#did-document). Anything can be a DID subject: person, group, organization, physical thing, digital thing, etc.
 
 ### Distributed Ledger Technology (DLT)
 A distributed database or ledger establishes confidence for the participants to rely on the data recorded. Typically these databases use nodes and a consensus protocol to confirm the order of cryptographically signed transactions. Linking the transactions over time creates a historical ledger that is effectively immutable.
