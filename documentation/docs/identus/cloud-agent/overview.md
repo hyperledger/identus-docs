@@ -43,39 +43,39 @@ This document provides an overview of the Cloud Agent feature set. This document
 
 | Credential Type | Supported | Notes |
 | --- | :--: | -- |
-| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWT using the `JsonWebSignature2020` with `ESK256K` signature suite.<br /><br />Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions. |
+| [W3C Standard Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) | :white_check_mark: | Supports JSON and JSON-LD Credentials encoded as JWT using the `JsonWebSignature2020` with `ES256K` (secp256k1) signature suite.<br /><br />Supports the [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/) data format for presentation requests and presentation submissions. |
 
 ## DID Methods
 
 | Method | Supported | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --- | :--: |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `did:PRISM` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) compliant [PRISM DID Method](https://github.com/input-output-hk/PRISM-did-method-spec/blob/main/w3c-spec/PRISM-method.md) specification. A distributed ledger is the default [Verifiable Data Registry (VDR)](/docs/concepts/glossary#verifiable-data-registry) to anchor DIDs. PRISM DID Method is used for [Verifiable Credentials](/docs/concepts/glossary#verifiable-credential) and [Verifiable Presentations](/docs/concepts/glossary#verifiable-presentation). |
+| `did:prism` | :white_check_mark: | W3C [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/) compliant [PRISM DID Method](https://github.com/input-output-hk/PRISM-did-method-spec/blob/main/w3c-spec/PRISM-method.md) specification. A distributed ledger is the default [Verifiable Data Registry (VDR)](/docs/concepts/glossary#verifiable-data-registry) to anchor DIDs. PRISM DID Method is used for [Verifiable Credentials](/docs/concepts/glossary#verifiable-credential) and [Verifiable Presentations](/docs/concepts/glossary#verifiable-presentation). |
 | `did:peer` | :white_check_mark:| Used for P2P connections                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Universal Resolver | :construction: |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ## DIDComm
 
-| Version | Supported | Notes |
-| --- | :--: | -- |
-| [`V1`](https://github.com/hyperledger/aries-rfcs/blob/main/concepts/0005-didcomm/README.md) | :x: |  |
-| [`V2`](https://identity.foundation/didcomm-messaging/spec/) | :white_check_mark: |  |
+| Version | Supported |
+| --- | :--: |
+| [`V1`](https://github.com/hyperledger/aries-rfcs/blob/main/concepts/0005-didcomm/README.md) | :x: |
+| [`V2`](https://identity.foundation/didcomm-messaging/spec/) | :white_check_mark: |
 
 ## DIDComm Protocol Support
 
-| Protocol | Supported | Notes |
-| --- | :--: | -- |
-| [Mediator Coordinator](https://didcomm.org/mediator-coordination/2.0/) | :white_check_mark: | -- |
-| [DIDComm V2 Messaging](https://identity.foundation/didcomm-messaging/spec) | :white_check_mark: | -- |
-| [DIDComm V2 Issue Credential](https://github.com/decentralized-identity/waci-didcomm/tree/main/issue_credential) | :white_check_mark: | -- |
-| [DIDComm V2 Present Proof](https://github.com/decentralized-identity/waci-didcomm/blob/main/present_proof/present-proof-v3.md) | :white_check_mark: | -- |
-| [DIDComm V2 Report Problem](https://identity.foundation/didcomm-messaging/spec/#problem-reports) | :white_check_mark: | -- |
-| [DIDComm V2 Routing Protocol](https://identity.foundation/didcomm-messaging/spec/#routing-protocol-20) | :white_check_mark: | -- |
+| Protocol | Supported |
+| --- | :--: |
+| [Mediator Coordinator](https://didcomm.org/mediator-coordination/2.0/) | :white_check_mark: |
+| [DIDComm V2 Messaging](https://identity.foundation/didcomm-messaging/spec) | :white_check_mark: |
+| [DIDComm V2 Issue Credential](https://github.com/decentralized-identity/waci-didcomm/tree/main/issue_credential) | :white_check_mark: |
+| [DIDComm V2 Present Proof](https://github.com/decentralized-identity/waci-didcomm/blob/main/present_proof/present-proof-v3.md) | :white_check_mark: |
+| [DIDComm V2 Report Problem](https://identity.foundation/didcomm-messaging/spec/#problem-reports) | :white_check_mark: |
+| [DIDComm V2 Routing Protocol](https://identity.foundation/didcomm-messaging/spec/#routing-protocol-20) | :white_check_mark: |
 
 ## Supported Aries RFCs
 
-| RFC | Supported | Notes |
- --- | :--: | -- |
-| [0023-did-exchange](https://github.com/hyperledger/aries-rfcs/tree/main/features/0023-did-exchange)      | :white_check_mark:        | |
-| [0434-out-of-band-protocol](https://github.com/hyperledger/aries-rfcs/blob/main/features/0434-outofband/README.md)      | :white_check_mark:        | |
-| [0453-issue-credential-protocol](https://github.com/hyperledger/aries-rfcs/tree/main/features/0453-issue-credential-v2)      | :white_check_mark:        | |
-| [0453-present-proof-protocol](https://github.com/hyperledger/aries-rfcs/tree/main/features/0454-present-proof-v2)      | :white_check_mark:        | |
+| RFC | Supported |
+ --- | :--: |
+| [0023-did-exchange](https://github.com/hyperledger/aries-rfcs/tree/main/features/0023-did-exchange)      | :white_check_mark:        |
+| [0434-out-of-band-protocol](https://github.com/hyperledger/aries-rfcs/blob/main/features/0434-outofband/README.md)      | :white_check_mark:        |
+| [0453-issue-credential-protocol](https://github.com/hyperledger/aries-rfcs/tree/main/features/0453-issue-credential-v2)      | :white_check_mark:        |
+| [0453-present-proof-protocol](https://github.com/hyperledger/aries-rfcs/tree/main/features/0454-present-proof-v2)      | :white_check_mark:        |
