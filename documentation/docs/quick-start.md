@@ -925,6 +925,7 @@ In the example, we show a verification flow that assumes a connection between Ho
 ### Verifier Agent
 <Tabs>
 <TabItem value="existing" label="With Existing Connection">
+
 5. To run this section, we will use [the connection](/docs/quick-start#establish-connection-on-the-verifier-cloud-agent) we created between the Holder and the Verifier.
 
 ```bash
@@ -953,7 +954,7 @@ curl --location \
 </TabItem>
 <TabItem value="connectionless" label="Connectionless Request Presentation"> 
 
-5. To run this section, we will use presentation invitation enpoint, we create a request presentation invitation. which can be scanned / used by the holder.
+5. To run this section, we'll use the presentation invitation endpoint to create a request presentation invitation, which the holder can scan to receive the invitation or the verifier can share directly.
 
 ```bash
 curl --location \
@@ -978,7 +979,7 @@ curl --location \
 }'
 ```
 
-  * This API request will return a `invitationId` with OOB message with Request Presentation attached as a base64 url encoded string which can be used to share with the holder.
+  * This API request will return an `invitationId` along with an Out-Of-Band (OOB) message. The OOB message includes a Request Presentation in JSON format as an attachment and is encoded as a base64 URL-encoded string, which can be shared with the holder.
 
 ### Accept Request Presentation invitation for connectionless verification **Holder**
 # TODO please ask SDK team to add below section
