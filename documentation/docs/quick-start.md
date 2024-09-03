@@ -661,7 +661,6 @@ curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credenti
 
 
 ### Accept Credential Offer Invitation for connectionless issuance **Holder**
-# TODO please ask SDK team to add below section
 
 For connectionless issuance, the Holder needs to accept the invitation containing the credential offer. This step is necessary before creating the Credential Request.
 #### Demo application
@@ -984,7 +983,6 @@ curl --location \
   * This API request will return an `invitationId` along with an Out-Of-Band (OOB) message. The OOB message includes a Request Presentation in JSON format as an attachment and is encoded as a base64 URL-encoded string, which can be shared with the holder.
 
 ### Accept Request Presentation invitation for connectionless verification **Holder**
-# TODO please ask SDK team to add below section
 
 For connectionless verification, the Holder needs to accept the invitation containing the Request Presentation.
 #### Demo application
