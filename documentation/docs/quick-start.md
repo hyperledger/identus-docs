@@ -917,8 +917,10 @@ Now that the Holder has received a credential, it can be used in a verification 
 
 :::info
 
-In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connectionless verification.
+In the example, we demonstrate two verification flows:
 
+1. Verification with an established connection between the Holder and the Verifier.
+2. Connectionless verification in which the Holder and Verifier do not have a pre-established connection.
 :::
 
 
