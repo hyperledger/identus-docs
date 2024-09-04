@@ -391,7 +391,11 @@ Follow the steps in your desired platform as stated below:
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
 
-1. Open http://localhost:3000 in your browser, paste the mediator peer DID (obtained from the `from` attribute after fetching from the mediator's invitation endpoint), and click **Start** after.
+1. Open http://localhost:3000/debug in your browser, 
+1. paste the mediator peer DID (obtained from the `from` attribute after fetching from the mediator's invitation endpoint),
+1. click **Edge Agent** tab in the bottom left,
+1. click **Connect** button,
+1. click **Start** button.
 
 </TabItem>
 
