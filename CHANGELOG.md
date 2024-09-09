@@ -1,3 +1,24 @@
+## [1.108.0](https://github.com/hyperledger/identus-docs/compare/v1.107.0...v1.108.0) (2024-09-09)
+
+### :rocket: New Content
+
+* delete old draft ADRs ([#150](https://github.com/hyperledger/identus-docs/issues/150)) ([4b90d27](https://github.com/hyperledger/identus-docs/commit/4b90d27b79f42b951f9384039ee989e630f5ff3b))
+* Move ADRs to this repo ([#144](https://github.com/hyperledger/identus-docs/issues/144)) ([0950bfb](https://github.com/hyperledger/identus-docs/commit/0950bfb4b11b0d73e5df0c21863ef7648dd703df))
+* update submodules documentation to latest ([58a75d8](https://github.com/hyperledger/identus-docs/commit/58a75d8a01521acc6307cc97e30583a5fbd1b92b))
+* update submodules documentation to latest ([62e8e5b](https://github.com/hyperledger/identus-docs/commit/62e8e5b9df311155f0bae1fad6c3c5d235df3c0f))
+* update submodules documentation to latest ([ceefbb7](https://github.com/hyperledger/identus-docs/commit/ceefbb72964b375b216e6fda90f4752f603d0bab))
+* update submodules documentation to latest ([db6fc52](https://github.com/hyperledger/identus-docs/commit/db6fc522c9f5c5124a3a40e0d3fc6ca63f137132))
+* update submodules documentation to latest ([5680dfb](https://github.com/hyperledger/identus-docs/commit/5680dfb0a9cec7fd1399ffc38da80ec34174fd10))
+* upgrade dependencies [#110](https://github.com/hyperledger/identus-docs/issues/110) ([#151](https://github.com/hyperledger/identus-docs/issues/151)) ([1b09d0d](https://github.com/hyperledger/identus-docs/commit/1b09d0d36b562018f641b2a37b76d35a06a615c7))
+
+### :sparkles: Updates
+
+* branding fixes ([#146](https://github.com/hyperledger/identus-docs/issues/146)) ([c0d5248](https://github.com/hyperledger/identus-docs/commit/c0d5248e7d8ee04df13e2e4d7f900c4adccbf40a))
+* CI job must run on PR ([#148](https://github.com/hyperledger/identus-docs/issues/148)) ([2b9fc55](https://github.com/hyperledger/identus-docs/commit/2b9fc55e3f5d916a5e62f3d235ee7ef75a84c464))
+* quick start guide contents ([#145](https://github.com/hyperledger/identus-docs/issues/145)) ([ac555b0](https://github.com/hyperledger/identus-docs/commit/ac555b0651c0f644928f495c35a9fd8e71009eba))
+* rebrand-touch-up ([#155](https://github.com/hyperledger/identus-docs/issues/155)) ([e1023aa](https://github.com/hyperledger/identus-docs/commit/e1023aa00313836c3d5f16ce01e8576ffa470a2d))
+* use the IDENTUS_CI token ([#149](https://github.com/hyperledger/identus-docs/issues/149)) ([f89f7ad](https://github.com/hyperledger/identus-docs/commit/f89f7ad33250f414aecfbabf2ba881588d8e183c))
+
 ## [1.107.0](https://github.com/hyperledger/identus-docs/compare/v1.106.0...v1.107.0) (2024-08-04)
 
 ### :rocket: New Content
