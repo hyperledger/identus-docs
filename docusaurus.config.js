@@ -102,8 +102,8 @@ const config = {
         navbar: {
             logo: {
                 alt: ' Identus logo',
-                src: 'img/identus-navbar-dark.png',
-                srcDark: "img/identus-navbar-dark.png",
+                src: 'img/identus-navbar-light.png',
+                srcDark: "img/identus-navbar-light.png",
             },
             items: [
                 {

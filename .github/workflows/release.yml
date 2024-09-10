@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: "lts/*"
 
       - uses: crazy-max/ghaction-import-gpg@v6
         id: import_gpg
@@ -47,18 +47,6 @@ jobs:
           registry: ghcr.io
           username: ${{ env.GITHUB_ACTOR }}
           password: ${{ env.GITHUB_TOKEN }}
-
-      - name: Build ADRs
-        run: |
-          cd ./identus-cloud-agent
-          npm install -g log4brains
-          log4brains build --out ../static/adrs --basePath /adrs
-          touch ../static/adrs/.nojekyll
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
 
       - name: Release
         env:
