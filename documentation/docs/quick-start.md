@@ -601,7 +601,13 @@ agent.acceptOutOfBandInvitation(invitation)
 
 The credential issuance flow consists of multiple steps, detailed in this section. It starts with the Issuer sending a [Credential Offer](/docs/concepts/glossary/#credential-offer) to the Holder, which would accept or reject this invitation and create a `credentialRequest` from it. The [credential request](/docs/concepts/glossary/#credential-request) gets sent through DIDComm to the Issuer, issuing and sending the credential back to the Holder.
 
-### Create a Credential Offer **Issuer Agent**
+The Issuer can create a credential offer in two ways:
+1. As a direct credential offer DIDComm message for a holder with an existing connection
+2. As an credential offer as attachment in an OOB invitation message for connectionless issuance
+
+<Tabs>
+<TabItem value="existing" label="With Existing Connection">
+### Create a Credential Offer with an existing connection **Issuer Agent**
 
 1. To trigger the creation of a credential-offer, we call the credential-offers-endpoint, as follows:
 
@@ -630,7 +636,98 @@ curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credenti
     "automaticIssuance": true
 }'
 ```
+</TabItem>
+<TabItem value="connectionless" label="Connectionless Issuance">
+### Create a Credential Offer as Invitation for connectionless issuance **Issuer Agent**
 
+1. To trigger the creation of a credential-offer, we call the credential-offers-invitation-endpoint, as follows:
+
+:::info
+
+Please replace the following variables in the example request before sending:
+
+- `goalCode`: OPTIONAL A self-attested code the receiver may want to display to the user or use in automatically deciding what to do with the out-of-band message,
+- `goal`: OPTIONAL. A self-attested string that the receiver may want to display to the user about the context-specific goal of the out-of-band message.
+- `publishedPrismDID`: The short form of the PRISM DID created when setting up the Issuer agent
+
+The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
+
+- ``
+
+:::
+
+```bash
+curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credentials/credential-offers/invitation' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
+    "goalCode": [[goalCode]],
+    "goal": [[goal]],
+    "credentialFormat": "JWT",
+    "issuingDID": [[publishedPrismDID]],
+    "automaticIssuance": true
+}'
+```
+
+
+### Accept Credential Offer Invitation for connectionless issuance **Holder**
+
+For connectionless issuance, the Holder needs to accept the invitation containing the credential offer. This step is necessary before creating the Credential Request.
+#### Demo application
+<Tabs>
+<TabItem value="js" label="Typescript Sample APP">
+
+1. In the browser at localhost:3000, navigate to the "Credential Offer" section.
+2. Paste the invitation URL received from the Issuer into the provided input field.
+3. Click on "Accept Invitation" to process the credential offer.
+
+</TabItem>
+<TabItem value="swift" label="Swift Sample APP">
+
+1. In the Swift mobile app, go to the "Credential Offer" section.
+2. Enter the invitation URL received from the Issuer.
+3. Tap on "Accept Invitation" to process the credential offer.
+
+</TabItem>
+<TabItem value="android" label="Android Sample APP">
+
+1. In the Android mobile app, navigate to the "Credential Offer" section.
+2. Input the invitation URL provided by the Issuer.
+3. Tap "Accept Invitation" to process the credential offer.
+
+</TabItem>
+</Tabs>
+
+<summary>Code examples</summary>
+<Tabs>
+<TabItem value="js" label="Typescript">
+
+```js
+const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
+await props.agent.acceptDIDCommInvitation(parsed);
+```
+
+</TabItem>
+<TabItem value="swift" label="Swift">
+
+```swift
+  let message = try agent.parseOOBInvitation(url: oobUrl)
+  try await agent.acceptDIDCommInvitation(invitation: message)
+```
+
+</TabItem>
+<TabItem value="android" label="Android">
+
+```kotlin
+val invitation = agent.parseInvitation(oobUrl)
+agent.acceptOutOfBandInvitation(invitation)
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
 ### Create CredentialRequest from CredentialOffer **Holder**
 
 2. Because this credential Offer was created with the `automaticIssuance` true, as soon as the `CloudAgent` receives this `credentialRequest` it will respond with the `IssuedCredential` message and send this back to the holder.
@@ -829,12 +926,16 @@ Now that the Holder has received a credential, it can be used in a verification 
 
 :::info
 
-In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connectionless verification.
+In the example, we demonstrate two verification flows:
 
+1. Verification with an established connection between the Holder and the Verifier.
+2. Connectionless verification in which the Holder and Verifier do not have a pre-established connection.
 :::
 
 
 ### Verifier Agent
+<Tabs>
+<TabItem value="existing" label="With Existing Connection">
 
 5. To run this section, we will use [the connection](/docs/quick-start#establish-connection-on-the-verifier-cloud-agent) we created between the Holder and the Verifier.
 
@@ -860,6 +961,95 @@ curl --location \
 ```
 
   * This API request will return a `presentationRequestId,` which the verifier can use later to check the current status  of the request.
+
+</TabItem>
+<TabItem value="connectionless" label="Connectionless Request Presentation"> 
+
+5. To run this section, we'll use the presentation invitation endpoint to create a request presentation invitation, which the holder can scan to receive the invitation or the verifier can share directly.
+
+```bash
+curl --location \
+--request POST 'http://localhost:9000/cloud-agent/present-proof/presentations/invitation' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "goalCode": [[goalCode]],
+    "goal": [[goal]],
+    "credentialFormat": "JWT",
+    "proofs": [
+        {
+            "schemaId": [[schemaId]],
+            "trustIssuers": [
+                [[PUBLISHED PRISM DID FROM THE ISSUER]]
+            ]
+        }
+    ],
+    "options": {
+        "challenge": "A challenge for the holder to sign",
+        "domain": "domain.com"
+    }
+}'
+```
+
+  * This API request will return an `invitationId` along with an Out-Of-Band (OOB) message. The OOB message includes a Request Presentation in JSON format as an attachment and is encoded as a base64 URL-encoded string, which can be shared with the holder.
+
+### Accept Request Presentation invitation for connectionless verification **Holder**
+
+For connectionless verification, the Holder needs to accept the invitation containing the Request Presentation.
+#### Demo application
+<Tabs>
+<TabItem value="js" label="Typescript Sample APP">
+
+1. In the browser at localhost:3000, navigate to the "Request Presentation" section.
+2. Paste the invitation URL received from the Issuer into the provided input field.
+3. Click on "Accept Invitation" to process the request presentation.
+
+</TabItem>
+<TabItem value="swift" label="Swift Sample APP">
+
+1. In the Swift mobile app, go to the "Request Presentation" section.
+2. Enter the invitation URL received from the Issuer.
+3. Tap on "Accept Invitation" to process the request presentation.
+
+</TabItem>
+<TabItem value="android" label="Android Sample APP">
+
+1. In the Android mobile app, navigate to the "Request Presentation" section.
+2. Input the invitation URL provided by the Issuer.
+3. Tap "Accept Invitation" to process the request presentation.
+
+</TabItem>
+</Tabs>
+
+<summary>Code examples</summary>
+<Tabs>
+<TabItem value="js" label="Typescript">
+
+```js
+const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
+await props.agent.acceptDIDCommInvitation(parsed);
+```
+
+</TabItem>
+<TabItem value="swift" label="Swift">
+
+```swift
+  let message = try agent.parseOOBInvitation(url: oobUrl)
+  try await agent.acceptDIDCommInvitation(invitation: message)
+```
+
+</TabItem>
+<TabItem value="android" label="Android">
+
+```kotlin
+val invitation = agent.parseInvitation(oobUrl)
+agent.acceptOutOfBandInvitation(invitation)
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
 
 
 
