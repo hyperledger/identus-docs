@@ -1,3 +1,9 @@
+## [1.109.0](https://github.com/hyperledger/identus-docs/compare/v1.108.0...v1.109.0) (2024-09-11)
+
+### :rocket: New Content
+
+* Docker Logging Considerations ([#162](https://github.com/hyperledger/identus-docs/issues/162)) ([cea862b](https://github.com/hyperledger/identus-docs/commit/cea862b4f7b111d84461597dd192de2a0f09ee96))
+
 ## [1.108.0](https://github.com/hyperledger/identus-docs/compare/v1.107.0...v1.108.0) (2024-09-09)
 
 ### :rocket: New Content
