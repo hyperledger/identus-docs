@@ -1,3 +1,9 @@
+## [1.109.1](https://github.com/hyperledger/identus-docs/compare/v1.109.0...v1.109.1) (2024-09-12)
+
+### :sparkles: Updates
+
+* Minor corrections in clould-agent/overview.md ([#158](https://github.com/hyperledger/identus-docs/issues/158)) ([238c022](https://github.com/hyperledger/identus-docs/commit/238c0220ca7037b1ecd12625091d301f7cff23ed))
+
 ## [1.109.0](https://github.com/hyperledger/identus-docs/compare/v1.108.0...v1.109.0) (2024-09-11)
 
 ### :rocket: New Content
