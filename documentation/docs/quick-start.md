@@ -21,7 +21,7 @@ Verifiers are the [relying party](/docs/concepts/glossary/#relying-party) in the
 
 
 
-## Identus flow
+## Hyperledger Identus flow
 The diagram details how the concepts fit alongside the Identus components in a typical SSI interaction.
 
 ![Component Diagram](/img/component-diagram.png)
@@ -29,11 +29,11 @@ The diagram details how the concepts fit alongside the Identus components in a t
 
 
 ## An overview of Hyperledger Identus components
-Hyperledger Identus consists of core libraries that facilitate typical SSI interactions between [Issuers](/docs/concepts/glossary/#issuer), [Holders](/docs/concepts/glossary/#holder), and [Verifiers](/docs/concepts/glossary/#verifier).
+Identus consists of core libraries that facilitate typical SSI interactions between [Issuers](/docs/concepts/glossary/#issuer), [Holders](/docs/concepts/glossary/#holder), and [Verifiers](/docs/concepts/glossary/#verifier).
 
 
 ### A Cloud Agent
-A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The  Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
+A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/docs/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/docs/concepts/glossary/#decentralized-identifier) and DID-based connections. The Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/docs/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
 
 It is maintained as an open source through the [Hyperledger Identus](https://www.hyperledger.org/projects/identus).
 
@@ -48,17 +48,17 @@ More in-depth documentation about the different Wallet SDKs can be found here ([
 
 
 
-### A Mediator
+### Mediator
 [Mediators](/docs/concepts/glossary/#mediator) are for storing and relaying messages between Cloud Agents and Wallet SDKs. They act as a proxy that remains connected to the network and receives any message, credential, or proof request on behalf of the Wallet SDKs (which can be offline occasionally).
 
 More in-depth documentation about Mediator can be found [here](/docs/identus/mediator).
 
-#### A Node for a Verifiable Data Registry (VDR)
+#### Node for a Verifiable Data Registry (VDR)
 To issue and verify VCs to and from DIDs, we need a [Verifiable Data Registry (VDR)](/docs/concepts/glossary/#verifiable-data-registry) that is globally resolvable and always on. In Identus's case, it is `prism-node`, [anchoring](/docs/concepts/glossary/#anchoring) key information required for issuance and verification on the Distributed Ledger.
 
 
 
-## PRE-REQUISITES
+## Pre-Requisites
 
 
 ### Agent Deployment
@@ -76,7 +76,7 @@ git clone https://github.com/hyperledger/identus-cloud-agent
 ```
 
 
-2. Once cloned, create a new environment variable configuration file named  __./identus-cloud-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent with the following content:
+2. Once cloned, create a new file named  __./identus-cloud-agent/infrastructure/local/.env-issuer__ to define the Issuer Agent environment variable configuration with the following content:
 
 
 ```
@@ -89,7 +89,7 @@ VAULT_DEV_ROOT_TOKEN_ID=root
 PG_PORT=5432
 ```
 
-3. Create a new environment variable configuration file named  __./identus-cloud-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent with the following content:
+3. Create a new file named  __./identus-cloud-agent/infrastructure/local/.env-verifier__ to define the Verifier Agent environment variable configuration with the following content:
 
 
 
@@ -111,11 +111,11 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 :::
 
-5. Start the `issuer` and `verifier` Cloud Agents by copy paste the below two lines in the command tool.
+5. Start the `issuer` and `verifier` Cloud Agents by running the below commands in the terminal.
 
 
 
-  * Issuer Cloud Agent command: 
+  * Issuer Cloud Agent: 
     
   Mac OSX  terminal shell
 ```bash
@@ -126,7 +126,10 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
  ./infrastructure/local/run.sh -n issuer -b -e ./infrastructure/local/.env-issuer -p 8000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
-  * Verifier Cloud Agent command:
+  * The Issuer [API endpoint](http://localhost:8000/cloud-agent/) will be accessible on port 8000 `http://localhost:8000/cloud-agent/` with a [Swagger Interface](http://localhost:8000/cloud-agent/redoc) available at `http://localhost:8000/cloud-agent/redoc`.
+
+
+  * Verifier Cloud Agent:
 
  For Mac OSX  terminal shell
 ```bash
@@ -137,8 +140,6 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
  ./infrastructure/local/run.sh -n verifier -b -e ./infrastructure/local/.env-verifier -p 9000 -d "$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 ```
 
-  * The Issuer [API endpoint](http://localhost:8000/cloud-agent/) will be accessible on port 8000 `http://localhost:8000/cloud-agent/` with a [Swagger Interface](http://localhost:8000/cloud-agent/redoc) available at `http://localhost:8000/cloud-agent/redoc`.
-
 
   * The Verifier [API endpoint](http://localhost:9000/cloud-agent/) will be accessible on port 9000 `http://localhost:9000/cloud-agent/` with a [Swagger Interface](http://localhost:9000/cloud-agent/redoc) available at `http://localhost:9000/cloud-agent/redoc`.
 
@@ -148,7 +149,12 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 
 #### Creating LongForm PrismDID
 1. Run the following API request against your Issuer API to create a PRISM DID:
-- 📌 **Note:** [To create DIDs with various supported curves](/tutorials/dids/create#2-create-the-cloud-agent-managed-did-using-did-registrar-endpoint).
+
+:::note
+
+📌 **Note:** [To create DIDs with various supported curves](/tutorials/dids/create#2-create-the-cloud-agent-managed-did-using-did-registrar-endpoint).
+
+:::
 
 ```bash
 curl --location \
@@ -171,7 +177,7 @@ curl --location \
 }'
 ```
 
-2. Create a PRISM DID operation and publish the DID by replacing `{didRef}` with the `longFormDid` output value from the previous create DID step.
+2. Publish the DID by replacing `{didRef}` with the `longFormDid` output value from the previous step.
 
 ```bash
 curl --location \
@@ -179,18 +185,18 @@ curl --location \
 --header 'Accept: application/json'
 ```
 
-3. The short version of the did is the publishedPrismDID.
+3. The short version of the DID is the publishedPrismDID.
 
 :::info
 
-Learn more about PRISM DIDs and why it is necessary to publish specific DIDs [here](https://staging-docs.atalaprism.io/tutorials/dids/publish).
+📖Learn more about PRISM DIDs and why it is necessary to publish specific DIDs [here](https://staging-docs.atalaprism.io/tutorials/dids/publish).
 
 :::
 
 
 #### Create a credential schema (JWT W3C Credential)
 
-1. To create a [credential schema](/docs/concepts/glossary/#credential-schema) on the Issuer instance, run the following request:
+1. To create a [credential schema](/docs/concepts/glossary/#credential-schema) on the Issuer API instance, run the following request:
 
 :::info
 
@@ -267,18 +273,18 @@ All wallet SDK's come bundled with a sample application, that cover all the Iden
 git clone https://github.com/hyperledger/identus-edge-agent-sdk-ts
 ```
 
-2. Ensure you have all applications installed for building the SDK and it's dependencies
+2. Ensure you have all applications installed for building the SDK and their dependencies
 
-[rust](https://www.rust-lang.org/tools/install) and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) are leveraged to build and use the AnonCreds and DIDComm rust libraries within typescript. To build the SDK locally or run demonstration applications, you must have these applications installed.
+[rust](https://www.rust-lang.org/tools/install) and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) are leveraged to build and use the AnonCreds and DIDComm Rust libraries within TypeScript. To build the SDK locally or run demonstration applications, you must have these applications installed.
 
-The following should work Linux and MacOS, if you experience any issues - please check the latest installation instructions for your platform.
+The following should work Linux and MacOS. If you experience any issues, refer to the latest installation instructions for your platform.
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ```
 
-3. Run the following commands:
+3. Run the following:
   * Build the source SDK:
 
 ```bash
@@ -296,7 +302,7 @@ npm run build
 npm run start
 ```
 
-  * This will start the react Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
+  * This will start the React Wallet SDK TypeScript Demonstration at [http://localhost:3000](http://localhost:3000).
 
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
@@ -308,7 +314,7 @@ git clone https://github.com/hyperledger/identus-edge-agent-sdk-swift
 ```
 
 2. Open the XCode project on __./Sample/AtalaPrismWalletDemo/AtalaPrismWalletDemo.xcodeproj__
-3. On the top left of the XCode window you will see a play/run button, press it.
+3. On the top left of the XCode window you will see a Play/Run button, click it.
 4. The app will start.
 5. Click Wallet Demo 2.0
   * You will be able to run the rest of the guide here.
@@ -358,7 +364,7 @@ MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ipconfig getifaddr $(route g
 MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080;ws://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080/ws" docker-compose up
 ```
 
-`MEDIATOR_ENDPOINT` is then set to your local ip address:8080.
+`MEDIATOR_ENDPOINT` is then set to your local IP address:8080.
 
 3. More advanced documentation and configuration options can be found [here](https://github.com/hyperledger/identus-mediator).
 
@@ -385,7 +391,11 @@ Follow the steps in your desired platform as stated below:
 <Tabs>
 <TabItem value="js" label="Typescript Sample APP">
 
-1. Open http://localhost:3000 in your browser, paste the mediator peer DID (obtained from the `from` attribute after fetching from the mediator's invitation endpoint), and click **Start** after.
+1. Open http://localhost:3000/debug in your browser, 
+1. paste the mediator peer DID (obtained from the `from` attribute after fetching from the mediator's invitation endpoint),
+1. click **Edge Agent** tab in the bottom left,
+1. click **Connect** button,
+1. click **Start** button.
 
 </TabItem>
 
@@ -396,7 +406,7 @@ Follow the steps in your desired platform as stated below:
 </TabItem>
 <TabItem value="android" label="Android  Sample APP">
 
-1. Go back to the Sample app. In the main screen, you can provide the mediator DID of your choice or use that is there already. Proceed and click **Start** after.
+1. Go back to the Sample app. In the main screen, you can provide the mediator DID of your choice or use what is there already. Proceed and click **Start** after.
 
 </TabItem>
 </Tabs>
@@ -544,7 +554,7 @@ curl --location \
 </TabItem>
 <TabItem value="swift" label="Swift Sample APP">
 
-4. On the OOB dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
+4. On the Out of Bounds (OOB) dialog, paste the invitation URL we generated into the `CloudAgent` connection section and click **Validate**.
   * The application will respond once the connection gets established correctly and show a message under messages.
 
 </TabItem>
@@ -591,7 +601,13 @@ agent.acceptOutOfBandInvitation(invitation)
 
 The credential issuance flow consists of multiple steps, detailed in this section. It starts with the Issuer sending a [Credential Offer](/docs/concepts/glossary/#credential-offer) to the Holder, which would accept or reject this invitation and create a `credentialRequest` from it. The [credential request](/docs/concepts/glossary/#credential-request) gets sent through DIDComm to the Issuer, issuing and sending the credential back to the Holder.
 
-### Create a Credential Offer **Issuer Agent**
+The Issuer can create a credential offer in two ways:
+1. As a direct credential offer DIDComm message for a holder with an existing connection
+2. As an credential offer as attachment in an OOB invitation message for connectionless issuance
+
+<Tabs>
+<TabItem value="existing" label="With Existing Connection">
+### Create a Credential Offer with an existing connection **Issuer Agent**
 
 1. To trigger the creation of a credential-offer, we call the credential-offers-endpoint, as follows:
 
@@ -620,7 +636,98 @@ curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credenti
     "automaticIssuance": true
 }'
 ```
+</TabItem>
+<TabItem value="connectionless" label="Connectionless Issuance">
+### Create a Credential Offer as Invitation for connectionless issuance **Issuer Agent**
 
+1. To trigger the creation of a credential-offer, we call the credential-offers-invitation-endpoint, as follows:
+
+:::info
+
+Please replace the following variables in the example request before sending:
+
+- `goalCode`: OPTIONAL A self-attested code the receiver may want to display to the user or use in automatically deciding what to do with the out-of-band message,
+- `goal`: OPTIONAL. A self-attested string that the receiver may want to display to the user about the context-specific goal of the out-of-band message.
+- `publishedPrismDID`: The short form of the PRISM DID created when setting up the Issuer agent
+
+The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
+
+- ``
+
+:::
+
+```bash
+curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credentials/credential-offers/invitation' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
+    "goalCode": [[goalCode]],
+    "goal": [[goal]],
+    "credentialFormat": "JWT",
+    "issuingDID": [[publishedPrismDID]],
+    "automaticIssuance": true
+}'
+```
+
+
+### Accept Credential Offer Invitation for connectionless issuance **Holder**
+
+For connectionless issuance, the Holder needs to accept the invitation containing the credential offer. This step is necessary before creating the Credential Request.
+#### Demo application
+<Tabs>
+<TabItem value="js" label="Typescript Sample APP">
+
+1. In the browser at localhost:3000, navigate to the "Credential Offer" section.
+2. Paste the invitation URL received from the Issuer into the provided input field.
+3. Click on "Accept Invitation" to process the credential offer.
+
+</TabItem>
+<TabItem value="swift" label="Swift Sample APP">
+
+1. In the Swift mobile app, go to the "Credential Offer" section.
+2. Enter the invitation URL received from the Issuer.
+3. Tap on "Accept Invitation" to process the credential offer.
+
+</TabItem>
+<TabItem value="android" label="Android Sample APP">
+
+1. In the Android mobile app, navigate to the "Credential Offer" section.
+2. Input the invitation URL provided by the Issuer.
+3. Tap "Accept Invitation" to process the credential offer.
+
+</TabItem>
+</Tabs>
+
+<summary>Code examples</summary>
+<Tabs>
+<TabItem value="js" label="Typescript">
+
+```js
+const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
+await props.agent.acceptDIDCommInvitation(parsed);
+```
+
+</TabItem>
+<TabItem value="swift" label="Swift">
+
+```swift
+  let message = try agent.parseOOBInvitation(url: oobUrl)
+  try await agent.acceptDIDCommInvitation(invitation: message)
+```
+
+</TabItem>
+<TabItem value="android" label="Android">
+
+```kotlin
+val invitation = agent.parseInvitation(oobUrl)
+agent.acceptOutOfBandInvitation(invitation)
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
 ### Create CredentialRequest from CredentialOffer **Holder**
 
 2. Because this credential Offer was created with the `automaticIssuance` true, as soon as the `CloudAgent` receives this `credentialRequest` it will respond with the `IssuedCredential` message and send this back to the holder.
@@ -819,12 +926,16 @@ Now that the Holder has received a credential, it can be used in a verification 
 
 :::info
 
-In the example, we show a verification flow that assumes a connection between Holder and Verifier. In the future, we will also support connectionless verification.
+In the example, we demonstrate two verification flows:
 
+1. Verification with an established connection between the Holder and the Verifier.
+2. Connectionless verification in which the Holder and Verifier do not have a pre-established connection.
 :::
 
 
 ### Verifier Agent
+<Tabs>
+<TabItem value="existing" label="With Existing Connection">
 
 5. To run this section, we will use [the connection](/docs/quick-start#establish-connection-on-the-verifier-cloud-agent) we created between the Holder and the Verifier.
 
@@ -849,7 +960,96 @@ curl --location \
 }'
 ```
 
-  * This API request will return a `presentationRequestId,` which the verifier can use later to check the request's current status.
+  * This API request will return a `presentationRequestId,` which the verifier can use later to check the current status  of the request.
+
+</TabItem>
+<TabItem value="connectionless" label="Connectionless Request Presentation"> 
+
+5. To run this section, we'll use the presentation invitation endpoint to create a request presentation invitation, which the holder can scan to receive the invitation or the verifier can share directly.
+
+```bash
+curl --location \
+--request POST 'http://localhost:9000/cloud-agent/present-proof/presentations/invitation' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "goalCode": [[goalCode]],
+    "goal": [[goal]],
+    "credentialFormat": "JWT",
+    "proofs": [
+        {
+            "schemaId": [[schemaId]],
+            "trustIssuers": [
+                [[PUBLISHED PRISM DID FROM THE ISSUER]]
+            ]
+        }
+    ],
+    "options": {
+        "challenge": "A challenge for the holder to sign",
+        "domain": "domain.com"
+    }
+}'
+```
+
+  * This API request will return an `invitationId` along with an Out-Of-Band (OOB) message. The OOB message includes a Request Presentation in JSON format as an attachment and is encoded as a base64 URL-encoded string, which can be shared with the holder.
+
+### Accept Request Presentation invitation for connectionless verification **Holder**
+
+For connectionless verification, the Holder needs to accept the invitation containing the Request Presentation.
+#### Demo application
+<Tabs>
+<TabItem value="js" label="Typescript Sample APP">
+
+1. In the browser at localhost:3000, navigate to the "Request Presentation" section.
+2. Paste the invitation URL received from the Issuer into the provided input field.
+3. Click on "Accept Invitation" to process the request presentation.
+
+</TabItem>
+<TabItem value="swift" label="Swift Sample APP">
+
+1. In the Swift mobile app, go to the "Request Presentation" section.
+2. Enter the invitation URL received from the Issuer.
+3. Tap on "Accept Invitation" to process the request presentation.
+
+</TabItem>
+<TabItem value="android" label="Android Sample APP">
+
+1. In the Android mobile app, navigate to the "Request Presentation" section.
+2. Input the invitation URL provided by the Issuer.
+3. Tap "Accept Invitation" to process the request presentation.
+
+</TabItem>
+</Tabs>
+
+<summary>Code examples</summary>
+<Tabs>
+<TabItem value="js" label="Typescript">
+
+```js
+const parsed = await props.agent.parseOOBInvitation(new URL([[OOB URL]]));
+await props.agent.acceptDIDCommInvitation(parsed);
+```
+
+</TabItem>
+<TabItem value="swift" label="Swift">
+
+```swift
+  let message = try agent.parseOOBInvitation(url: oobUrl)
+  try await agent.acceptDIDCommInvitation(invitation: message)
+```
+
+</TabItem>
+<TabItem value="android" label="Android">
+
+```kotlin
+val invitation = agent.parseInvitation(oobUrl)
+agent.acceptOutOfBandInvitation(invitation)
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
 
 
 
