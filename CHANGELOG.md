@@ -1,3 +1,9 @@
+## [1.112.1](https://github.com/hyperledger/identus-docs/compare/v1.112.0...v1.112.1) (2024-09-25)
+
+### :sparkles: Updates
+
+* type in MEDIATOR_ENDPOINTS ([#180](https://github.com/hyperledger/identus-docs/issues/180)) ([e7ab5da](https://github.com/hyperledger/identus-docs/commit/e7ab5dadf59ba023757902834e96272540c6db34))
+
 ## [1.112.0](https://github.com/hyperledger/identus-docs/compare/v1.111.0...v1.112.0) (2024-09-22)
 
 ### :rocket: New Content
