@@ -364,7 +364,7 @@ MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ipconfig getifaddr $(route g
 MEDIATOR_VERSION=0.15.0 SERVICE_ENDPOINTS="http://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080;ws://$(ip addr show $(ip route show default | awk '/default/ {print $5}') | grep 'inet ' | awk '{print $2}' | cut -d/ -f1):8080/ws" docker-compose up
 ```
 
-`MEDIATOR_ENDPOINT` is then set to your local IP address:8080.
+`MEDIATOR_ENDPOINTS` is then set to your local IP address:8080.
 
 3. More advanced documentation and configuration options can be found [here](https://github.com/hyperledger/identus-mediator).
 
