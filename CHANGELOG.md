@@ -1,3 +1,21 @@
+## [1.112.2](https://github.com/hyperledger/identus-docs/compare/v1.112.1...v1.112.2) (2024-09-27)
+
+### :sparkles: Updates
+
+* kmp repository ([#181](https://github.com/hyperledger/identus-docs/issues/181)) ([10abed3](https://github.com/hyperledger/identus-docs/commit/10abed37d2a6caef86bb4abe79c2d8a3ad6ca4c2))
+
+## [1.112.1](https://github.com/hyperledger/identus-docs/compare/v1.112.0...v1.112.1) (2024-09-25)
+
+### :sparkles: Updates
+
+* type in MEDIATOR_ENDPOINTS ([#180](https://github.com/hyperledger/identus-docs/issues/180)) ([e7ab5da](https://github.com/hyperledger/identus-docs/commit/e7ab5dadf59ba023757902834e96272540c6db34))
+
+## [1.112.0](https://github.com/hyperledger/identus-docs/compare/v1.111.0...v1.112.0) (2024-09-22)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([8bb264e](https://github.com/hyperledger/identus-docs/commit/8bb264e24938e971aa166a6bb8f907f0ece81650))
+
 ## [1.111.0](https://github.com/hyperledger/identus-docs/compare/v1.110.0...v1.111.0) (2024-09-15)
 
 ### :rocket: New Content
