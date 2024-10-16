@@ -129,19 +129,19 @@ const RESOURCES = [
         title: "Wallet SDK Swift",
         Svg: Graphics.walletSdkSwift,
         content: "Build Swift-based applications using our SDKs",
-        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-swift/documentation/edgeagentsdk/"
+        linkTo: "https://hyperledger.github.io/identus-edge-agent-sdk-swift/documentation/edgeagentsdk/"
     },
     {
         title: "Wallet SDK TypeScript",
         Svg: Graphics.walletSdkTS,
         content: "Build web-based applications using our SDKs",
-        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-ts/"
+        linkTo: "https://hyperledger.github.io/identus-edge-agent-sdk-ts/"
     },
     {
         title: "Wallet SDK KMM",
         Svg: Graphics.walletSdkKmm,
         content: "Build KMM-based applications using our SDKs",
-        linkTo: "https://input-output-hk.github.io/atala-prism-wallet-sdk-kmm/"
+        linkTo: "https://hyperledger.github.io/atala-prism-wallet-sdk-kmm/"
     },
     {
         title: "APIs",
