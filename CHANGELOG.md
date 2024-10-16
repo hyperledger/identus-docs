@@ -1,3 +1,9 @@
+## [1.115.1](https://github.com/hyperledger/identus-docs/compare/v1.115.0...v1.115.1) (2024-10-16)
+
+### :sparkles: Updates
+
+* broken links [#182](https://github.com/hyperledger/identus-docs/issues/182) ([#187](https://github.com/hyperledger/identus-docs/issues/187)) ([0cead38](https://github.com/hyperledger/identus-docs/commit/0cead38343d46a6ad3754c017db86f73b6694a5d))
+
 ## [1.115.0](https://github.com/hyperledger/identus-docs/compare/v1.114.0...v1.115.0) (2024-10-13)
 
 ### :rocket: New Content
