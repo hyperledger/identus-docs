@@ -1,6 +1,6 @@
 {
   "name": "identus-documentation-portal",
-  "version": "1.115.1",
+  "version": "1.116.0",
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
