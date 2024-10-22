@@ -67,6 +67,12 @@ The process for retrieving a [DID document](#did-document).
 ### DID subject
 The entity is identified by a [DID](#decentralized-identifer-(did)) and described by a [DID documents](#did-document). Anything can be a DID subject: person, group, organization, physical thing, digital thing, etc.
 
+### DID Url
+A DID itself is a type of a URL, while `did` is a registered schema type, like `http` and `https`. With Identus, we refer DID URLs to a DID that includes path and query parameters and can resolve a resource via one of the service endpoints in the DID document. For example: 
+```
+did:prism:9f847f8bbb66c112f71d08ab39930d468ccbfe1e0e1d002be53d46c431212c26?resourceService=agent-base-url&resourcePath=schema-registry/schemas/did-url&resourceHash=4074bb1a8e0ea45437ad86763cd7e12de3fe8349ef19113df773b0d65c8a9c46
+```
+
 ### Distributed Ledger Technology (DLT)
 A distributed database or ledger establishes confidence for the participants to rely on the data recorded. Typically these databases use nodes and a consensus protocol to confirm the order of cryptographically signed transactions. Linking the transactions over time creates a historical ledger that is effectively immutable.
 
@@ -173,6 +179,12 @@ The Protection API in User-Managed Access ([UMA](#uma)) is a set of endpoints th
 
 ### Protocol buffer
 Also known as protobuf.
+
+### Prism envelope
+A response type for endpoints that implement prism anoncred method
+```json
+{"resource": <encoded resource as string>, url: <did url at which this resource can be resolved>}
+```
 
 
 

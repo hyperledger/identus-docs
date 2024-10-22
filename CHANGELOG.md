@@ -1,3 +1,45 @@
+## [1.116.0](https://github.com/hyperledger/identus-docs/compare/v1.115.1...v1.116.0) (2024-10-20)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([b966c48](https://github.com/hyperledger/identus-docs/commit/b966c4846abe2bade4648698380e3c117168a91a))
+
+## [1.115.1](https://github.com/hyperledger/identus-docs/compare/v1.115.0...v1.115.1) (2024-10-16)
+
+### :sparkles: Updates
+
+* broken links [#182](https://github.com/hyperledger/identus-docs/issues/182) ([#187](https://github.com/hyperledger/identus-docs/issues/187)) ([0cead38](https://github.com/hyperledger/identus-docs/commit/0cead38343d46a6ad3754c017db86f73b6694a5d))
+
+## [1.115.0](https://github.com/hyperledger/identus-docs/compare/v1.114.0...v1.115.0) (2024-10-13)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([6fbc3b2](https://github.com/hyperledger/identus-docs/commit/6fbc3b2fbfdb63126b5d0963e127a5046bb0b4bb))
+
+## [1.114.0](https://github.com/hyperledger/identus-docs/compare/v1.113.0...v1.114.0) (2024-10-06)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([1be7cb6](https://github.com/hyperledger/identus-docs/commit/1be7cb666110d070aa33663568a2c7fcc15f4ad2))
+
+## [1.113.0](https://github.com/hyperledger/identus-docs/compare/v1.112.2...v1.113.0) (2024-09-29)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([8614bd3](https://github.com/hyperledger/identus-docs/commit/8614bd3d097f9f6a0175502e06c40a44e32c8957))
+
+## [1.112.2](https://github.com/hyperledger/identus-docs/compare/v1.112.1...v1.112.2) (2024-09-27)
+
+### :sparkles: Updates
+
+* kmp repository ([#181](https://github.com/hyperledger/identus-docs/issues/181)) ([10abed3](https://github.com/hyperledger/identus-docs/commit/10abed37d2a6caef86bb4abe79c2d8a3ad6ca4c2))
+
+## [1.112.1](https://github.com/hyperledger/identus-docs/compare/v1.112.0...v1.112.1) (2024-09-25)
+
+### :sparkles: Updates
+
+* type in MEDIATOR_ENDPOINTS ([#180](https://github.com/hyperledger/identus-docs/issues/180)) ([e7ab5da](https://github.com/hyperledger/identus-docs/commit/e7ab5dadf59ba023757902834e96272540c6db34))
+
 ## [1.112.0](https://github.com/hyperledger/identus-docs/compare/v1.111.0...v1.112.0) (2024-09-22)
 
 ### :rocket: New Content
