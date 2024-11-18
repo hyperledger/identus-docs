@@ -1,3 +1,39 @@
+## [1.120.0](https://github.com/hyperledger/identus-docs/compare/v1.119.0...v1.120.0) (2024-11-17)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([120bafa](https://github.com/hyperledger/identus-docs/commit/120bafa916eda4da23329c8f039c49137358f42e))
+
+## [1.119.0](https://github.com/hyperledger/identus-docs/compare/v1.118.0...v1.119.0) (2024-11-10)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([1def23f](https://github.com/hyperledger/identus-docs/commit/1def23f4f308707c2ef7127a950e224be106b972))
+
+## [1.118.0](https://github.com/hyperledger/identus-docs/compare/v1.117.0...v1.118.0) (2024-11-03)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([e1927bc](https://github.com/hyperledger/identus-docs/commit/e1927bc7afd71e6577029a73ece1b45d8274ded1))
+
+## [1.117.0](https://github.com/hyperledger/identus-docs/compare/v1.116.0...v1.117.0) (2024-10-27)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([f322bab](https://github.com/hyperledger/identus-docs/commit/f322bab4a0313ed356088b7eacbf3bc83d2c75fc))
+
+## [1.116.0](https://github.com/hyperledger/identus-docs/compare/v1.115.1...v1.116.0) (2024-10-20)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([b966c48](https://github.com/hyperledger/identus-docs/commit/b966c4846abe2bade4648698380e3c117168a91a))
+
+## [1.115.1](https://github.com/hyperledger/identus-docs/compare/v1.115.0...v1.115.1) (2024-10-16)
+
+### :sparkles: Updates
+
+* broken links [#182](https://github.com/hyperledger/identus-docs/issues/182) ([#187](https://github.com/hyperledger/identus-docs/issues/187)) ([0cead38](https://github.com/hyperledger/identus-docs/commit/0cead38343d46a6ad3754c017db86f73b6694a5d))
+
 ## [1.115.0](https://github.com/hyperledger/identus-docs/compare/v1.114.0...v1.115.0) (2024-10-13)
 
 ### :rocket: New Content
