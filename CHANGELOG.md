@@ -1,3 +1,19 @@
+## [1.121.0](https://github.com/hyperledger/identus-docs/compare/v1.120.0...v1.121.0) (2025-01-08)
+
+### :rocket: New Content
+
+* update submodules documentation to latest ([fbbc34e](https://github.com/hyperledger/identus-docs/commit/fbbc34e6fb6a33053b0c395286a44d078641dab1))
+* update submodules documentation to latest ([8164691](https://github.com/hyperledger/identus-docs/commit/8164691fa1e4628817c0d7dd89681b89b6118163))
+* update submodules documentation to latest ([67ef658](https://github.com/hyperledger/identus-docs/commit/67ef658c2fd8bcee2a9e0d7907c98ffaa9dcbb93))
+* update submodules documentation to latest ([ef5f023](https://github.com/hyperledger/identus-docs/commit/ef5f02346ef652ace13c5daa1446ef9bfe09d9b5))
+* update submodules documentation to latest ([95d398c](https://github.com/hyperledger/identus-docs/commit/95d398c4c0fc475ebb1eab57076e8b59d5d759d4))
+* update submodules documentation to latest ([1a8dd1a](https://github.com/hyperledger/identus-docs/commit/1a8dd1a0e86dbf9234f5110c048805501aa2bd91))
+* update submodules documentation to latest ([8e6e00b](https://github.com/hyperledger/identus-docs/commit/8e6e00b08698e4d97db6122fc1c272a4850802b0))
+
+### :sparkles: Updates
+
+* replace 'docker-compose' with 'docker compose' ([#179](https://github.com/hyperledger/identus-docs/issues/179)) ([585d102](https://github.com/hyperledger/identus-docs/commit/585d1026b590f0302c19c8fea581f68bad520929))
+
 ## [1.120.0](https://github.com/hyperledger/identus-docs/compare/v1.119.0...v1.120.0) (2024-11-17)
 
 ### :rocket: New Content
