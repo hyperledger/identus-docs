@@ -1,6 +1,6 @@
 # Environment Variables
 
-The following enviroment variables can be used to configure Cloud Agent:
+The following enviroment variables can be used to configure Identus Cloud Agent:
 
 | Variable Name                              | Description                                                                                                                                                        | Type                  | Default                                      |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|----------------------------------------------|
@@ -66,4 +66,5 @@ The following enviroment variables can be used to configure Cloud Agent:
 | KEYCLOAK_UMA_AUTO_UPGRADE_RPT              | Whether or not to enable automatic upgrade of RPT tokens. If disabled, `accessToken` must be RPT and include the permission claims.                                | Boolean               | true                                         |
 | KEYKLOAK_ROLES_CLAIM_PATH                  | The json path to the `roles` claim in the JWT payload . Used for role-based authorization (e.g. admin or tenant).                                                  | String                | `resource_access.<KEYCLOAK_CLIENT_ID>.roles` |
 | PRESENTATION_INVITATION_EXPIRY             | The presentation invitation expiry duration e.g 300 seconds. After which the OOB Request Presentation will expire                                                  | String                | 300 seconds                                  |
-| ISSUANCE_INVITATION_EXPIRY                 | The presentation invitation expiry duration e.g 300 seconds. After which the OOB Credential Offer will expire                                                      | String                | 300 seconds                                  |     
+| ISSUANCE_INVITATION_EXPIRY                 | The presentation invitation expiry duration e.g 300 seconds. After which the OOB Credential Offer will expire                                                      | String                | 300 seconds                                  |
+| ENABLE_ANONCRED                            | Enable support for Anoncred Credential type via API and DIDComm                                                                                                    | Boolean               | false                                        |
