@@ -1,3 +1,9 @@
+## [1.124.0](https://github.com/hyperledger/identus-docs/compare/v1.123.1...v1.124.0) (2025-01-14)
+
+### :rocket: New Content
+
+* document feature flag ENABLE_ANONCRED [#199](https://github.com/hyperledger/identus-docs/issues/199) ([#201](https://github.com/hyperledger/identus-docs/issues/201)) ([0c15820](https://github.com/hyperledger/identus-docs/commit/0c15820196446f1eda3846578b77971dd175f015))
+
 ## [1.123.1](https://github.com/hyperledger/identus-docs/compare/v1.123.0...v1.123.1) (2025-01-14)
 
 ### :sparkles: Updates
