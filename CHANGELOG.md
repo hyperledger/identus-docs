@@ -1,3 +1,9 @@
+## [1.123.1](https://github.com/hyperledger/identus-docs/compare/v1.123.0...v1.123.1) (2025-01-14)
+
+### :sparkles: Updates
+
+* Broken link in Credential Schema Introduction page for [#84](https://github.com/hyperledger/identus-docs/issues/84) ([#200](https://github.com/hyperledger/identus-docs/issues/200)) ([2bc6b75](https://github.com/hyperledger/identus-docs/commit/2bc6b75bf9f4499ae5648aba4df5bedc485a571e))
+
 ## [1.123.0](https://github.com/hyperledger/identus-docs/compare/v1.122.0...v1.123.0) (2025-01-12)
 
 ### :rocket: New Content
