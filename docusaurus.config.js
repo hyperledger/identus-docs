@@ -139,13 +139,13 @@ const config = {
                             href: 'https://hyperledger.github.io/identus-edge-agent-sdk-swift/documentation/edgeagentsdk/',
                         },
                         {
-                            to: '/identus-edge-agent-sdk-ts/sdk',
+                            to: '/edge-agent-sdk-ts/sdk',
                             label: 'Edge Agent SDK Typescript',
-                            activeBaseRegex: `/identus-edge-agent-sdk-ts/sdk`
+                            activeBaseRegex: `/edge-agent-sdk-ts/sdk`
                         },
                         {
                             label: 'Edge Agent SDK Kotlin Multiplatform',
-                            href: 'https://hyperledger.github.io/identus-edge-agent-sdk-kmp/',
+                            href: 'https://hyperledger-identus.github.io/edge-agent-sdk-kmp/',
                         },
                     ],
                 },
