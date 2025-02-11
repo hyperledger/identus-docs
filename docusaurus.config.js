@@ -14,7 +14,7 @@ const config = {
     // url: 'https://docs.atalaprism.io',
     url: 'https://hyperledger-identus.github.io/',
     baseUrl: '/docs/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'ignore', //TODO: make this `throw` after migration
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'Hyperledger',
