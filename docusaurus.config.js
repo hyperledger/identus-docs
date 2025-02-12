@@ -11,9 +11,8 @@ const path = require('path')
 const config = {
     title: 'Hyperledger Identus',
     tagline: 'Hyperledger Identus Docs',
-    // url: 'https://docs.atalaprism.io',
-    url: 'https://hyperledger.github.io/',
-    baseUrl: '/identus-docs/',
+    url: 'https://hyperledger-identus.github.io/',
+    baseUrl: '/docs/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
@@ -156,7 +155,7 @@ const config = {
             ],
         },
         footer: {
-           copyright: `Hyperledger Identus CC BY 4.0`,
+            copyright: `Hyperledger Identus CC BY 4.0`,
         },
         prism: {
             theme: prismThemes.github,
