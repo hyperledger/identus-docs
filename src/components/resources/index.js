@@ -141,7 +141,7 @@ const RESOURCES = [
         title: "Wallet SDK KMM",
         Svg: Graphics.walletSdkKmm,
         content: "Build KMM-based applications using our SDKs",
-        linkTo: "https://hyperledger.github.io/identus-edge-agent-sdk-kmp/"
+        linkTo: "https://hyperledger-identus.github.io/edge-agent-sdk-kmp/"
     },
     {
         title: "APIs",
