@@ -80,7 +80,6 @@ const sidebars = {
         },
         "identus/mediator",
         "identus/troubleshooting&considerations",
-        "identus/specifications",
         "identus/getting-help",
       ],
     },
