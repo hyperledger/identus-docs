@@ -2,13 +2,13 @@
 
 ## Introduction
 
-To ensure maximum security, storing sensitive information, including secrets, actively and securely in the [Secrets Storage](</docs/concepts/glossary#secrets storage>). The Cloud Agent manages the following types of secrets:
+To ensure maximum security, storing sensitive information, including secrets, actively and securely in the [Secrets Storage](</home/concepts/glossary#secrets-storage>). The Cloud Agent manages the following types of secrets:
 
 - **seed**: a secret used to derive cryptographic keys
 - **private key**: a secret used to sign and decrypt data
 - any other sensitive data from entities' (for instance, credential definition and the link-secret used by the AnonCreds)
 
-The default secret storage for the Cloud Agent is the [HashiCorp Vault Service](</docs/concepts/glossary#Vault Service>). Other implementations of secret storage can be implemented based on the needs.
+The default secret storage for the Cloud Agent is the [HashiCorp Vault Service](</home/concepts/glossary#vault-service>). Other implementations of secret storage can be implemented based on the needs.
 
 ## Technical Overview
 

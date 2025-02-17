@@ -13,10 +13,13 @@ An administrator is a role who oversees the agent and releated resources, includ
 
 
 ## C
-### Claim
+### Claim {#claim}
 An assertion made about a [subject](#did-subject).
 
-### Cloud Agent
+### Claims {#claims}
+Synonym of [claim](#claim) in the plural form. 
+
+### Cloud Agent {#cloud-agent}
 The Cloud Agent is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides self-sovereign identity (SSI) services to build products and solutions based on it. The Cloud Agent exposes REST API for integration with any programming language.
 
 ### Controller
@@ -31,6 +34,11 @@ An invitation from one entity to another to establish a connection.
 ### Connection request
 A request to establish a connection.
 
+### Credential Definition {#credential-definition}
+The term [refers](https://hyperledger.github.io/anoncreds-spec/#term:credential-definition) to the AnonCreds v1 implementation. 
+Credential Definition contains public and private part. 
+The public part is published and available for anyone to use to verify the credential. The private part is used to issue credentials.
+
 ### Credential schema
 A data template for verifiable credentials (VCs). It contains claims of the VCs, credential schema author, type, name, version, and proof of authorship.
 
@@ -43,19 +51,22 @@ When the Holder accepts or rejects a credential offer, a credential request is c
 
 
 ## D
-### Decentralized Identifier (DID)
+### Decentralized Identifier {#decentralized-identifier}
 A globally unique persistent identifier that does not require a centralized registration authority and is often cryptographically generated. All DIDs use distributed ledger technology (DLT) or some other decentralized network.
 
-### DID
-See [decentralized identifier](#decentralized-identifer-(did))
+### DID {#did}
+See [decentralized identifier](#decentralized-identifier)
 
-### DIDComm
+### DIDs {#dids}
+See [decentralized identifiers](#decentralized-identifier)
+
+### DIDComm {#didcomm}
 A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.
 
 ### DID controller
 The entity that has control of the DID
 
-### DID document
+### DID document {#did-document}
 A set of data that describes the DID subject, including mechanisms such as cryptographic public keys. The entire W3C DID specification is [here](https://www.w3.org/TR/did-spec-registries/).
 
 ### DID method
@@ -64,8 +75,8 @@ The DID method defines how to implement a specific DID method schema. The specif
 ### DID resolution
 The process for retrieving a [DID document](#did-document).
 
-### DID subject
-The entity is identified by a [DID](#decentralized-identifer-(did)) and described by a [DID documents](#did-document). Anything can be a DID subject: person, group, organization, physical thing, digital thing, etc.
+### DID subject {#did-subject}
+The entity is identified by a [DID](#decentralized-identifier) and described by a [DID documents](#did-document). Anything can be a DID subject: person, group, organization, physical thing, digital thing, etc.
 
 ### DID Url
 A DID itself is a type of a URL, while `did` is a registered schema type, like `http` and `https`. With Identus, we refer DID URLs to a DID that includes path and query parameters and can resolve a resource via one of the service endpoints in the DID document. For example: 
@@ -87,7 +98,7 @@ An `entity,` in the context of the Identus platform, is an identity representing
 Each entity possesses an Edge Agent and is associated with an authentication method. 
 Entities are crucial for secure and verifiable transactions within the SSI ecosystem.
 
-### Edge Agent SDK
+### Edge Agent SDK {#edge-agent-sdk}
 For use with web and mobile (iOS, Android, TypeScript) enable identity holders to store credentials and respond to proof requests.
 
 ### Edge Agent
@@ -100,8 +111,8 @@ See [Trust Framework](#trust-framework)
 
 
 ## H
-### Holder 
-An entity will take on this role by possessing one or more [verifiable credentials](#verifiable-credentials) and generating [verifiable presentations](#verifiable-presentations). Also takes the role of a prover when presenting verifiable credentials for verification.
+### Holder {#holder}
+An entity will take on this role by possessing one or more [verifiable credentials](#verifiable-credential) and generating [verifiable presentations](#verifiable-presentation). Also takes the role of a prover when presenting verifiable credentials for verification.
 
 
 
@@ -112,7 +123,7 @@ IAM (Identity and Access Management), is a framework that controls and manages u
 ### Identus
 A suite of products that provides infrastructure for decentralized identity.
 
-### IDP
+### IDP {#idp}
 An Identity Provider (IDP) is a centralized service that manages and authenticates user identities, allowing individuals to access multiple applications and services with a single set of credentials. IDPs play a crucial role in Single Sign-On (SSO) systems, simplifying user access management across various platforms and services.
 
 ### Invitation
@@ -124,11 +135,11 @@ A subject that receives a connection invitation and accepts it by sending a conn
 ### Inviter
 A subject that initiates a connection request by sending a connection invitation.
 
-### Issuer
-An entity that asserts claim(s) about one or more [subjects](#did-subject) then creates a [verifiable credentials](#verifiable-credentials) from these claims and transmits the VC to a holder.
+### Issuer {#issuer}
+An entity that asserts claim(s) about one or more [subjects](#did-subject) then creates a [verifiable credential](#verifiable-credential) from these claims and transmits the VC to a holder.
 
 ### Issue Credential Protocol
-Allows you to create, retrieve, and manage issued [verifiable credentials (VCs)](#verifiable-credentials) between a VC issuer and a VC holder.
+Allows you to create, retrieve, and manage issued [verifiable credentials (VCs)](#verifiable-credential) between a VC issuer and a VC holder.
 
 ## K
 ### Keycloak Service
@@ -136,7 +147,7 @@ Keycloak is an open-source [IAM](#iam) solution that provides authentication, au
 
 
 ## M
-### Mediator
+### Mediator {#mediator}
 A mediator participates in agent-to-agent message delivery that the sender must model. It has its keys and will deliver messages only after decrypting an outer envelope to reveal a forward request. Many types of mediators may exist, but two important ones should be widely understood, as they commonly manifest in DID Docs:
 - A service that hosts many cloud agents at a single endpoint to provide herd privacy (an "agency") is a mediator.
 - A cloud-based agent that routes between/among the edges of a sovereign domain is a mediator.
@@ -166,7 +177,7 @@ A rich DID method that has no blockchain dependencies. The verifiable data regis
 The protocol provides endpoints for a Verifier to request new proof presentations from Holder/Provers and for a Holder/Prover to respond to the presentation request using a specific verifiable credential they own.
 
 ### Proof
-A cryptographic mechanism that proves the information in a [verifiable credential](#verifiable-credentials) or [verifiable presentation](#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
+A cryptographic mechanism that proves the information in a [verifiable credential](#verifiable-credential) or [verifiable presentation](#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
 
 ### Proof presentation
 See [verifiable presentation](#verifiable-presentation). Also see [Present Proof Protocol](#present-proof-protocol).
@@ -201,14 +212,17 @@ Requesting Party Token (RPT) is a concept within the [UMA](#uma) framework. It r
 
 
 ## S
-### Secrets storage
+### Secrets storage {#secrets-storage}
 This component securely stores sensitive information, such as private keys associated with an individual's digital identity, Edge Agent seed, etc.
 Secrets storage plays a crucial role in SSI implementations because it ensures that sensitive information is securely stored and protected against unauthorized access or disclosure
 
-### SSI
+### Subject {#subject}
+See [DID Subject](#did-subject)
+
+### SSI {#ssi}
 See [Self-Sovereign Identity](#self-sovereign-identity)
 
-### Self-Sovereign Identity (SSI)
+### Self-Sovereign Identity (SSI) {#self-sovereign-identity}
 An identity model that shifts control to the edges, focused on security, privacy using public/private key encryption.
 
 
@@ -237,17 +251,20 @@ User-Managed Access (UMA) is an authorization framework that allows users to con
 
 
 ## V
-### Vault Service
+### Vault Service {#vault-service}
 HashiCorp Vault is a widely used open-source and enterprise-grade solution designed for securely storing, accessing, and managing secrets and sensitive data in modern computing environments.
 It offers a centralized platform for managing cryptographic keys, passwords, API keys, tokens, and other secrets.
 
-### Verifiable Credential (VC)
+### Verifiable Credential (VC) {#verifiable-credential}
 A verifiable credential is a tamper-evident credential that contains one or more claims made by an issuer whose authorship can be cryptographically verified. It is possible to use VCs to create a [verifiable presentation](#verifiable-presentation). Also, the claims in a VC can be about different subjects.
 
-### Verifiable Data Registry
+### Verifiable Credentials (VCs) {#verifiable-credentials}
+Synonym of the [Verifiable Credential (VC)](#verifiable-credential).
+
+### Verifiable Data Registry {#verifiable-data-registry}
 A system that mediates the creation and verification of identifiers, keys, and other relevant data.
 
-### Verifiable Presentation
+### Verifiable Presentation {#verifiable-presentation}
 Data is derived from one or more [verifiable credentials](#verifiable-credential), issued by issuers, and shared (presented) to a specific verifier. The verifiable presentation is tamper-evident and encoded in a way to trust the authorship of the data after a cryptographic verification. 
 
 ### Verifier
@@ -255,3 +272,8 @@ An entity that receives one or more [verifiable credentials](#verifiable-credent
 
 
 
+## W
+### Wallet SDK {#wallet-sdk}
+A software development kit (SDK) that enables developers to build applications that interact with the Identus platform. 
+The Wallet SDK provides a set of tools, libraries, and APIs that simplify the integration of SSI features, such as DID operations, verifiable credentials, and secure communications, into web and mobile applications.
+Wallet SDK is much wider term than [Edge Agent SDK](#edge-agent-sdk), as it includes all the features of Edge Agent SDK and more.

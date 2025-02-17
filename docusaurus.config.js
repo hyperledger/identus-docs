@@ -14,11 +14,11 @@ const config = {
     // url: 'https://docs.atalaprism.io',
     url: 'https://hyperledger-identus.github.io/',
     baseUrl: '/docs/',
-    onBrokenLinks: 'ignore', //TODO: make this `throw` after migration
+    onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'Hyperledger',
-    projectName: 'identus-docs',
+    organizationName: 'hyperledger-identus',
+    projectName: 'docs',
     markdown: {
         mermaid: true,
     },
@@ -36,8 +36,10 @@ const config = {
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: {
-                    sidebarPath: require.resolve('./documentation/docs/sidebars.js'),
-                    path: './documentation/docs'
+                    sidebarPath: require.resolve('./documentation/home/sidebars.js'),
+                    path: './documentation/home/',
+                    routeBasePath: '/home/',
+
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -86,10 +88,10 @@ const config = {
         [
             '@docusaurus/plugin-content-docs',
             {
-                id: 'edge-agent-sdk-ts',
-                path: 'edge-agent-sdk-ts/docs',
-                routeBasePath: 'edge-agent-sdk-ts',
-                sidebarPath: require.resolve('./edge-agent-sdk-ts/docs/sidebars.js'),
+                id: 'sdk-ts',
+                path: 'sdk-ts/docs',
+                routeBasePath: 'sdk-ts',
+                sidebarPath: require.resolve('./sdk-ts/docs/sidebars.js'),
             },
         ]
     ],
@@ -107,10 +109,10 @@ const config = {
             },
             items: [
                 {
-                    type: 'doc',
-                    docId: 'getting-started',
+                    to: '/home/',
                     position: 'left',
-                    label: 'Docs',
+                    activeBaseRegex: `/home/`,
+                    label: 'Home',
                 },
                 {
                     to: '/tutorials/',
@@ -135,17 +137,17 @@ const config = {
                     position: 'left',
                     items: [
                         {
-                            label: 'Edge Agent SDK Swift',
-                            href: 'https://hyperledger.github.io/identus-edge-agent-sdk-swift/documentation/edgeagentsdk/',
+                            label: 'SDK Swift',
+                            href: 'https://hyperledger-identus.github.io/sdk-swift/documentation/edgeagentsdk/',
                         },
                         {
-                            to: '/edge-agent-sdk-ts/sdk',
-                            label: 'Edge Agent SDK Typescript',
-                            activeBaseRegex: `/edge-agent-sdk-ts/sdk`
+                            to: '/sdk-ts/sdk',
+                            label: 'SDK Typescript',
+                            activeBaseRegex: `/sdk-ts/sdk`
                         },
                         {
-                            label: 'Edge Agent SDK Kotlin Multiplatform',
-                            href: 'https://hyperledger-identus.github.io/edge-agent-sdk-kmp/',
+                            label: 'SDK Kotlin Multiplatform',
+                            href: 'https://hyperledger-identus.github.io/sdk-kmp/',
                         },
                     ],
                 },

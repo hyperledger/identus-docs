@@ -19,7 +19,7 @@ function HomepageHeader() {
           <h1 className={clsx('hero__title', styles.hero__title)} dangerouslySetInnerHTML={{ __html: siteConfig.title }} />
           <Button
             className={clsx("button button--lg", styles.hero__button)}
-            to="/docs/getting-started">
+            to="/home/">
             Get Started
           </Button>
         </div>
