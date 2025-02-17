@@ -19,7 +19,11 @@ const sidebars = {
   // But you can create a sidebar manually
 
   docsSidebar: [
-    "getting-started",
+    {
+      type: 'doc',
+      id: 'README', // document ID
+      label: 'Getting Started', // sidebar label
+    },
     "quick-start",
     {
       type: "category",

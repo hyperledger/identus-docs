@@ -16,7 +16,7 @@ An administrator is a role who oversees the agent and releated resources, includ
 ### Claim
 An assertion made about a [subject](#did-subject).
 
-### Cloud Agent
+### Cloud Agent {#cloud-agent}
 The Cloud Agent is a scaleable, easy-to-use, robust, and W3C standards-based agent that provides self-sovereign identity (SSI) services to build products and solutions based on it. The Cloud Agent exposes REST API for integration with any programming language.
 
 ### Controller
@@ -43,19 +43,19 @@ When the Holder accepts or rejects a credential offer, a credential request is c
 
 
 ## D
-### Decentralized Identifier (DID)
+### Decentralized Identifier (DID) {#decentralized-identifier}
 A globally unique persistent identifier that does not require a centralized registration authority and is often cryptographically generated. All DIDs use distributed ledger technology (DLT) or some other decentralized network.
 
-### DID
-See [decentralized identifier](#decentralized-identifer-(did))
+### DID {#did}
+See [decentralized identifier](#decentralized-identifer)
 
-### DIDComm
+### DIDComm {#didcomm}
 A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.
 
 ### DID controller
 The entity that has control of the DID
 
-### DID document
+### DID document {#did-document}
 A set of data that describes the DID subject, including mechanisms such as cryptographic public keys. The entire W3C DID specification is [here](https://www.w3.org/TR/did-spec-registries/).
 
 ### DID method
@@ -100,8 +100,8 @@ See [Trust Framework](#trust-framework)
 
 
 ## H
-### Holder 
-An entity will take on this role by possessing one or more [verifiable credentials](#verifiable-credentials) and generating [verifiable presentations](#verifiable-presentations). Also takes the role of a prover when presenting verifiable credentials for verification.
+### Holder {#holder}
+An entity will take on this role by possessing one or more [verifiable credentials](#verifiable-credential) and generating [verifiable presentations](#verifiable-presentation). Also takes the role of a prover when presenting verifiable credentials for verification.
 
 
 
@@ -112,7 +112,7 @@ IAM (Identity and Access Management), is a framework that controls and manages u
 ### Identus
 A suite of products that provides infrastructure for decentralized identity.
 
-### IDP
+### IDP {#idp}
 An Identity Provider (IDP) is a centralized service that manages and authenticates user identities, allowing individuals to access multiple applications and services with a single set of credentials. IDPs play a crucial role in Single Sign-On (SSO) systems, simplifying user access management across various platforms and services.
 
 ### Invitation
@@ -124,7 +124,7 @@ A subject that receives a connection invitation and accepts it by sending a conn
 ### Inviter
 A subject that initiates a connection request by sending a connection invitation.
 
-### Issuer
+### Issuer {#issuer}
 An entity that asserts claim(s) about one or more [subjects](#did-subject) then creates a [verifiable credentials](#verifiable-credentials) from these claims and transmits the VC to a holder.
 
 ### Issue Credential Protocol
@@ -136,7 +136,7 @@ Keycloak is an open-source [IAM](#iam) solution that provides authentication, au
 
 
 ## M
-### Mediator
+### Mediator {#mediator}
 A mediator participates in agent-to-agent message delivery that the sender must model. It has its keys and will deliver messages only after decrypting an outer envelope to reveal a forward request. Many types of mediators may exist, but two important ones should be widely understood, as they commonly manifest in DID Docs:
 - A service that hosts many cloud agents at a single endpoint to provide herd privacy (an "agency") is a mediator.
 - A cloud-based agent that routes between/among the edges of a sovereign domain is a mediator.
@@ -166,7 +166,7 @@ A rich DID method that has no blockchain dependencies. The verifiable data regis
 The protocol provides endpoints for a Verifier to request new proof presentations from Holder/Provers and for a Holder/Prover to respond to the presentation request using a specific verifiable credential they own.
 
 ### Proof
-A cryptographic mechanism that proves the information in a [verifiable credential](#verifiable-credentials) or [verifiable presentation](#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
+A cryptographic mechanism that proves the information in a [verifiable credential](#verifiable-credential) or [verifiable presentation](#verifiable-presentation) has not been tampered with. Many types of cryptographic proofs include but are not limited to digital signatures, zero-knowledge proofs, Proofs of Work, and Proofs of Stake.
 
 ### Proof presentation
 See [verifiable presentation](#verifiable-presentation). Also see [Present Proof Protocol](#present-proof-protocol).
@@ -241,10 +241,10 @@ User-Managed Access (UMA) is an authorization framework that allows users to con
 HashiCorp Vault is a widely used open-source and enterprise-grade solution designed for securely storing, accessing, and managing secrets and sensitive data in modern computing environments.
 It offers a centralized platform for managing cryptographic keys, passwords, API keys, tokens, and other secrets.
 
-### Verifiable Credential (VC)
+### Verifiable Credential (VC) {#verifiable-credential}
 A verifiable credential is a tamper-evident credential that contains one or more claims made by an issuer whose authorship can be cryptographically verified. It is possible to use VCs to create a [verifiable presentation](#verifiable-presentation). Also, the claims in a VC can be about different subjects.
 
-### Verifiable Data Registry
+### Verifiable Data Registry {#verifiable-data-registry}
 A system that mediates the creation and verification of identifiers, keys, and other relevant data.
 
 ### Verifiable Presentation
