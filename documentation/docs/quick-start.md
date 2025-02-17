@@ -148,7 +148,7 @@ API_KEY_ENABLED disables API Key authentication. This should **not** be used bey
 ### Agent configuration
 
 #### Creating LongForm PrismDID
-1. Run the following API request against your Issuer API to create a PRISM DID:
+1. Run the following API request against your Issuer API to create a PRISM DID, this gives you the `longFormDID`:
 
 :::note
 
@@ -177,15 +177,13 @@ curl --location \
 }'
 ```
 
-2. Publish the DID by replacing `{didRef}` with the `longFormDid` output value from the previous step.
+2. Publish the DID by replacing `{longFormDID}` with the output value from the previous step. This returns the DID in its short form, `publishedPrismDID`
 
 ```bash
 curl --location \
---request POST 'http://localhost:8000/cloud-agent/did-registrar/dids/{didRef}/publications' \
+--request POST 'http://localhost:8000/cloud-agent/did-registrar/dids/{longFormDID}/publications' \
 --header 'Accept: application/json'
 ```
-
-3. The short version of the DID is the publishedPrismDID.
 
 :::info
 
@@ -616,13 +614,7 @@ The Issuer can create a credential offer in two ways:
 Please replace the following variables in the example request before sending:
 
 - `connectionId`: The ID of the connection previously established between agent and holder. This is part of the response of the POST message from the agent when calling the `cloud-agent/connections` endpoint. It is returned in the `connectionId` attribute. There is a unique connection ID for the relationship between issuer and holder and verifier and holder. In this example, please use the `connectionId` returned when creating the connection between issuer and holder
-- `publishedPrismDID`: The short form of the PRISM DID created when setting up the Issuer agent
-
-The `connectionId` is just the ID of the connection we previously established with the issuer.
-
-The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
-
-- ``
+- `issuingDID`: The Issuing DID is the `publishedPrismDID` created when [configuring the Issuer](#agent-configuration), which is the `longFormPrismDID` in its short form version.
 
 :::
 
@@ -630,12 +622,19 @@ The Issuing DID is the published PRISM DID in its short version which was also u
 curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credentials/credential-offers' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
+    "claims": {
+      "emailAddress": "sampleEmail",
+      "familyName": "",
+      "dateOfIssuance": "2023-01-01T02:02:02Z",
+      "drivingLicenseID": "",
+      "drivingClass": 1
+    },
     "connectionId": [[connectionId]],
-    "issuingDID": [[publishedPrismDID]],
+    "issuingDID": [[issuingDID]],
     "automaticIssuance": true
 }'
 ```
+
 </TabItem>
 <TabItem value="connectionless" label="Connectionless Issuance">
 ### Create a Credential Offer as Invitation for connectionless issuance **Issuer Agent**
@@ -646,13 +645,9 @@ curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credenti
 
 Please replace the following variables in the example request before sending:
 
-- `goalCode`: OPTIONAL A self-attested code the receiver may want to display to the user or use in automatically deciding what to do with the out-of-band message,
+- `goalCode`: OPTIONAL A self-attested string code the receiver may want to display to the user or use in automatically deciding what to do with the out-of-band message,
 - `goal`: OPTIONAL. A self-attested string that the receiver may want to display to the user about the context-specific goal of the out-of-band message.
-- `publishedPrismDID`: The short form of the PRISM DID created when setting up the Issuer agent
-
-The Issuing DID is the published PRISM DID in its short version which was also used to create and publish the credential schema.
-
-- ``
+- `issuingDID`: The Issuing DID is the `publishedPrismDID` created when [configuring the Issuer](#agent-configuration), which is the `longFormPrismDID` in its short form version.
 
 :::
 
@@ -660,11 +655,17 @@ The Issuing DID is the published PRISM DID in its short version which was also u
 curl --location --request POST 'http://localhost:8000/cloud-agent/issue-credentials/credential-offers/invitation' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "claims": {"emailAddress":"sampleEmail", "familyName":"", "dateOfIssuance":"2023-01-01T02:02:02Z", "drivingLicenseID":"", "drivingClass":1},
+    "claims": {
+      "emailAddress": "sampleEmail",
+      "familyName": "",
+      "dateOfIssuance": "2023-01-01T02:02:02Z",
+      "drivingLicenseID": "",
+      "drivingClass": 1
+    },
     "goalCode": [[goalCode]],
     "goal": [[goal]],
     "credentialFormat": "JWT",
-    "issuingDID": [[publishedPrismDID]],
+    "issuingDID": [[issuingDID]],
     "automaticIssuance": true
 }'
 ```
@@ -698,7 +699,7 @@ For connectionless issuance, the Holder needs to accept the invitation containin
 </TabItem>
 </Tabs>
 
-<summary>Code examples</summary>
+#### Code examples
 <Tabs>
 <TabItem value="js" label="Typescript">
 
@@ -734,7 +735,7 @@ agent.acceptOutOfBandInvitation(invitation)
 
 :::info
 
-automaticIssuance is optional. It can also be manually triggered and confirmed by the Holder.```
+`automaticIssuance` is optional. It can also be manually triggered and confirmed by the Holder.
 
 :::
 
@@ -758,30 +759,37 @@ automaticIssuance is optional. It can also be manually triggered and confirmed b
 </Tabs>
 
 
-<summary>Code examples</summary>
+#### Code examples
 
-5. The exchange between CredentialOffer and CredentialRequest is demonstrated through more advanced code samples below, showcasing how different platforms handle it.
+5. The exchange between `CredentialOffer` and `CredentialRequest` is demonstrated through more advanced code samples below, showcasing how different platforms handle it.
 
 <Tabs>
 <TabItem value="js" label="Typescript">
 
 ```typescript
-props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Message[]) => {
-    //newMessages can contain any didcomm message that is received, including
-    //Credential Offers, Issued credentials and Request Presentation Messages
-    const credentialOffers = newMessages.filter((message) => message.piuri === "https://didcomm.org/issue-credential/2.0/offer-credential");
+agent.addListener(SDK.ListenerKey.MESSAGE, async (newMessages: SDK.Domain.Message[]) => {
+  // newMessages can contain any didcomm message that is received, including
+  // Credential Offers, Issued credentials and Request Presentation Messages
+  const credentialOffers = newMessages.filter(
+    (message) => message.piuri === ProtocolType.DidcommOfferCredential
+  )
 
-    if (credentialOffers.length) {
-        for(const credentialOfferMessage of credentialOffers) {
-        const credentialOffer = OfferCredential.fromMessage(credentialOfferMessage);
-        const requestCredential = await props.agent.prepareRequestCredentialWithIssuer(credentialOffer);
-        try {
-            await props.agent.sendMessage(requestCredential.makeMessage())
-        } catch (err) {
-            console.log("continue after err", err)
-        }
-        }
+  if (credentialOffers.length) {
+    for (const credentialOfferMessage of credentialOffers) {
+      try {
+        // Create credential offer object from the message
+        const credentialOffer = await SDK.OfferCredential.fromMessage(credentialOfferMessage)
+
+        // Prepare the credential request
+        const requestCredential = await agent.prepareRequestCredentialWithIssuer(credentialOffer)
+
+        // Send the credential request
+        await agent.sendMessage(requestCredential.makeMessage())
+      } catch (err) {
+        console.error('Error occurred while sending the credential request:', err)
+      }
     }
+  }
 })
 ```
 
@@ -841,32 +849,41 @@ agent.handleReceivedMessagesEvents().collect { list ->
 </TabItem>
 </Tabs>
 
-### Store the Issued Credential [Holder]
+### Store the Issued Credential **Holder**
 :::caution
 
 The sample application are using an insecure storage solution which should only be used for testing purposes and not production environments!
 
 :::
 
-<summary>Code examples</summary>
+#### Code examples
+
 6. Once the Holder receives a credential from the Cloud Agent, it needs to store the credential somewhere:
 
 <Tabs>
 <TabItem value="js" label="Typescript">
 
-
-
 ```typescript
-props.agent.addListener(ListenerKey.MESSAGE,async (newMessages:SDK.Domain.Message[]) => {
-    //newMessages can contain any didcomm message that is received, including
-    //Credential Offers, Issued credentials and Request Presentation Messages
-    const issuedCredentials = newMessages.filter((message) => message.piuri === "https://didcomm.org/issue-credential/2.0/issue-credential");
-    if (issuedCredentials.length) {
-        for(const issuedCredential of issuedCredentials) {
-            const issueCredential = IssueCredential.fromMessage(issuedCredential);
-            await props.agent.processIssuedCredentialMessage(issueCredential);
-        }
+agent.addListener(SDK.ListenerKey.MESSAGE, async (newMessages: SDK.Domain.Message[]) => {
+  // newMessages can contain any didcomm message that is received, including
+  // Credential Offers, Issued credentials and Request Presentation Messages
+  const issuedCredentials = newMessages.filter(
+    (message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential
+  )
+
+  if (issuedCredentials.length) {
+    for (const issuedCredential of issuedCredentials) {
+      try {
+        // Create issue credential object from the message
+        const issueCredential = await SDK.IssueCredential.fromMessage(issuedCredential)
+        
+        // Store the credential in pluto
+        await agent.processIssuedCredentialMessage(issueCredential)
+      } catch (err) {
+        console.error('Error occurred while storing the credential:', err)
+      }
     }
+  }
 })
 ```
 
