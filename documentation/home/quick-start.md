@@ -33,7 +33,7 @@ Identus consists of core libraries that facilitate typical SSI interactions betw
 
 
 ### A Cloud Agent
-A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/home/concepts/glossary/#verifiable-credentials) for any entity and manage [decentralized identifiers (DIDs)](/home/concepts/glossary/#decentralized-identifier) and DID-based connections. The Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/home/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
+A Cloud Agent can issue, hold, and verify [verifiable credentials (VCs)](/home/concepts/glossary/#verifiable-credential) for any entity and manage [decentralized identifiers (DIDs)](/home/concepts/glossary/#decentralized-identifier) and DID-based connections. The Cloud Agent has an easy-to-use REST API to enable easy integration into any solution and uses [DIDComm V2](/home/concepts/glossary/#didcomm) as a messaging protocol for Cloud Agent-to-Cloud Agent communication.
 
 It is maintained as an open source through the [Hyperledger Identus](https://www.hyperledger.org/projects/identus).
 

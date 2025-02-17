@@ -11,7 +11,7 @@ The second-layer PRISM Node also plays a critical role in resolving DIDs. Becaus
 
 Overall, second-layer nodes are essential for the PRISM Node protocol, providing the necessary off-chain processing and data storage capabilities to make DIDs scalable and efficient.
 
-At its core, PRISM depends on protocols defining how to manage decentralized identifiers and [Verifiable Credentials (VCs)](/home/concepts/glossary#verifiable-credentials). The PRISM Node is the main component that implements these protocols. First, we should explain how the protocol works to understand what the PRISM Node does.
+At its core, PRISM depends on protocols defining how to manage decentralized identifiers and [Verifiable Credentials (VCs)](/home/concepts/glossary#verifiable-credential). The PRISM Node is the main component that implements these protocols. First, we should explain how the protocol works to understand what the PRISM Node does.
 
 - Any user can run a PRISM Node to self-validate information or rely on a set of actors that run nodes on his behalf. The level of delegation of trust is a decision made by each user.
 - Any user willing to create a DID can do so without any need to interact with any PRISM Node. Creating a DID can be optionally announced publicly by publishing a creation operation on-chain. The action of posting an operation on-chain does require interaction with a PRISM Node.

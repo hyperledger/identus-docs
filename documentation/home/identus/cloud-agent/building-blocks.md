@@ -9,7 +9,7 @@ Below is a brief overview of the current building blocks of Identus:
 **Building Block**|**Definition**|**Code Name**
 :-----:|:-----:|:-----:
 Cryptography|A set of cryptographic primitives that ensure the integrity, authenticity, and confidentiality of all data we store and process in a provable secure way.|Apollo
-[Decentralized Identifiers (DID)](/home/concepts/glossary#decentralized-identifer)|A set of DID operations to create, manage, and resolve standards-based DIDs in a user-controlled manner.|Castor
+[Decentralized Identifiers (DID)](/home/concepts/glossary#decentralized-identifier)|A set of DID operations to create, manage, and resolve standards-based DIDs in a user-controlled manner.|Castor
 [Verifiable Credentials](/home/concepts/glossary#verifiable-credential)|A set of credential operations to issue, manage, and verify standards-based [verifiable credentials](/home/concepts/glossary#verifiable-credential) in a privacy-preserving manner.|Pollux
 [DIDComm](/home/concepts/glossary#didcomm) V2|A set of secure, standards-based communications protocols to establish and manage trusted, peer-to-peer connections and interactions between DIDs in a transport-agnostic and interoperable manner.|Mercury
 
