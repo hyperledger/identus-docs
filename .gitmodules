@@ -3,4 +3,4 @@
 	url = https://github.com/hyperledger-identus/cloud-agent
 [submodule "sdk-ts"]
 	path = sdk-ts
-	url = https://github.com/hyperledger-identus/sdk-ts
+	url = https://github.com/hyperledger-identus/sdk-ts.git
