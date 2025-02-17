@@ -109,9 +109,7 @@ const config = {
             },
             items: [
                 {
-                    //type: 'default',
                     to: '/home/',
-                    //docId: 'getting-started',
                     position: 'left',
                     activeBaseRegex: `/home/`,
                     label: 'Home',

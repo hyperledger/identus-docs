@@ -1,6 +1,6 @@
-[submodule "identus-cloud-agent"]
-	path = identus-cloud-agent
-	url = https://github.com/hyperledger/identus-cloud-agent.git
-[submodule "identus-edge-agent-sdk-ts"]
-	path = identus-edge-agent-sdk-ts
-	url = https://github.com/hyperledger/identus-edge-agent-sdk-ts.git
+[submodule "cloud-agent"]
+	path = cloud-agent
+	url = https://github.com/hyperledger-identus/cloud-agent
+[submodule "edge-agent-sdk-ts"]
+	path = edge-agent-sdk-ts
+	url = https://github.com/hyperledger-identus/edge-agent-sdk-ts
