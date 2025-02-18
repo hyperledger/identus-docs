@@ -14,7 +14,6 @@ on:
       - "gh-pages"
   push:
     branches: [main]
-    tags: ["v*"]
 
 jobs:
   ghpages:
@@ -37,7 +36,7 @@ jobs:
           yarn build
 
       - name: Deploy
-        if: (inputs.force_deploy_ghpages == true) || (github.ref == 'refs/heads/main') || startsWith(github.ref, 'refs/tags/v')
+        if: (inputs.force_deploy_ghpages == true) || (github.ref == 'refs/heads/main')
         # https://github.com/marketplace/actions/github-pages-action
         uses: peaceiris/actions-gh-pages@v3
         with:
