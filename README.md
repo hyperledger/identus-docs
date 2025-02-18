@@ -71,3 +71,9 @@ $ yarn build --out-dir infra/website
 ```
 
 This command creates a set of static resources which can be hosted to serve the full site.
+
+## Run [linkinator](https://github.com/JustinBeckwith/linkinator) locally to check the broken links of the live website
+
+```shell
+$ npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text
+```
