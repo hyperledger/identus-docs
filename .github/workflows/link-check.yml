@@ -1,0 +1,41 @@
+name: Check Broken Links
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]  # Runs on push to main branch
+  schedule:
+    - cron: "0 12 * * 1"  # Runs every Monday at 12:00 UTC
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: .linkinatorrc.json
+          sparse-checkout-cone-mode: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Wait for GitHub Pages deployment
+        run: sleep 60s  # Delay to allow deployment to complete
+
+      - name: Get short SHA
+        run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Check links on the live site
+        run: |
+          echo "Commit SHA: $SHORT_SHA"
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.json
+
+      - name: Upload Linkinator output
+        uses: actions/upload-artifact@v4
+        with:
+          name: linkinator-results-${{ env.SHORT_SHA }}
+          path: link-check-results.txt

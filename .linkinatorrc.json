@@ -1,0 +1,17 @@
+{
+  "recurse": true,
+  "concurrency": 10,
+  "format": "JSON",
+  "verbosity": "info",
+  "timeout": 30000,
+  "skip": [
+    "https://example.org/*",
+    "https://example.com/*",
+    "https://example-verifier.com/*",
+    "https://my.domain.com/*",
+    "http://issuer-agent.com/*",
+    "https://didcomm.org/*",
+    "http://localhost*",
+    "https://host.docker.internal*"
+  ]
+}
