@@ -47,7 +47,7 @@ jobs:
           name: linkinator-results-${{ env.SHORT_SHA }}
           path: link-check-results.json
 
-      - name: Faile the build if there are broken links
+      - name: Fail the build if there are broken links
         if: env.LINKINATOR_EXIT_CODE != 0
         run: |
           echo "Broken links detected. Check the artifact for details."
