@@ -41,12 +41,15 @@ jobs:
           npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.json || true
 
       - name: Generate Markdown Table from Linkinator Results
+        if: env.LINKINATOR_EXIT_CODE != 0
         run: |
           echo "| URL | Status | Parent Page |" >> link-report.md
           echo "|-----|--------|-------------|" >> link-report.md
           jq -r '.links[] | select(.state == "BROKEN") | "| \(.url) | \(.status) | \(.parent) |"' link-check-results.json >> link-report.md
           
-          echo "### 🔗 Broken Links Report" >> $GITHUB_STEP_SUMMARY
+          BROKEN_COUNT=$(jq '[.links[] | select(.state == "BROKEN")] | length' link-check-results.json)
+          
+          echo "### 🔗 Broken Links Report( $BROKEN_COUNT found)" >> $GITHUB_STEP_SUMMARY
           cat link-report.md >> $GITHUB_STEP_SUMMARY
 
 
