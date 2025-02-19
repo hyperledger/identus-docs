@@ -28,14 +28,25 @@ jobs:
       - name: Get short SHA
         run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-      - name: Check links on the live site
+      - name: Check links on the live site to the action output
         run: |
           echo "Commit SHA: $SHORT_SHA"
-          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text
-          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.json
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text || true
+          echo "LINKINATOR_EXIT_CODE=$?" >> $GITHUB_ENV
+
+      - name: Check links on the live site and safe to a file
+        if: env.LINKINATOR_EXIT_CODE != 0
+        run: |
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.txt || true
 
       - name: Upload Linkinator output
         uses: actions/upload-artifact@v4
         with:
           name: linkinator-results-${{ env.SHORT_SHA }}
           path: link-check-results.txt
+
+      - name: Faile the build if there are broken links
+        if: env.LINKINATOR_EXIT_CODE != 0
+        run: |
+          echo "Broken links detected. Check the artifact for details."
+          exit 1
