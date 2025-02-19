@@ -1,6 +1,6 @@
 {
   "recurse": true,
-  "concurrency": 10,
+  "concurrency": 3,
   "format": "JSON",
   "verbosity": "info",
   "timeout": 30000,

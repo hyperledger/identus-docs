@@ -23,27 +23,30 @@ jobs:
           node-version: "18"
 
       - name: Wait for GitHub Pages deployment
+        if: github.event_name == 'push'
         run: sleep 60s  # Delay to allow deployment to complete
 
       - name: Get short SHA
         run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Check links on the live site to the action output
+        continue-on-error: true
         run: |
           echo "Commit SHA: $SHORT_SHA"
-          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text || true
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text
           echo "LINKINATOR_EXIT_CODE=$?" >> $GITHUB_ENV
 
       - name: Check links on the live site and safe to a file
         if: env.LINKINATOR_EXIT_CODE != 0
+        continue-on-error: true
         run: |
-          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.txt || true
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.json
 
       - name: Upload Linkinator output
         uses: actions/upload-artifact@v4
         with:
           name: linkinator-results-${{ env.SHORT_SHA }}
-          path: link-check-results.txt
+          path: link-check-results.json
 
       - name: Faile the build if there are broken links
         if: env.LINKINATOR_EXIT_CODE != 0
