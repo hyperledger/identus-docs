@@ -2,7 +2,7 @@
   "recurse": true,
   "concurrency": 16,
   "format": "JSON",
-  "verbosity": "warning",
+  "verbosity": "error",
   "timeout": 30000,
   "skip": [
     "https://example.org/*",
