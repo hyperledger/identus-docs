@@ -23,19 +23,45 @@ jobs:
           node-version: "18"
 
       - name: Wait for GitHub Pages deployment
+        if: github.event_name == 'push'
         run: sleep 60s  # Delay to allow deployment to complete
 
       - name: Get short SHA
         run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-      - name: Check links on the live site
+      - name: Check links on the live site to the action output
         run: |
           echo "Commit SHA: $SHORT_SHA"
-          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text
-          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.json
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json --format text || EXIT_CODE=$?
+          echo "LINKINATOR_EXIT_CODE=${EXIT_CODE:-0}" >> $GITHUB_ENV
+
+      - name: Check links on the live site and safe to a file
+        if: env.LINKINATOR_EXIT_CODE != 0
+        run: |
+          npx linkinator https://hyperledger-identus.github.io/docs/ --config .linkinatorrc.json > link-check-results.json || true
+
+      - name: Generate Markdown Table from Linkinator Results
+        if: env.LINKINATOR_EXIT_CODE != 0
+        run: |
+          echo "| URL | Status | Parent Page |" >> link-report.md
+          echo "|-----|--------|-------------|" >> link-report.md
+          jq -r '.links[] | select(.state == "BROKEN") | "| \(.url) | \(.status) | \(.parent) |"' link-check-results.json >> link-report.md
+          
+          BROKEN_COUNT=$(jq '[.links[] | select(.state == "BROKEN")] | length' link-check-results.json)
+          
+          echo "### 🔗 Broken Links Report( $BROKEN_COUNT found)" >> $GITHUB_STEP_SUMMARY
+          cat link-report.md >> $GITHUB_STEP_SUMMARY
+
 
       - name: Upload Linkinator output
+        if: env.LINKINATOR_EXIT_CODE != 0
         uses: actions/upload-artifact@v4
         with:
           name: linkinator-results-${{ env.SHORT_SHA }}
-          path: link-check-results.txt
+          path: link-check-results.json
+
+      - name: Fail the build if there are broken links
+        if: env.LINKINATOR_EXIT_CODE != 0
+        run: |
+          echo "Broken links detected. Check the artifact for details."
+          exit 1

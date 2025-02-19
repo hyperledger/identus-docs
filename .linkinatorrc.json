@@ -1,9 +1,8 @@
 {
   "recurse": true,
-  "concurrency": 10,
+  "concurrency": 16,
   "format": "JSON",
-  "verbosity": "info",
-  "timeout": 30000,
+  "verbosity": "error",
   "skip": [
     "https://example.org/*",
     "https://example.com/*",
@@ -12,6 +11,7 @@
     "http://issuer-agent.com/*",
     "https://didcomm.org/*",
     "http://localhost*",
-    "https://host.docker.internal*"
+    "https://host.docker.internal*",
+    "https://identity.foundation/*"
   ]
 }
