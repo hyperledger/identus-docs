@@ -3,7 +3,6 @@
   "concurrency": 16,
   "format": "JSON",
   "verbosity": "error",
-  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
   "skip": [
     "https://example.org/*",
     "https://example.com/*",
@@ -12,6 +11,7 @@
     "http://issuer-agent.com/*",
     "https://didcomm.org/*",
     "http://localhost*",
-    "https://host.docker.internal*"
+    "https://host.docker.internal*",
+    "https://identity.foundation/*"
   ]
 }
