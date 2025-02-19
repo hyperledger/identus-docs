@@ -1,8 +1,8 @@
 {
   "recurse": true,
-  "concurrency": 3,
+  "concurrency": 16,
   "format": "JSON",
-  "verbosity": "info",
+  "verbosity": "warn",
   "timeout": 30000,
   "skip": [
     "https://example.org/*",
