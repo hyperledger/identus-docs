@@ -3,7 +3,9 @@
   "concurrency": 16,
   "format": "JSON",
   "verbosity": "error",
-  "timeout": 30000,
+  "timeout": 10000,
+  "retry": 3,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
   "skip": [
     "https://example.org/*",
     "https://example.com/*",
